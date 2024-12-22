@@ -55,29 +55,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DangNhap.cs">
+    <Compile Include="frm\DangKyTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DangNhap.Designer.cs">
+    <Compile Include="frm\DangKyTaiKhoan.Designer.cs">
+      <DependentUpon>DangKyTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="BanHang.cs">
+    <Compile Include="frm\BanHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BanHang.Designer.cs">
+    <Compile Include="frm\BanHang.Designer.cs">
       <DependentUpon>BanHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ThongTinSanPham.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ThongTinSanPham.Designer.cs">
-      <DependentUpon>ThongTinSanPham.cs</DependentUpon>
     </Compile>
     <Compile Include="model\CHATLIEU.cs" />
     <Compile Include="model\CHITIETDONHANG.cs" />
     <Compile Include="model\CuaHangDB.cs" />
     <Compile Include="model\DANHMUC.cs" />
-    <Compile Include="model\DonHang.cs" />
+    <Compile Include="model\DONHANG.cs" />
     <Compile Include="model\HOADON.cs" />
     <Compile Include="model\KHACHHANG.cs" />
     <Compile Include="model\KHUYENMAI.cs" />
@@ -94,60 +94,60 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="TrangChu.cs">
+    <Compile Include="frm\TrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TrangChu.Designer.cs">
+    <Compile Include="frm\TrangChu.Designer.cs">
       <DependentUpon>TrangChu.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLyNhanVien.cs">
+    <Compile Include="frm\QuanLyNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLyNhanVien.Designer.cs">
+    <Compile Include="frm\QuanLyNhanVien.Designer.cs">
       <DependentUpon>QuanLyNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLyKhachHang.cs">
+    <Compile Include="frm\QuanLyKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLyKhachHang.Designer.cs">
+    <Compile Include="frm\QuanLyKhachHang.Designer.cs">
       <DependentUpon>QuanLyKhachHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLyDonHang.cs">
+    <Compile Include="frm\QuanLyDonHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLyDonHang.Designer.cs">
+    <Compile Include="frm\QuanLyDonHang.Designer.cs">
       <DependentUpon>QuanLyDonHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLySanPham.cs">
+    <Compile Include="frm\QuanLySanPham.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLySanPham.Designer.cs">
+    <Compile Include="frm\QuanLySanPham.Designer.cs">
       <DependentUpon>QuanLySanPham.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="BanHang.resx">
+    <EmbeddedResource Include="frm\BanHang.resx">
       <DependentUpon>BanHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DangNhap.resx">
+    <EmbeddedResource Include="frm\DangKyTaiKhoan.resx">
+      <DependentUpon>DangKyTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThongTinSanPham.resx">
-      <DependentUpon>ThongTinSanPham.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TrangChu.resx">
+    <EmbeddedResource Include="frm\TrangChu.resx">
       <DependentUpon>TrangChu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyNhanVien.resx">
+    <EmbeddedResource Include="frm\QuanLyNhanVien.resx">
       <DependentUpon>QuanLyNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyKhachHang.resx">
+    <EmbeddedResource Include="frm\QuanLyKhachHang.resx">
       <DependentUpon>QuanLyKhachHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyDonHang.resx">
+    <EmbeddedResource Include="frm\QuanLyDonHang.resx">
       <DependentUpon>QuanLyDonHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySanPham.resx">
+    <EmbeddedResource Include="frm\QuanLySanPham.resx">
       <DependentUpon>QuanLySanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

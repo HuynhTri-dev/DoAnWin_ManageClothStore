@@ -27,6 +27,9 @@ namespace DoAnCuoiKi
             label1.Text = "Da doi";
         }
 
-        
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

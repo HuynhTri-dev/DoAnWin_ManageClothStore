@@ -15,7 +15,7 @@ namespace DoAnCuoiKi.model
         public virtual DbSet<CHATLIEU> CHATLIEUx { get; set; }
         public virtual DbSet<CHITIETDONHANG> CHITIETDONHANGs { get; set; }
         public virtual DbSet<DANHMUC> DANHMUCs { get; set; }
-        public virtual DbSet<DonHang> DonHangs { get; set; }
+        public virtual DbSet<DONHANG> DONHANGs { get; set; }
         public virtual DbSet<HOADON> HOADONs { get; set; }
         public virtual DbSet<KHACHHANG> KHACHHANGs { get; set; }
         public virtual DbSet<KHUYENMAI> KHUYENMAIs { get; set; }
@@ -56,31 +56,31 @@ namespace DoAnCuoiKi.model
                 .WithRequired(e => e.DANHMUC)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<DonHang>()
+            modelBuilder.Entity<DONHANG>()
                 .Property(e => e.MaDH)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<DonHang>()
+            modelBuilder.Entity<DONHANG>()
                 .Property(e => e.MaKH)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<DonHang>()
+            modelBuilder.Entity<DONHANG>()
                 .Property(e => e.MaNV)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<DonHang>()
+            modelBuilder.Entity<DONHANG>()
                 .HasMany(e => e.CHITIETDONHANGs)
-                .WithRequired(e => e.DonHang)
+                .WithRequired(e => e.DONHANG)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<DonHang>()
+            modelBuilder.Entity<DONHANG>()
                 .HasMany(e => e.HOADONs)
-                .WithRequired(e => e.DonHang)
+                .WithRequired(e => e.DONHANG)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<DonHang>()
+            modelBuilder.Entity<DONHANG>()
                 .HasMany(e => e.PHIEUGIAOHANGs)
-                .WithRequired(e => e.DonHang)
+                .WithRequired(e => e.DONHANG)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<HOADON>()
@@ -104,7 +104,7 @@ namespace DoAnCuoiKi.model
                 .IsUnicode(false);
 
             modelBuilder.Entity<KHACHHANG>()
-                .HasMany(e => e.DonHangs)
+                .HasMany(e => e.DONHANGs)
                 .WithRequired(e => e.KHACHHANG)
                 .WillCascadeOnDelete(false);
 
@@ -160,7 +160,7 @@ namespace DoAnCuoiKi.model
                 .IsUnicode(false);
 
             modelBuilder.Entity<NHANVIEN>()
-                .HasMany(e => e.DonHangs)
+                .HasMany(e => e.DONHANGs)
                 .WithRequired(e => e.NHANVIEN)
                 .WillCascadeOnDelete(false);
 

@@ -23,6 +23,8 @@ namespace DoAnCuoiKi.model
         [StringLength(32)]
         public string TenSP { get; set; }
 
+        public byte[] AnhSP { get; set; }
+
         public int SoLuongTon { get; set; }
 
         [Required]

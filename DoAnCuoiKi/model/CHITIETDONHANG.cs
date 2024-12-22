@@ -21,7 +21,7 @@ namespace DoAnCuoiKi.model
 
         public byte SoLuong { get; set; }
 
-        public virtual DonHang DonHang { get; set; }
+        public virtual DONHANG DONHANG { get; set; }
 
         public virtual SANPHAM SANPHAM { get; set; }
     }

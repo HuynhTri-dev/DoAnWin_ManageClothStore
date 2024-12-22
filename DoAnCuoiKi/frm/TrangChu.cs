@@ -20,7 +20,8 @@ namespace DoAnCuoiKi
             InitializeComponent();
         }
 
-        private Form activeForm = null; // Form con hiện tại
+        // hàm để tạo tạo và gọi form con
+        private Form activeForm = null; 
         private void OpenChildForm(Form childForm)
         {
             // Đóng Form hiện tại nếu có
@@ -30,12 +31,22 @@ namespace DoAnCuoiKi
             activeForm = childForm; // Cập nhật Form mới
             childForm.TopLevel = false; // Không phải Form cấp cao nhất
             childForm.FormBorderStyle = FormBorderStyle.None; // Xóa viền
-            childForm.Dock = DockStyle.Fill; // Lấp đầy Panel chính
+
+            // Đặt kích thước Panel chính dựa trên kích thước Form con
             panel2.Controls.Clear(); // Xóa các control cũ trong Panel chính
+            panel2.AutoScroll = true;
+
+            // Cập nhật kích thước Panel chính dựa trên kích thước ChildForm
+            panel2.Size = new Size(childForm.Width, childForm.Height);
+
+            childForm.Dock = DockStyle.Fill; // Lấp đầy Panel chính
             panel2.Controls.Add(childForm); // Thêm Form mới vào Panel chính
             panel2.Tag = childForm; // Gắn thẻ Form
             childForm.BringToFront(); // Đưa Form lên trên cùng
             childForm.Show(); // Hiển thị Form
+
+            // Đặt lại kích thước nếu cần khi không dùng DockStyle.Fill
+            panel2.Refresh();
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -109,6 +120,11 @@ namespace DoAnCuoiKi
         private void btnWarehouse_Click(object sender, EventArgs e)
         {
             this.Text = "Quản lý kho";
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

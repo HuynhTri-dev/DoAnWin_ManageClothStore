@@ -12,7 +12,7 @@ namespace DoAnCuoiKi.model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public KHACHHANG()
         {
-            DonHangs = new HashSet<DonHang>();
+            DONHANGs = new HashSet<DONHANG>();
             KHUYENMAIs = new HashSet<KHUYENMAI>();
         }
 
@@ -39,7 +39,7 @@ namespace DoAnCuoiKi.model
         public string GhiChu { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DonHang> DonHangs { get; set; }
+        public virtual ICollection<DONHANG> DONHANGs { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KHUYENMAI> KHUYENMAIs { get; set; }

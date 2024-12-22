@@ -6,11 +6,11 @@ namespace DoAnCuoiKi.model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("DonHang")]
-    public partial class DonHang
+    [Table("DONHANG")]
+    public partial class DONHANG
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public DonHang()
+        public DONHANG()
         {
             CHITIETDONHANGs = new HashSet<CHITIETDONHANG>();
             HOADONs = new HashSet<HOADON>();
