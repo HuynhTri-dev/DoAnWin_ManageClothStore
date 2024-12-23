@@ -165,5 +165,15 @@ namespace DoAnCuoiKi
         {
 
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NhanHieuComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
