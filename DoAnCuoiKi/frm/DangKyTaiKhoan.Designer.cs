@@ -31,12 +31,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.maTKText = new System.Windows.Forms.TextBox();
-            this.tenDangNhapTextBox = new System.Windows.Forms.TextBox();
             this.matKhauTextBox = new System.Windows.Forms.TextBox();
+            this.tenDangNhapTextBox = new System.Windows.Forms.TextBox();
+            this.maTKText = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.addUpdateButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -49,7 +49,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(802, 100);
+            this.panel1.Size = new System.Drawing.Size(755, 100);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -58,7 +58,7 @@
             this.label1.Font = new System.Drawing.Font("Tahoma", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(193, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(380, 41);
+            this.label1.Size = new System.Drawing.Size(371, 40);
             this.label1.TabIndex = 0;
             this.label1.Text = "ĐĂNG KÝ TÀI KHOẢN";
             // 
@@ -72,63 +72,64 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(48, 121);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(707, 244);
+            this.groupBox1.Size = new System.Drawing.Size(655, 244);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
-            // label2
+            // matKhauTextBox
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(34, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(186, 34);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Mã tài khoản:";
+            this.matKhauTextBox.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.matKhauTextBox.Location = new System.Drawing.Point(259, 178);
+            this.matKhauTextBox.Name = "matKhauTextBox";
+            this.matKhauTextBox.Size = new System.Drawing.Size(364, 32);
+            this.matKhauTextBox.TabIndex = 5;
             // 
-            // label3
+            // tenDangNhapTextBox
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(34, 107);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(214, 34);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Tên đăng nhập:";
+            this.tenDangNhapTextBox.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tenDangNhapTextBox.Location = new System.Drawing.Point(259, 104);
+            this.tenDangNhapTextBox.Name = "tenDangNhapTextBox";
+            this.tenDangNhapTextBox.Size = new System.Drawing.Size(364, 32);
+            this.tenDangNhapTextBox.TabIndex = 4;
+            // 
+            // maTKText
+            // 
+            this.maTKText.Enabled = false;
+            this.maTKText.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maTKText.Location = new System.Drawing.Point(259, 25);
+            this.maTKText.Name = "maTKText";
+            this.maTKText.Size = new System.Drawing.Size(364, 32);
+            this.maTKText.TabIndex = 3;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(34, 181);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(141, 34);
+            this.label4.Size = new System.Drawing.Size(99, 24);
             this.label4.TabIndex = 2;
             this.label4.Text = "Mật khẩu:";
             // 
-            // maTKText
+            // label3
             // 
-            this.maTKText.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maTKText.Location = new System.Drawing.Point(300, 25);
-            this.maTKText.Name = "maTKText";
-            this.maTKText.Size = new System.Drawing.Size(364, 40);
-            this.maTKText.TabIndex = 3;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(34, 107);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(151, 24);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Tên đăng nhập:";
             // 
-            // tenDangNhapTextBox
+            // label2
             // 
-            this.tenDangNhapTextBox.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tenDangNhapTextBox.Location = new System.Drawing.Point(300, 104);
-            this.tenDangNhapTextBox.Name = "tenDangNhapTextBox";
-            this.tenDangNhapTextBox.Size = new System.Drawing.Size(364, 40);
-            this.tenDangNhapTextBox.TabIndex = 4;
-            // 
-            // matKhauTextBox
-            // 
-            this.matKhauTextBox.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.matKhauTextBox.Location = new System.Drawing.Point(300, 178);
-            this.matKhauTextBox.Name = "matKhauTextBox";
-            this.matKhauTextBox.Size = new System.Drawing.Size(364, 40);
-            this.matKhauTextBox.TabIndex = 5;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(34, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(132, 24);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Mã tài khoản:";
             // 
             // addUpdateButton
             // 
@@ -144,7 +145,7 @@
             // deleteButton
             // 
             this.deleteButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteButton.Location = new System.Drawing.Point(618, 389);
+            this.deleteButton.Location = new System.Drawing.Point(566, 389);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(137, 43);
             this.deleteButton.TabIndex = 3;
@@ -156,7 +157,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 459);
+            this.ClientSize = new System.Drawing.Size(755, 459);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.addUpdateButton);
             this.Controls.Add(this.groupBox1);

@@ -35,9 +35,16 @@ namespace DoAnCuoiKi.frm
             {
                 var tk = db.TAIKHOANs.FirstOrDefault(x => x.MaTK == maTK);
 
-                maTKText.Text = tk.MaTK;
-                tenDangNhapTextBox.Text = tk.TenTK;
-                matKhauTextBox.Text = tk.MatKhau;
+                if (tk != null)
+                {
+                    maTKText.Text = tk.MaTK;
+                    tenDangNhapTextBox.Text = tk.TenTK;
+                    matKhauTextBox.Text = tk.MatKhau;
+                }
+                else
+                {
+                    maTKText.Text = maTK;
+                }
             }
         }
 
@@ -72,6 +79,8 @@ namespace DoAnCuoiKi.frm
                 }
 
                 DataToReturn = maTKText.Text;
+
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             else
@@ -88,16 +97,16 @@ namespace DoAnCuoiKi.frm
                 var phuThuoc = db.NHANVIENs.FirstOrDefault(x => x.MaTK == maTKText.Text);
                 if (phuThuoc != null)
                 {
-                    MessageBox.Show("Nhân viên này còn hoạt động!", "Thông báo");
-                    return;
-                }
-
-                DialogResult dlg = MessageBox.Show("Xóa thông tin nhân viên này?", "Xóa sản phẩm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dlg == DialogResult.Yes)
-                {
-                    db.TAIKHOANs.Remove(tk);
-                    db.SaveChanges();
-                    MessageBox.Show("Xóa thành công!");
+                    DialogResult dlg = MessageBox.Show("Nhân viên này còn hoạt động! \nBạn có chắc muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dlg == DialogResult.Yes)
+                    {
+                        db.NHANVIENs.Remove(phuThuoc);
+                        db.TAIKHOANs.Remove(tk);
+                        db.SaveChanges();
+                        MessageBox.Show("Xóa thành công!");
+                        this.DialogResult = DialogResult.Cancel;
+                        this.Close();
+                    }
                 }
             }
             else

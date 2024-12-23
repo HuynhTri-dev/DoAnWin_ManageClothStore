@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblStaffID = new System.Windows.Forms.Label();
@@ -81,54 +81,60 @@
             // lblStaffID
             // 
             this.lblStaffID.AutoSize = true;
-            this.lblStaffID.Location = new System.Drawing.Point(108, 33);
+            this.lblStaffID.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStaffID.Location = new System.Drawing.Point(108, 27);
             this.lblStaffID.Name = "lblStaffID";
-            this.lblStaffID.Size = new System.Drawing.Size(86, 16);
+            this.lblStaffID.Size = new System.Drawing.Size(129, 24);
             this.lblStaffID.TabIndex = 1;
             this.lblStaffID.Text = "Mã nhân viên";
             // 
             // lblStaffName
             // 
             this.lblStaffName.AutoSize = true;
-            this.lblStaffName.Location = new System.Drawing.Point(108, 75);
+            this.lblStaffName.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStaffName.Location = new System.Drawing.Point(108, 69);
             this.lblStaffName.Name = "lblStaffName";
-            this.lblStaffName.Size = new System.Drawing.Size(52, 16);
+            this.lblStaffName.Size = new System.Drawing.Size(75, 24);
             this.lblStaffName.TabIndex = 2;
             this.lblStaffName.Text = "Họ Tên";
             // 
             // lblGender
             // 
             this.lblGender.AutoSize = true;
-            this.lblGender.Location = new System.Drawing.Point(108, 124);
+            this.lblGender.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGender.Location = new System.Drawing.Point(108, 118);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(54, 16);
+            this.lblGender.Size = new System.Drawing.Size(84, 24);
             this.lblGender.TabIndex = 3;
             this.lblGender.Text = "Giới tính";
             // 
             // lblSDTS
             // 
             this.lblSDTS.AutoSize = true;
-            this.lblSDTS.Location = new System.Drawing.Point(108, 171);
+            this.lblSDTS.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSDTS.Location = new System.Drawing.Point(108, 165);
             this.lblSDTS.Name = "lblSDTS";
-            this.lblSDTS.Size = new System.Drawing.Size(35, 16);
+            this.lblSDTS.Size = new System.Drawing.Size(47, 24);
             this.lblSDTS.TabIndex = 4;
             this.lblSDTS.Text = "SDT";
             // 
             // lblDOB
             // 
             this.lblDOB.AutoSize = true;
-            this.lblDOB.Location = new System.Drawing.Point(515, 33);
+            this.lblDOB.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDOB.Location = new System.Drawing.Point(540, 26);
             this.lblDOB.Name = "lblDOB";
-            this.lblDOB.Size = new System.Drawing.Size(67, 16);
+            this.lblDOB.Size = new System.Drawing.Size(97, 24);
             this.lblDOB.TabIndex = 5;
             this.lblDOB.Text = "Ngày sinh";
             // 
             // lblRole
             // 
             this.lblRole.AutoSize = true;
-            this.lblRole.Location = new System.Drawing.Point(515, 81);
+            this.lblRole.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRole.Location = new System.Drawing.Point(540, 75);
             this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(54, 16);
+            this.lblRole.Size = new System.Drawing.Size(81, 24);
             this.lblRole.TabIndex = 6;
             this.lblRole.Text = "Chức vụ";
             // 
@@ -136,14 +142,14 @@
             // 
             this.nhanVienDataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(225)))), ((int)(((byte)(213)))));
             this.nhanVienDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.nhanVienDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.nhanVienDataGrid.DefaultCellStyle = dataGridViewCellStyle4;
             this.nhanVienDataGrid.Location = new System.Drawing.Point(28, 289);
             this.nhanVienDataGrid.Name = "nhanVienDataGrid";
             this.nhanVienDataGrid.ReadOnly = true;
@@ -155,47 +161,54 @@
             // 
             // txtStaffID
             // 
-            this.txtStaffID.Location = new System.Drawing.Point(200, 30);
+            this.txtStaffID.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStaffID.Location = new System.Drawing.Point(243, 25);
             this.txtStaffID.Name = "txtStaffID";
-            this.txtStaffID.Size = new System.Drawing.Size(187, 22);
+            this.txtStaffID.Size = new System.Drawing.Size(235, 32);
             this.txtStaffID.TabIndex = 9;
             // 
             // txtStaffName
             // 
-            this.txtStaffName.Location = new System.Drawing.Point(200, 75);
+            this.txtStaffName.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStaffName.Location = new System.Drawing.Point(243, 69);
             this.txtStaffName.Name = "txtStaffName";
-            this.txtStaffName.Size = new System.Drawing.Size(187, 22);
+            this.txtStaffName.Size = new System.Drawing.Size(235, 32);
             this.txtStaffName.TabIndex = 10;
             // 
             // dtpStaff
             // 
             this.dtpStaff.CustomFormat = "dd/MM/yyyy";
+            this.dtpStaff.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpStaff.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStaff.Location = new System.Drawing.Point(612, 28);
+            this.dtpStaff.Location = new System.Drawing.Point(637, 21);
             this.dtpStaff.Name = "dtpStaff";
-            this.dtpStaff.Size = new System.Drawing.Size(121, 22);
+            this.dtpStaff.Size = new System.Drawing.Size(133, 32);
             this.dtpStaff.TabIndex = 12;
             // 
             // cboRole
             // 
+            this.cboRole.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRole.FormattingEnabled = true;
-            this.cboRole.Location = new System.Drawing.Point(612, 75);
+            this.cboRole.Location = new System.Drawing.Point(637, 72);
             this.cboRole.Name = "cboRole";
-            this.cboRole.Size = new System.Drawing.Size(121, 24);
+            this.cboRole.Size = new System.Drawing.Size(133, 32);
             this.cboRole.TabIndex = 13;
+            this.cboRole.SelectedIndexChanged += new System.EventHandler(this.cboRole_SelectedIndexChanged);
             // 
             // txtSDTS
             // 
-            this.txtSDTS.Location = new System.Drawing.Point(200, 165);
+            this.txtSDTS.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSDTS.Location = new System.Drawing.Point(243, 162);
             this.txtSDTS.Name = "txtSDTS";
-            this.txtSDTS.Size = new System.Drawing.Size(187, 22);
+            this.txtSDTS.Size = new System.Drawing.Size(235, 32);
             this.txtSDTS.TabIndex = 14;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(518, 161);
+            this.btnAdd.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(544, 160);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(122, 26);
+            this.btnAdd.Size = new System.Drawing.Size(168, 34);
             this.btnAdd.TabIndex = 16;
             this.btnAdd.Text = "Thêm/Cập nhật";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -203,9 +216,10 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(683, 161);
+            this.btnDelete.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Location = new System.Drawing.Point(768, 160);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 26);
+            this.btnDelete.Size = new System.Drawing.Size(100, 34);
             this.btnDelete.TabIndex = 17;
             this.btnDelete.Text = "Xoá";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -240,32 +254,35 @@
             // nuRadio
             // 
             this.nuRadio.AutoSize = true;
-            this.nuRadio.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nuRadio.Location = new System.Drawing.Point(279, 123);
+            this.nuRadio.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nuRadio.Location = new System.Drawing.Point(354, 117);
             this.nuRadio.Name = "nuRadio";
-            this.nuRadio.Size = new System.Drawing.Size(44, 20);
+            this.nuRadio.Size = new System.Drawing.Size(56, 28);
             this.nuRadio.TabIndex = 25;
             this.nuRadio.TabStop = true;
             this.nuRadio.Text = "Nữ";
             this.nuRadio.UseVisualStyleBackColor = true;
+            this.nuRadio.CheckedChanged += new System.EventHandler(this.nuRadio_CheckedChanged);
             // 
             // namRadio
             // 
             this.namRadio.AutoSize = true;
-            this.namRadio.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.namRadio.Location = new System.Drawing.Point(200, 123);
+            this.namRadio.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.namRadio.Location = new System.Drawing.Point(243, 117);
             this.namRadio.Name = "namRadio";
-            this.namRadio.Size = new System.Drawing.Size(54, 20);
+            this.namRadio.Size = new System.Drawing.Size(72, 28);
             this.namRadio.TabIndex = 24;
             this.namRadio.TabStop = true;
             this.namRadio.Text = "Nam";
             this.namRadio.UseVisualStyleBackColor = true;
+            this.namRadio.CheckedChanged += new System.EventHandler(this.namRadio_CheckedChanged);
             // 
             // taoTKButton
             // 
-            this.taoTKButton.Location = new System.Drawing.Point(751, 122);
+            this.taoTKButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.taoTKButton.Location = new System.Drawing.Point(778, 114);
             this.taoTKButton.Name = "taoTKButton";
-            this.taoTKButton.Size = new System.Drawing.Size(75, 23);
+            this.taoTKButton.Size = new System.Drawing.Size(90, 33);
             this.taoTKButton.TabIndex = 23;
             this.taoTKButton.Text = "Tạo TK";
             this.taoTKButton.UseVisualStyleBackColor = true;
@@ -273,19 +290,21 @@
             // 
             // MaTKTextBox
             // 
-            this.MaTKTextBox.Location = new System.Drawing.Point(610, 123);
+            this.MaTKTextBox.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaTKTextBox.Location = new System.Drawing.Point(637, 116);
             this.MaTKTextBox.Name = "MaTKTextBox";
             this.MaTKTextBox.ReadOnly = true;
-            this.MaTKTextBox.Size = new System.Drawing.Size(121, 22);
+            this.MaTKTextBox.Size = new System.Drawing.Size(133, 32);
             this.MaTKTextBox.TabIndex = 22;
             this.MaTKTextBox.TextChanged += new System.EventHandler(this.MaTKTextBox_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(515, 125);
+            this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(540, 123);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 16);
+            this.label2.Size = new System.Drawing.Size(66, 24);
             this.label2.TabIndex = 21;
             this.label2.Text = "Mã TK";
             // 

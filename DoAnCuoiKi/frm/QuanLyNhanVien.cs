@@ -69,55 +69,53 @@ namespace DoAnCuoiKi
             || !string.IsNullOrEmpty(cboRole.SelectedItem.ToString())
             || !string.IsNullOrEmpty(MaTKTextBox.Text))
             {
+                // Kiểm tra mã nhân viên không vượt quá 6 ký tự
                 if (txtStaffID.Text.Length > 6)
                 {
-                    MessageBox.Show("Mã chữ có tối đa 6 ký tự", "Thông báo");
+                    MessageBox.Show("Mã nhân viên chỉ được tối đa 6 ký tự", "Thông báo");
                     return;
                 }
 
-                string fullName = txtStaffName.Text; // Chuỗi họ tên đầy đủ
+                // Lấy thông tin họ tên
+                string fullName = txtStaffName.Text.Trim(); // Chuỗi họ tên đầy đủ
+                if (string.IsNullOrEmpty(fullName))
+                {
+                    MessageBox.Show("Phải nhập đầy đủ họ tên!", "Thông báo");
+                    return;
+                }
+
                 int firstSpaceIndex = fullName.IndexOf(' ');
-
-                string lastName;
-                string restName;
-
                 if (firstSpaceIndex == -1)
                 {
-                    MessageBox.Show("Phải nhập đầu đủ họ tên!", "Thông báo");
+                    MessageBox.Show("Họ tên phải có cả họ và tên!", "Thông báo");
                     return;
                 }
-                else
-                {
-                    lastName = fullName.Substring(0, firstSpaceIndex); // Họ
-                    restName = fullName.Substring(firstSpaceIndex + 1); // Đệm và tên
-                }
 
+                string lastName = fullName.Substring(0, firstSpaceIndex); // Họ
+                string restName = fullName.Substring(firstSpaceIndex + 1); // Đệm và tên
+
+              
                 NHANVIEN nv = new NHANVIEN()
                 {
-                    MaNV = txtStaffID.Text,
+                    MaNV = txtStaffID.Text.Trim(),
                     Ho = lastName,
                     LotTen = restName,
-                    ChucVu = cboRole.SelectedItem.ToString(),
-                    GioiTinh = namRadio.Checked,
+                    ChucVu = cboRole.SelectedItem?.ToString(),
+                    GioiTinh = namRadio.Checked, 
                     NgaySinh = dtpStaff.Value.Date,
-                    SDT = txtSDTS.Text,
-                    MaTK = MaTKTextBox.Text
+                    SDT = txtSDTS.Text.Trim(),
+                    MaTK = MaTKTextBox.Text.Trim()
                 };
 
+                var existingStaff = db.NHANVIENs.FirstOrDefault(x => x.MaNV == nv.MaNV);
                 db.NHANVIENs.AddOrUpdate(nv);
-                db.SaveChanges();
-                LoadThongTinNhanVien();
-                ClearFields();
 
-                var maNV = db.NHANVIENs.Select(x => x.MaNV == txtStaffID.Text).FirstOrDefault();
-                if (maNV)
-                {
-                    MessageBox.Show("Thêm thông tin thành công!");
-                }
-                else
-                {
-                    MessageBox.Show("Cập nhật thông tin thành công!");
-                }
+                db.SaveChanges(); 
+
+                MessageBox.Show(existingStaff == null ? "Thêm thông tin nhân viên thành công!" : "Cập nhật thông tin nhân viên thành công!", "Thông báo");
+
+                LoadThongTinNhanVien(); 
+                ClearFields();
             }
             else
             {
@@ -192,10 +190,31 @@ namespace DoAnCuoiKi
 
         private void taoTKButton_Click(object sender, EventArgs e)
         {
-            DangKyTaiKhoan tk = new DangKyTaiKhoan(MaTKTextBox.Text);
-            tk.ShowDialog();
+            DangKyTaiKhoan tk = new DangKyTaiKhoan(txtStaffID.Text);
+            DialogResult dr = tk.ShowDialog();
+            
+            if(dr == DialogResult.Cancel)
+            {
+                LoadThongTinNhanVien();
+                ClearFields();
+            }
 
             MaTKTextBox.Text = tk.DataToReturn;
+        }
+
+        private void nuRadio_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void namRadio_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboRole_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
