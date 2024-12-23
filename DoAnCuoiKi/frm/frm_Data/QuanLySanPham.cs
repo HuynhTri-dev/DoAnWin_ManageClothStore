@@ -23,12 +23,29 @@ namespace DoAnCuoiKi
 
         private void QuanLySanPham_Load(object sender, EventArgs e)
         {
+            ClearFields();
             ThuongHieuComboBox();
             NhaCungCapBox();
             LoaiSanPhamComboBox();
             MauBox();
             ChatLieuBox();
             LoadForm();
+        }
+
+        private void ClearFields()
+        {
+            MaSPTextBox.Clear();
+            TenSPTextBox.Clear();
+            SLTonTextBox.Clear();
+            KichCoComboBox.SelectedIndex = -1;
+            MauComboBox.SelectedIndex = -1;
+            LoaiSPComboBox.SelectedIndex = -1;
+            MaNCCComboBox.SelectedIndex = -1;
+            MaChatLieuComboBox.SelectedIndex = -1;
+            NhanHieuComboBox.SelectedIndex = -1;
+            GiaNhapTextBox.Clear();
+            GiaBanTextBox.Clear();
+            anhSPPictureBox.Image = null;
         }
 
         private void ThuongHieuComboBox()
@@ -172,6 +189,11 @@ namespace DoAnCuoiKi
         }
 
         private void NhanHieuComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void anhSPPictureBox_Click(object sender, EventArgs e)
         {
 
         }

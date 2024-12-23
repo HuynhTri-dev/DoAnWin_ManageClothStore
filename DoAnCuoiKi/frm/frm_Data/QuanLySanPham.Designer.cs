@@ -60,9 +60,9 @@
             this.MauComboBox = new System.Windows.Forms.ComboBox();
             this.LoaiSPComboBox = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.anhSPPictureBox = new System.Windows.Forms.PictureBox();
             this.OpenMauButton = new System.Windows.Forms.Button();
             this.OpenLoaiButton = new System.Windows.Forms.Button();
             this.OpenNCCButton = new System.Windows.Forms.Button();
@@ -72,9 +72,9 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SanPhamDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.anhSPPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -409,16 +409,6 @@
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::DoAnCuoiKi.Properties.Resources.dau_true2;
-            this.pictureBox1.Location = new System.Drawing.Point(231, 115);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 27;
-            this.pictureBox1.TabStop = false;
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::DoAnCuoiKi.Properties.Resources.dau_cong;
@@ -429,16 +419,27 @@
             this.pictureBox2.TabIndex = 28;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox3
+            // pictureBox1
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(225)))), ((int)(((byte)(213)))));
-            this.pictureBox3.Location = new System.Drawing.Point(586, 92);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(238, 181);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 28;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Tag = "";
+            this.pictureBox1.Image = global::DoAnCuoiKi.Properties.Resources.dau_true2;
+            this.pictureBox1.Location = new System.Drawing.Point(231, 115);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
+            // 
+            // anhSPPictureBox
+            // 
+            this.anhSPPictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(225)))), ((int)(((byte)(213)))));
+            this.anhSPPictureBox.Location = new System.Drawing.Point(586, 92);
+            this.anhSPPictureBox.Name = "anhSPPictureBox";
+            this.anhSPPictureBox.Size = new System.Drawing.Size(238, 181);
+            this.anhSPPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.anhSPPictureBox.TabIndex = 28;
+            this.anhSPPictureBox.TabStop = false;
+            this.anhSPPictureBox.Tag = "";
+            this.anhSPPictureBox.Click += new System.EventHandler(this.anhSPPictureBox_Click);
             // 
             // OpenMauButton
             // 
@@ -511,7 +512,7 @@
             this.Controls.Add(this.OpenNCCButton);
             this.Controls.Add(this.OpenLoaiButton);
             this.Controls.Add(this.OpenMauButton);
-            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.anhSPPictureBox);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.XoaButton);
             this.Controls.Add(this.ThemSuaButton);
@@ -525,9 +526,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.SanPhamDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.anhSPPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -568,7 +569,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox anhSPPictureBox;
         private System.Windows.Forms.Button OpenMauButton;
         private System.Windows.Forms.Button OpenLoaiButton;
         private System.Windows.Forms.Button OpenNCCButton;
