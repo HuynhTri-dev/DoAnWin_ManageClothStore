@@ -47,6 +47,7 @@ namespace DoAnCuoiKi
             GiaNhapTextBox.Text = "0";
             GiaBanTextBox.Text = "0";
             anhSPPictureBox.Image = null;
+            chonAnhLabel.Visible = true;
         }
 
         private void ThuongHieuComboBox()
@@ -100,6 +101,27 @@ namespace DoAnCuoiKi
 
         }
 
+        private void anhSPPictureBox_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog
+            {
+                Filter = "Image Files (*.jpg; *.jpeg; *.png)|*.jpg; *.jpeg; *.png"
+            };
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                chonAnhLabel.Visible = false;
+                anhSPPictureBox.Image = Image.FromFile(ofd.FileName);
+                this.Text = ofd.FileName;
+            }
+        }
+        byte[] ImageToBytes(Image img)
+        {
+            MemoryStream ms = new MemoryStream();
+            img.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+            return ms.ToArray();
+        }
+
         private void ThemSuaButton_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(MaSPTextBox.Text)
@@ -112,22 +134,35 @@ namespace DoAnCuoiKi
                 && MaChatLieuComboBox.SelectedItem != null
                 && NhanHieuComboBox.SelectedItem != null)
             {
+
+                if (!decimal.TryParse(GiaNhapTextBox.Text, out decimal giaNhap) || giaNhap < 0)
+                {
+                    MessageBox.Show("Giá nhập không hợp lệ", "Thông báo");
+                    return;
+                }
+
+                if (!decimal.TryParse(GiaBanTextBox.Text, out decimal giaBan) || giaBan < 0)
+                {
+                    MessageBox.Show("Giá bán không hợp lệ", "Thông báo");
+                    return;
+                }
+
                 var sp = db.SANPHAMs.Any(x => x.MaSP == MaSPTextBox.Text);
-                byte[] b = ImageToBytes(pictureBox1.Image);
+                byte[] b = ImageToBytes(anhSPPictureBox.Image);
                 var maDM = db.DANHMUCs.Where(x => x.TenDM == LoaiSPComboBox.SelectedItem.ToString()).Select(x => x.MaDM).FirstOrDefault();
                 var maNCC = db.NHACUNGCAPs.Where(x => x.TenNCC == MaNCCComboBox.SelectedItem.ToString()).Select(x => x.MaNCC).FirstOrDefault();
                 var maMau = db.MAUs.Where(x => x.TenMau == MauComboBox.SelectedItem.ToString()).Select(x => x.MaMau).FirstOrDefault();
                 var maCL = db.CHATLIEUx.Where(x => x.TenCL == MaChatLieuComboBox.SelectedItem.ToString()).Select(x => x.MaCL).FirstOrDefault();
                 var maTH = db.THUONGHIEUx.Where(x => x.TenTH == NhanHieuComboBox.SelectedItem.ToString()).Select(x => x.MaTH).FirstOrDefault();
-                SANPHAM sANPHAM = new SANPHAM()
+                SANPHAM sanPham = new SANPHAM()
                 {
                     MaSP = MaSPTextBox.Text,
                     TenSP = TenSPTextBox.Text,
                     AnhSP = b,
                     SoLuongTon = int.Parse(SLTonTextBox.Text),
                     Size = KichCoComboBox.SelectedItem.ToString(),
-                    GiaNhap = decimal.Parse(GiaNhapTextBox.Text),
-                    GiaBan = decimal.Parse(GiaBanTextBox.Text),
+                    GiaNhap = giaNhap,
+                    GiaBan = giaBan,
                     MoTa = MoTaRichTextBox.Text,
                     MaDM = maDM,
                     MaNCC = maNCC,
@@ -136,10 +171,11 @@ namespace DoAnCuoiKi
                     MaTH = maTH
                 };
 
+                db.SANPHAMs.AddOrUpdate(sanPham);
+                db.SaveChanges();
+
                 if (!sp)
                 {
-                    db.SANPHAMs.AddOrUpdate(sANPHAM);
-                    db.SaveChanges();
                     MessageBox.Show("Thêm thành công sản phẩm!", "Thông báo");
 
                 }
@@ -168,6 +204,7 @@ namespace DoAnCuoiKi
                     db.SaveChanges();
                     MessageBox.Show("Xóa thành công!");
                     LoadForm();
+                    ClearFields();
                 }
             }
             else
@@ -176,10 +213,7 @@ namespace DoAnCuoiKi
             }    
         }
 
-        private void QuayLaiButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        
 
         private void MaSPTextBox_TextChanged(object sender, EventArgs e)
         {
@@ -216,26 +250,7 @@ namespace DoAnCuoiKi
 
         }
 
-        private void anhSPPictureBox_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog ofd = new OpenFileDialog
-            {
-                Filter = "Image Files (*.jpg; *.jpeg; *.png)|*.jpg; *.jpeg; *.png"
-            };
-
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                chonAnhLabel.Visible = false;
-                anhSPPictureBox.Image = Image.FromFile(ofd.FileName);
-                this.Text = ofd.FileName;
-            }
-        }
-        byte[] ImageToBytes(Image img)
-        {
-            MemoryStream ms = new MemoryStream();
-            img.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-            return ms.ToArray();
-        }
+        
 
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -277,18 +292,61 @@ namespace DoAnCuoiKi
 
         private void GiaNhapTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (!int.TryParse(GiaNhapTextBox.Text, out int gia) || string.IsNullOrEmpty(GiaNhapTextBox.Text) || gia < 0)
-            {
-                MessageBox.Show("Giá nhập phải là số nguyên và >= 0 ");
-            }
         }
 
         private void GiaBanTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (!int.TryParse(GiaBanTextBox.Text, out int gia) || string.IsNullOrEmpty(GiaBanTextBox.Text) || gia < 0)
+        }
+
+        private void SanPhamDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
             {
-                MessageBox.Show("Giá nhập phải là số nguyên và >= 0 ");
+                var row = SanPhamDataGridView.Rows[e.RowIndex];
+                var maSo = row.Cells["MaSP"].Value.ToString();
+                if (!string.IsNullOrEmpty(maSo))
+                {
+                    var thongTin = db.SANPHAMs.FirstOrDefault(x => x.MaSP == maSo);
+
+                    if (thongTin != null)
+                    {
+                        MaSPTextBox.Text = thongTin.MaSP;
+                        TenSPTextBox.Text = thongTin.TenSP;
+                        SLTonTextBox.Text = thongTin.SoLuongTon.ToString();
+                        KichCoComboBox.SelectedItem = thongTin.Size;
+
+                        if (thongTin.AnhSP != null)
+                        {
+                            using (MemoryStream ms = new MemoryStream(thongTin.AnhSP))
+                            {
+                                Image img = Image.FromStream(ms);
+                                anhSPPictureBox.Image = img;
+                                anhSPPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                                chonAnhLabel.Visible = false;
+                            }
+                        }
+                        else
+                        {
+                            anhSPPictureBox.Image = null;
+                            chonAnhLabel.Visible = true;
+                        }
+
+                        MauComboBox.SelectedItem = thongTin.MAU?.TenMau;
+                        LoaiSPComboBox.SelectedItem = thongTin.DANHMUC?.TenDM;
+                        MaNCCComboBox.SelectedItem = thongTin.NHACUNGCAP?.TenNCC;
+                        MaChatLieuComboBox.SelectedItem = thongTin.CHATLIEU?.TenCL;
+                        NhanHieuComboBox.SelectedItem = thongTin.THUONGHIEU?.TenTH;
+                        GiaBanTextBox.Text = thongTin.GiaBan.ToString("0.##");
+                        GiaNhapTextBox.Text = thongTin.GiaNhap.ToString("0.##");
+                        MoTaRichTextBox.Text = thongTin.MoTa;
+                    }
+                }
             }
+        }
+
+        private void chonAnhLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -60,16 +60,16 @@
             this.MauComboBox = new System.Windows.Forms.ComboBox();
             this.LoaiSPComboBox = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ErrorLabel = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.anhSPPictureBox = new System.Windows.Forms.PictureBox();
             this.OpenMauButton = new System.Windows.Forms.Button();
             this.OpenLoaiButton = new System.Windows.Forms.Button();
             this.OpenNCCButton = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.OpenCLButton = new System.Windows.Forms.Button();
+            this.OpenNHButton = new System.Windows.Forms.Button();
             this.chonAnhLabel = new System.Windows.Forms.Label();
-            this.ErrorLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SanPhamDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -204,6 +204,7 @@
             this.SanPhamDataGridView.RowTemplate.Height = 24;
             this.SanPhamDataGridView.Size = new System.Drawing.Size(466, 565);
             this.SanPhamDataGridView.TabIndex = 14;
+            this.SanPhamDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SanPhamDataGridView_CellContentClick);
             // 
             // XoaButton
             // 
@@ -415,6 +416,15 @@
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             // 
+            // ErrorLabel
+            // 
+            this.ErrorLabel.AutoSize = true;
+            this.ErrorLabel.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ErrorLabel.Location = new System.Drawing.Point(329, 115);
+            this.ErrorLabel.Name = "ErrorLabel";
+            this.ErrorLabel.Size = new System.Drawing.Size(0, 16);
+            this.ErrorLabel.TabIndex = 29;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::DoAnCuoiKi.Properties.Resources.dau_cong;
@@ -440,7 +450,7 @@
             // anhSPPictureBox
             // 
             this.anhSPPictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(225)))), ((int)(((byte)(213)))));
-            this.anhSPPictureBox.Location = new System.Drawing.Point(586, 92);
+            this.anhSPPictureBox.Location = new System.Drawing.Point(586, 87);
             this.anhSPPictureBox.Name = "anhSPPictureBox";
             this.anhSPPictureBox.Size = new System.Drawing.Size(238, 181);
             this.anhSPPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -479,25 +489,25 @@
             this.OpenNCCButton.Text = "Nhà cung cấp";
             this.OpenNCCButton.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // OpenCLButton
             // 
-            this.button4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(586, 429);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(238, 32);
-            this.button4.TabIndex = 32;
-            this.button4.Text = "Thêm / Sửa";
-            this.button4.UseVisualStyleBackColor = true;
+            this.OpenCLButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OpenCLButton.Location = new System.Drawing.Point(586, 429);
+            this.OpenCLButton.Name = "OpenCLButton";
+            this.OpenCLButton.Size = new System.Drawing.Size(238, 32);
+            this.OpenCLButton.TabIndex = 32;
+            this.OpenCLButton.Text = "Chất liệu";
+            this.OpenCLButton.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // OpenNHButton
             // 
-            this.button5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(586, 474);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(238, 32);
-            this.button5.TabIndex = 33;
-            this.button5.Text = "Thêm / Sửa";
-            this.button5.UseVisualStyleBackColor = true;
+            this.OpenNHButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OpenNHButton.Location = new System.Drawing.Point(586, 474);
+            this.OpenNHButton.Name = "OpenNHButton";
+            this.OpenNHButton.Size = new System.Drawing.Size(238, 32);
+            this.OpenNHButton.TabIndex = 33;
+            this.OpenNHButton.Text = "Nhãn hiệu";
+            this.OpenNHButton.UseVisualStyleBackColor = true;
             // 
             // chonAnhLabel
             // 
@@ -508,15 +518,7 @@
             this.chonAnhLabel.Size = new System.Drawing.Size(63, 16);
             this.chonAnhLabel.TabIndex = 34;
             this.chonAnhLabel.Text = "Chọn ảnh";
-            // 
-            // ErrorLabel
-            // 
-            this.ErrorLabel.AutoSize = true;
-            this.ErrorLabel.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ErrorLabel.Location = new System.Drawing.Point(329, 115);
-            this.ErrorLabel.Name = "ErrorLabel";
-            this.ErrorLabel.Size = new System.Drawing.Size(0, 16);
-            this.ErrorLabel.TabIndex = 29;
+            this.chonAnhLabel.Click += new System.EventHandler(this.chonAnhLabel_Click);
             // 
             // QuanLySanPham
             // 
@@ -524,8 +526,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1323, 672);
             this.Controls.Add(this.chonAnhLabel);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.OpenNHButton);
+            this.Controls.Add(this.OpenCLButton);
             this.Controls.Add(this.OpenNCCButton);
             this.Controls.Add(this.OpenLoaiButton);
             this.Controls.Add(this.OpenMauButton);
@@ -590,8 +592,8 @@
         private System.Windows.Forms.Button OpenMauButton;
         private System.Windows.Forms.Button OpenLoaiButton;
         private System.Windows.Forms.Button OpenNCCButton;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button OpenCLButton;
+        private System.Windows.Forms.Button OpenNHButton;
         private System.Windows.Forms.Label chonAnhLabel;
         private System.Windows.Forms.Label ErrorLabel;
     }
