@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.Entity.Migrations;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,21 +37,21 @@ namespace DoAnCuoiKi
         {
             MaSPTextBox.Clear();
             TenSPTextBox.Clear();
-            SLTonTextBox.Clear();
+            SLTonTextBox.Text = "0";
             KichCoComboBox.SelectedIndex = -1;
             MauComboBox.SelectedIndex = -1;
             LoaiSPComboBox.SelectedIndex = -1;
             MaNCCComboBox.SelectedIndex = -1;
             MaChatLieuComboBox.SelectedIndex = -1;
             NhanHieuComboBox.SelectedIndex = -1;
-            GiaNhapTextBox.Clear();
-            GiaBanTextBox.Clear();
+            GiaNhapTextBox.Text = "0";
+            GiaBanTextBox.Text = "0";
             anhSPPictureBox.Image = null;
         }
 
         private void ThuongHieuComboBox()
         {
-            var list = db.THUONGHIEUx.Select(x => x.MaTH).ToList();
+            var list = db.THUONGHIEUx.Select(x => x.TenTH).ToList();
             foreach (var item in list)
             {
                 NhanHieuComboBox.Items.Add(item);
@@ -59,7 +60,7 @@ namespace DoAnCuoiKi
 
         private void LoaiSanPhamComboBox()
         {
-            var list = db.DANHMUCs.Select(x => x.MaDM).ToList();
+            var list = db.DANHMUCs.Select(x => x.TenDM).ToList();
             foreach (var item in list) 
                 {
                     LoaiSPComboBox.Items.Add(item);
@@ -68,7 +69,7 @@ namespace DoAnCuoiKi
 
         private void MauBox()
         {
-            var list = db.MAUs.Select(x => x.MaMau).ToList();
+            var list = db.MAUs.Select(x => x.TenMau).ToList();
             foreach(var item in list)
             {
                 MauComboBox.Items.Add(item);
@@ -77,7 +78,7 @@ namespace DoAnCuoiKi
 
         private void NhaCungCapBox()
         {
-            var list = db.NHACUNGCAPs.Select(x => x.MaNCC).ToList();
+            var list = db.NHACUNGCAPs.Select(x => x.TenNCC).ToList();
             foreach( var item in list)
             {
                 MaNCCComboBox.Items.Add(item);
@@ -86,7 +87,7 @@ namespace DoAnCuoiKi
 
         private void ChatLieuBox()
         {
-            var list = db.CHATLIEUx.Select(x => x.MaCL).ToList();
+            var list = db.CHATLIEUx.Select(x => x.TenCL).ToList();
             foreach ( var item in list)
             {
                 MaChatLieuComboBox.Items.Add(item);
@@ -101,36 +102,58 @@ namespace DoAnCuoiKi
 
         private void ThemSuaButton_Click(object sender, EventArgs e)
         {
-            
-            var sp = db.SANPHAMs.Any(x => x.MaSP == MaSPTextBox.Text);
-            SANPHAM sANPHAM = new SANPHAM()
+            if (!string.IsNullOrEmpty(MaSPTextBox.Text)
+                && !string.IsNullOrEmpty(TenSPTextBox.Text)
+                && !string.IsNullOrEmpty(SLTonTextBox.Text)
+                && LoaiSPComboBox.SelectedItem != null
+                && KichCoComboBox.SelectedItem != null
+                && MaNCCComboBox.SelectedItem != null
+                && MauComboBox.SelectedItem != null
+                && MaChatLieuComboBox.SelectedItem != null
+                && NhanHieuComboBox.SelectedItem != null)
             {
-                MaSP = MaSPTextBox.Text,
-                TenSP = TenSPTextBox.Text,
-                SoLuongTon = int.Parse(SLTonTextBox.Text),
-                Size = KichCoComboBox.Text,
-                GiaNhap = decimal.Parse(GiaNhapTextBox.Text),
-                GiaBan = decimal.Parse(GiaBanTextBox.Text),
-                MoTa = MoTaRichTextBox.Text,
-                MaDM = LoaiSPComboBox.SelectedItem.ToString(),
-                MaNCC = MaNCCComboBox.SelectedItem.ToString(),
-                MaMau = MauComboBox.SelectedItem.ToString(),
-                MaCL = MaChatLieuComboBox.SelectedItem.ToString(),
-                MaTH = NhanHieuComboBox.SelectedItem.ToString()
-            };
-                
-            if (!sp)
-            {
-                db.SANPHAMs.AddOrUpdate(sANPHAM);
-                db.SaveChanges();
-                MessageBox.Show("Thêm thành công sản phẩm!");
+                var sp = db.SANPHAMs.Any(x => x.MaSP == MaSPTextBox.Text);
+                byte[] b = ImageToBytes(pictureBox1.Image);
+                var maDM = db.DANHMUCs.Where(x => x.TenDM == LoaiSPComboBox.SelectedItem.ToString()).Select(x => x.MaDM).FirstOrDefault();
+                var maNCC = db.NHACUNGCAPs.Where(x => x.TenNCC == MaNCCComboBox.SelectedItem.ToString()).Select(x => x.MaNCC).FirstOrDefault();
+                var maMau = db.MAUs.Where(x => x.TenMau == MauComboBox.SelectedItem.ToString()).Select(x => x.MaMau).FirstOrDefault();
+                var maCL = db.CHATLIEUx.Where(x => x.TenCL == MaChatLieuComboBox.SelectedItem.ToString()).Select(x => x.MaCL).FirstOrDefault();
+                var maTH = db.THUONGHIEUx.Where(x => x.TenTH == NhanHieuComboBox.SelectedItem.ToString()).Select(x => x.MaTH).FirstOrDefault();
+                SANPHAM sANPHAM = new SANPHAM()
+                {
+                    MaSP = MaSPTextBox.Text,
+                    TenSP = TenSPTextBox.Text,
+                    AnhSP = b,
+                    SoLuongTon = int.Parse(SLTonTextBox.Text),
+                    Size = KichCoComboBox.SelectedItem.ToString(),
+                    GiaNhap = decimal.Parse(GiaNhapTextBox.Text),
+                    GiaBan = decimal.Parse(GiaBanTextBox.Text),
+                    MoTa = MoTaRichTextBox.Text,
+                    MaDM = maDM,
+                    MaNCC = maNCC,
+                    MaMau = maMau,
+                    MaCL = maCL,
+                    MaTH = maTH
+                };
 
+                if (!sp)
+                {
+                    db.SANPHAMs.AddOrUpdate(sANPHAM);
+                    db.SaveChanges();
+                    MessageBox.Show("Thêm thành công sản phẩm!", "Thông báo");
+
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật thông tin sản phẩm thành công!", "Thông báo");
+                }
+                LoadForm();
+                ClearFields();
             }
             else
             {
-                MessageBox.Show("Cập nhật thông tin sản phẩm thành công!");
+                MessageBox.Show("Cần nhập đầy đủ thông tin sản phẩm", "Thông báo");
             }
-            LoadForm();
         }
 
         private void XoaButton_Click(object sender, EventArgs e)
@@ -195,7 +218,77 @@ namespace DoAnCuoiKi
 
         private void anhSPPictureBox_Click(object sender, EventArgs e)
         {
+            OpenFileDialog ofd = new OpenFileDialog
+            {
+                Filter = "Image Files (*.jpg; *.jpeg; *.png)|*.jpg; *.jpeg; *.png"
+            };
 
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                chonAnhLabel.Visible = false;
+                anhSPPictureBox.Image = Image.FromFile(ofd.FileName);
+                this.Text = ofd.FileName;
+            }
+        }
+        byte[] ImageToBytes(Image img)
+        {
+            MemoryStream ms = new MemoryStream();
+            img.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+            return ms.ToArray();
+        }
+
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(SLTonTextBox.Text, out int sl))
+            {
+                if (sl >= 0)
+                {
+                    sl = sl - 1;
+                    SLTonTextBox.Text = sl.ToString();  
+                }
+            }
+        }
+
+        private void SLTonTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (!int.TryParse(SLTonTextBox.Text, out int sl) || string.IsNullOrEmpty(SLTonTextBox.Text) || sl < 0)
+            {
+                ErrorLabel.Text = "Giá trị nhập không hợp lệ. \nVui lòng nhập số nguyên và >= 0!";
+                ErrorLabel.ForeColor = Color.Red; 
+            }
+            else
+            {
+                ErrorLabel.Text = ""; 
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(SLTonTextBox.Text, out int sl))
+            {
+                if (sl >= 0)
+                {
+                    sl = sl + 1;
+                    SLTonTextBox.Text = sl.ToString();
+                }
+            }
+        }
+
+        private void GiaNhapTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (!int.TryParse(GiaNhapTextBox.Text, out int gia) || string.IsNullOrEmpty(GiaNhapTextBox.Text) || gia < 0)
+            {
+                MessageBox.Show("Giá nhập phải là số nguyên và >= 0 ");
+            }
+        }
+
+        private void GiaBanTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (!int.TryParse(GiaBanTextBox.Text, out int gia) || string.IsNullOrEmpty(GiaBanTextBox.Text) || gia < 0)
+            {
+                MessageBox.Show("Giá nhập phải là số nguyên và >= 0 ");
+            }
         }
     }
 }

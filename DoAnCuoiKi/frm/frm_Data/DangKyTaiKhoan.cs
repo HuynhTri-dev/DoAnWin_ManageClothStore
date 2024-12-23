@@ -50,7 +50,7 @@ namespace DoAnCuoiKi.frm
 
         private void addUpdateButton_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(maTKText.Text) || !string.IsNullOrEmpty(tenDangNhapTextBox.Text) || !string.IsNullOrEmpty(matKhauTextBox.Text))
+            if (!string.IsNullOrEmpty(maTKText.Text) && !string.IsNullOrEmpty(tenDangNhapTextBox.Text) && !string.IsNullOrEmpty(matKhauTextBox.Text))
             {
                 if (maTKText.Text.Length > 6)
                 {

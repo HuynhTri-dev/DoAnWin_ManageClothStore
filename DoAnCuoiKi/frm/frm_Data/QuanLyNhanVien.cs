@@ -64,10 +64,10 @@ namespace DoAnCuoiKi
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txtStaffID.Text)
-            || !string.IsNullOrEmpty(txtStaffName.Text)
-            || (namRadio.Checked == true || nuRadio.Checked == true)
-            || !string.IsNullOrEmpty(cboRole.SelectedItem.ToString())
-            || !string.IsNullOrEmpty(MaTKTextBox.Text))
+                && !string.IsNullOrEmpty(txtStaffName.Text)
+                && (namRadio.Checked == true || nuRadio.Checked == true)
+                && cboRole.SelectedItem != null
+                && !string.IsNullOrEmpty(MaTKTextBox.Text))
             {
                 // Kiểm tra mã nhân viên không vượt quá 6 ký tự
                 if (txtStaffID.Text.Length > 6)

@@ -69,6 +69,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.chonAnhLabel = new System.Windows.Forms.Label();
+            this.ErrorLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SanPhamDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -295,14 +296,17 @@
             this.GiaNhapTextBox.Name = "GiaNhapTextBox";
             this.GiaNhapTextBox.Size = new System.Drawing.Size(150, 32);
             this.GiaNhapTextBox.TabIndex = 20;
+            this.GiaNhapTextBox.TextChanged += new System.EventHandler(this.GiaNhapTextBox_TextChanged);
             // 
             // SLTonTextBox
             // 
             this.SLTonTextBox.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SLTonTextBox.Location = new System.Drawing.Point(262, 112);
+            this.SLTonTextBox.Location = new System.Drawing.Point(212, 112);
             this.SLTonTextBox.Name = "SLTonTextBox";
-            this.SLTonTextBox.Size = new System.Drawing.Size(78, 32);
+            this.SLTonTextBox.Size = new System.Drawing.Size(71, 32);
             this.SLTonTextBox.TabIndex = 20;
+            this.SLTonTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.SLTonTextBox.TextChanged += new System.EventHandler(this.SLTonTextBox_TextChanged);
             // 
             // GiaBanTextBox
             // 
@@ -311,6 +315,7 @@
             this.GiaBanTextBox.Name = "GiaBanTextBox";
             this.GiaBanTextBox.Size = new System.Drawing.Size(150, 32);
             this.GiaBanTextBox.TabIndex = 20;
+            this.GiaBanTextBox.TextChanged += new System.EventHandler(this.GiaBanTextBox_TextChanged);
             // 
             // MaNCCComboBox
             // 
@@ -377,6 +382,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.ErrorLabel);
             this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.MoTaRichTextBox);
@@ -412,22 +418,24 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::DoAnCuoiKi.Properties.Resources.dau_cong;
-            this.pictureBox2.Location = new System.Drawing.Point(346, 115);
+            this.pictureBox2.Location = new System.Drawing.Point(289, 115);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(25, 25);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 28;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::DoAnCuoiKi.Properties.Resources.dau_true2;
-            this.pictureBox1.Location = new System.Drawing.Point(231, 115);
+            this.pictureBox1.Location = new System.Drawing.Point(181, 115);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(25, 25);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // anhSPPictureBox
             // 
@@ -500,6 +508,15 @@
             this.chonAnhLabel.Size = new System.Drawing.Size(63, 16);
             this.chonAnhLabel.TabIndex = 34;
             this.chonAnhLabel.Text = "Chọn ảnh";
+            // 
+            // ErrorLabel
+            // 
+            this.ErrorLabel.AutoSize = true;
+            this.ErrorLabel.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ErrorLabel.Location = new System.Drawing.Point(329, 115);
+            this.ErrorLabel.Name = "ErrorLabel";
+            this.ErrorLabel.Size = new System.Drawing.Size(0, 16);
+            this.ErrorLabel.TabIndex = 29;
             // 
             // QuanLySanPham
             // 
@@ -576,5 +593,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label chonAnhLabel;
+        private System.Windows.Forms.Label ErrorLabel;
     }
 }

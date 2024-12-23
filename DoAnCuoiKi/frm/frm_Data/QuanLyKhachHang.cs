@@ -52,9 +52,9 @@ namespace DoAnCuoiKi
         private void ThemSuaButton_Click_1(object sender, EventArgs e)
         {
             if(!string.IsNullOrEmpty(MaKhachHangTextBox.Text)
-               || !string.IsNullOrEmpty(HoTenTextBox.Text)
-               || (NamRadioButton.Checked == true || NuRadioButton.Checked == true)
-               || !string.IsNullOrEmpty(NgaySinhDateTimePicker.Value.ToString()))
+               && !string.IsNullOrEmpty(HoTenTextBox.Text)
+               && (NamRadioButton.Checked == true || NuRadioButton.Checked == true)
+               && !string.IsNullOrEmpty(NgaySinhDateTimePicker.Value.ToString()))
             {
                 string fullName = HoTenTextBox.Text; // Chuỗi họ tên đầy đủ
                 int firstSpaceIndex = fullName.IndexOf(' ');
