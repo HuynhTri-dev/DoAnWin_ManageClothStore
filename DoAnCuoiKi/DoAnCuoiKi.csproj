@@ -197,5 +197,11 @@
   <ItemGroup>
     <None Include="Resources\quanLyDonHang.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dau true.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dau cong.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
