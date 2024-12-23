@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblStaffID = new System.Windows.Forms.Label();
@@ -63,20 +63,20 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1083, 58);
+            this.panel1.Size = new System.Drawing.Size(1083, 78);
             this.panel1.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(113)))), ((int)(((byte)(91)))));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.label1.Font = new System.Drawing.Font("Tahoma", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(343, 9);
+            this.label1.Location = new System.Drawing.Point(352, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(247, 36);
+            this.label1.Size = new System.Drawing.Size(377, 41);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Quản lí nhân viên";
+            this.label1.Text = "QUẢN LÝ NHÂN VIÊN";
             // 
             // lblStaffID
             // 
@@ -142,20 +142,20 @@
             // 
             this.nhanVienDataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(225)))), ((int)(((byte)(213)))));
             this.nhanVienDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.nhanVienDataGrid.DefaultCellStyle = dataGridViewCellStyle4;
-            this.nhanVienDataGrid.Location = new System.Drawing.Point(28, 289);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.nhanVienDataGrid.DefaultCellStyle = dataGridViewCellStyle1;
+            this.nhanVienDataGrid.Location = new System.Drawing.Point(28, 308);
             this.nhanVienDataGrid.Name = "nhanVienDataGrid";
             this.nhanVienDataGrid.ReadOnly = true;
             this.nhanVienDataGrid.RowHeadersWidth = 51;
             this.nhanVienDataGrid.RowTemplate.Height = 24;
-            this.nhanVienDataGrid.Size = new System.Drawing.Size(1030, 371);
+            this.nhanVienDataGrid.Size = new System.Drawing.Size(1030, 357);
             this.nhanVienDataGrid.TabIndex = 8;
             this.nhanVienDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.nhanVienDataGrid_CellContentClick);
             // 
@@ -245,7 +245,7 @@
             this.groupBox1.Controls.Add(this.lblStaffID);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.lblDOB);
-            this.groupBox1.Location = new System.Drawing.Point(28, 70);
+            this.groupBox1.Location = new System.Drawing.Point(28, 82);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1030, 213);
             this.groupBox1.TabIndex = 20;
