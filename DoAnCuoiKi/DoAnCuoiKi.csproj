@@ -73,6 +73,36 @@
     <Compile Include="frm\frm_App\BanHang.Designer.cs">
       <DependentUpon>BanHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm\frm_Data\frm_ChildSanPham\ChatLieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\frm_Data\frm_ChildSanPham\ChatLieu.Designer.cs">
+      <DependentUpon>ChatLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\frm_Data\frm_ChildSanPham\LoaiSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\frm_Data\frm_ChildSanPham\LoaiSanPham.Designer.cs">
+      <DependentUpon>LoaiSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\frm_Data\frm_ChildSanPham\Mau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\frm_Data\frm_ChildSanPham\Mau.Designer.cs">
+      <DependentUpon>Mau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\frm_Data\frm_ChildSanPham\NhaCungCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\frm_Data\frm_ChildSanPham\NhaCungCap.Designer.cs">
+      <DependentUpon>NhaCungCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm\frm_Data\frm_ChildSanPham\NhanHieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\frm_Data\frm_ChildSanPham\NhanHieu.Designer.cs">
+      <DependentUpon>NhanHieu.cs</DependentUpon>
+    </Compile>
     <Compile Include="model\CHATLIEU.cs" />
     <Compile Include="model\CHITIETDONHANG.cs" />
     <Compile Include="model\CuaHangDB.cs" />
@@ -137,6 +167,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm\frm_App\TrangChu.resx">
       <DependentUpon>TrangChu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\frm_Data\frm_ChildSanPham\ChatLieu.resx">
+      <DependentUpon>ChatLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\frm_Data\frm_ChildSanPham\LoaiSanPham.resx">
+      <DependentUpon>LoaiSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\frm_Data\frm_ChildSanPham\Mau.resx">
+      <DependentUpon>Mau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\frm_Data\frm_ChildSanPham\NhaCungCap.resx">
+      <DependentUpon>NhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\frm_Data\frm_ChildSanPham\NhanHieu.resx">
+      <DependentUpon>NhanHieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm\frm_Data\QuanLyNhanVien.resx">
       <DependentUpon>QuanLyNhanVien.cs</DependentUpon>
@@ -203,5 +248,6 @@
   <ItemGroup>
     <None Include="Resources\dau cong.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

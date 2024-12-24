@@ -468,6 +468,7 @@
             this.OpenMauButton.TabIndex = 29;
             this.OpenMauButton.Text = "Màu";
             this.OpenMauButton.UseVisualStyleBackColor = true;
+            this.OpenMauButton.Click += new System.EventHandler(this.OpenMauButton_Click);
             // 
             // OpenLoaiButton
             // 
@@ -478,6 +479,7 @@
             this.OpenLoaiButton.TabIndex = 30;
             this.OpenLoaiButton.Text = "Loại";
             this.OpenLoaiButton.UseVisualStyleBackColor = true;
+            this.OpenLoaiButton.Click += new System.EventHandler(this.OpenLoaiButton_Click);
             // 
             // OpenNCCButton
             // 
@@ -488,6 +490,7 @@
             this.OpenNCCButton.TabIndex = 31;
             this.OpenNCCButton.Text = "Nhà cung cấp";
             this.OpenNCCButton.UseVisualStyleBackColor = true;
+            this.OpenNCCButton.Click += new System.EventHandler(this.OpenNCCButton_Click);
             // 
             // OpenCLButton
             // 
@@ -498,6 +501,7 @@
             this.OpenCLButton.TabIndex = 32;
             this.OpenCLButton.Text = "Chất liệu";
             this.OpenCLButton.UseVisualStyleBackColor = true;
+            this.OpenCLButton.Click += new System.EventHandler(this.OpenCLButton_Click);
             // 
             // OpenNHButton
             // 
@@ -508,6 +512,7 @@
             this.OpenNHButton.TabIndex = 33;
             this.OpenNHButton.Text = "Nhãn hiệu";
             this.OpenNHButton.UseVisualStyleBackColor = true;
+            this.OpenNHButton.Click += new System.EventHandler(this.OpenNHButton_Click);
             // 
             // chonAnhLabel
             // 

@@ -52,6 +52,7 @@ namespace DoAnCuoiKi
 
         private void ThuongHieuComboBox()
         {
+            NhanHieuComboBox.Items.Clear();
             var list = db.THUONGHIEUx.Select(x => x.TenTH).ToList();
             foreach (var item in list)
             {
@@ -61,6 +62,7 @@ namespace DoAnCuoiKi
 
         private void LoaiSanPhamComboBox()
         {
+            LoaiSPComboBox.Items.Clear();
             var list = db.DANHMUCs.Select(x => x.TenDM).ToList();
             foreach (var item in list) 
                 {
@@ -70,6 +72,7 @@ namespace DoAnCuoiKi
 
         private void MauBox()
         {
+            MauComboBox.Items.Clear();
             var list = db.MAUs.Select(x => x.TenMau).ToList();
             foreach(var item in list)
             {
@@ -79,6 +82,7 @@ namespace DoAnCuoiKi
 
         private void NhaCungCapBox()
         {
+            MaNCCComboBox.Items.Clear();
             var list = db.NHACUNGCAPs.Select(x => x.TenNCC).ToList();
             foreach( var item in list)
             {
@@ -88,6 +92,7 @@ namespace DoAnCuoiKi
 
         private void ChatLieuBox()
         {
+            MaChatLieuComboBox.Items.Clear();
             var list = db.CHATLIEUx.Select(x => x.TenCL).ToList();
             foreach ( var item in list)
             {
@@ -347,6 +352,56 @@ namespace DoAnCuoiKi
         private void chonAnhLabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void OpenMauButton_Click(object sender, EventArgs e)
+        {
+            Mau mau = new Mau();
+            DialogResult dr = mau.ShowDialog();
+            if (dr == DialogResult.Cancel)
+            {
+                MauBox();
+            }
+        }
+
+        private void OpenLoaiButton_Click(object sender, EventArgs e)
+        {
+            LoaiSanPham loaiSanPham = new LoaiSanPham();
+            DialogResult dr = loaiSanPham.ShowDialog();
+            if(dr == DialogResult.Cancel)
+            {
+                LoaiSanPhamComboBox();
+            }
+        }
+
+        private void OpenNCCButton_Click(object sender, EventArgs e)
+        {
+            NhaCungCap ncc = new NhaCungCap();
+            DialogResult dr = ncc.ShowDialog();
+            if (dr == DialogResult.Cancel)
+            {
+                NhaCungCapBox();
+            }
+        }
+
+        private void OpenCLButton_Click(object sender, EventArgs e)
+        {
+            ChatLieu cl = new ChatLieu();
+            DialogResult dr = cl.ShowDialog();
+            if (dr == DialogResult.Cancel)
+            {
+                ChatLieuBox();
+            }
+        }
+
+        private void OpenNHButton_Click(object sender, EventArgs e)
+        {
+            NhanHieu nh = new NhanHieu();
+            DialogResult dr = nh.ShowDialog();
+            if (dr == DialogResult.Cancel)
+            {
+                ThuongHieuComboBox();
+            }
         }
     }
 }
