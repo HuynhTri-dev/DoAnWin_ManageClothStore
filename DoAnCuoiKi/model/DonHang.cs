@@ -6,11 +6,11 @@ namespace DoAnCuoiKi.model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("DONHANG")]
-    public partial class DONHANG
+    [Table("DonHang")]
+    public partial class DonHang
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public DONHANG()
+        public DonHang()
         {
             CHITIETDONHANGs = new HashSet<CHITIETDONHANG>();
             HOADONs = new HashSet<HOADON>();
@@ -23,11 +23,10 @@ namespace DoAnCuoiKi.model
 
         public DateTime NgayLapDon { get; set; }
 
-        public bool LoaiDH { get; set; }
-
-        public bool TrangThaiDH { get; set; }
-
         [Required]
+        [StringLength(2)]
+        public string LoaiDH { get; set; }
+
         [StringLength(6)]
         public string MaKH { get; set; }
 
@@ -35,10 +34,15 @@ namespace DoAnCuoiKi.model
         [StringLength(6)]
         public string MaNV { get; set; }
 
+        [StringLength(6)]
+        public string MaKM { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHITIETDONHANG> CHITIETDONHANGs { get; set; }
 
         public virtual KHACHHANG KHACHHANG { get; set; }
+
+        public virtual KHUYENMAI KHUYENMAI { get; set; }
 
         public virtual NHANVIEN NHANVIEN { get; set; }
 

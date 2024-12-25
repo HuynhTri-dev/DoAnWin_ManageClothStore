@@ -31,10 +31,8 @@ namespace DoAnCuoiKi.model
         [StringLength(3)]
         public string Size { get; set; }
 
-        [Column(TypeName = "money")]
         public decimal GiaNhap { get; set; }
 
-        [Column(TypeName = "money")]
         public decimal GiaBan { get; set; }
 
         [StringLength(32)]

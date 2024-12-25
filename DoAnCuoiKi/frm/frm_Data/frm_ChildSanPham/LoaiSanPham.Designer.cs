@@ -43,61 +43,66 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Tahoma", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Sienna;
             this.label1.Location = new System.Drawing.Point(233, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(329, 51);
+            this.label1.Size = new System.Drawing.Size(347, 53);
             this.label1.TabIndex = 2;
             this.label1.Text = "Loại Sản Phẩm";
             // 
             // LoaiSanPhamDataGirdView
             // 
             this.LoaiSanPhamDataGirdView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.LoaiSanPhamDataGirdView.Location = new System.Drawing.Point(436, 128);
+            this.LoaiSanPhamDataGirdView.Location = new System.Drawing.Point(413, 107);
             this.LoaiSanPhamDataGirdView.Name = "LoaiSanPhamDataGirdView";
             this.LoaiSanPhamDataGirdView.RowHeadersWidth = 51;
             this.LoaiSanPhamDataGirdView.RowTemplate.Height = 24;
-            this.LoaiSanPhamDataGirdView.Size = new System.Drawing.Size(324, 220);
+            this.LoaiSanPhamDataGirdView.Size = new System.Drawing.Size(347, 230);
             this.LoaiSanPhamDataGirdView.TabIndex = 3;
             // 
             // MaDMTextBox
             // 
-            this.MaDMTextBox.Location = new System.Drawing.Point(193, 128);
+            this.MaDMTextBox.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaDMTextBox.Location = new System.Drawing.Point(166, 144);
             this.MaDMTextBox.Name = "MaDMTextBox";
-            this.MaDMTextBox.Size = new System.Drawing.Size(89, 22);
+            this.MaDMTextBox.Size = new System.Drawing.Size(207, 23);
             this.MaDMTextBox.TabIndex = 4;
             // 
             // TenDMTextBox
             // 
-            this.TenDMTextBox.Location = new System.Drawing.Point(193, 212);
+            this.TenDMTextBox.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TenDMTextBox.Location = new System.Drawing.Point(166, 193);
             this.TenDMTextBox.Name = "TenDMTextBox";
-            this.TenDMTextBox.Size = new System.Drawing.Size(153, 22);
+            this.TenDMTextBox.Size = new System.Drawing.Size(207, 23);
             this.TenDMTextBox.TabIndex = 5;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(46, 215);
+            this.label2.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(46, 196);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 16);
+            this.label2.Size = new System.Drawing.Size(89, 16);
             this.label2.TabIndex = 6;
             this.label2.Text = "Tên danh mục";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(46, 131);
+            this.label3.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(46, 147);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 16);
+            this.label3.Size = new System.Drawing.Size(84, 16);
             this.label3.TabIndex = 6;
             this.label3.Text = "Mã danh mục";
             // 
             // XoaButton
             // 
-            this.XoaButton.Location = new System.Drawing.Point(331, 398);
+            this.XoaButton.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.XoaButton.Location = new System.Drawing.Point(198, 236);
             this.XoaButton.Name = "XoaButton";
-            this.XoaButton.Size = new System.Drawing.Size(115, 40);
+            this.XoaButton.Size = new System.Drawing.Size(105, 30);
             this.XoaButton.TabIndex = 7;
             this.XoaButton.Text = "Xóa";
             this.XoaButton.UseVisualStyleBackColor = true;
@@ -105,9 +110,10 @@
             // 
             // ThemSuaButton
             // 
-            this.ThemSuaButton.Location = new System.Drawing.Point(196, 398);
+            this.ThemSuaButton.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ThemSuaButton.Location = new System.Drawing.Point(49, 236);
             this.ThemSuaButton.Name = "ThemSuaButton";
-            this.ThemSuaButton.Size = new System.Drawing.Size(115, 40);
+            this.ThemSuaButton.Size = new System.Drawing.Size(105, 30);
             this.ThemSuaButton.TabIndex = 7;
             this.ThemSuaButton.Text = "Thêm / Sửa";
             this.ThemSuaButton.UseVisualStyleBackColor = true;
@@ -115,9 +121,10 @@
             // 
             // TroLaiButton
             // 
-            this.TroLaiButton.Location = new System.Drawing.Point(467, 398);
+            this.TroLaiButton.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TroLaiButton.Location = new System.Drawing.Point(281, 308);
             this.TroLaiButton.Name = "TroLaiButton";
-            this.TroLaiButton.Size = new System.Drawing.Size(115, 40);
+            this.TroLaiButton.Size = new System.Drawing.Size(92, 29);
             this.TroLaiButton.TabIndex = 7;
             this.TroLaiButton.Text = "Trờ lại";
             this.TroLaiButton.UseVisualStyleBackColor = true;
@@ -127,7 +134,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 362);
             this.Controls.Add(this.ThemSuaButton);
             this.Controls.Add(this.TroLaiButton);
             this.Controls.Add(this.XoaButton);

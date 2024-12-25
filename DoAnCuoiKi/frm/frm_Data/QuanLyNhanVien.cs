@@ -31,14 +31,24 @@ namespace DoAnCuoiKi
 
         private void LoadThongTinNhanVien()
         {
-            var thongTin = db.NHANVIENs.Select(x => new {x.MaNV, 
-                                                         HoTen = x.Ho + " " + x.LotTen, 
-                                                         x.ChucVu, 
-                                                         GioiTinh = x.GioiTinh == true ? "Nam" : "Nữ",
-                                                         x.NgaySinh,
-                                                         x.SDT}).ToList();
+            var thongTin = db.NHANVIENs.Select(x => new {
+                x.MaNV,
+                HoTen = x.Ho + " " + x.LotTen,
+                x.ChucVu,
+                GioiTinh = x.GioiTinh == true ? "Nam" : "Nữ",
+                x.NgaySinh,
+                x.SDT
+            }).ToList()
+            .Select(x => new {
+                x.MaNV,
+                x.HoTen,
+                x.ChucVu,
+                x.GioiTinh,
+                NgaySinh = x.NgaySinh.HasValue ? x.NgaySinh.Value.ToString("dd/MM/yyyy") : "", // Định dạng NgaySinh
+                x.SDT
+            }).ToList();
+
             nhanVienDataGrid.DataSource = thongTin;
-            
             nhanVienDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 

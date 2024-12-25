@@ -32,6 +32,7 @@ namespace DoAnCuoiKi
         {
             var sp = db.DANHMUCs.Select(x => new {x.MaDM, x.TenDM}).ToList();
             LoaiSanPhamDataGirdView.DataSource = sp;
+            LoaiSanPhamDataGirdView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void ThemSuaButton_Click(object sender, EventArgs e)

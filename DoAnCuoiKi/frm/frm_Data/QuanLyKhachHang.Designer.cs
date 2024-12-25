@@ -57,7 +57,7 @@
             this.ThongTinKHDataGirdView.AllowUserToAddRows = false;
             this.ThongTinKHDataGirdView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(225)))), ((int)(((byte)(213)))));
             this.ThongTinKHDataGirdView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ThongTinKHDataGirdView.Location = new System.Drawing.Point(39, 353);
+            this.ThongTinKHDataGirdView.Location = new System.Drawing.Point(43, 353);
             this.ThongTinKHDataGirdView.Name = "ThongTinKHDataGirdView";
             this.ThongTinKHDataGirdView.RowHeadersWidth = 51;
             this.ThongTinKHDataGirdView.RowTemplate.Height = 24;
@@ -159,6 +159,7 @@
             this.NgaySinhDateTimePicker.Name = "NgaySinhDateTimePicker";
             this.NgaySinhDateTimePicker.Size = new System.Drawing.Size(163, 32);
             this.NgaySinhDateTimePicker.TabIndex = 12;
+            this.NgaySinhDateTimePicker.ValueChanged += new System.EventHandler(this.NgaySinhDateTimePicker_ValueChanged);
             // 
             // ThemSuaButton
             // 

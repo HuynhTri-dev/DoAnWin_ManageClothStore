@@ -15,7 +15,6 @@ namespace DoAnCuoiKi.model
 
         public DateTime NgayLap { get; set; }
 
-        [Column(TypeName = "money")]
         public decimal TongTien { get; set; }
 
         [Required]
@@ -33,7 +32,7 @@ namespace DoAnCuoiKi.model
         [StringLength(6)]
         public string MaDH { get; set; }
 
-        public virtual DONHANG DONHANG { get; set; }
+        public virtual DonHang DonHang { get; set; }
 
         public virtual NHANVIEN NHANVIEN { get; set; }
     }

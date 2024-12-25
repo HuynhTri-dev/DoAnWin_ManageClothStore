@@ -341,8 +341,8 @@ namespace DoAnCuoiKi
                         MaNCCComboBox.SelectedItem = thongTin.NHACUNGCAP?.TenNCC;
                         MaChatLieuComboBox.SelectedItem = thongTin.CHATLIEU?.TenCL;
                         NhanHieuComboBox.SelectedItem = thongTin.THUONGHIEU?.TenTH;
-                        GiaBanTextBox.Text = thongTin.GiaBan.ToString("0.##");
-                        GiaNhapTextBox.Text = thongTin.GiaNhap.ToString("0.##");
+                        GiaBanTextBox.Text = thongTin.GiaBan.ToString();
+                        GiaNhapTextBox.Text = thongTin.GiaNhap.ToString();
                         MoTaRichTextBox.Text = thongTin.MoTa;
                     }
                 }

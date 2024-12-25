@@ -12,7 +12,7 @@ namespace DoAnCuoiKi.model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public KHUYENMAI()
         {
-            KHACHHANGs = new HashSet<KHACHHANG>();
+            DonHangs = new HashSet<DonHang>();
         }
 
         [Key]
@@ -29,9 +29,9 @@ namespace DoAnCuoiKi.model
         public DateTime NgayBatDau { get; set; }
 
         [Column(TypeName = "smalldatetime")]
-        public DateTime NgayKetThuc { get; set; }
+        public DateTime? NgayKetThuc { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KHACHHANG> KHACHHANGs { get; set; }
+        public virtual ICollection<DonHang> DonHangs { get; set; }
     }
 }

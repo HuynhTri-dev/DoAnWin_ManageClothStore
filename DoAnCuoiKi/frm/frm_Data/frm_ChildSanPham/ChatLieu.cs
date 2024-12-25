@@ -17,7 +17,6 @@ namespace DoAnCuoiKi
 
         CuaHangDB db = new CuaHangDB();
 
-
         public ChatLieu()
         {
             InitializeComponent();
@@ -32,6 +31,7 @@ namespace DoAnCuoiKi
         {
             var cl = db.CHATLIEUx.Select(x => new {x.MaCL, x.TenCL}).ToList();
             ChatLieuDataGridView.DataSource = cl;
+            ChatLieuDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void ThemSuaButton_Click(object sender, EventArgs e)

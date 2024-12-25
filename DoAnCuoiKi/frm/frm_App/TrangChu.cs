@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DoAnCuoiKi.frm.frm_Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -119,7 +120,9 @@ namespace DoAnCuoiKi
 
         private void btnWarehouse_Click(object sender, EventArgs e)
         {
-            this.Text = "Quản lý kho";
+            this.Text = "Khuyến mãi";
+
+            OpenChildForm(new QuanLyKhuyenMai());
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

@@ -32,6 +32,7 @@ namespace DoAnCuoiKi
         {
             var mau = db.MAUs.Select(x => new {x.MaMau, x.TenMau}).ToList();
             MauDataGridView.DataSource = mau;
+            MauDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void ThemSuaButton_Click(object sender, EventArgs e)
@@ -102,6 +103,31 @@ namespace DoAnCuoiKi
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TenMauTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MauDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void MaMauTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

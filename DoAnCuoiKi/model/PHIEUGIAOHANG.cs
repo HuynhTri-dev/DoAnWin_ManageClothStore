@@ -40,7 +40,7 @@ namespace DoAnCuoiKi.model
         [StringLength(3)]
         public string MaPhi { get; set; }
 
-        public virtual DONHANG DONHANG { get; set; }
+        public virtual DonHang DonHang { get; set; }
 
         public virtual NHANVIEN NHANVIEN { get; set; }
 

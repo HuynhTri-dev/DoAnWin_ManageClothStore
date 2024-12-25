@@ -32,7 +32,23 @@ namespace DoAnCuoiKi
 
         private void LoadForm()
         {
-            var KH = db.KHACHHANGs.Select(x => new { x.MaKH, HoTen = x.Ho + " " + x.TenLot, GioiTinh = x.GioiTinh == true ? "Nam" : "Nữ", x.NgaySinh, x.DiaChi, x.GhiChu}).ToList();
+            var KH = db.KHACHHANGs.Select(x => new {
+                x.MaKH,
+                HoTen = x.Ho + " " + x.TenLot,
+                GioiTinh = x.GioiTinh == true ? "Nam" : "Nữ",
+                x.NgaySinh,
+                x.DiaChi,
+                x.GhiChu
+            }).ToList()
+            .Select(x => new {
+                x.MaKH,
+                x.HoTen,
+                x.GioiTinh,
+                NgaySinh = x.NgaySinh.ToString("dd/MM/yyyy"),
+                x.DiaChi,
+                x.GhiChu
+            }).ToList();
+
             ThongTinKHDataGirdView.DataSource = KH;
 
             ThongTinKHDataGirdView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -175,6 +191,11 @@ namespace DoAnCuoiKi
                     }
                 }
             }
+        }
+
+        private void NgaySinhDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

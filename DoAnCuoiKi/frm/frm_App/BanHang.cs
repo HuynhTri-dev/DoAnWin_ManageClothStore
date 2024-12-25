@@ -25,6 +25,11 @@ namespace DoAnCuoiKi
             LoadProducts(); 
         }
 
+        private void LoadGioiHang()
+        {
+
+        }
+
         private void LoadProducts()
         {
             // Lấy danh sách sản phẩm từ cơ sở dữ liệu
@@ -48,6 +53,8 @@ namespace DoAnCuoiKi
 
             foreach (var product in products)
             {
+                
+
                 // Tạo Panel cho mỗi sản phẩm
                 Panel productPanel = new Panel
                 {
@@ -111,6 +118,29 @@ namespace DoAnCuoiKi
                 
                 productPanel.Controls.Add(moreInfo);
 
+                // Neu san pham het
+                if (product.SoLuongTon <= 0)
+                {
+                    Label soldOut = new Label()
+                    {
+                        Size = new Size(200, 50),
+                       
+                        BackColor = Color.Red,
+                        Text = "Sold Out",
+                        ForeColor = Color.White,
+                        TextAlign = ContentAlignment.MiddleCenter,
+                        Font = new Font("Tahoma", 16, FontStyle.Bold),
+                        Location = new Point(0, 75),
+                    };
+
+
+                    productPanel.Controls.Add(soldOut);
+                    soldOut.BringToFront();
+
+                    productPanel.Enabled = false;
+                }
+
+
                 // Thêm Panel vào FlowLayoutPanel
                 flowLayoutPanel1.Controls.Add(productPanel);
             }
@@ -150,6 +180,11 @@ namespace DoAnCuoiKi
 
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

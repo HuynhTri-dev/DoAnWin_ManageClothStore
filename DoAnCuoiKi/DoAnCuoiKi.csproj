@@ -103,15 +103,21 @@
     <Compile Include="frm\frm_Data\frm_ChildSanPham\NhanHieu.Designer.cs">
       <DependentUpon>NhanHieu.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm\frm_Data\QuanLyKhuyenMai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\frm_Data\QuanLyKhuyenMai.Designer.cs">
+      <DependentUpon>QuanLyKhuyenMai.cs</DependentUpon>
+    </Compile>
     <Compile Include="model\CHATLIEU.cs" />
     <Compile Include="model\CHITIETDONHANG.cs" />
-    <Compile Include="model\CuaHangDB.cs" />
     <Compile Include="model\DANHMUC.cs" />
-    <Compile Include="model\DONHANG.cs" />
+    <Compile Include="model\DonHang.cs" />
     <Compile Include="model\HOADON.cs" />
     <Compile Include="model\KHACHHANG.cs" />
     <Compile Include="model\KHUYENMAI.cs" />
     <Compile Include="model\MAU.cs" />
+    <Compile Include="model\CuaHangDB.cs" />
     <Compile Include="model\NHACUNGCAP.cs" />
     <Compile Include="model\NHANVIEN.cs" />
     <Compile Include="model\PHIEUGIAOHANG.cs" />
@@ -182,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm\frm_Data\frm_ChildSanPham\NhanHieu.resx">
       <DependentUpon>NhanHieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\frm_Data\QuanLyKhuyenMai.resx">
+      <DependentUpon>QuanLyKhuyenMai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm\frm_Data\QuanLyNhanVien.resx">
       <DependentUpon>QuanLyNhanVien.cs</DependentUpon>

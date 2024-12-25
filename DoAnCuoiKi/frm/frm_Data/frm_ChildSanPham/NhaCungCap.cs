@@ -32,6 +32,7 @@ namespace DoAnCuoiKi
         {
             var ncc = db.NHACUNGCAPs.Select(x => new {x.MaNCC, x.TenNCC}).ToList();
             NhaCungCapDataGirdView.DataSource = ncc;
+            NhaCungCapDataGirdView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void ThemSuaButton_Click(object sender, EventArgs e)
@@ -138,6 +139,11 @@ namespace DoAnCuoiKi
                     }
                 }
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

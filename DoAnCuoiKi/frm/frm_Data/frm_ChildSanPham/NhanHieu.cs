@@ -30,6 +30,7 @@ namespace DoAnCuoiKi
         {
             var th = db.THUONGHIEUx.Select(x => new { x.MaTH, x.TenTH}).ToList();
             NhanHieuDataGirdView.DataSource = th;
+            NhanHieuDataGirdView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void ThemSuaButton_Click(object sender, EventArgs e)
@@ -70,9 +71,6 @@ namespace DoAnCuoiKi
             {
                 MessageBox.Show("Chưa nhập thông tin đầy đủ", "Thông báo");
             }
-
-
-            
         }
 
         private void XoaButton_Click(object sender, EventArgs e)
