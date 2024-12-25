@@ -190,9 +190,9 @@
             this.panel2.AutoScroll = true;
             this.panel2.AutoSize = true;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(225)))), ((int)(((byte)(213)))));
-            this.panel2.Location = new System.Drawing.Point(198, -2);
+            this.panel2.Location = new System.Drawing.Point(183, -1);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1241, 616);
+            this.panel2.Size = new System.Drawing.Size(1264, 615);
             this.panel2.TabIndex = 2;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -218,7 +218,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(113)))), ((int)(((byte)(91)))));
-            this.ClientSize = new System.Drawing.Size(1439, 614);
+            this.ClientSize = new System.Drawing.Size(1447, 614);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnRevenue);
             this.Controls.Add(this.panel1);

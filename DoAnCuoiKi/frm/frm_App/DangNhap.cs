@@ -71,7 +71,7 @@ namespace DoAnCuoiKi
         {
             string username = txtLoginName.Text;
             string password = txtPass.Text;
-            
+            var nhanVien = db.NHANVIENs.FirstOrDefault(x => x.TAIKHOAN.TenTK == username);
             if (!string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(password))
             {
                 var tkTonTai = db.TAIKHOANs.Where(x => x.TenTK == username).FirstOrDefault();
@@ -80,19 +80,12 @@ namespace DoAnCuoiKi
                     var mkCheck = db.TAIKHOANs.Where(x => x.TenTK == username && x.MatKhau == password).FirstOrDefault();
 
                     if (mkCheck != null)
-                    {
-                        var chucVu = db.NHANVIENs.Where(x => x.TAIKHOAN.TenTK == username).Select(x => x.ChucVu).FirstOrDefault();
+                    {   
+                        MessageBox.Show($"Mã nhân viên: {nhanVien.MaNV} \nChức vụ: {nhanVien.ChucVu}", "Thông báo");
 
-                        if (chucVu == "QL")
-                        {
-                            MessageBox.Show("Đăng nhập thành công vào tài khoản quản lý", "Thông báo");
-                        }
-
-                        TrangChu trangChu = new TrangChu(chucVu);
+                        TrangChu trangChu = new TrangChu(nhanVien.ChucVu, nhanVien.MaNV);
                         this.Hide();
                         DialogResult dr = trangChu.ShowDialog();
-                        
-                        
 
                         if (dr == DialogResult.Yes)
                         {

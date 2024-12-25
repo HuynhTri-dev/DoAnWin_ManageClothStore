@@ -13,48 +13,51 @@ namespace DoAnCuoiKi
 {
     public partial class TrangChu : Form
     {
-        private string chucVu;
-
-        public TrangChu(string ChucVu)
+        private string CHUCVU;
+        private string MANV;
+        public TrangChu(string ChucVu, string maNV)
         {
-            chucVu = ChucVu;
+            CHUCVU = ChucVu;
             InitializeComponent();
+            this.MANV = maNV;
         }
 
         // hàm để tạo tạo và gọi form con
         private Form activeForm = null; 
         private void OpenChildForm(Form childForm)
         {
-            // Đóng Form hiện tại nếu có
             if (activeForm != null)
                 activeForm.Close();
 
-            activeForm = childForm; // Cập nhật Form mới
+            activeForm = childForm; 
             childForm.TopLevel = false; // Không phải Form cấp cao nhất
-            childForm.FormBorderStyle = FormBorderStyle.None; // Xóa viền
+            childForm.FormBorderStyle = FormBorderStyle.None; 
 
-            // Đặt kích thước Panel chính dựa trên kích thước Form con
-            panel2.Controls.Clear(); // Xóa các control cũ trong Panel chính
+            panel2.Controls.Clear(); 
             panel2.AutoScroll = true;
 
-            // Cập nhật kích thước Panel chính dựa trên kích thước ChildForm
             panel2.Size = new Size(childForm.Width, childForm.Height);
 
-            childForm.Dock = DockStyle.Fill; // Lấp đầy Panel chính
-            panel2.Controls.Add(childForm); // Thêm Form mới vào Panel chính
-            panel2.Tag = childForm; // Gắn thẻ Form
-            childForm.BringToFront(); // Đưa Form lên trên cùng
-            childForm.Show(); // Hiển thị Form
+            childForm.Dock = DockStyle.Fill; 
+            panel2.Controls.Add(childForm); 
+            panel2.Tag = childForm; 
+            childForm.BringToFront(); 
+            childForm.Show(); 
 
-            // Đặt lại kích thước nếu cần khi không dùng DockStyle.Fill
             panel2.Refresh();
+        }
+
+        private void TrangChu_Load(object sender, EventArgs e)
+        {
+            this.Text = "Trang chủ";
+            OpenChildForm(new BanHang(MANV));
         }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
             this.Text = "Trang chủ";
 
-            OpenChildForm(new BanHang());
+            OpenChildForm(new BanHang(MANV));
         }
 
         private void btnBill_Click(object sender, EventArgs e)
@@ -66,7 +69,7 @@ namespace DoAnCuoiKi
 
         private void btnStaff_Click(object sender, EventArgs e)
         {
-            if (chucVu == "QL")
+            if (CHUCVU == "QL")
             {
                 this.Text = "Quản lý nhân viên";
                 OpenChildForm(new QuanLyNhanVien());
@@ -106,12 +109,7 @@ namespace DoAnCuoiKi
             this.Text = "Quản lý doanh thu";
         }
 
-        private void TrangChu_Load(object sender, EventArgs e)
-        {
-            this.Text = "Trang chủ";
-
-            OpenChildForm(new BanHang());
-        }
+        
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {

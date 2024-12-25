@@ -16,7 +16,8 @@ namespace DoAnCuoiKi
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TrangChu("QL"));
+            Application.Run(new TrangChu("QL", "1"));
+            //Application.Run(new DangNhap());
         }
     }
 }

@@ -14,20 +14,73 @@ namespace DoAnCuoiKi
 {
     public partial class BanHang : Form
     {
+        // Kết nối database
         CuaHangDB db = new CuaHangDB();
-        public BanHang()
+
+        // Tạo list giỏi hàng
+        public class Hang
         {
+            public string MaSP { get; set; }
+            public string TenSP { get; set; }
+            public int SoLuong { get; set; }
+            public decimal ThanhTien { get; set; }
+
+            public Hang(string ma, string ten, int sl, decimal tt)
+            {
+                MaSP = ma;
+                TenSP = ten;
+                SoLuong = sl;
+                ThanhTien = tt;
+            }
+        }
+
+        private List<Hang> gioHangs = new List<Hang>();
+
+        // Định danh nhân viên
+        private string MANV;
+        public BanHang(string MaNV)
+        {
+            MANV = MaNV;
             InitializeComponent();
         }
 
         private void BanHang_Load(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(MANV))
+            {
+                MaNVTextBox.Text = MANV;
+            }
+
+            LoadMaHoaDon();
+            LoadGioHang();
             LoadProducts(); 
         }
 
-        private void LoadGioiHang()
+        private void LoadMaHoaDon()
         {
+            // Lấy mã hóa đơn cuối cùng từ cơ sở dữ liệu
+            var lastMaHD = db.DonHangs  
+                             .OrderByDescending(h => h.MaDH) // Sắp xếp giảm dần theo MaHD
+                             .Select(h => h.MaDH)           // Chỉ lấy trường MaHD
+                             .FirstOrDefault();             // Lấy giá trị đầu tiên (lớn nhất)
 
+            // Nếu không có hóa đơn nào trong cơ sở dữ liệu, đặt giá trị mặc định
+            string newMaHD = "DH0001";
+
+            if (!string.IsNullOrEmpty(lastMaHD))
+            {
+                // Tăng mã hóa đơn lên 1
+                int numberPart = int.Parse(lastMaHD.Substring(2)); // Lấy phần số sau "HD"
+                newMaHD = "DH" + (numberPart + 1).ToString("D4");  // Cộng 1 và format thành "D4"
+            }
+
+            // Hiển thị mã hóa đơn mới lên TextBox
+            MaDHTextBox.Text = newMaHD;
+        }
+
+        private void LoadGioHang()
+        {
+            DonHangDataGrid.DataSource = gioHangs.ToList();
         }
 
         private void LoadProducts()
@@ -105,17 +158,18 @@ namespace DoAnCuoiKi
                     BackColor = Color.White
                 };
 
+                //Thêm các chức năng của các label và img, button
                 moreInfo.Click += (s,e) => ShowProductDetails(product.MaSP);
-
-                // Gán sự kiện click cho Panel
-                //productPanel.Click += (s, e) => 
+                productImage.Click += (s, e) => ThemVaoGioHang(product.MaSP, product.TenSP, product.GiaBan);
+                productName.Click += (s, e) => ThemVaoGioHang(product.MaSP, product.TenSP, product.GiaBan);
+                soLuong.Click += (s, e) => ThemVaoGioHang(product.MaSP, product.TenSP, product.GiaBan);
+                productPrice.Click += (s, e) => ThemVaoGioHang(product.MaSP, product.TenSP, product.GiaBan);
 
                 // Thêm các control vào Panel
                 productPanel.Controls.Add(productImage);
                 productPanel.Controls.Add(productName);
                 productPanel.Controls.Add(soLuong);
                 productPanel.Controls.Add(productPrice);
-                
                 productPanel.Controls.Add(moreInfo);
 
                 // Neu san pham het
@@ -136,14 +190,35 @@ namespace DoAnCuoiKi
 
                     productPanel.Controls.Add(soldOut);
                     soldOut.BringToFront();
-
                     productPanel.Enabled = false;
                 }
+
+                productPanel.Enabled = true;
+
+                productPanel.Click += (s, e) => ThemVaoGioHang(product.MaSP, product.TenSP, product.GiaBan);
 
 
                 // Thêm Panel vào FlowLayoutPanel
                 flowLayoutPanel1.Controls.Add(productPanel);
             }
+        }
+
+        private void ThemVaoGioHang(string MaSP, string TenSP, decimal GiaBan)
+        {
+            var sanPham = gioHangs.FirstOrDefault(h => h.MaSP == MaSP);
+
+            if (sanPham != null)
+            {
+                sanPham.SoLuong++;
+                sanPham.ThanhTien = sanPham.SoLuong * GiaBan;
+            }
+            else
+            {
+                MessageBox.Show($"Thêm sản phẩm: {TenSP}", "Thông báo");
+                gioHangs.Add(new Hang(MaSP, TenSP, 1, GiaBan));
+            }
+
+            LoadGioHang();
         }
 
         private Image ByteArrayToImage(byte[] byteArray)
@@ -156,7 +231,6 @@ namespace DoAnCuoiKi
 
         private void ShowProductDetails(string productId)
         {
-            // Lấy thông tin sản phẩm từ cơ sở dữ liệu
             var product = db.SANPHAMs.FirstOrDefault(p => p.MaSP == productId);
             if (product != null)
             {
@@ -185,6 +259,21 @@ namespace DoAnCuoiKi
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MaKHTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MaKMComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
