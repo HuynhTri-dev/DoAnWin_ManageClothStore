@@ -43,44 +43,90 @@ namespace DoAnCuoiKi
             MANV = MaNV;
             InitializeComponent();
         }
-
+        // Load Page
         private void BanHang_Load(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(MANV))
             {
                 MaNVTextBox.Text = MANV;
             }
-
+            LoadComboKhuyenMai();
+            GiaTriTextBox.Text = "0";
             LoadMaHoaDon();
             LoadGioHang();
             LoadProducts(); 
+
+            // Group
+            TongTienTextBox.Text = "0";
+            GiamTextBox.Text = "0";
+            PhaiThuTextBox.Text = "0";
+            KhachDuaTextBox.Text = "0";
+            TienThoiTextBox.Text = "0";
         }
 
+        // Hiển thị collection combo khuyến mãi
+        private void LoadComboKhuyenMai()
+        {
+            var khuyenMais = db.KHUYENMAIs.Select(x => x.TenKM).ToList();
+
+            foreach(var km in khuyenMais)
+            {
+                MaKMComboBox.Items.Add(km);
+            }
+        }
+        // Cập nhật giá trị từng khuyến mãi
+        private void MaKMComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var giaTri = db.KHUYENMAIs.Where(x => x.TenKM == MaKMComboBox.SelectedItem.ToString()).Select(x => x.GiaTri).FirstOrDefault();
+
+            GiaTriTextBox.Text = giaTri.ToString();
+            LoadGia();
+        }
+        //Load mã hoá đơn
         private void LoadMaHoaDon()
         {
-            // Lấy mã hóa đơn cuối cùng từ cơ sở dữ liệu
             var lastMaHD = db.DonHangs  
-                             .OrderByDescending(h => h.MaDH) // Sắp xếp giảm dần theo MaHD
-                             .Select(h => h.MaDH)           // Chỉ lấy trường MaHD
-                             .FirstOrDefault();             // Lấy giá trị đầu tiên (lớn nhất)
+                             .OrderByDescending(h => h.MaDH) 
+                             .Select(h => h.MaDH)          
+                             .FirstOrDefault();             
 
-            // Nếu không có hóa đơn nào trong cơ sở dữ liệu, đặt giá trị mặc định
             string newMaHD = "DH0001";
 
             if (!string.IsNullOrEmpty(lastMaHD))
             {
-                // Tăng mã hóa đơn lên 1
-                int numberPart = int.Parse(lastMaHD.Substring(2)); // Lấy phần số sau "HD"
-                newMaHD = "DH" + (numberPart + 1).ToString("D4");  // Cộng 1 và format thành "D4"
+                int numberPart = int.Parse(lastMaHD.Substring(2));
+                newMaHD = "DH" + (numberPart + 1).ToString("D4"); 
             }
 
-            // Hiển thị mã hóa đơn mới lên TextBox
             MaDHTextBox.Text = newMaHD;
         }
-
+        // Load bảng datagrid giỏ hàng
         private void LoadGioHang()
         {
             DonHangDataGrid.DataSource = gioHangs.ToList();
+            LoadGia();
+        }
+
+
+        private void LoadGia()
+        {
+            // Mỗi lần mà load lại thì phải cập nhật laị giá trị của group Giá Tiền
+            decimal tongTien = 0;
+            foreach (var x in gioHangs)
+            {
+                tongTien += x.ThanhTien;
+            }
+
+            TongTienTextBox.Text = tongTien.ToString();
+
+            decimal giamGia = 0;
+            if (float.TryParse(GiaTriTextBox.Text, out float giam))
+            {
+                giamGia = tongTien * (decimal)(giam / 100);
+                GiamTextBox.Text = giamGia.ToString("0.##");
+            }
+
+            PhaiThuTextBox.Text = (tongTien - giamGia).ToString("0.##");
         }
 
         private void LoadProducts()
@@ -202,7 +248,7 @@ namespace DoAnCuoiKi
                 flowLayoutPanel1.Controls.Add(productPanel);
             }
         }
-
+        // Chức năng thêm hàng vào giỏ
         private void ThemVaoGioHang(string MaSP, string TenSP, decimal GiaBan)
         {
             var sanPham = gioHangs.FirstOrDefault(h => h.MaSP == MaSP);
@@ -220,7 +266,7 @@ namespace DoAnCuoiKi
 
             LoadGioHang();
         }
-
+        // Đổi ảnh sang dạng nhị phân
         private Image ByteArrayToImage(byte[] byteArray)
         {
             using (MemoryStream ms = new MemoryStream(byteArray))
@@ -228,7 +274,7 @@ namespace DoAnCuoiKi
                 return Image.FromStream(ms);
             }
         }
-
+        // Chức năng hiển thị thông tin sản phẩm
         private void ShowProductDetails(string productId)
         {
             var product = db.SANPHAMs.FirstOrDefault(p => p.MaSP == productId);
@@ -251,7 +297,34 @@ namespace DoAnCuoiKi
                     MessageBoxIcon.Information);
             }
         }
+        // Đổi giá trị thối mỗi khi khách đưa tiền
+        private void KhachDuaTextBox_Leave(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(KhachDuaTextBox.Text, out decimal khachDua)
+                && khachDua >= 0
+                && decimal.TryParse(PhaiThuTextBox.Text, out decimal phaiThu))
+            {
+                if (khachDua >= phaiThu)
+                {
+                    TienThoiTextBox.Text = (khachDua - phaiThu).ToString();
+                }
+                else
+                {
+                    TienThoiTextBox.Text = "0";
+                    MessageBox.Show("Khách đưa chưa đủ", "Thông báo");  
+                }
+            }
+            else
+            {
+                
+                MessageBox.Show("Giá trị không đúng", "Thông báo");
+            }
+        }
 
+        private void ThanhToanButton_Click(object sender, EventArgs e)
+        {
+
+        }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -273,7 +346,9 @@ namespace DoAnCuoiKi
 
         }
 
-        private void MaKMComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        
+
+        private void KhachDuaTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }
