@@ -29,6 +29,20 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.TienThoiTextBox = new System.Windows.Forms.TextBox();
+            this.KhachDuaTextBox = new System.Windows.Forms.TextBox();
+            this.PhaiThuTextBox = new System.Windows.Forms.TextBox();
+            this.GiamTextBox = new System.Windows.Forms.TextBox();
+            this.TongTienTextBox = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.XoaButton = new System.Windows.Forms.Button();
+            this.ThanhToanButton = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.LoaiDHComboBox = new System.Windows.Forms.ComboBox();
             this.GiaTriTextBox = new System.Windows.Forms.TextBox();
@@ -48,24 +62,10 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.ThanhToanButton = new System.Windows.Forms.Button();
-            this.XoaButton = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.TongTienTextBox = new System.Windows.Forms.TextBox();
-            this.GiamTextBox = new System.Windows.Forms.TextBox();
-            this.PhaiThuTextBox = new System.Windows.Forms.TextBox();
-            this.KhachDuaTextBox = new System.Windows.Forms.TextBox();
-            this.TienThoiTextBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DonHangDataGrid)).BeginInit();
             this.panel2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -95,6 +95,158 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(510, 803);
             this.panel1.TabIndex = 5;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.TienThoiTextBox);
+            this.groupBox1.Controls.Add(this.KhachDuaTextBox);
+            this.groupBox1.Controls.Add(this.PhaiThuTextBox);
+            this.groupBox1.Controls.Add(this.GiamTextBox);
+            this.groupBox1.Controls.Add(this.TongTienTextBox);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Location = new System.Drawing.Point(44, 478);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(436, 255);
+            this.groupBox1.TabIndex = 31;
+            this.groupBox1.TabStop = false;
+            // 
+            // TienThoiTextBox
+            // 
+            this.TienThoiTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TienThoiTextBox.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TienThoiTextBox.Location = new System.Drawing.Point(128, 205);
+            this.TienThoiTextBox.Name = "TienThoiTextBox";
+            this.TienThoiTextBox.ReadOnly = true;
+            this.TienThoiTextBox.Size = new System.Drawing.Size(280, 28);
+            this.TienThoiTextBox.TabIndex = 36;
+            // 
+            // KhachDuaTextBox
+            // 
+            this.KhachDuaTextBox.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KhachDuaTextBox.Location = new System.Drawing.Point(128, 159);
+            this.KhachDuaTextBox.Name = "KhachDuaTextBox";
+            this.KhachDuaTextBox.Size = new System.Drawing.Size(236, 28);
+            this.KhachDuaTextBox.TabIndex = 35;
+            this.KhachDuaTextBox.TextChanged += new System.EventHandler(this.KhachDuaTextBox_TextChanged);
+            this.KhachDuaTextBox.Leave += new System.EventHandler(this.KhachDuaTextBox_Leave);
+            // 
+            // PhaiThuTextBox
+            // 
+            this.PhaiThuTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PhaiThuTextBox.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PhaiThuTextBox.Location = new System.Drawing.Point(128, 112);
+            this.PhaiThuTextBox.Name = "PhaiThuTextBox";
+            this.PhaiThuTextBox.ReadOnly = true;
+            this.PhaiThuTextBox.Size = new System.Drawing.Size(280, 28);
+            this.PhaiThuTextBox.TabIndex = 34;
+            // 
+            // GiamTextBox
+            // 
+            this.GiamTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.GiamTextBox.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GiamTextBox.Location = new System.Drawing.Point(128, 67);
+            this.GiamTextBox.Name = "GiamTextBox";
+            this.GiamTextBox.ReadOnly = true;
+            this.GiamTextBox.Size = new System.Drawing.Size(280, 28);
+            this.GiamTextBox.TabIndex = 33;
+            // 
+            // TongTienTextBox
+            // 
+            this.TongTienTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TongTienTextBox.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TongTienTextBox.Location = new System.Drawing.Point(128, 20);
+            this.TongTienTextBox.Name = "TongTienTextBox";
+            this.TongTienTextBox.ReadOnly = true;
+            this.TongTienTextBox.Size = new System.Drawing.Size(280, 28);
+            this.TongTienTextBox.TabIndex = 32;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(34, 23);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(86, 21);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "Tổng tiền:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(34, 208);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(87, 21);
+            this.label14.TabIndex = 30;
+            this.label14.Text = "Tiền thừa:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(34, 70);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(54, 21);
+            this.label11.TabIndex = 27;
+            this.label11.Text = "Giảm:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(34, 162);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(95, 21);
+            this.label13.TabIndex = 29;
+            this.label13.Text = "Khách đưa:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(34, 115);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(76, 21);
+            this.label12.TabIndex = 28;
+            this.label12.Text = "Phải thu:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(359, 444);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(19, 16);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "%";
+            // 
+            // XoaButton
+            // 
+            this.XoaButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(113)))), ((int)(((byte)(91)))));
+            this.XoaButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.XoaButton.ForeColor = System.Drawing.Color.White;
+            this.XoaButton.Location = new System.Drawing.Point(330, 739);
+            this.XoaButton.Name = "XoaButton";
+            this.XoaButton.Size = new System.Drawing.Size(150, 41);
+            this.XoaButton.TabIndex = 25;
+            this.XoaButton.Text = "Xóa";
+            this.XoaButton.UseVisualStyleBackColor = false;
+            // 
+            // ThanhToanButton
+            // 
+            this.ThanhToanButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(113)))), ((int)(((byte)(91)))));
+            this.ThanhToanButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ThanhToanButton.ForeColor = System.Drawing.Color.White;
+            this.ThanhToanButton.Location = new System.Drawing.Point(44, 739);
+            this.ThanhToanButton.Name = "ThanhToanButton";
+            this.ThanhToanButton.Size = new System.Drawing.Size(172, 41);
+            this.ThanhToanButton.TabIndex = 24;
+            this.ThanhToanButton.Text = "Thanh Toán";
+            this.ThanhToanButton.UseVisualStyleBackColor = false;
+            this.ThanhToanButton.Click += new System.EventHandler(this.ThanhToanButton_Click);
             // 
             // label8
             // 
@@ -235,12 +387,12 @@
             this.DonHangDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DonHangDataGrid.Location = new System.Drawing.Point(14, 133);
             this.DonHangDataGrid.Name = "DonHangDataGrid";
-            this.DonHangDataGrid.ReadOnly = true;
             this.DonHangDataGrid.RowHeadersWidth = 51;
             this.DonHangDataGrid.RowTemplate.Height = 24;
             this.DonHangDataGrid.Size = new System.Drawing.Size(482, 251);
             this.DonHangDataGrid.TabIndex = 1;
             this.DonHangDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.DonHangDataGrid.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DonHangDataGrid_CellEndEdit);
             // 
             // label3
             // 
@@ -282,158 +434,6 @@
             this.panel2.Size = new System.Drawing.Size(925, 71);
             this.panel2.TabIndex = 8;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(34, 23);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(86, 21);
-            this.label9.TabIndex = 23;
-            this.label9.Text = "Tổng tiền:";
-            // 
-            // ThanhToanButton
-            // 
-            this.ThanhToanButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(113)))), ((int)(((byte)(91)))));
-            this.ThanhToanButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ThanhToanButton.ForeColor = System.Drawing.Color.White;
-            this.ThanhToanButton.Location = new System.Drawing.Point(44, 739);
-            this.ThanhToanButton.Name = "ThanhToanButton";
-            this.ThanhToanButton.Size = new System.Drawing.Size(150, 41);
-            this.ThanhToanButton.TabIndex = 24;
-            this.ThanhToanButton.Text = "Thanh Toán";
-            this.ThanhToanButton.UseVisualStyleBackColor = false;
-            this.ThanhToanButton.Click += new System.EventHandler(this.ThanhToanButton_Click);
-            // 
-            // XoaButton
-            // 
-            this.XoaButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(113)))), ((int)(((byte)(91)))));
-            this.XoaButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.XoaButton.ForeColor = System.Drawing.Color.White;
-            this.XoaButton.Location = new System.Drawing.Point(330, 739);
-            this.XoaButton.Name = "XoaButton";
-            this.XoaButton.Size = new System.Drawing.Size(150, 41);
-            this.XoaButton.TabIndex = 25;
-            this.XoaButton.Text = "Xóa";
-            this.XoaButton.UseVisualStyleBackColor = false;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(359, 444);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(19, 16);
-            this.label10.TabIndex = 26;
-            this.label10.Text = "%";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(34, 70);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(54, 21);
-            this.label11.TabIndex = 27;
-            this.label11.Text = "Giảm:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(34, 115);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(76, 21);
-            this.label12.TabIndex = 28;
-            this.label12.Text = "Phải thu:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(34, 162);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(95, 21);
-            this.label13.TabIndex = 29;
-            this.label13.Text = "Khách đưa:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(34, 208);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(81, 21);
-            this.label14.TabIndex = 30;
-            this.label14.Text = "Tiền thối:";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.TienThoiTextBox);
-            this.groupBox1.Controls.Add(this.KhachDuaTextBox);
-            this.groupBox1.Controls.Add(this.PhaiThuTextBox);
-            this.groupBox1.Controls.Add(this.GiamTextBox);
-            this.groupBox1.Controls.Add(this.TongTienTextBox);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Location = new System.Drawing.Point(44, 478);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(436, 255);
-            this.groupBox1.TabIndex = 31;
-            this.groupBox1.TabStop = false;
-            // 
-            // TongTienTextBox
-            // 
-            this.TongTienTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TongTienTextBox.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TongTienTextBox.Location = new System.Drawing.Point(128, 20);
-            this.TongTienTextBox.Name = "TongTienTextBox";
-            this.TongTienTextBox.ReadOnly = true;
-            this.TongTienTextBox.Size = new System.Drawing.Size(280, 28);
-            this.TongTienTextBox.TabIndex = 32;
-            // 
-            // GiamTextBox
-            // 
-            this.GiamTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.GiamTextBox.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GiamTextBox.Location = new System.Drawing.Point(128, 67);
-            this.GiamTextBox.Name = "GiamTextBox";
-            this.GiamTextBox.ReadOnly = true;
-            this.GiamTextBox.Size = new System.Drawing.Size(280, 28);
-            this.GiamTextBox.TabIndex = 33;
-            // 
-            // PhaiThuTextBox
-            // 
-            this.PhaiThuTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PhaiThuTextBox.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PhaiThuTextBox.Location = new System.Drawing.Point(128, 112);
-            this.PhaiThuTextBox.Name = "PhaiThuTextBox";
-            this.PhaiThuTextBox.ReadOnly = true;
-            this.PhaiThuTextBox.Size = new System.Drawing.Size(280, 28);
-            this.PhaiThuTextBox.TabIndex = 34;
-            // 
-            // KhachDuaTextBox
-            // 
-            this.KhachDuaTextBox.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.KhachDuaTextBox.Location = new System.Drawing.Point(128, 159);
-            this.KhachDuaTextBox.Name = "KhachDuaTextBox";
-            this.KhachDuaTextBox.Size = new System.Drawing.Size(280, 28);
-            this.KhachDuaTextBox.TabIndex = 35;
-            this.KhachDuaTextBox.TextChanged += new System.EventHandler(this.KhachDuaTextBox_TextChanged);
-            this.KhachDuaTextBox.Leave += new System.EventHandler(this.KhachDuaTextBox_Leave);
-            // 
-            // TienThoiTextBox
-            // 
-            this.TienThoiTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TienThoiTextBox.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TienThoiTextBox.Location = new System.Drawing.Point(128, 205);
-            this.TienThoiTextBox.Name = "TienThoiTextBox";
-            this.TienThoiTextBox.ReadOnly = true;
-            this.TienThoiTextBox.Size = new System.Drawing.Size(280, 28);
-            this.TienThoiTextBox.TabIndex = 36;
-            // 
             // BanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -450,11 +450,11 @@
             this.Load += new System.EventHandler(this.BanHang_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DonHangDataGrid)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -104,6 +104,19 @@ namespace DoAnCuoiKi
         private void LoadGioHang()
         {
             DonHangDataGrid.DataSource = gioHangs.ToList();
+
+            foreach (DataGridViewColumn column in DonHangDataGrid.Columns)
+            {
+                if (column.Name == "SoLuong")
+                {
+                    column.ReadOnly = false;
+                }
+                else
+                {
+                    column.ReadOnly = true; 
+                }
+            }
+
             LoadGia();
         }
 
@@ -321,6 +334,34 @@ namespace DoAnCuoiKi
             }
         }
 
+        // Chức năng thay đổi số lượng trong sản phẩm
+        private void DonHangDataGrid_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+            int columnIndex = e.ColumnIndex;
+
+            // Kiểm tra nếu cột là "SoLuong"
+            if (DonHangDataGrid.Columns[columnIndex].Name == "SoLuong")
+            {
+                try
+                {
+                    int soLuong = int.Parse(DonHangDataGrid.Rows[rowIndex].Cells["SoLuong"].Value.ToString());
+                    var ma = DonHangDataGrid.Rows[rowIndex].Cells["MaSP"].Value.ToString();
+                    decimal donGia = db.SANPHAMs.Where(x => x.MaSP == ma).Select(x => x.GiaBan).FirstOrDefault();
+
+                    decimal thanhTien = soLuong * donGia;
+
+                    DonHangDataGrid.Rows[rowIndex].Cells["ThanhTien"].Value = thanhTien;
+
+                    LoadGia();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Dữ liệu không hợp lệ. Vui lòng nhập số hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
         private void ThanhToanButton_Click(object sender, EventArgs e)
         {
 
@@ -352,5 +393,7 @@ namespace DoAnCuoiKi
         {
 
         }
+
+        
     }
 }
