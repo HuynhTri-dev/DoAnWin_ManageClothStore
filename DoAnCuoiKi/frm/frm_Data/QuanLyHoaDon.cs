@@ -18,8 +18,18 @@ namespace DoAnCuoiKi.frm.frm_Data
     public partial class QuanLyHoaDon : Form
     {
         CuaHangDB db = new CuaHangDB();
-        List<HOADON> dataGrid;
-        List<HOADON> filterList;
+        public class HoaDon
+        {
+            public string MaHD { get; set; }
+            public DateTime NgayLap { get; set; }
+            public decimal TongTien { get; set; }
+            public string PhuongThucThanhToan { get; set; }
+            public string MaNV { get; set; }
+            public string MaDH { get; set; }
+            public string GhiChu { get; set; }
+            
+        }
+        List<HoaDon> filterList = new List<HoaDon>();
         public QuanLyHoaDon()
         {
             InitializeComponent();
@@ -33,38 +43,45 @@ namespace DoAnCuoiKi.frm.frm_Data
 
         private void LoadData()
         {
-            var thongTin = db.HOADONs.ToList();
-            dataGrid = filterList = thongTin;
-            HoaDonAdvance.DataSource = dataGrid;
-        }
+            var thongTin = db.HOADONs.Select(x => new {x.MaHD, x.NgayLap, x.TongTien,x.PhuongThucThanhToan,x.MaNV,x.MaDH, x.GhiChu}).ToList();
 
-        private void HoaDonAdvance_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            foreach (var th in thongTin)
+            {
+                HoaDon hd = new HoaDon()
+                { MaHD = th.MaHD, 
+                  NgayLap = th.NgayLap, 
+                  TongTien = th.TongTien, 
+                  PhuongThucThanhToan = th.PhuongThucThanhToan, 
+                  MaNV = th.MaNV, 
+                  MaDH = th.MaDH, 
+                  GhiChu = th.GhiChu 
+                };
+                filterList.Add(hd);
+            }
+            
+            HoaDonAdvance.DataSource = thongTin;
         }
 
         private void HoaDonAdvance_FilterStringChanged(object sender, AdvancedDataGridView.FilterEventArgs e)
         {
+
+
             try
             {
                 if (string.IsNullOrEmpty(HoaDonAdvance.FilterString) == true)
                 {
-                    filterList = dataGrid;
-                    HoaDonAdvance.DataSource = dataGrid;
-
+                    LoadData();
                 }
                 else
                 {
                     var listfilter = FilterStringconverter(HoaDonAdvance.FilterString);
-
                     filterList = filterList.AsQueryable().Where(listfilter).ToList();
-
                     HoaDonAdvance.DataSource = filterList;
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message + " - " + MethodBase.GetCurrentMethod().Name);
+                MessageBox.Show(ex.Message + " - " + MethodBase.GetCurrentMethod().Name, "Thông báo");
             }
         }
         private string FilterStringconverter(string filter)
@@ -101,5 +118,112 @@ namespace DoAnCuoiKi.frm.frm_Data
             return newColFilter.Replace("'", "\"");
         }
 
+        private void HoaDonAdvance_SortStringChanged(object sender, AdvancedDataGridView.SortEventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(HoaDonAdvance.SortString) == true)
+                    return;
+
+                var sortStr = HoaDonAdvance.SortString.Replace("[", "").Replace("]", "");
+
+                if (string.IsNullOrEmpty(HoaDonAdvance.FilterString) == true)
+                {
+                    HoaDonAdvance.DataSource = db.HOADONs.AsQueryable().OrderBy(sortStr).ToList();
+                }
+                else
+                {
+                    filterList = filterList.AsQueryable().OrderBy(sortStr).ToList();
+                    HoaDonAdvance.DataSource = filterList;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " - " + MethodBase.GetCurrentMethod().Name, "Thông báo");
+            }
+        }
+
+        private void HoaDonAdvance_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var row = HoaDonAdvance.Rows[e.RowIndex];
+                var maSo = row.Cells["MaDH"].Value.ToString();
+                if (!string.IsNullOrEmpty(maSo))
+                {
+                    var thongTin = db.DonHangs.FirstOrDefault(x => x.MaDH == maSo);
+
+                    if (thongTin != null)
+                    {
+                        MaDHText.Text = thongTin.MaDH;
+                        NgayLap.Value = thongTin.NgayLapDon;
+                        LoaiDHText.Text = thongTin.LoaiDH;  
+                        MaKHText.Text = thongTin?.MaKH;
+                        MaNVText.Text = thongTin.MaNV;
+                        MaKMText.Text = thongTin.MaKM;
+                    }
+
+                    var data = db.CHITIETDONHANGs.Where(x => x.MaDH == maSo).Select(x => new { x.MaSP, x.SoLuong}).ToList();
+                    CTDHDataGrid.DataSource = data;
+                }
+            }
+        }
+
+        private void XoaButton_Click(object sender, EventArgs e)
+        {
+            var maDH = db.DonHangs.FirstOrDefault(x => x.MaDH == MaDHText.Text);
+            var maHD = db.HOADONs.FirstOrDefault(x => x.MaDH == maDH.MaDH);
+            if (maDH != null && maHD != null)
+            {
+                var chiTietDH = db.CHITIETDONHANGs.Where(x => x.MaDH == maDH.MaDH).ToList();
+                DialogResult dlg = MessageBox.Show("Xóa thông tin đơn hàng này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dlg == DialogResult.Yes)
+                {
+                    db.HOADONs.Remove(maHD);
+                    foreach(var ct in chiTietDH)
+                    {
+                        db.CHITIETDONHANGs.Remove(ct);
+                    }
+                    db.DonHangs.Remove(maDH);
+
+                    db.SaveChanges();
+                    MessageBox.Show("Xóa thành công", "Thông báo");
+                    LoadData();
+                    ClearField();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không có thông tin đon hàng này.");
+            }
+        }
+
+        private void ClearField()
+        {
+            MaDHText.Clear();
+            NgayLap.Value = DateTime.Now;
+            LoaiDHText.Clear();
+            MaKHText.Clear();
+            MaNVText.Clear();
+            MaKMText.Clear();
+            CTDHDataGrid.DataSource = null;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

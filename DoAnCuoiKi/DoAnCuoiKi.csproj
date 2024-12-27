@@ -297,5 +297,8 @@
   <ItemGroup>
     <None Include="Resources\istockphoto-1342842799-612x612.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quanLyDHicon.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

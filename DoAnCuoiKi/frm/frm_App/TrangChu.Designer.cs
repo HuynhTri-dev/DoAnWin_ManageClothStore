@@ -70,7 +70,7 @@
             this.btnStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStaff.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStaff.ForeColor = System.Drawing.Color.White;
-            this.btnStaff.Location = new System.Drawing.Point(-1, 404);
+            this.btnStaff.Location = new System.Drawing.Point(-1, 379);
             this.btnStaff.Name = "btnStaff";
             this.btnStaff.Size = new System.Drawing.Size(203, 47);
             this.btnStaff.TabIndex = 1;
@@ -106,11 +106,11 @@
             this.btnBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBill.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBill.ForeColor = System.Drawing.Color.White;
-            this.btnBill.Location = new System.Drawing.Point(-1, 457);
+            this.btnBill.Location = new System.Drawing.Point(-1, 326);
             this.btnBill.Name = "btnBill";
             this.btnBill.Size = new System.Drawing.Size(203, 47);
             this.btnBill.TabIndex = 3;
-            this.btnBill.Text = "Đơn Hàng";
+            this.btnBill.Text = "Giao Hàng";
             this.btnBill.UseVisualStyleBackColor = false;
             this.btnBill.Click += new System.EventHandler(this.btnBill_Click);
             // 
@@ -160,7 +160,7 @@
             this.btnRevenue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRevenue.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRevenue.ForeColor = System.Drawing.Color.White;
-            this.btnRevenue.Location = new System.Drawing.Point(-1, 538);
+            this.btnRevenue.Location = new System.Drawing.Point(-1, 432);
             this.btnRevenue.Name = "btnRevenue";
             this.btnRevenue.Size = new System.Drawing.Size(203, 47);
             this.btnRevenue.TabIndex = 5;

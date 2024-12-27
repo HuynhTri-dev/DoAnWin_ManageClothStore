@@ -535,7 +535,7 @@ namespace DoAnCuoiKi
 
             if (checkTonTai == null)
             {
-                return maDH;
+                return maHD;
             }
             else
             {
