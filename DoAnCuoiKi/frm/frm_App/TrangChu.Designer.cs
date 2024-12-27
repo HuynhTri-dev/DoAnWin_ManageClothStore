@@ -38,6 +38,7 @@
             this.exitButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.HoaDonButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnHome
@@ -51,7 +52,7 @@
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.Color.White;
-            this.btnHome.Location = new System.Drawing.Point(0, 41);
+            this.btnHome.Location = new System.Drawing.Point(-1, 41);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(203, 47);
             this.btnHome.TabIndex = 0;
@@ -69,7 +70,7 @@
             this.btnStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStaff.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStaff.ForeColor = System.Drawing.Color.White;
-            this.btnStaff.Location = new System.Drawing.Point(0, 404);
+            this.btnStaff.Location = new System.Drawing.Point(-1, 404);
             this.btnStaff.Name = "btnStaff";
             this.btnStaff.Size = new System.Drawing.Size(203, 47);
             this.btnStaff.TabIndex = 1;
@@ -87,7 +88,7 @@
             this.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomers.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomers.ForeColor = System.Drawing.Color.White;
-            this.btnCustomers.Location = new System.Drawing.Point(0, 305);
+            this.btnCustomers.Location = new System.Drawing.Point(-1, 220);
             this.btnCustomers.Name = "btnCustomers";
             this.btnCustomers.Size = new System.Drawing.Size(203, 47);
             this.btnCustomers.TabIndex = 2;
@@ -105,7 +106,7 @@
             this.btnBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBill.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBill.ForeColor = System.Drawing.Color.White;
-            this.btnBill.Location = new System.Drawing.Point(0, 457);
+            this.btnBill.Location = new System.Drawing.Point(-1, 457);
             this.btnBill.Name = "btnBill";
             this.btnBill.Size = new System.Drawing.Size(203, 47);
             this.btnBill.TabIndex = 3;
@@ -123,7 +124,7 @@
             this.btnProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProduct.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProduct.ForeColor = System.Drawing.Color.White;
-            this.btnProduct.Location = new System.Drawing.Point(0, 114);
+            this.btnProduct.Location = new System.Drawing.Point(-1, 114);
             this.btnProduct.Name = "btnProduct";
             this.btnProduct.Size = new System.Drawing.Size(203, 47);
             this.btnProduct.TabIndex = 4;
@@ -141,7 +142,7 @@
             this.btnWarehouse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWarehouse.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWarehouse.ForeColor = System.Drawing.Color.White;
-            this.btnWarehouse.Location = new System.Drawing.Point(0, 167);
+            this.btnWarehouse.Location = new System.Drawing.Point(-1, 167);
             this.btnWarehouse.Name = "btnWarehouse";
             this.btnWarehouse.Size = new System.Drawing.Size(203, 47);
             this.btnWarehouse.TabIndex = 5;
@@ -159,7 +160,7 @@
             this.btnRevenue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRevenue.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRevenue.ForeColor = System.Drawing.Color.White;
-            this.btnRevenue.Location = new System.Drawing.Point(0, 538);
+            this.btnRevenue.Location = new System.Drawing.Point(-1, 538);
             this.btnRevenue.Name = "btnRevenue";
             this.btnRevenue.Size = new System.Drawing.Size(203, 47);
             this.btnRevenue.TabIndex = 5;
@@ -176,7 +177,7 @@
             this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exitButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitButton.ForeColor = System.Drawing.Color.White;
-            this.exitButton.Location = new System.Drawing.Point(0, 614);
+            this.exitButton.Location = new System.Drawing.Point(-1, 614);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(203, 47);
             this.exitButton.TabIndex = 6;
@@ -210,6 +211,24 @@
             this.panel1.Tag = "";
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // HoaDonButton
+            // 
+            this.HoaDonButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(113)))), ((int)(((byte)(91)))));
+            this.HoaDonButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(113)))), ((int)(((byte)(91)))));
+            this.HoaDonButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(225)))), ((int)(((byte)(213)))));
+            this.HoaDonButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(225)))), ((int)(((byte)(213)))));
+            this.HoaDonButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(225)))), ((int)(((byte)(213)))));
+            this.HoaDonButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.HoaDonButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HoaDonButton.ForeColor = System.Drawing.Color.White;
+            this.HoaDonButton.Location = new System.Drawing.Point(-1, 273);
+            this.HoaDonButton.Name = "HoaDonButton";
+            this.HoaDonButton.Size = new System.Drawing.Size(203, 47);
+            this.HoaDonButton.TabIndex = 7;
+            this.HoaDonButton.Text = "Hóa Đơn";
+            this.HoaDonButton.UseVisualStyleBackColor = false;
+            this.HoaDonButton.Click += new System.EventHandler(this.HoaDonButton_Click);
+            // 
             // TrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -229,6 +248,7 @@
             this.Controls.Add(this.btnCustomers);
             this.Controls.Add(this.btnStaff);
             this.Controls.Add(this.btnProduct);
+            this.Controls.Add(this.HoaDonButton);
             this.Name = "TrangChu";
             this.Text = "Trang Chủ";
             this.Load += new System.EventHandler(this.TrangChu_Load);
@@ -249,5 +269,6 @@
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button HoaDonButton;
     }
 }

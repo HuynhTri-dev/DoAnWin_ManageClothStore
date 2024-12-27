@@ -127,6 +127,13 @@ namespace DoAnCuoiKi
         {
 
         }
+
+        private void HoaDonButton_Click(object sender, EventArgs e)
+        {
+            this.Text = "Quản lý hóa đơn";
+
+            OpenChildForm(new QuanLyHoaDon());
+        }
     }
 }
 

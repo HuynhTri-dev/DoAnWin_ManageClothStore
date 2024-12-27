@@ -1,4 +1,5 @@
-﻿using DoAnCuoiKi.model;
+﻿using DoAnCuoiKi.frm.frm_ThanhToan;
+using DoAnCuoiKi.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,11 @@ namespace DoAnCuoiKi
     {
         // Kết nối database
         CuaHangDB db = new CuaHangDB();
+
+        // Gia tien
+        public decimal PhaiThu = 0;
+        public string MaDonHang = "";
+        public string PhuongThuc = "Tiền mặt";
 
         // Tạo list giỏi hàng
         public class Hang
@@ -52,9 +58,9 @@ namespace DoAnCuoiKi
             }
             LoadComboKhuyenMai();
             GiaTriTextBox.Text = "0";
-            LoadMaHoaDon();
+            LoadMaDonHang();
             LoadGioHang();
-            LoadProducts(); 
+            LoadProducts();
 
             // Group
             TongTienTextBox.Text = "0";
@@ -69,7 +75,7 @@ namespace DoAnCuoiKi
         {
             var khuyenMais = db.KHUYENMAIs.Select(x => x.TenKM).ToList();
 
-            foreach(var km in khuyenMais)
+            foreach (var km in khuyenMais)
             {
                 MaKMComboBox.Items.Add(km);
             }
@@ -82,24 +88,32 @@ namespace DoAnCuoiKi
             GiaTriTextBox.Text = giaTri.ToString();
             LoadGia();
         }
+
         //Load mã hoá đơn
-        private void LoadMaHoaDon()
+        private void LoadMaDonHang()
         {
-            var lastMaHD = db.DonHangs  
-                             .OrderByDescending(h => h.MaDH) 
-                             .Select(h => h.MaDH)          
-                             .FirstOrDefault();             
+            var lastMaHD = db.DonHangs
+                             .OrderByDescending(h => h.MaDH)
+                             .Select(h => h.MaDH)
+                             .FirstOrDefault();
 
             string newMaHD = "DH0001";
 
             if (!string.IsNullOrEmpty(lastMaHD))
             {
                 int numberPart = int.Parse(lastMaHD.Substring(2));
-                newMaHD = "DH" + (numberPart + 1).ToString("D4"); 
+                newMaHD = "DH" + (numberPart + 1).ToString("D4");
             }
 
-            MaDHTextBox.Text = newMaHD;
+            MaDonHang = newMaHD;
+            MaDHTextBox.Text = MaDonHang;
         }
+        // cập nhật lại giá trị mã hóa đơn
+        private void MaDHTextBox_TextChanged(object sender, EventArgs e)
+        {
+            MaDonHang = MaDHTextBox.Text;
+        }
+
         // Load bảng datagrid giỏ hàng
         private void LoadGioHang()
         {
@@ -113,13 +127,12 @@ namespace DoAnCuoiKi
                 }
                 else
                 {
-                    column.ReadOnly = true; 
+                    column.ReadOnly = true;
                 }
             }
 
             LoadGia();
         }
-
 
         private void LoadGia()
         {
@@ -138,8 +151,8 @@ namespace DoAnCuoiKi
                 giamGia = tongTien * (decimal)(giam / 100);
                 GiamTextBox.Text = giamGia.ToString("0.##");
             }
-
-            PhaiThuTextBox.Text = (tongTien - giamGia).ToString("0.##");
+            PhaiThu = tongTien - giamGia;
+            PhaiThuTextBox.Text = (PhaiThu).ToString("0.##");
         }
 
         private void LoadProducts()
@@ -165,7 +178,7 @@ namespace DoAnCuoiKi
 
             foreach (var product in products)
             {
-                
+
 
                 // Tạo Panel cho mỗi sản phẩm
                 Panel productPanel = new Panel
@@ -218,7 +231,7 @@ namespace DoAnCuoiKi
                 };
 
                 //Thêm các chức năng của các label và img, button
-                moreInfo.Click += (s,e) => ShowProductDetails(product.MaSP);
+                moreInfo.Click += (s, e) => ShowProductDetails(product.MaSP);
                 productImage.Click += (s, e) => ThemVaoGioHang(product.MaSP, product.TenSP, product.GiaBan);
                 productName.Click += (s, e) => ThemVaoGioHang(product.MaSP, product.TenSP, product.GiaBan);
                 soLuong.Click += (s, e) => ThemVaoGioHang(product.MaSP, product.TenSP, product.GiaBan);
@@ -237,7 +250,7 @@ namespace DoAnCuoiKi
                     Label soldOut = new Label()
                     {
                         Size = new Size(200, 50),
-                       
+
                         BackColor = Color.Red,
                         Text = "Sold Out",
                         ForeColor = Color.White,
@@ -324,12 +337,12 @@ namespace DoAnCuoiKi
                 else
                 {
                     TienThoiTextBox.Text = "0";
-                    MessageBox.Show("Khách đưa chưa đủ", "Thông báo");  
+                    MessageBox.Show("Khách đưa chưa đủ", "Thông báo");
                 }
             }
             else
             {
-                
+
                 MessageBox.Show("Giá trị không đúng", "Thông báo");
             }
         }
@@ -362,9 +375,173 @@ namespace DoAnCuoiKi
             }
         }
 
+        // Nut tao qr
+
+        private void MaQRButton_Click(object sender, EventArgs e)
+        {
+            TaoQR taoQR = new TaoQR(MaDonHang, PhaiThu);
+            DialogResult dr = taoQR.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                PhuongThuc = "Momo";
+                MessageBox.Show("Thanh toán thành công", "Thông báo");
+            }
+        }
+
+        private void XoaButton_Click(object sender, EventArgs e)
+        {
+            if (DonHangDataGrid.SelectedCells.Count > 0)
+            {
+                var selectedCell = DonHangDataGrid.SelectedCells[0];
+
+                var selectedRow = selectedCell.OwningRow;
+
+                var productId = selectedRow.Cells["MaSP"].Value.ToString();
+
+
+                var productToRemove = gioHangs.FirstOrDefault(p => p.MaSP == productId);
+
+                if (productToRemove != null)
+                {
+                    gioHangs.Remove(productToRemove);
+
+                    // Cập nhật lại DataGridView
+                    DonHangDataGrid.Refresh();
+                    LoadGioHang();
+                }
+                else
+                {
+                    MessageBox.Show("Sản phẩm không tìm thấy trong giỏ hàng.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Hãy chọn hàng muốn xóa");
+            }
+        }
+
         private void ThanhToanButton_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(MaDHTextBox.Text) 
+                || string.IsNullOrEmpty(MaNVTextBox.Text) 
+                || string.IsNullOrEmpty(NgayLapDatePicker.Value.ToString()) 
+                || LoaiDHComboBox.SelectedItem == null 
+                || string.IsNullOrEmpty(PhaiThuTextBox.Text) 
+                || string.IsNullOrEmpty(PhuongThuc))
+            {
+                MessageBox.Show("Thông tin chưa đầy đủ", "Thông báo");
+                return;
+            }
 
+            if (gioHangs == null || gioHangs.Count == 0) 
+            { 
+                MessageBox.Show("Không có sản phẩm trong giỏ hàng", "Thông báo"); 
+                return; 
+            }
+
+            if (PhuongThuc == "Tiền mặt" && string.IsNullOrEmpty(KhachDuaTextBox.Text))
+            {
+                MessageBox.Show("Chưa thu tiền khách", "Thông báo");
+                return;
+            }
+
+            string maKM = null;
+            if (MaKMComboBox.SelectedItem != null)
+            {
+                maKM = db.KHUYENMAIs
+                          .Where(x => x.TenKM == MaKMComboBox.SelectedItem.ToString())
+                          .Select(x => x.MaKM)
+                          .FirstOrDefault();
+            }
+
+            try
+            {
+                // Sau đó lưu dữ liệu
+                // Luu don truoc
+                DonHang dh = new DonHang()
+                {
+                    MaDH = MaDHTextBox.Text,
+                    NgayLapDon = NgayLapDatePicker.Value,
+                    LoaiDH = LoaiDHComboBox.SelectedItem.ToString() == "Online" ? "ON" : "OF",
+                    MaKH = string.IsNullOrEmpty(MaKHTextBox.Text) ? null : MaKHTextBox.Text,
+                    MaNV = MaNVTextBox.Text,
+                    MaKM = string.IsNullOrEmpty(maKM) ? null : maKM
+                };
+
+                db.DonHangs.Add(dh);
+                //db.SaveChanges();
+
+                // Luu chi tiet don
+                foreach (var sanPham in gioHangs)
+                {
+                    if (sanPham.SoLuong > byte.MaxValue)
+                    {
+                        MessageBox.Show("Số lượng sản phẩm quá lớn", "Thông báo");
+                        return;
+                    }
+
+                    CHITIETDONHANG ctdh = new CHITIETDONHANG()
+                    {
+                        MaDH = MaDHTextBox.Text,
+                        MaSP = sanPham.MaSP,
+                        SoLuong = sanPham.SoLuong
+                    };
+                    db.CHITIETDONHANGs.Add(ctdh);
+                    //db.SaveChanges();
+                }
+
+                // Lưu hóa đơn
+                HOADON hd = new HOADON()
+                {
+                    MaHD = LoadMaHoaDon(),
+                    NgayLap = NgayLapDatePicker.Value,
+                    TongTien = decimal.Parse(PhaiThuTextBox.Text),
+                    PhuongThucThanhToan = PhuongThuc,
+                    GhiChu = GhiChuRichText.Text,
+                    MaNV = MaNVTextBox.Text,
+                    MaDH = MaDHTextBox.Text
+                };
+                db.HOADONs.Add(hd);
+                db.SaveChanges();
+                ResetGioHang();
+                MessageBox.Show("Hoàn thành đơn hàng", "Thông báo");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi lưu dữ liệu: {ex.Message}", "Thông báo");
+                return;
+            }
+        }
+
+        private void ResetGioHang()
+        {
+            LoadMaDonHang();
+            NgayLapDatePicker.Value = DateTime.Now;
+            gioHangs.Clear();
+            LoadGioHang();
+            MaKHTextBox.Clear();
+            MaKMComboBox.SelectedIndex = -1;
+            LoaiDHComboBox.SelectedIndex = -1;
+            GhiChuRichText.Clear();
+        }
+
+        // Tao mã hóa đơn
+        private string LoadMaHoaDon()
+        {
+            string maDH = MaDHTextBox.Text;
+            var maHD = "HD" + maDH.Substring(2);
+
+            var checkTonTai = db.HOADONs.FirstOrDefault(s => s.MaHD == maHD);
+
+            if (checkTonTai == null)
+            {
+                return maDH;
+            }
+            else
+            {
+                MessageBox.Show("Mã hóa đơn đã tồn tại","Thông báo");
+                return string.Empty;
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -390,6 +567,11 @@ namespace DoAnCuoiKi
         
 
         private void KhachDuaTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }

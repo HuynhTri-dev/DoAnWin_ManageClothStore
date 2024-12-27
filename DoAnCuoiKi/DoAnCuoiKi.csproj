@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AdvancedDataGridView, Version=1.2.30017.16, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DG.AdvancedDataGridView.1.2.30017.16\lib\net40\AdvancedDataGridView.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -47,8 +50,12 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Linq.Dynamic.Core, Version=1.5.1.0, Culture=neutral, PublicKeyToken=0f07ec44de6ac832, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.Core.1.5.1\lib\net46\System.Linq.Dynamic.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -109,21 +116,33 @@
     <Compile Include="frm\frm_Data\frm_ChildSanPham\NhanHieu.Designer.cs">
       <DependentUpon>NhanHieu.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm\frm_Data\QuanLyHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\frm_Data\QuanLyHoaDon.Designer.cs">
+      <DependentUpon>QuanLyHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm\frm_Data\QuanLyKhuyenMai.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm\frm_Data\QuanLyKhuyenMai.Designer.cs">
       <DependentUpon>QuanLyKhuyenMai.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm\frm_ThanhToan\TaoQR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\frm_ThanhToan\TaoQR.Designer.cs">
+      <DependentUpon>TaoQR.cs</DependentUpon>
+    </Compile>
     <Compile Include="model\CHATLIEU.cs" />
     <Compile Include="model\CHITIETDONHANG.cs" />
+    <Compile Include="model\CuaHangDB.cs" />
     <Compile Include="model\DANHMUC.cs" />
     <Compile Include="model\DonHang.cs" />
     <Compile Include="model\HOADON.cs" />
     <Compile Include="model\KHACHHANG.cs" />
     <Compile Include="model\KHUYENMAI.cs" />
     <Compile Include="model\MAU.cs" />
-    <Compile Include="model\CuaHangDB.cs" />
     <Compile Include="model\NHACUNGCAP.cs" />
     <Compile Include="model\NHANVIEN.cs" />
     <Compile Include="model\PHIEUGIAOHANG.cs" />
@@ -195,6 +214,9 @@
     <EmbeddedResource Include="frm\frm_Data\frm_ChildSanPham\NhanHieu.resx">
       <DependentUpon>NhanHieu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm\frm_Data\QuanLyHoaDon.resx">
+      <DependentUpon>QuanLyHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm\frm_Data\QuanLyKhuyenMai.resx">
       <DependentUpon>QuanLyKhuyenMai.cs</DependentUpon>
     </EmbeddedResource>
@@ -209,6 +231,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm\frm_Data\QuanLySanPham.resx">
       <DependentUpon>QuanLySanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm\frm_ThanhToan\TaoQR.resx">
+      <DependentUpon>TaoQR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -263,6 +288,14 @@
   <ItemGroup>
     <None Include="Resources\dau cong.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\tải xuống.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="frm\frm_BaoCao\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\istockphoto-1342842799-612x612.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

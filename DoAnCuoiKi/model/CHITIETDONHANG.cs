@@ -19,7 +19,7 @@ namespace DoAnCuoiKi.model
         [StringLength(6)]
         public string MaSP { get; set; }
 
-        public byte SoLuong { get; set; }
+        public int SoLuong { get; set; }
 
         public virtual DonHang DonHang { get; set; }
 
