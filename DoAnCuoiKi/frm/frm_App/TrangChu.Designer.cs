@@ -191,7 +191,7 @@
             this.panel2.AutoScroll = true;
             this.panel2.AutoSize = true;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(225)))), ((int)(((byte)(213)))));
-            this.panel2.Location = new System.Drawing.Point(199, -1);
+            this.panel2.Location = new System.Drawing.Point(199, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1233, 703);
             this.panel2.TabIndex = 2;

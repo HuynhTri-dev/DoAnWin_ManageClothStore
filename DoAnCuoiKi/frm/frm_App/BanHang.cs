@@ -1,4 +1,5 @@
-﻿using DoAnCuoiKi.frm.frm_ThanhToan;
+﻿using DoAnCuoiKi.frm.frm_Data;
+using DoAnCuoiKi.frm.frm_ThanhToan;
 using DoAnCuoiKi.model;
 using System;
 using System.Collections.Generic;
@@ -576,6 +577,11 @@ namespace DoAnCuoiKi
 
         }
 
-        
+        private void GiaoHangButton_Click(object sender, EventArgs e)
+        {
+            ThongTinGiaoHang giaoHang = new ThongTinGiaoHang();
+
+            DialogResult dr = giaoHang.ShowDialog();
+        }
     }
 }

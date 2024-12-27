@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.GiaoHangButton = new System.Windows.Forms.Button();
             this.GhiChuRichText = new System.Windows.Forms.RichTextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -75,6 +76,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.GiaoHangButton);
             this.panel1.Controls.Add(this.GhiChuRichText);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.groupBox1);
@@ -101,6 +103,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(510, 826);
             this.panel1.TabIndex = 5;
+            // 
+            // GiaoHangButton
+            // 
+            this.GiaoHangButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(113)))), ((int)(((byte)(91)))));
+            this.GiaoHangButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GiaoHangButton.ForeColor = System.Drawing.Color.White;
+            this.GiaoHangButton.Location = new System.Drawing.Point(26, 772);
+            this.GiaoHangButton.Name = "GiaoHangButton";
+            this.GiaoHangButton.Size = new System.Drawing.Size(172, 41);
+            this.GiaoHangButton.TabIndex = 34;
+            this.GiaoHangButton.Text = "Giao hàng";
+            this.GiaoHangButton.UseVisualStyleBackColor = false;
+            this.GiaoHangButton.Click += new System.EventHandler(this.GiaoHangButton_Click);
             // 
             // GhiChuRichText
             // 
@@ -276,7 +291,7 @@
             this.ThanhToanButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(113)))), ((int)(((byte)(91)))));
             this.ThanhToanButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ThanhToanButton.ForeColor = System.Drawing.Color.White;
-            this.ThanhToanButton.Location = new System.Drawing.Point(308, 770);
+            this.ThanhToanButton.Location = new System.Drawing.Point(323, 772);
             this.ThanhToanButton.Name = "ThanhToanButton";
             this.ThanhToanButton.Size = new System.Drawing.Size(172, 41);
             this.ThanhToanButton.TabIndex = 24;
@@ -536,5 +551,6 @@
         private System.Windows.Forms.PictureBox MaQRButton;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.RichTextBox GhiChuRichText;
+        private System.Windows.Forms.Button GiaoHangButton;
     }
 }

@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+    <div id="googleMap" style="width:100%;height:450px;"></div>
+
+    <script>
+        function myMap() {
+            var thuDuc = new google.maps.LatLng(10.860385490221637, 106.73663969155784);
+            var thuDuc2 = new google.maps.LatLng(10.858259022311715, 106.72624653253611);
+            var mapProp = {
+                center: thuDuc,
+                zoom: 15,
+            };
+
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+            var marker = new google.maps.Marker({
+                position: thuDuc,
+            });
+
+            var marker2 = new google.maps.Marker({
+                position: thuDuc2,
+            });
+            marker2.setMap(map);
+            marker.setMap(map);
+
+            var thongTin = new google.maps.getBounds();
+        }
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMGi-gemh0_zCdxATofIcE3xVbqYd1U7E&callback=myMap"></script>
+
+</body>
+</html>
