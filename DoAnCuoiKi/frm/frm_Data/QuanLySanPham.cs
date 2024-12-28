@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DoAnCuoiKi.model;
+using static QRCoder.PayloadGenerator.SwissQrCode;
 
 namespace DoAnCuoiKi
 {
@@ -129,16 +130,19 @@ namespace DoAnCuoiKi
 
         private void ThemSuaButton_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(MaSPTextBox.Text)
-                && !string.IsNullOrEmpty(TenSPTextBox.Text)
-                && !string.IsNullOrEmpty(SLTonTextBox.Text)
-                && LoaiSPComboBox.SelectedItem != null
-                && KichCoComboBox.SelectedItem != null
-                && MaNCCComboBox.SelectedItem != null
-                && MauComboBox.SelectedItem != null
-                && MaChatLieuComboBox.SelectedItem != null
-                && NhanHieuComboBox.SelectedItem != null)
+            if (string.IsNullOrEmpty(MaSPTextBox.Text)
+                || string.IsNullOrEmpty(TenSPTextBox.Text)
+                || string.IsNullOrEmpty(SLTonTextBox.Text)
+                || LoaiSPComboBox.SelectedItem == null
+                || KichCoComboBox.SelectedItem == null
+                || MaNCCComboBox.SelectedItem == null
+                || MauComboBox.SelectedItem == null
+                || MaChatLieuComboBox.SelectedItem == null
+                || NhanHieuComboBox.SelectedItem == null)
             {
+                MessageBox.Show("Cần nhập đầy đủ thông tin sản phẩm", "Thông báo");
+                return;
+            }
 
                 if (!decimal.TryParse(GiaNhapTextBox.Text, out decimal giaNhap) || giaNhap < 0)
                 {
@@ -152,6 +156,11 @@ namespace DoAnCuoiKi
                     return;
                 }
 
+                
+            
+
+            try
+            {
                 var sp = db.SANPHAMs.Any(x => x.MaSP == MaSPTextBox.Text);
                 byte[] b = ImageToBytes(anhSPPictureBox.Image);
                 var maDM = db.DANHMUCs.Where(x => x.TenDM == LoaiSPComboBox.SelectedItem.ToString()).Select(x => x.MaDM).FirstOrDefault();
@@ -191,9 +200,9 @@ namespace DoAnCuoiKi
                 LoadForm();
                 ClearFields();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Cần nhập đầy đủ thông tin sản phẩm", "Thông báo");
+                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo");
             }
         }
 
@@ -336,11 +345,11 @@ namespace DoAnCuoiKi
                             chonAnhLabel.Visible = true;
                         }
 
-                        MauComboBox.SelectedItem = thongTin.MAU?.TenMau;
-                        LoaiSPComboBox.SelectedItem = thongTin.DANHMUC?.TenDM;
-                        MaNCCComboBox.SelectedItem = thongTin.NHACUNGCAP?.TenNCC;
-                        MaChatLieuComboBox.SelectedItem = thongTin.CHATLIEU?.TenCL;
-                        NhanHieuComboBox.SelectedItem = thongTin.THUONGHIEU?.TenTH;
+                        MauComboBox.SelectedItem = thongTin.MAU.TenMau;
+                        LoaiSPComboBox.SelectedItem = thongTin.DANHMUC.TenDM;
+                        MaNCCComboBox.SelectedItem = thongTin.NHACUNGCAP.TenNCC;
+                        MaChatLieuComboBox.SelectedItem = thongTin.CHATLIEU.TenCL;
+                        NhanHieuComboBox.SelectedItem = thongTin.THUONGHIEU.TenTH;
                         GiaBanTextBox.Text = thongTin.GiaBan.ToString();
                         GiaNhapTextBox.Text = thongTin.GiaNhap.ToString();
                         MoTaRichTextBox.Text = thongTin.MoTa;

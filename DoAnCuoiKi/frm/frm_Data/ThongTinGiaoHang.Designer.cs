@@ -31,19 +31,21 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.HoanThanhButton = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.PhiText = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.DiaChiText = new System.Windows.Forms.TextBox();
+            this.NgayGiaoDate = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.NgayLapDate = new System.Windows.Forms.DateTimePicker();
+            this.GhiChuText = new System.Windows.Forms.RichTextBox();
+            this.MaPhieuText = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.HoanThanhButton = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.TrangThaiCombo = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -70,76 +72,76 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.TrangThaiCombo);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.PhiText);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
+            this.groupBox1.Controls.Add(this.DiaChiText);
+            this.groupBox1.Controls.Add(this.NgayGiaoDate);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.richTextBox1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.NgayLapDate);
+            this.groupBox1.Controls.Add(this.GhiChuText);
+            this.groupBox1.Controls.Add(this.MaPhieuText);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(28, 120);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(454, 331);
+            this.groupBox1.Size = new System.Drawing.Size(454, 363);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
-            // label2
+            // PhiText
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 31);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 21);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Mã phiếu:";
+            this.PhiText.Location = new System.Drawing.Point(173, 208);
+            this.PhiText.Name = "PhiText";
+            this.PhiText.Size = new System.Drawing.Size(239, 28);
+            this.PhiText.TabIndex = 11;
             // 
-            // textBox1
+            // label7
             // 
-            this.textBox1.Location = new System.Drawing.Point(173, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(239, 28);
-            this.textBox1.TabIndex = 1;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(31, 211);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(38, 21);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Phí:";
             // 
-            // richTextBox1
+            // DiaChiText
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(173, 217);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(200, 96);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
+            this.DiaChiText.Location = new System.Drawing.Point(173, 63);
+            this.DiaChiText.Name = "DiaChiText";
+            this.DiaChiText.Size = new System.Drawing.Size(239, 28);
+            this.DiaChiText.TabIndex = 9;
             // 
-            // dateTimePicker1
+            // NgayGiaoDate
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(173, 100);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(142, 28);
-            this.dateTimePicker1.TabIndex = 3;
+            this.NgayGiaoDate.CustomFormat = "dd/MM/yyyy";
+            this.NgayGiaoDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.NgayGiaoDate.Location = new System.Drawing.Point(173, 171);
+            this.NgayGiaoDate.Name = "NgayGiaoDate";
+            this.NgayGiaoDate.Size = new System.Drawing.Size(142, 28);
+            this.NgayGiaoDate.TabIndex = 8;
             // 
-            // HoanThanhButton
+            // label6
             // 
-            this.HoanThanhButton.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HoanThanhButton.Location = new System.Drawing.Point(323, 471);
-            this.HoanThanhButton.Name = "HoanThanhButton";
-            this.HoanThanhButton.Size = new System.Drawing.Size(117, 44);
-            this.HoanThanhButton.TabIndex = 5;
-            this.HoanThanhButton.Text = "Hoàn thành";
-            this.HoanThanhButton.UseVisualStyleBackColor = true;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(31, 177);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(89, 21);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Ngày giao:";
             // 
-            // label3
+            // label5
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 106);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 21);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Ngày lập:";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(31, 252);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(71, 21);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Ghi chú:";
             // 
             // label4
             // 
@@ -150,61 +152,85 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Địa chỉ:";
             // 
-            // label5
+            // label3
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(31, 220);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 21);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Ghi chú:";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(31, 138);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 21);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Ngày lập:";
             // 
-            // label6
+            // NgayLapDate
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(31, 145);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 21);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Ngày giao:";
+            this.NgayLapDate.CustomFormat = "dd/MM/yyyy";
+            this.NgayLapDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.NgayLapDate.Location = new System.Drawing.Point(173, 132);
+            this.NgayLapDate.Name = "NgayLapDate";
+            this.NgayLapDate.Size = new System.Drawing.Size(142, 28);
+            this.NgayLapDate.TabIndex = 3;
             // 
-            // dateTimePicker2
+            // GhiChuText
             // 
-            this.dateTimePicker2.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(173, 139);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(142, 28);
-            this.dateTimePicker2.TabIndex = 8;
+            this.GhiChuText.Location = new System.Drawing.Point(173, 249);
+            this.GhiChuText.Name = "GhiChuText";
+            this.GhiChuText.Size = new System.Drawing.Size(239, 96);
+            this.GhiChuText.TabIndex = 2;
+            this.GhiChuText.Text = "";
             // 
-            // textBox2
+            // MaPhieuText
             // 
-            this.textBox2.Location = new System.Drawing.Point(173, 63);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(239, 28);
-            this.textBox2.TabIndex = 9;
+            this.MaPhieuText.Location = new System.Drawing.Point(173, 28);
+            this.MaPhieuText.Name = "MaPhieuText";
+            this.MaPhieuText.Size = new System.Drawing.Size(239, 28);
+            this.MaPhieuText.TabIndex = 1;
             // 
-            // textBox3
+            // label2
             // 
-            this.textBox3.Location = new System.Drawing.Point(173, 176);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(239, 28);
-            this.textBox3.TabIndex = 11;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(31, 31);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 21);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Mã phiếu:";
             // 
-            // label7
+            // HoanThanhButton
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(31, 179);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 21);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Phí:";
+            this.HoanThanhButton.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HoanThanhButton.Location = new System.Drawing.Point(357, 489);
+            this.HoanThanhButton.Name = "HoanThanhButton";
+            this.HoanThanhButton.Size = new System.Drawing.Size(125, 44);
+            this.HoanThanhButton.TabIndex = 5;
+            this.HoanThanhButton.Text = "Hoàn thành";
+            this.HoanThanhButton.UseVisualStyleBackColor = true;
+            this.HoanThanhButton.Click += new System.EventHandler(this.HoanThanhButton_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(31, 100);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(86, 21);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "Trạng thái";
+            // 
+            // TrangThaiCombo
+            // 
+            this.TrangThaiCombo.FormattingEnabled = true;
+            this.TrangThaiCombo.Items.AddRange(new object[] {
+            "Chưa giao",
+            "Đang giao",
+            "Hoàn thành"});
+            this.TrangThaiCombo.Location = new System.Drawing.Point(173, 97);
+            this.TrangThaiCombo.Name = "TrangThaiCombo";
+            this.TrangThaiCombo.Size = new System.Drawing.Size(239, 29);
+            this.TrangThaiCombo.TabIndex = 13;
             // 
             // ThongTinGiaoHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(508, 536);
+            this.ClientSize = new System.Drawing.Size(508, 553);
             this.Controls.Add(this.HoanThanhButton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
@@ -224,18 +250,20 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.TextBox DiaChiText;
+        private System.Windows.Forms.DateTimePicker NgayGiaoDate;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DateTimePicker NgayLapDate;
+        private System.Windows.Forms.RichTextBox GhiChuText;
+        private System.Windows.Forms.TextBox MaPhieuText;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button HoanThanhButton;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox PhiText;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox TrangThaiCombo;
+        private System.Windows.Forms.Label label8;
     }
 }

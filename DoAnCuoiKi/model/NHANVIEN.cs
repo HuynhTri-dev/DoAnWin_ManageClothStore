@@ -13,8 +13,6 @@ namespace DoAnCuoiKi.model
         public NHANVIEN()
         {
             DonHangs = new HashSet<DonHang>();
-            HOADONs = new HashSet<HOADON>();
-            PHIEUGIAOHANGs = new HashSet<PHIEUGIAOHANG>();
         }
 
         [Key]
@@ -48,12 +46,6 @@ namespace DoAnCuoiKi.model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DonHang> DonHangs { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOADON> HOADONs { get; set; }
-
         public virtual TAIKHOAN TAIKHOAN { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PHIEUGIAOHANG> PHIEUGIAOHANGs { get; set; }
     }
 }

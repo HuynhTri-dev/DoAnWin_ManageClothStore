@@ -57,11 +57,11 @@
             this.ThongTinKHDataGirdView.AllowUserToAddRows = false;
             this.ThongTinKHDataGirdView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(225)))), ((int)(((byte)(213)))));
             this.ThongTinKHDataGirdView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ThongTinKHDataGirdView.Location = new System.Drawing.Point(43, 353);
+            this.ThongTinKHDataGirdView.Location = new System.Drawing.Point(51, 353);
             this.ThongTinKHDataGirdView.Name = "ThongTinKHDataGirdView";
             this.ThongTinKHDataGirdView.RowHeadersWidth = 51;
             this.ThongTinKHDataGirdView.RowTemplate.Height = 24;
-            this.ThongTinKHDataGirdView.Size = new System.Drawing.Size(1008, 307);
+            this.ThongTinKHDataGirdView.Size = new System.Drawing.Size(1334, 307);
             this.ThongTinKHDataGirdView.TabIndex = 1;
             this.ThongTinKHDataGirdView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ThongTinKHDataGirdView_CellContentClick);
             // 
@@ -191,7 +191,7 @@
             this.panel1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1083, 78);
+            this.panel1.Size = new System.Drawing.Size(1432, 78);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -200,7 +200,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(113)))), ((int)(((byte)(91)))));
             this.label1.Font = new System.Drawing.Font("Tahoma", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(301, 19);
+            this.label1.Location = new System.Drawing.Point(528, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(444, 40);
             this.label1.TabIndex = 0;
@@ -268,12 +268,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1083, 672);
+            this.ClientSize = new System.Drawing.Size(1432, 703);
             this.Controls.Add(this.ThongTinKHDataGirdView);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.Name = "QuanLyKhachHang";
-            this.Text = "v";
             this.Load += new System.EventHandler(this.QuanLyKhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ThongTinKHDataGirdView)).EndInit();
             this.panel1.ResumeLayout(false);

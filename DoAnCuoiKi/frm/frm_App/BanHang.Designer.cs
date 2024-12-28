@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.GiaoHangButton = new System.Windows.Forms.Button();
             this.GhiChuRichText = new System.Windows.Forms.RichTextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -76,7 +75,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.GiaoHangButton);
             this.panel1.Controls.Add(this.GhiChuRichText);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.groupBox1);
@@ -104,25 +102,12 @@
             this.panel1.Size = new System.Drawing.Size(510, 826);
             this.panel1.TabIndex = 5;
             // 
-            // GiaoHangButton
-            // 
-            this.GiaoHangButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(113)))), ((int)(((byte)(91)))));
-            this.GiaoHangButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GiaoHangButton.ForeColor = System.Drawing.Color.White;
-            this.GiaoHangButton.Location = new System.Drawing.Point(26, 772);
-            this.GiaoHangButton.Name = "GiaoHangButton";
-            this.GiaoHangButton.Size = new System.Drawing.Size(172, 41);
-            this.GiaoHangButton.TabIndex = 34;
-            this.GiaoHangButton.Text = "Giao hàng";
-            this.GiaoHangButton.UseVisualStyleBackColor = false;
-            this.GiaoHangButton.Click += new System.EventHandler(this.GiaoHangButton_Click);
-            // 
             // GhiChuRichText
             // 
             this.GhiChuRichText.Location = new System.Drawing.Point(321, 446);
             this.GhiChuRichText.Name = "GhiChuRichText";
             this.GhiChuRichText.Size = new System.Drawing.Size(158, 49);
-            this.GhiChuRichText.TabIndex = 33;
+            this.GhiChuRichText.TabIndex = 4;
             this.GhiChuRichText.Text = "";
             // 
             // label15
@@ -172,7 +157,7 @@
             this.TienThoiTextBox.Name = "TienThoiTextBox";
             this.TienThoiTextBox.ReadOnly = true;
             this.TienThoiTextBox.Size = new System.Drawing.Size(280, 28);
-            this.TienThoiTextBox.TabIndex = 36;
+            this.TienThoiTextBox.TabIndex = 93;
             // 
             // KhachDuaTextBox
             // 
@@ -180,7 +165,7 @@
             this.KhachDuaTextBox.Location = new System.Drawing.Point(128, 159);
             this.KhachDuaTextBox.Name = "KhachDuaTextBox";
             this.KhachDuaTextBox.Size = new System.Drawing.Size(236, 28);
-            this.KhachDuaTextBox.TabIndex = 35;
+            this.KhachDuaTextBox.TabIndex = 5;
             this.KhachDuaTextBox.TextChanged += new System.EventHandler(this.KhachDuaTextBox_TextChanged);
             this.KhachDuaTextBox.Leave += new System.EventHandler(this.KhachDuaTextBox_Leave);
             // 
@@ -192,7 +177,7 @@
             this.PhaiThuTextBox.Name = "PhaiThuTextBox";
             this.PhaiThuTextBox.ReadOnly = true;
             this.PhaiThuTextBox.Size = new System.Drawing.Size(280, 28);
-            this.PhaiThuTextBox.TabIndex = 34;
+            this.PhaiThuTextBox.TabIndex = 94;
             // 
             // GiamTextBox
             // 
@@ -202,7 +187,7 @@
             this.GiamTextBox.Name = "GiamTextBox";
             this.GiamTextBox.ReadOnly = true;
             this.GiamTextBox.Size = new System.Drawing.Size(280, 28);
-            this.GiamTextBox.TabIndex = 33;
+            this.GiamTextBox.TabIndex = 95;
             // 
             // TongTienTextBox
             // 
@@ -212,7 +197,7 @@
             this.TongTienTextBox.Name = "TongTienTextBox";
             this.TongTienTextBox.ReadOnly = true;
             this.TongTienTextBox.Size = new System.Drawing.Size(280, 28);
-            this.TongTienTextBox.TabIndex = 32;
+            this.TongTienTextBox.TabIndex = 96;
             // 
             // label9
             // 
@@ -291,10 +276,10 @@
             this.ThanhToanButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(113)))), ((int)(((byte)(91)))));
             this.ThanhToanButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ThanhToanButton.ForeColor = System.Drawing.Color.White;
-            this.ThanhToanButton.Location = new System.Drawing.Point(323, 772);
+            this.ThanhToanButton.Location = new System.Drawing.Point(280, 772);
             this.ThanhToanButton.Name = "ThanhToanButton";
             this.ThanhToanButton.Size = new System.Drawing.Size(172, 41);
-            this.ThanhToanButton.TabIndex = 24;
+            this.ThanhToanButton.TabIndex = 6;
             this.ThanhToanButton.Text = "Thanh Toán";
             this.ThanhToanButton.UseVisualStyleBackColor = false;
             this.ThanhToanButton.Click += new System.EventHandler(this.ThanhToanButton_Click);
@@ -317,7 +302,7 @@
             this.LoaiDHComboBox.Location = new System.Drawing.Point(121, 441);
             this.LoaiDHComboBox.Name = "LoaiDHComboBox";
             this.LoaiDHComboBox.Size = new System.Drawing.Size(121, 24);
-            this.LoaiDHComboBox.TabIndex = 21;
+            this.LoaiDHComboBox.TabIndex = 3;
             this.LoaiDHComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // GiaTriTextBox
@@ -351,7 +336,7 @@
             this.MaKHTextBox.Location = new System.Drawing.Point(121, 373);
             this.MaKHTextBox.Name = "MaKHTextBox";
             this.MaKHTextBox.Size = new System.Drawing.Size(121, 22);
-            this.MaKHTextBox.TabIndex = 17;
+            this.MaKHTextBox.TabIndex = 1;
             this.MaKHTextBox.TextChanged += new System.EventHandler(this.MaKHTextBox_TextChanged);
             // 
             // label6
@@ -370,7 +355,7 @@
             this.MaKMComboBox.Location = new System.Drawing.Point(121, 406);
             this.MaKMComboBox.Name = "MaKMComboBox";
             this.MaKMComboBox.Size = new System.Drawing.Size(121, 24);
-            this.MaKMComboBox.TabIndex = 15;
+            this.MaKMComboBox.TabIndex = 2;
             this.MaKMComboBox.SelectedIndexChanged += new System.EventHandler(this.MaKMComboBox_SelectedIndexChanged);
             // 
             // MaNVTextBox
@@ -380,7 +365,7 @@
             this.MaNVTextBox.Name = "MaNVTextBox";
             this.MaNVTextBox.ReadOnly = true;
             this.MaNVTextBox.Size = new System.Drawing.Size(99, 23);
-            this.MaNVTextBox.TabIndex = 14;
+            this.MaNVTextBox.TabIndex = 98;
             // 
             // label5
             // 
@@ -410,7 +395,7 @@
             this.NgayLapDatePicker.Location = new System.Drawing.Point(398, 67);
             this.NgayLapDatePicker.Name = "NgayLapDatePicker";
             this.NgayLapDatePicker.Size = new System.Drawing.Size(97, 23);
-            this.NgayLapDatePicker.TabIndex = 11;
+            this.NgayLapDatePicker.TabIndex = 97;
             // 
             // MaDHTextBox
             // 
@@ -418,7 +403,7 @@
             this.MaDHTextBox.Location = new System.Drawing.Point(107, 52);
             this.MaDHTextBox.Name = "MaDHTextBox";
             this.MaDHTextBox.Size = new System.Drawing.Size(99, 23);
-            this.MaDHTextBox.TabIndex = 10;
+            this.MaDHTextBox.TabIndex = 99;
             this.MaDHTextBox.TextChanged += new System.EventHandler(this.MaDHTextBox_TextChanged);
             // 
             // label2
@@ -443,7 +428,7 @@
             this.DonHangDataGrid.RowHeadersWidth = 51;
             this.DonHangDataGrid.RowTemplate.Height = 24;
             this.DonHangDataGrid.Size = new System.Drawing.Size(482, 251);
-            this.DonHangDataGrid.TabIndex = 1;
+            this.DonHangDataGrid.TabIndex = 0;
             this.DonHangDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.DonHangDataGrid.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DonHangDataGrid_CellEndEdit);
             // 
@@ -463,7 +448,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(14, 77);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(935, 734);
-            this.flowLayoutPanel1.TabIndex = 6;
+            this.flowLayoutPanel1.TabIndex = 0;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // label1
@@ -551,6 +536,5 @@
         private System.Windows.Forms.PictureBox MaQRButton;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.RichTextBox GhiChuRichText;
-        private System.Windows.Forms.Button GiaoHangButton;
     }
 }

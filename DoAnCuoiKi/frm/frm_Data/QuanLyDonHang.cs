@@ -45,7 +45,7 @@ namespace DoAnCuoiKi
 
         private void LoadData()
         {
-            var thongTin = db.PHIEUGIAOHANGs.Select(x => new { x.MaPhieu, x.NgayLap, x.DiaChi, x.NgayGiaoHang, x.TrangThaiGiaoHang, x.MaDH, Phi = x.PHIGIAOHANG.Phi, x.GhiChu }).ToList();
+            var thongTin = db.PHIEUGIAOHANGs.Select(x => new { x.MaPhieu, x.NgayLap, x.DiaChi, x.NgayGiaoHang, x.TrangThaiGiaoHang, x.MaDH, x.Phi , x.GhiChu }).ToList();
             foreach (var x in thongTin)
             {
                 PhieuGiaoHang hd = new PhieuGiaoHang()

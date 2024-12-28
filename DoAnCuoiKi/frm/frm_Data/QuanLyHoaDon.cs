@@ -24,7 +24,6 @@ namespace DoAnCuoiKi.frm.frm_Data
             public DateTime NgayLap { get; set; }
             public decimal TongTien { get; set; }
             public string PhuongThucThanhToan { get; set; }
-            public string MaNV { get; set; }
             public string MaDH { get; set; }
             public string GhiChu { get; set; }
             
@@ -43,7 +42,7 @@ namespace DoAnCuoiKi.frm.frm_Data
 
         private void LoadData()
         {
-            var thongTin = db.HOADONs.Select(x => new {x.MaHD, x.NgayLap, x.TongTien,x.PhuongThucThanhToan,x.MaNV,x.MaDH, x.GhiChu}).ToList();
+            var thongTin = db.HOADONs.Select(x => new {x.MaHD, x.NgayLap, x.TongTien,x.PhuongThucThanhToan,x.MaDH, x.GhiChu}).ToList();
 
             foreach (var th in thongTin)
             {
@@ -52,7 +51,6 @@ namespace DoAnCuoiKi.frm.frm_Data
                   NgayLap = th.NgayLap, 
                   TongTien = th.TongTien, 
                   PhuongThucThanhToan = th.PhuongThucThanhToan, 
-                  MaNV = th.MaNV, 
                   MaDH = th.MaDH, 
                   GhiChu = th.GhiChu 
                 };
@@ -152,12 +150,11 @@ namespace DoAnCuoiKi.frm.frm_Data
                 if (!string.IsNullOrEmpty(maSo))
                 {
                     var thongTin = db.DonHangs.FirstOrDefault(x => x.MaDH == maSo);
-
                     if (thongTin != null)
                     {
                         MaDHText.Text = thongTin.MaDH;
                         NgayLap.Value = thongTin.NgayLapDon;
-                        LoaiDHText.Text = thongTin.LoaiDH;  
+                        LoaiDHText.Text = thongTin.LoaiDH == "ON" ? "Online" : "Offline";  
                         MaKHText.Text = thongTin?.MaKH;
                         MaNVText.Text = thongTin.MaNV;
                         MaKMText.Text = thongTin.MaKM;

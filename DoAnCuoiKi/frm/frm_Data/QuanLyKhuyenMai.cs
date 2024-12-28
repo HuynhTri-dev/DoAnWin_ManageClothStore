@@ -71,23 +71,30 @@ namespace DoAnCuoiKi.frm.frm_Data
                     return;
                 }
 
-                KHUYENMAI km = new KHUYENMAI()
+                try
                 {
-                    MaKM = maTextBox.Text,
-                    TenKM = tenTextBox.Text,
-                    GiaTri = giaTri,
-                    NgayBatDau = batDauDatePicker.Value.Date,
-                    NgayKetThuc = ketThucDatePicker.Value.Date
-                };
+                    KHUYENMAI km = new KHUYENMAI()
+                    {
+                        MaKM = maTextBox.Text,
+                        TenKM = tenTextBox.Text,
+                        GiaTri = giaTri,
+                        NgayBatDau = batDauDatePicker.Value.Date,
+                        NgayKetThuc = ketThucDatePicker.Value.Date
+                    };
 
-                var checkMa = db.KHUYENMAIs.Where(x => x.MaKM == maTextBox.Text).FirstOrDefault();
+                    var checkMa = db.KHUYENMAIs.Where(x => x.MaKM == maTextBox.Text).FirstOrDefault();
 
-                MessageBox.Show(checkMa == null ? "Thêm thông tin thành công!" : "Cập nhật thông tin thành công!", "Thông báo");
+                    MessageBox.Show(checkMa == null ? "Thêm thông tin thành công!" : "Cập nhật thông tin thành công!", "Thông báo");
 
-                db.KHUYENMAIs.AddOrUpdate(km);
-                db.SaveChanges();
-                LoadBang();
-                ResetFields();
+                    db.KHUYENMAIs.AddOrUpdate(km);
+                    db.SaveChanges();
+                    LoadBang();
+                    ResetFields();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message, "Thông báo");
+                }
             }
             else
             {

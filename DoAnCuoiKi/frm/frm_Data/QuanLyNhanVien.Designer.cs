@@ -63,7 +63,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1083, 78);
+            this.panel1.Size = new System.Drawing.Size(1432, 78);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -72,9 +72,9 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(113)))), ((int)(((byte)(91)))));
             this.label1.Font = new System.Drawing.Font("Tahoma", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(352, 19);
+            this.label1.Location = new System.Drawing.Point(481, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(377, 41);
+            this.label1.Size = new System.Drawing.Size(366, 40);
             this.label1.TabIndex = 0;
             this.label1.Text = "QUẢN LÝ NHÂN VIÊN";
             // 
@@ -82,7 +82,7 @@
             // 
             this.lblStaffID.AutoSize = true;
             this.lblStaffID.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStaffID.Location = new System.Drawing.Point(108, 27);
+            this.lblStaffID.Location = new System.Drawing.Point(27, 31);
             this.lblStaffID.Name = "lblStaffID";
             this.lblStaffID.Size = new System.Drawing.Size(129, 24);
             this.lblStaffID.TabIndex = 1;
@@ -92,7 +92,7 @@
             // 
             this.lblStaffName.AutoSize = true;
             this.lblStaffName.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStaffName.Location = new System.Drawing.Point(108, 69);
+            this.lblStaffName.Location = new System.Drawing.Point(27, 73);
             this.lblStaffName.Name = "lblStaffName";
             this.lblStaffName.Size = new System.Drawing.Size(75, 24);
             this.lblStaffName.TabIndex = 2;
@@ -102,7 +102,7 @@
             // 
             this.lblGender.AutoSize = true;
             this.lblGender.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGender.Location = new System.Drawing.Point(108, 118);
+            this.lblGender.Location = new System.Drawing.Point(27, 122);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(84, 24);
             this.lblGender.TabIndex = 3;
@@ -112,7 +112,7 @@
             // 
             this.lblSDTS.AutoSize = true;
             this.lblSDTS.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSDTS.Location = new System.Drawing.Point(108, 165);
+            this.lblSDTS.Location = new System.Drawing.Point(27, 169);
             this.lblSDTS.Name = "lblSDTS";
             this.lblSDTS.Size = new System.Drawing.Size(47, 24);
             this.lblSDTS.TabIndex = 4;
@@ -122,7 +122,7 @@
             // 
             this.lblDOB.AutoSize = true;
             this.lblDOB.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDOB.Location = new System.Drawing.Point(540, 26);
+            this.lblDOB.Location = new System.Drawing.Point(459, 30);
             this.lblDOB.Name = "lblDOB";
             this.lblDOB.Size = new System.Drawing.Size(97, 24);
             this.lblDOB.TabIndex = 5;
@@ -132,7 +132,7 @@
             // 
             this.lblRole.AutoSize = true;
             this.lblRole.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRole.Location = new System.Drawing.Point(540, 75);
+            this.lblRole.Location = new System.Drawing.Point(459, 79);
             this.lblRole.Name = "lblRole";
             this.lblRole.Size = new System.Drawing.Size(81, 24);
             this.lblRole.TabIndex = 6;
@@ -150,19 +150,20 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.nhanVienDataGrid.DefaultCellStyle = dataGridViewCellStyle1;
-            this.nhanVienDataGrid.Location = new System.Drawing.Point(28, 308);
+            this.nhanVienDataGrid.Location = new System.Drawing.Point(84, 318);
             this.nhanVienDataGrid.Name = "nhanVienDataGrid";
             this.nhanVienDataGrid.ReadOnly = true;
             this.nhanVienDataGrid.RowHeadersWidth = 51;
             this.nhanVienDataGrid.RowTemplate.Height = 24;
-            this.nhanVienDataGrid.Size = new System.Drawing.Size(1030, 357);
+            this.nhanVienDataGrid.Size = new System.Drawing.Size(1272, 357);
             this.nhanVienDataGrid.TabIndex = 8;
+            this.nhanVienDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.nhanVienDataGrid_CellContentClick);
             this.nhanVienDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.nhanVienDataGrid_CellContentClick);
             // 
             // txtStaffID
             // 
             this.txtStaffID.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStaffID.Location = new System.Drawing.Point(243, 25);
+            this.txtStaffID.Location = new System.Drawing.Point(162, 29);
             this.txtStaffID.Name = "txtStaffID";
             this.txtStaffID.Size = new System.Drawing.Size(235, 32);
             this.txtStaffID.TabIndex = 9;
@@ -170,7 +171,7 @@
             // txtStaffName
             // 
             this.txtStaffName.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStaffName.Location = new System.Drawing.Point(243, 69);
+            this.txtStaffName.Location = new System.Drawing.Point(162, 73);
             this.txtStaffName.Name = "txtStaffName";
             this.txtStaffName.Size = new System.Drawing.Size(235, 32);
             this.txtStaffName.TabIndex = 10;
@@ -180,7 +181,7 @@
             this.dtpStaff.CustomFormat = "dd/MM/yyyy";
             this.dtpStaff.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpStaff.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStaff.Location = new System.Drawing.Point(637, 21);
+            this.dtpStaff.Location = new System.Drawing.Point(556, 25);
             this.dtpStaff.Name = "dtpStaff";
             this.dtpStaff.Size = new System.Drawing.Size(133, 32);
             this.dtpStaff.TabIndex = 12;
@@ -189,7 +190,7 @@
             // 
             this.cboRole.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRole.FormattingEnabled = true;
-            this.cboRole.Location = new System.Drawing.Point(637, 72);
+            this.cboRole.Location = new System.Drawing.Point(556, 76);
             this.cboRole.Name = "cboRole";
             this.cboRole.Size = new System.Drawing.Size(133, 32);
             this.cboRole.TabIndex = 13;
@@ -198,7 +199,7 @@
             // txtSDTS
             // 
             this.txtSDTS.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSDTS.Location = new System.Drawing.Point(243, 162);
+            this.txtSDTS.Location = new System.Drawing.Point(162, 166);
             this.txtSDTS.Name = "txtSDTS";
             this.txtSDTS.Size = new System.Drawing.Size(235, 32);
             this.txtSDTS.TabIndex = 14;
@@ -206,9 +207,9 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(544, 160);
+            this.btnAdd.Location = new System.Drawing.Point(463, 161);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(168, 34);
+            this.btnAdd.Size = new System.Drawing.Size(168, 40);
             this.btnAdd.TabIndex = 16;
             this.btnAdd.Text = "Thêm/Cập nhật";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -217,9 +218,9 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(768, 160);
+            this.btnDelete.Location = new System.Drawing.Point(697, 161);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(100, 34);
+            this.btnDelete.Size = new System.Drawing.Size(100, 40);
             this.btnDelete.TabIndex = 17;
             this.btnDelete.Text = "Xoá";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -230,7 +231,9 @@
             this.groupBox1.Controls.Add(this.nuRadio);
             this.groupBox1.Controls.Add(this.namRadio);
             this.groupBox1.Controls.Add(this.txtSDTS);
+            this.groupBox1.Controls.Add(this.btnAdd);
             this.groupBox1.Controls.Add(this.cboRole);
+            this.groupBox1.Controls.Add(this.btnDelete);
             this.groupBox1.Controls.Add(this.lblSDTS);
             this.groupBox1.Controls.Add(this.taoTKButton);
             this.groupBox1.Controls.Add(this.txtStaffName);
@@ -239,15 +242,13 @@
             this.groupBox1.Controls.Add(this.txtStaffID);
             this.groupBox1.Controls.Add(this.dtpStaff);
             this.groupBox1.Controls.Add(this.lblStaffName);
-            this.groupBox1.Controls.Add(this.btnAdd);
-            this.groupBox1.Controls.Add(this.btnDelete);
             this.groupBox1.Controls.Add(this.lblRole);
             this.groupBox1.Controls.Add(this.lblStaffID);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.lblDOB);
-            this.groupBox1.Location = new System.Drawing.Point(28, 82);
+            this.groupBox1.Location = new System.Drawing.Point(141, 84);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1030, 213);
+            this.groupBox1.Size = new System.Drawing.Size(817, 213);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             // 
@@ -255,7 +256,7 @@
             // 
             this.nuRadio.AutoSize = true;
             this.nuRadio.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nuRadio.Location = new System.Drawing.Point(354, 117);
+            this.nuRadio.Location = new System.Drawing.Point(273, 121);
             this.nuRadio.Name = "nuRadio";
             this.nuRadio.Size = new System.Drawing.Size(56, 28);
             this.nuRadio.TabIndex = 25;
@@ -268,7 +269,7 @@
             // 
             this.namRadio.AutoSize = true;
             this.namRadio.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.namRadio.Location = new System.Drawing.Point(243, 117);
+            this.namRadio.Location = new System.Drawing.Point(162, 121);
             this.namRadio.Name = "namRadio";
             this.namRadio.Size = new System.Drawing.Size(72, 28);
             this.namRadio.TabIndex = 24;
@@ -280,7 +281,7 @@
             // taoTKButton
             // 
             this.taoTKButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.taoTKButton.Location = new System.Drawing.Point(778, 114);
+            this.taoTKButton.Location = new System.Drawing.Point(697, 118);
             this.taoTKButton.Name = "taoTKButton";
             this.taoTKButton.Size = new System.Drawing.Size(90, 33);
             this.taoTKButton.TabIndex = 23;
@@ -291,7 +292,7 @@
             // MaTKTextBox
             // 
             this.MaTKTextBox.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MaTKTextBox.Location = new System.Drawing.Point(637, 116);
+            this.MaTKTextBox.Location = new System.Drawing.Point(556, 120);
             this.MaTKTextBox.Name = "MaTKTextBox";
             this.MaTKTextBox.ReadOnly = true;
             this.MaTKTextBox.Size = new System.Drawing.Size(133, 32);
@@ -302,7 +303,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(540, 123);
+            this.label2.Location = new System.Drawing.Point(459, 127);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 24);
             this.label2.TabIndex = 21;
@@ -313,7 +314,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1083, 672);
+            this.ClientSize = new System.Drawing.Size(1432, 703);
             this.Controls.Add(this.nhanVienDataGrid);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);

@@ -107,7 +107,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1323, 78);
+            this.panel1.Size = new System.Drawing.Size(1432, 78);
             this.panel1.TabIndex = 2;
             // 
             // label3
@@ -198,19 +198,20 @@
             this.SanPhamDataGridView.AllowUserToAddRows = false;
             this.SanPhamDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(225)))), ((int)(((byte)(213)))));
             this.SanPhamDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.SanPhamDataGridView.Location = new System.Drawing.Point(845, 95);
+            this.SanPhamDataGridView.Location = new System.Drawing.Point(859, 113);
             this.SanPhamDataGridView.Name = "SanPhamDataGridView";
             this.SanPhamDataGridView.RowHeadersWidth = 51;
             this.SanPhamDataGridView.RowTemplate.Height = 24;
-            this.SanPhamDataGridView.Size = new System.Drawing.Size(466, 565);
+            this.SanPhamDataGridView.Size = new System.Drawing.Size(561, 565);
             this.SanPhamDataGridView.TabIndex = 14;
+            this.SanPhamDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SanPhamDataGridView_CellContentClick);
             this.SanPhamDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SanPhamDataGridView_CellContentClick);
             // 
             // XoaButton
             // 
             this.XoaButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(225)))), ((int)(((byte)(213)))));
             this.XoaButton.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.XoaButton.Location = new System.Drawing.Point(586, 614);
+            this.XoaButton.Location = new System.Drawing.Point(594, 632);
             this.XoaButton.Name = "XoaButton";
             this.XoaButton.Size = new System.Drawing.Size(238, 46);
             this.XoaButton.TabIndex = 17;
@@ -222,7 +223,7 @@
             // 
             this.ThemSuaButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(225)))), ((int)(((byte)(213)))));
             this.ThemSuaButton.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ThemSuaButton.Location = new System.Drawing.Point(586, 532);
+            this.ThemSuaButton.Location = new System.Drawing.Point(594, 550);
             this.ThemSuaButton.Name = "ThemSuaButton";
             this.ThemSuaButton.Size = new System.Drawing.Size(238, 63);
             this.ThemSuaButton.TabIndex = 16;
@@ -410,7 +411,7 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Location = new System.Drawing.Point(26, 84);
+            this.groupBox1.Location = new System.Drawing.Point(26, 102);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(543, 576);
             this.groupBox1.TabIndex = 27;
@@ -450,7 +451,7 @@
             // anhSPPictureBox
             // 
             this.anhSPPictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(225)))), ((int)(((byte)(213)))));
-            this.anhSPPictureBox.Location = new System.Drawing.Point(586, 87);
+            this.anhSPPictureBox.Location = new System.Drawing.Point(594, 105);
             this.anhSPPictureBox.Name = "anhSPPictureBox";
             this.anhSPPictureBox.Size = new System.Drawing.Size(238, 181);
             this.anhSPPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -462,7 +463,7 @@
             // OpenMauButton
             // 
             this.OpenMauButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OpenMauButton.Location = new System.Drawing.Point(586, 286);
+            this.OpenMauButton.Location = new System.Drawing.Point(594, 304);
             this.OpenMauButton.Name = "OpenMauButton";
             this.OpenMauButton.Size = new System.Drawing.Size(238, 32);
             this.OpenMauButton.TabIndex = 29;
@@ -473,7 +474,7 @@
             // OpenLoaiButton
             // 
             this.OpenLoaiButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OpenLoaiButton.Location = new System.Drawing.Point(586, 334);
+            this.OpenLoaiButton.Location = new System.Drawing.Point(594, 352);
             this.OpenLoaiButton.Name = "OpenLoaiButton";
             this.OpenLoaiButton.Size = new System.Drawing.Size(238, 32);
             this.OpenLoaiButton.TabIndex = 30;
@@ -484,7 +485,7 @@
             // OpenNCCButton
             // 
             this.OpenNCCButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OpenNCCButton.Location = new System.Drawing.Point(586, 381);
+            this.OpenNCCButton.Location = new System.Drawing.Point(594, 399);
             this.OpenNCCButton.Name = "OpenNCCButton";
             this.OpenNCCButton.Size = new System.Drawing.Size(238, 32);
             this.OpenNCCButton.TabIndex = 31;
@@ -495,7 +496,7 @@
             // OpenCLButton
             // 
             this.OpenCLButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OpenCLButton.Location = new System.Drawing.Point(586, 429);
+            this.OpenCLButton.Location = new System.Drawing.Point(594, 447);
             this.OpenCLButton.Name = "OpenCLButton";
             this.OpenCLButton.Size = new System.Drawing.Size(238, 32);
             this.OpenCLButton.TabIndex = 32;
@@ -506,7 +507,7 @@
             // OpenNHButton
             // 
             this.OpenNHButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OpenNHButton.Location = new System.Drawing.Point(586, 474);
+            this.OpenNHButton.Location = new System.Drawing.Point(594, 492);
             this.OpenNHButton.Name = "OpenNHButton";
             this.OpenNHButton.Size = new System.Drawing.Size(238, 32);
             this.OpenNHButton.TabIndex = 33;
@@ -518,7 +519,8 @@
             // 
             this.chonAnhLabel.AutoSize = true;
             this.chonAnhLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(225)))), ((int)(((byte)(213)))));
-            this.chonAnhLabel.Location = new System.Drawing.Point(676, 177);
+            this.chonAnhLabel.Enabled = false;
+            this.chonAnhLabel.Location = new System.Drawing.Point(684, 195);
             this.chonAnhLabel.Name = "chonAnhLabel";
             this.chonAnhLabel.Size = new System.Drawing.Size(63, 16);
             this.chonAnhLabel.TabIndex = 34;
@@ -529,7 +531,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1323, 672);
+            this.ClientSize = new System.Drawing.Size(1432, 703);
             this.Controls.Add(this.chonAnhLabel);
             this.Controls.Add(this.OpenNHButton);
             this.Controls.Add(this.OpenCLButton);

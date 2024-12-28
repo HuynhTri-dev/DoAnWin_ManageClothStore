@@ -55,7 +55,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1117, 99);
+            this.panel1.Size = new System.Drawing.Size(1433, 99);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -63,7 +63,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(386, 28);
+            this.label1.Location = new System.Drawing.Point(550, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(392, 40);
             this.label1.TabIndex = 0;
@@ -71,14 +71,16 @@
             // 
             // KhuyenMaiDataGrid
             // 
+            this.KhuyenMaiDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.KhuyenMaiDataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(225)))), ((int)(((byte)(213)))));
             this.KhuyenMaiDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.KhuyenMaiDataGrid.Location = new System.Drawing.Point(557, 124);
+            this.KhuyenMaiDataGrid.Location = new System.Drawing.Point(557, 132);
             this.KhuyenMaiDataGrid.Name = "KhuyenMaiDataGrid";
             this.KhuyenMaiDataGrid.RowHeadersWidth = 51;
             this.KhuyenMaiDataGrid.RowTemplate.Height = 24;
-            this.KhuyenMaiDataGrid.Size = new System.Drawing.Size(523, 371);
+            this.KhuyenMaiDataGrid.Size = new System.Drawing.Size(837, 540);
             this.KhuyenMaiDataGrid.TabIndex = 1;
+            this.KhuyenMaiDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.KhuyenMaiDataGrid_CellContentClick);
             this.KhuyenMaiDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.KhuyenMaiDataGrid_CellContentClick);
             // 
             // groupBox1
@@ -94,7 +96,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(42, 132);
+            this.groupBox1.Location = new System.Drawing.Point(42, 186);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(465, 279);
             this.groupBox1.TabIndex = 2;
@@ -188,9 +190,9 @@
             // themSuaButton
             // 
             this.themSuaButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.themSuaButton.Location = new System.Drawing.Point(75, 436);
+            this.themSuaButton.Location = new System.Drawing.Point(75, 490);
             this.themSuaButton.Name = "themSuaButton";
-            this.themSuaButton.Size = new System.Drawing.Size(134, 32);
+            this.themSuaButton.Size = new System.Drawing.Size(168, 40);
             this.themSuaButton.TabIndex = 3;
             this.themSuaButton.Text = "Thêm / Sửa";
             this.themSuaButton.UseVisualStyleBackColor = true;
@@ -199,9 +201,9 @@
             // xoaButton
             // 
             this.xoaButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xoaButton.Location = new System.Drawing.Point(406, 436);
+            this.xoaButton.Location = new System.Drawing.Point(392, 490);
             this.xoaButton.Name = "xoaButton";
-            this.xoaButton.Size = new System.Drawing.Size(75, 32);
+            this.xoaButton.Size = new System.Drawing.Size(89, 40);
             this.xoaButton.TabIndex = 4;
             this.xoaButton.Text = "Xóa";
             this.xoaButton.UseVisualStyleBackColor = true;
@@ -211,7 +213,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1116, 515);
+            this.ClientSize = new System.Drawing.Size(1432, 703);
             this.Controls.Add(this.xoaButton);
             this.Controls.Add(this.themSuaButton);
             this.Controls.Add(this.groupBox1);

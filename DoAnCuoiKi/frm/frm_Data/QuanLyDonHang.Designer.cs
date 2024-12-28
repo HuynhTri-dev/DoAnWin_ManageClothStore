@@ -34,17 +34,17 @@
             this.DonHangAdvanced = new Zuby.ADGV.AdvancedDataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.MaPhieuText = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.NgayLapDate = new System.Windows.Forms.DateTimePicker();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.GhiChuText = new System.Windows.Forms.RichTextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.NgayGiaoDate = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.DiaChiText = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.GhiChuText = new System.Windows.Forms.RichTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.NgayLapDate = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.MaPhieuText = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MapWebView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DonHangAdvanced)).BeginInit();
@@ -97,6 +97,7 @@
             this.DonHangAdvanced.Size = new System.Drawing.Size(655, 378);
             this.DonHangAdvanced.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.DonHangAdvanced.TabIndex = 2;
+            this.DonHangAdvanced.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DonHangAdvanced_CellContentClick);
             this.DonHangAdvanced.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DonHangAdvanced_CellContentClick);
             // 
             // label2
@@ -130,30 +131,38 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin đơn hàng";
             // 
-            // MaPhieuText
+            // textBox1
             // 
-            this.MaPhieuText.Location = new System.Drawing.Point(122, 42);
-            this.MaPhieuText.Name = "MaPhieuText";
-            this.MaPhieuText.Size = new System.Drawing.Size(168, 28);
-            this.MaPhieuText.TabIndex = 4;
+            this.textBox1.Location = new System.Drawing.Point(408, 127);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(228, 28);
+            this.textBox1.TabIndex = 14;
             // 
-            // label3
+            // label7
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 90);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 21);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Ngày lập:";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(306, 130);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(92, 21);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Trạng thái:";
             // 
-            // NgayLapDate
+            // GhiChuText
             // 
-            this.NgayLapDate.CustomFormat = "dd/MM/yyyy";
-            this.NgayLapDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.NgayLapDate.Location = new System.Drawing.Point(122, 84);
-            this.NgayLapDate.Name = "NgayLapDate";
-            this.NgayLapDate.Size = new System.Drawing.Size(150, 28);
-            this.NgayLapDate.TabIndex = 6;
+            this.GhiChuText.Location = new System.Drawing.Point(122, 127);
+            this.GhiChuText.Name = "GhiChuText";
+            this.GhiChuText.Size = new System.Drawing.Size(168, 49);
+            this.GhiChuText.TabIndex = 12;
+            this.GhiChuText.Text = "";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(20, 137);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(71, 21);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Ghi chú:";
             // 
             // NgayGiaoDate
             // 
@@ -189,38 +198,30 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Địa chỉ:";
             // 
-            // label6
+            // NgayLapDate
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(20, 137);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 21);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Ghi chú:";
+            this.NgayLapDate.CustomFormat = "dd/MM/yyyy";
+            this.NgayLapDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.NgayLapDate.Location = new System.Drawing.Point(122, 84);
+            this.NgayLapDate.Name = "NgayLapDate";
+            this.NgayLapDate.Size = new System.Drawing.Size(150, 28);
+            this.NgayLapDate.TabIndex = 6;
             // 
-            // GhiChuText
+            // label3
             // 
-            this.GhiChuText.Location = new System.Drawing.Point(122, 127);
-            this.GhiChuText.Name = "GhiChuText";
-            this.GhiChuText.Size = new System.Drawing.Size(168, 49);
-            this.GhiChuText.TabIndex = 12;
-            this.GhiChuText.Text = "";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(20, 90);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 21);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Ngày lập:";
             // 
-            // textBox1
+            // MaPhieuText
             // 
-            this.textBox1.Location = new System.Drawing.Point(408, 127);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(228, 28);
-            this.textBox1.TabIndex = 14;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(306, 130);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 21);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Trạng thái:";
+            this.MaPhieuText.Location = new System.Drawing.Point(122, 42);
+            this.MaPhieuText.Name = "MaPhieuText";
+            this.MaPhieuText.Size = new System.Drawing.Size(168, 28);
+            this.MaPhieuText.TabIndex = 4;
             // 
             // QuanLyDonHang
             // 

@@ -30,20 +30,10 @@ namespace DoAnCuoiKi.model
 
         [Required]
         [StringLength(6)]
-        public string MaNV { get; set; }
-
-        [Required]
-        [StringLength(6)]
         public string MaDH { get; set; }
 
-        [Required]
-        [StringLength(3)]
-        public string MaPhi { get; set; }
+        public decimal Phi { get; set; }
 
         public virtual DonHang DonHang { get; set; }
-
-        public virtual NHANVIEN NHANVIEN { get; set; }
-
-        public virtual PHIGIAOHANG PHIGIAOHANG { get; set; }
     }
 }

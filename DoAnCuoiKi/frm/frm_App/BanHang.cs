@@ -74,20 +74,32 @@ namespace DoAnCuoiKi
         // Hiển thị collection combo khuyến mãi
         private void LoadComboKhuyenMai()
         {
-            var khuyenMais = db.KHUYENMAIs.Select(x => x.TenKM).ToList();
+            var khuyenMais = db.KHUYENMAIs.ToList();
 
             foreach (var km in khuyenMais)
             {
-                MaKMComboBox.Items.Add(km);
+                // kiem tra khuyen mai co hieu luc khong
+                if (km.NgayBatDau <= DateTime.Now && km.NgayKetThuc >= DateTime.Now)
+                {
+                    MaKMComboBox.Items.Add(km.TenKM);
+                }
             }
         }
         // Cập nhật giá trị từng khuyến mãi
         private void MaKMComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var giaTri = db.KHUYENMAIs.Where(x => x.TenKM == MaKMComboBox.SelectedItem.ToString()).Select(x => x.GiaTri).FirstOrDefault();
+            if (MaKMComboBox.SelectedItem != null)
+            {
+                var giaTri = db.KHUYENMAIs.Where(x => x.TenKM == MaKMComboBox.SelectedItem.ToString()).Select(x => x.GiaTri).FirstOrDefault();
 
-            GiaTriTextBox.Text = giaTri.ToString();
-            LoadGia();
+                GiaTriTextBox.Text = giaTri.ToString();
+                LoadGia();
+            }
+            else
+            {
+                GiaTriTextBox.Clear();
+            }
+            
         }
 
         //Load mã hoá đơn
@@ -179,8 +191,6 @@ namespace DoAnCuoiKi
 
             foreach (var product in products)
             {
-
-
                 // Tạo Panel cho mỗi sản phẩm
                 Panel productPanel = new Panel
                 {
@@ -377,7 +387,6 @@ namespace DoAnCuoiKi
         }
 
         // Nut tao qr
-
         private void MaQRButton_Click(object sender, EventArgs e)
         {
             TaoQR taoQR = new TaoQR(MaDonHang, PhaiThu);
@@ -388,7 +397,7 @@ namespace DoAnCuoiKi
                 MessageBox.Show("Thanh toán thành công", "Thông báo");
             }
         }
-
+        // chức năng xóa hàng trong giỏ
         private void XoaButton_Click(object sender, EventArgs e)
         {
             if (DonHangDataGrid.SelectedCells.Count > 0)
@@ -420,7 +429,7 @@ namespace DoAnCuoiKi
                 MessageBox.Show("Hãy chọn hàng muốn xóa");
             }
         }
-
+        // chức năng thanh toán 
         private void ThanhToanButton_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(MaDHTextBox.Text) 
@@ -455,10 +464,35 @@ namespace DoAnCuoiKi
                           .FirstOrDefault();
             }
 
-            try
+            if (LoaiDHComboBox.SelectedItem.ToString() == "Online")
             {
-                // Sau đó lưu dữ liệu
-                // Luu don truoc
+                ThongTinGiaoHang giaoHang = new ThongTinGiaoHang();
+                DialogResult dr = giaoHang.ShowDialog();
+                if (dr == DialogResult.Cancel)
+                {
+                    MessageBox.Show("Cần phải nhập thông tin giao hàng", "Thông báo");
+                    return;
+                }
+                if (dr == DialogResult.OK)
+                {
+                    PHIEUGIAOHANG pgh = new PHIEUGIAOHANG()
+                    {
+                        MaPhieu = giaoHang.MaPhieu,
+                        DiaChi = giaoHang.DiaChi,
+                        NgayLap = giaoHang.NgayLap,
+                        NgayGiaoHang = giaoHang.NgayGiaoHang,
+                        TrangThaiGiaoHang = giaoHang.TrangThaiGiaoHang,
+                        Phi = giaoHang.Phi,
+                        GhiChu = giaoHang.GhiChu,
+                        MaDH = MaDHTextBox.Text
+                    };
+                    db.PHIEUGIAOHANGs.Add(pgh);
+                }
+            }
+
+
+            //Sau đó lưu dữ liệu
+            //Luu don truoc
                 DonHang dh = new DonHang()
                 {
                     MaDH = MaDHTextBox.Text,
@@ -469,49 +503,43 @@ namespace DoAnCuoiKi
                     MaKM = string.IsNullOrEmpty(maKM) ? null : maKM
                 };
 
-                db.DonHangs.Add(dh);
-                //db.SaveChanges();
 
-                // Luu chi tiet don
-                foreach (var sanPham in gioHangs)
-                {
-                    if (sanPham.SoLuong > byte.MaxValue)
-                    {
-                        MessageBox.Show("Số lượng sản phẩm quá lớn", "Thông báo");
-                        return;
-                    }
 
-                    CHITIETDONHANG ctdh = new CHITIETDONHANG()
-                    {
-                        MaDH = MaDHTextBox.Text,
-                        MaSP = sanPham.MaSP,
-                        SoLuong = sanPham.SoLuong
-                    };
-                    db.CHITIETDONHANGs.Add(ctdh);
-                    //db.SaveChanges();
-                }
+            db.DonHangs.Add(dh);
+            db.SaveChanges();
 
-                // Lưu hóa đơn
-                HOADON hd = new HOADON()
-                {
-                    MaHD = LoadMaHoaDon(),
-                    NgayLap = NgayLapDatePicker.Value,
-                    TongTien = decimal.Parse(PhaiThuTextBox.Text),
-                    PhuongThucThanhToan = PhuongThuc,
-                    GhiChu = GhiChuRichText.Text,
-                    MaNV = MaNVTextBox.Text,
-                    MaDH = MaDHTextBox.Text
-                };
-                db.HOADONs.Add(hd);
-                db.SaveChanges();
-                ResetGioHang();
-                MessageBox.Show("Hoàn thành đơn hàng", "Thông báo");
-            }
-            catch (Exception ex)
+            //Luu chi tiet don
+            foreach (var sanPham in gioHangs)
             {
-                MessageBox.Show($"Lỗi khi lưu dữ liệu: {ex.Message}", "Thông báo");
-                return;
+                CHITIETDONHANG ctdh = new CHITIETDONHANG()
+                {
+                    MaDH = MaDHTextBox.Text,
+                    MaSP = sanPham.MaSP,
+                    SoLuong = sanPham.SoLuong
+                };
+                db.CHITIETDONHANGs.Add(ctdh);
+
+                var sp = db.SANPHAMs.FirstOrDefault(x => x.MaSP == sanPham.MaSP);
+                sp.SoLuongTon -= sanPham.SoLuong;
+                db.SaveChanges();
             }
+
+            //Lưu hóa đơn
+           HOADON hd = new HOADON()
+           {
+               MaHD = LoadMaHoaDon(),
+               NgayLap = NgayLapDatePicker.Value,
+               TongTien = decimal.Parse(PhaiThuTextBox.Text),
+               PhuongThucThanhToan = PhuongThuc,
+               GhiChu = GhiChuRichText.Text,
+               MaDH = MaDHTextBox.Text
+           };
+            db.HOADONs.Add(hd);
+            db.SaveChanges();
+            ResetGioHang();
+            MessageBox.Show("Hoàn thành đơn hàng", "Thông báo");
+            flowLayoutPanel1.Refresh();
+            LoadProducts();
         }
 
         private void ResetGioHang()
@@ -524,6 +552,7 @@ namespace DoAnCuoiKi
             MaKMComboBox.SelectedIndex = -1;
             LoaiDHComboBox.SelectedIndex = -1;
             GhiChuRichText.Clear();
+            KhachDuaTextBox.Text = "0";
         }
 
         // Tao mã hóa đơn
@@ -579,9 +608,7 @@ namespace DoAnCuoiKi
 
         private void GiaoHangButton_Click(object sender, EventArgs e)
         {
-            ThongTinGiaoHang giaoHang = new ThongTinGiaoHang();
-
-            DialogResult dr = giaoHang.ShowDialog();
+            
         }
     }
 }

@@ -166,7 +166,6 @@
     <Compile Include="model\NHACUNGCAP.cs" />
     <Compile Include="model\NHANVIEN.cs" />
     <Compile Include="model\PHIEUGIAOHANG.cs" />
-    <Compile Include="model\PHIGIAOHANG.cs" />
     <Compile Include="model\SANPHAM.cs" />
     <Compile Include="model\TAIKHOAN.cs" />
     <Compile Include="model\THUONGHIEU.cs" />

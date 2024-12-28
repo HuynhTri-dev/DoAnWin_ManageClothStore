@@ -23,7 +23,6 @@ namespace DoAnCuoiKi.model
         public virtual DbSet<NHACUNGCAP> NHACUNGCAPs { get; set; }
         public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
         public virtual DbSet<PHIEUGIAOHANG> PHIEUGIAOHANGs { get; set; }
-        public virtual DbSet<PHIGIAOHANG> PHIGIAOHANGs { get; set; }
         public virtual DbSet<SANPHAM> SANPHAMs { get; set; }
         public virtual DbSet<TAIKHOAN> TAIKHOANs { get; set; }
         public virtual DbSet<THUONGHIEU> THUONGHIEUx { get; set; }
@@ -100,10 +99,6 @@ namespace DoAnCuoiKi.model
                 .HasPrecision(20, 0);
 
             modelBuilder.Entity<HOADON>()
-                .Property(e => e.MaNV)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<HOADON>()
                 .Property(e => e.MaDH)
                 .IsUnicode(false);
 
@@ -162,22 +157,8 @@ namespace DoAnCuoiKi.model
                 .WithRequired(e => e.NHANVIEN)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<NHANVIEN>()
-                .HasMany(e => e.HOADONs)
-                .WithRequired(e => e.NHANVIEN)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<NHANVIEN>()
-                .HasMany(e => e.PHIEUGIAOHANGs)
-                .WithRequired(e => e.NHANVIEN)
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<PHIEUGIAOHANG>()
                 .Property(e => e.MaPhieu)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<PHIEUGIAOHANG>()
-                .Property(e => e.MaNV)
                 .IsUnicode(false);
 
             modelBuilder.Entity<PHIEUGIAOHANG>()
@@ -185,21 +166,8 @@ namespace DoAnCuoiKi.model
                 .IsUnicode(false);
 
             modelBuilder.Entity<PHIEUGIAOHANG>()
-                .Property(e => e.MaPhi)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<PHIGIAOHANG>()
-                .Property(e => e.MaPhi)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<PHIGIAOHANG>()
                 .Property(e => e.Phi)
-                .HasPrecision(19, 4);
-
-            modelBuilder.Entity<PHIGIAOHANG>()
-                .HasMany(e => e.PHIEUGIAOHANGs)
-                .WithRequired(e => e.PHIGIAOHANG)
-                .WillCascadeOnDelete(false);
+                .HasPrecision(18, 0);
 
             modelBuilder.Entity<SANPHAM>()
                 .Property(e => e.MaSP)
