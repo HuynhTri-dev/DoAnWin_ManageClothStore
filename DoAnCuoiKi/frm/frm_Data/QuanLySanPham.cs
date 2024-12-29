@@ -6,6 +6,8 @@ using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Linq.Dynamic.Core;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,6 +18,22 @@ namespace DoAnCuoiKi
 {
     public partial class QuanLySanPham : Form
     {
+        public class SanPham
+        {
+            public string MaSP { get; set; }
+            public string TenSP { get; set; }
+            public int SoLuongTon { get; set; }
+            public decimal GiaNhap { get; set; }
+            public decimal GiaBan { get; set; }
+            public string NhanHieu { get; set; }
+            public string LoaiSanPham { get; set; }
+            public string Size { get; set; }
+            public string Mau { get; set; }
+            public string NhaCungCap { get; set; }
+            public string ChatLieu { get; set; }
+        }
+
+        List<SanPham> filterList = new List<SanPham>();
 
         CuaHangDB db = new CuaHangDB();
         public QuanLySanPham()
@@ -102,7 +120,27 @@ namespace DoAnCuoiKi
         }
         private void LoadForm()
         {
-            var sp = db.SANPHAMs.Select(x => new { x.MaSP, x.TenSP, NhanHieu = x.THUONGHIEU.TenTH, LoaiSanPham = x.DANHMUC.TenDM, x.Size, Mau = x.MAU.TenMau, NhaCungCap = x.NHACUNGCAP.TenNCC, ChatLieu = x.CHATLIEU.TenCL, x.MoTa }).ToList();
+            var sp = db.SANPHAMs.Select(x => new { x.MaSP, x.TenSP, NhanHieu = x.THUONGHIEU.TenTH, LoaiSanPham = x.DANHMUC.TenDM, x.Size, Mau = x.MAU.TenMau, NhaCungCap = x.NHACUNGCAP.TenNCC, ChatLieu = x.CHATLIEU.TenCL, x.SoLuongTon, x.GiaBan, x.GiaNhap }).ToList();
+
+            foreach (var item in sp)
+            {
+                SanPham sanPham = new SanPham()
+                {
+                    MaSP = item.MaSP,
+                    TenSP = item.TenSP,
+                    NhanHieu = item.NhanHieu,
+                    LoaiSanPham = item.LoaiSanPham,
+                    Size = item.Size,
+                    Mau = item.Mau,
+                    NhaCungCap = item.NhaCungCap,
+                    ChatLieu = item.ChatLieu,
+                    SoLuongTon = item.SoLuongTon,
+                    GiaBan = item.GiaBan,
+                    GiaNhap = item.GiaNhap
+                };
+                filterList.Add(sanPham);
+            }
+
             SanPhamDataGridView.DataSource = sp;
 
         }
@@ -410,6 +448,87 @@ namespace DoAnCuoiKi
             if (dr == DialogResult.Cancel)
             {
                 ThuongHieuComboBox();
+            }
+        }
+
+        private string FilterStringconverter(string filter)
+        {
+            string newColFilter = "";
+            filter = filter.Replace("(", "").Replace(")", "");
+            var colFilterList = filter.Split(new string[] { "AND" }, StringSplitOptions.None);
+            string andOperator = "";
+            foreach (var colFilter in colFilterList)
+            {
+                newColFilter += andOperator;
+                var temp1 = colFilter.Trim().Split(new string[] { "IN" }, StringSplitOptions.None);
+                var colName = temp1[0].Split('[', ']')[1].Trim();
+                newColFilter += string.Format("({0} != null && (", colName);
+                string orOperator = "";
+                var filterValsList = temp1[1].Split(',');
+                foreach (var filterVal in filterValsList)
+                {
+                    var cleanFilterVal = filterVal.Replace("'", "").Trim();
+
+                    double tempNum = 0;
+                    if (Double.TryParse(cleanFilterVal, out tempNum))
+                        newColFilter += string.Format("{0} {1} = {2}", orOperator, colName, cleanFilterVal.Trim());
+                    else
+                        newColFilter += string.Format("{0} {1}.Contains('{2}')", orOperator, colName, cleanFilterVal.Trim());
+
+                    orOperator = " OR ";
+                }
+
+                newColFilter += "))";
+
+                andOperator = " AND ";
+            }
+            return newColFilter.Replace("'", "\"");
+        }
+
+        private void SanPhamDataGridView_FilterStringChanged(object sender, Zuby.ADGV.AdvancedDataGridView.FilterEventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(SanPhamDataGridView.FilterString) == true)
+                {
+                    LoadForm();
+                }
+                else
+                {
+                    var listfilter = FilterStringconverter(SanPhamDataGridView.FilterString);
+                    filterList = filterList.AsQueryable().Where(listfilter).ToList();
+                    SanPhamDataGridView.DataSource = filterList;
+                }
+            
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " - " + MethodBase.GetCurrentMethod().Name, "Thông báo");
+            }
+        }
+
+        private void SanPhamDataGridView_SortStringChanged(object sender, Zuby.ADGV.AdvancedDataGridView.SortEventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(SanPhamDataGridView.SortString) == true)
+                    return;
+
+                var sortStr = SanPhamDataGridView.SortString.Replace("[", "").Replace("]", "");
+
+                if (string.IsNullOrEmpty(SanPhamDataGridView.FilterString) == true)
+                {
+                    SanPhamDataGridView.DataSource = db.SANPHAMs.AsQueryable().OrderBy(sortStr).Select(x => new { x.MaSP, x.TenSP, NhanHieu = x.THUONGHIEU.TenTH, LoaiSanPham = x.DANHMUC.TenDM, x.Size, Mau = x.MAU.TenMau, NhaCungCap = x.NHACUNGCAP.TenNCC, ChatLieu = x.CHATLIEU.TenCL, x.SoLuongTon, x.GiaBan, x.GiaNhap }).ToList();
+                }
+                else
+                {
+                    filterList = filterList.AsQueryable().OrderBy(sortStr).ToList();
+                    SanPhamDataGridView.DataSource = filterList;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " - " + MethodBase.GetCurrentMethod().Name, "Thông báo");
             }
         }
     }

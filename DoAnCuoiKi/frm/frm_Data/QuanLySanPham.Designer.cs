@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -40,7 +39,6 @@
             this.KichCoComboBox = new System.Windows.Forms.ComboBox();
             this.MaSPTextBox = new System.Windows.Forms.TextBox();
             this.TenSPTextBox = new System.Windows.Forms.TextBox();
-            this.SanPhamDataGridView = new System.Windows.Forms.DataGridView();
             this.XoaButton = new System.Windows.Forms.Button();
             this.ThemSuaButton = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -54,7 +52,6 @@
             this.GiaBanTextBox = new System.Windows.Forms.TextBox();
             this.MaNCCComboBox = new System.Windows.Forms.ComboBox();
             this.MaChatLieuComboBox = new System.Windows.Forms.ComboBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.MoTaRichTextBox = new System.Windows.Forms.RichTextBox();
             this.NhanHieuComboBox = new System.Windows.Forms.ComboBox();
             this.MauComboBox = new System.Windows.Forms.ComboBox();
@@ -70,12 +67,13 @@
             this.OpenCLButton = new System.Windows.Forms.Button();
             this.OpenNHButton = new System.Windows.Forms.Button();
             this.chonAnhLabel = new System.Windows.Forms.Label();
+            this.SanPhamDataGridView = new Zuby.ADGV.AdvancedDataGridView();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SanPhamDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anhSPPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SanPhamDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -192,20 +190,6 @@
             this.TenSPTextBox.Name = "TenSPTextBox";
             this.TenSPTextBox.Size = new System.Drawing.Size(332, 32);
             this.TenSPTextBox.TabIndex = 10;
-            // 
-            // SanPhamDataGridView
-            // 
-            this.SanPhamDataGridView.AllowUserToAddRows = false;
-            this.SanPhamDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(225)))), ((int)(((byte)(213)))));
-            this.SanPhamDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.SanPhamDataGridView.Location = new System.Drawing.Point(859, 113);
-            this.SanPhamDataGridView.Name = "SanPhamDataGridView";
-            this.SanPhamDataGridView.RowHeadersWidth = 51;
-            this.SanPhamDataGridView.RowTemplate.Height = 24;
-            this.SanPhamDataGridView.Size = new System.Drawing.Size(561, 565);
-            this.SanPhamDataGridView.TabIndex = 14;
-            this.SanPhamDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SanPhamDataGridView_CellContentClick);
-            this.SanPhamDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SanPhamDataGridView_CellContentClick);
             // 
             // XoaButton
             // 
@@ -336,12 +320,6 @@
             this.MaChatLieuComboBox.Name = "MaChatLieuComboBox";
             this.MaChatLieuComboBox.Size = new System.Drawing.Size(332, 32);
             this.MaChatLieuComboBox.TabIndex = 21;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // MoTaRichTextBox
             // 
@@ -527,11 +505,31 @@
             this.chonAnhLabel.Text = "Chọn ảnh";
             this.chonAnhLabel.Click += new System.EventHandler(this.chonAnhLabel_Click);
             // 
+            // SanPhamDataGridView
+            // 
+            this.SanPhamDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.SanPhamDataGridView.FilterAndSortEnabled = true;
+            this.SanPhamDataGridView.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
+            this.SanPhamDataGridView.Location = new System.Drawing.Point(858, 105);
+            this.SanPhamDataGridView.MaxFilterButtonImageHeight = 23;
+            this.SanPhamDataGridView.Name = "SanPhamDataGridView";
+            this.SanPhamDataGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.SanPhamDataGridView.RowHeadersWidth = 51;
+            this.SanPhamDataGridView.RowTemplate.Height = 24;
+            this.SanPhamDataGridView.Size = new System.Drawing.Size(543, 567);
+            this.SanPhamDataGridView.SortStringChangedInvokeBeforeDatasourceUpdate = true;
+            this.SanPhamDataGridView.TabIndex = 35;
+            this.SanPhamDataGridView.SortStringChanged += new System.EventHandler<Zuby.ADGV.AdvancedDataGridView.SortEventArgs>(this.SanPhamDataGridView_SortStringChanged);
+            this.SanPhamDataGridView.FilterStringChanged += new System.EventHandler<Zuby.ADGV.AdvancedDataGridView.FilterEventArgs>(this.SanPhamDataGridView_FilterStringChanged);
+            this.SanPhamDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SanPhamDataGridView_CellContentClick);
+            this.SanPhamDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SanPhamDataGridView_CellContentClick);
+            // 
             // QuanLySanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1432, 703);
+            this.Controls.Add(this.SanPhamDataGridView);
             this.Controls.Add(this.chonAnhLabel);
             this.Controls.Add(this.OpenNHButton);
             this.Controls.Add(this.OpenCLButton);
@@ -542,19 +540,18 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.XoaButton);
             this.Controls.Add(this.ThemSuaButton);
-            this.Controls.Add(this.SanPhamDataGridView);
             this.Controls.Add(this.panel1);
             this.Name = "QuanLySanPham";
             this.Text = "Sản phẩm";
             this.Load += new System.EventHandler(this.QuanLySanPham_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SanPhamDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.anhSPPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SanPhamDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -573,7 +570,6 @@
         private System.Windows.Forms.ComboBox KichCoComboBox;
         private System.Windows.Forms.TextBox MaSPTextBox;
         private System.Windows.Forms.TextBox TenSPTextBox;
-        private System.Windows.Forms.DataGridView SanPhamDataGridView;
         private System.Windows.Forms.Button XoaButton;
         private System.Windows.Forms.Button ThemSuaButton;
         private System.Windows.Forms.Label label8;
@@ -587,7 +583,6 @@
         private System.Windows.Forms.TextBox GiaBanTextBox;
         private System.Windows.Forms.ComboBox MaNCCComboBox;
         private System.Windows.Forms.ComboBox MaChatLieuComboBox;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.RichTextBox MoTaRichTextBox;
         private System.Windows.Forms.ComboBox NhanHieuComboBox;
         private System.Windows.Forms.ComboBox MauComboBox;
@@ -603,5 +598,6 @@
         private System.Windows.Forms.Button OpenNHButton;
         private System.Windows.Forms.Label chonAnhLabel;
         private System.Windows.Forms.Label ErrorLabel;
+        private Zuby.ADGV.AdvancedDataGridView SanPhamDataGridView;
     }
 }

@@ -127,7 +127,7 @@ namespace DoAnCuoiKi.frm.frm_Data
 
                 if (string.IsNullOrEmpty(HoaDonAdvance.FilterString) == true)
                 {
-                    HoaDonAdvance.DataSource = db.HOADONs.AsQueryable().OrderBy(sortStr).ToList();
+                    HoaDonAdvance.DataSource = db.HOADONs.AsQueryable().OrderBy(sortStr).Select(x => new { x.MaHD, x.NgayLap, x.TongTien, x.PhuongThucThanhToan, x.MaDH, x.GhiChu }).ToList();
                 }
                 else
                 {

@@ -89,6 +89,7 @@
             this.HoaDonAdvance.TabIndex = 7;
             this.HoaDonAdvance.SortStringChanged += new System.EventHandler<Zuby.ADGV.AdvancedDataGridView.SortEventArgs>(this.HoaDonAdvance_SortStringChanged);
             this.HoaDonAdvance.FilterStringChanged += new System.EventHandler<Zuby.ADGV.AdvancedDataGridView.FilterEventArgs>(this.HoaDonAdvance_FilterStringChanged);
+            this.HoaDonAdvance.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.HoaDonAdvance_CellContentClick);
             this.HoaDonAdvance.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.HoaDonAdvance_CellContentClick);
             // 
             // CTDHDataGrid
