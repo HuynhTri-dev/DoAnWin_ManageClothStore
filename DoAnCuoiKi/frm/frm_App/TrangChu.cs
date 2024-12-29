@@ -64,7 +64,7 @@ namespace DoAnCuoiKi
         {
             this.Text = "Quản lý đơn hàng";
 
-            OpenChildForm(new QuanLyDonHang());
+            OpenChildForm(new QuanLyDongHang());
         }
 
         private void btnStaff_Click(object sender, EventArgs e)

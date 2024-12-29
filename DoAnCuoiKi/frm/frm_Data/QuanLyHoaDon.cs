@@ -173,15 +173,27 @@ namespace DoAnCuoiKi.frm.frm_Data
             if (maDH != null && maHD != null)
             {
                 var chiTietDH = db.CHITIETDONHANGs.Where(x => x.MaDH == maDH.MaDH).ToList();
-                DialogResult dlg = MessageBox.Show("Xóa thông tin đơn hàng này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult dlg = MessageBox.Show("Xóa thông tin hóa đơn này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dlg == DialogResult.Yes)
                 {
+                    // xóa hóa đơn
                     db.HOADONs.Remove(maHD);
-                    foreach(var ct in chiTietDH)
+
+                    // xóa phiếu giao hàng
+                    var phieuGiaoHang = db.PHIEUGIAOHANGs.FirstOrDefault(x => x.MaDH == maDH.MaDH);
+                    if (phieuGiaoHang != null)
+                    {
+                        db.PHIEUGIAOHANGs.Remove(phieuGiaoHang);
+                    }
+
+                    // xóa đơn hàng, chi tiết đơn hàng liên quan tới hóa đơn
+                    foreach (var ct in chiTietDH)
                     {
                         db.CHITIETDONHANGs.Remove(ct);
                     }
                     db.DonHangs.Remove(maDH);
+
+                    
 
                     db.SaveChanges();
                     MessageBox.Show("Xóa thành công", "Thông báo");
