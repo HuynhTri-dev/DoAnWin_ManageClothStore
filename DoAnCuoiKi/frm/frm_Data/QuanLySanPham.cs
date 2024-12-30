@@ -11,6 +11,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DoAnCuoiKi.frm.frm_BaoCao;
 using DoAnCuoiKi.frm.frm_Data;
 using DoAnCuoiKi.model;
 using static QRCoder.PayloadGenerator.SwissQrCode;
@@ -611,6 +612,12 @@ namespace DoAnCuoiKi
         private void báoCáoToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void báoCáoXuHướngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BaoCaoXuHuong bcxh = new BaoCaoXuHuong();
+            bcxh.ShowDialog();
         }
     }
 }

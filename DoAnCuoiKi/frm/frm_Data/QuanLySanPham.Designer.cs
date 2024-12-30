@@ -58,6 +58,8 @@
             this.LoaiSPComboBox = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ErrorLabel = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.OpenMauButton = new System.Windows.Forms.Button();
             this.OpenLoaiButton = new System.Windows.Forms.Button();
             this.OpenNCCButton = new System.Windows.Forms.Button();
@@ -70,16 +72,16 @@
             this.nhậpHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.báoCáoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.anhSPPictureBox = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.báoCáoXuHướngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.báoCáoNhậpKhoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SanPhamDataGridView)).BeginInit();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.anhSPPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -411,6 +413,28 @@
             this.ErrorLabel.Size = new System.Drawing.Size(0, 16);
             this.ErrorLabel.TabIndex = 29;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::DoAnCuoiKi.Properties.Resources.dau_cong;
+            this.pictureBox2.Location = new System.Drawing.Point(289, 115);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 28;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::DoAnCuoiKi.Properties.Resources.dau_true2;
+            this.pictureBox1.Location = new System.Drawing.Point(181, 115);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // OpenMauButton
             // 
             this.OpenMauButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -515,7 +539,7 @@
             this.báoCáoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1592, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1592, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -523,15 +547,18 @@
             // 
             this.nhậpHàngToolStripMenuItem.Name = "nhậpHàngToolStripMenuItem";
             this.nhậpHàngToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
-            this.nhậpHàngToolStripMenuItem.Size = new System.Drawing.Size(96, 24);
+            this.nhậpHàngToolStripMenuItem.Size = new System.Drawing.Size(96, 26);
             this.nhậpHàngToolStripMenuItem.Text = "Nhập hàng";
             this.nhậpHàngToolStripMenuItem.Click += new System.EventHandler(this.nhậpHàngToolStripMenuItem_Click);
             // 
             // báoCáoToolStripMenuItem
             // 
+            this.báoCáoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.báoCáoXuHướngToolStripMenuItem,
+            this.báoCáoNhậpKhoToolStripMenuItem});
             this.báoCáoToolStripMenuItem.Name = "báoCáoToolStripMenuItem";
-            this.báoCáoToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
-            this.báoCáoToolStripMenuItem.Text = "Báo cáo";
+            this.báoCáoToolStripMenuItem.Size = new System.Drawing.Size(81, 26);
+            this.báoCáoToolStripMenuItem.Text = "Báo cáo ";
             this.báoCáoToolStripMenuItem.Click += new System.EventHandler(this.báoCáoToolStripMenuItem_Click);
             // 
             // anhSPPictureBox
@@ -546,27 +573,18 @@
             this.anhSPPictureBox.Tag = "";
             this.anhSPPictureBox.Click += new System.EventHandler(this.anhSPPictureBox_Click);
             // 
-            // pictureBox2
+            // báoCáoXuHướngToolStripMenuItem
             // 
-            this.pictureBox2.Image = global::DoAnCuoiKi.Properties.Resources.dau_cong;
-            this.pictureBox2.Location = new System.Drawing.Point(289, 115);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 28;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.báoCáoXuHướngToolStripMenuItem.Name = "báoCáoXuHướngToolStripMenuItem";
+            this.báoCáoXuHướngToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.báoCáoXuHướngToolStripMenuItem.Text = "Báo cáo xu hướng";
+            this.báoCáoXuHướngToolStripMenuItem.Click += new System.EventHandler(this.báoCáoXuHướngToolStripMenuItem_Click);
             // 
-            // pictureBox1
+            // báoCáoNhậpKhoToolStripMenuItem
             // 
-            this.pictureBox1.Image = global::DoAnCuoiKi.Properties.Resources.dau_true2;
-            this.pictureBox1.Location = new System.Drawing.Point(181, 115);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 27;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.báoCáoNhậpKhoToolStripMenuItem.Name = "báoCáoNhậpKhoToolStripMenuItem";
+            this.báoCáoNhậpKhoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.báoCáoNhậpKhoToolStripMenuItem.Text = "Báo cáo nhập kho";
             // 
             // QuanLySanPham
             // 
@@ -593,14 +611,14 @@
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SanPhamDataGridView)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.anhSPPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -652,5 +670,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem nhậpHàngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem báoCáoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem báoCáoXuHướngToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem báoCáoNhậpKhoToolStripMenuItem;
     }
 }
