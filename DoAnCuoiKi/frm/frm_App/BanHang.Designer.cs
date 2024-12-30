@@ -167,6 +167,7 @@
             this.KhachDuaTextBox.Size = new System.Drawing.Size(236, 28);
             this.KhachDuaTextBox.TabIndex = 5;
             this.KhachDuaTextBox.TextChanged += new System.EventHandler(this.KhachDuaTextBox_TextChanged);
+            this.KhachDuaTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KhachDuaTextBox_KeyPress);
             this.KhachDuaTextBox.Leave += new System.EventHandler(this.KhachDuaTextBox_Leave);
             // 
             // PhaiThuTextBox

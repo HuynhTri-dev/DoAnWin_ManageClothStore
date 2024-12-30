@@ -123,7 +123,7 @@ namespace DoAnCuoiKi
         {
             filterList.Clear();
             SanPhamDataGridView.DataSource = null;
-            var sp = db.SANPHAMs.Select(x => new { x.MaSP, x.TenSP, NhanHieu = x.THUONGHIEU.TenTH, LoaiSanPham = x.DANHMUC.TenDM, x.Size, Mau = x.MAU.TenMau, NhaCungCap = x.NHACUNGCAP.TenNCC, ChatLieu = x.CHATLIEU.TenCL, x.SoLuongTon, x.GiaBan, x.GiaNhap }).ToList();
+            var sp = db.SANPHAMs.Select(x => new { x.MaSP, x.TenSP, x.SoLuongTon, x.GiaBan, x.GiaNhap, NhanHieu = x.THUONGHIEU.TenTH, LoaiSanPham = x.DANHMUC.TenDM, x.Size, Mau = x.MAU.TenMau, NhaCungCap = x.NHACUNGCAP.TenNCC, ChatLieu = x.CHATLIEU.TenCL }).ToList();
 
             foreach (var item in sp)
             {
@@ -131,20 +131,43 @@ namespace DoAnCuoiKi
                 {
                     MaSP = item.MaSP,
                     TenSP = item.TenSP,
+                    SoLuongTon = item.SoLuongTon,
+                    GiaBan = item.GiaBan,
+                    GiaNhap = item.GiaNhap,
                     NhanHieu = item.NhanHieu,
                     LoaiSanPham = item.LoaiSanPham,
                     Size = item.Size,
                     Mau = item.Mau,
                     NhaCungCap = item.NhaCungCap,
-                    ChatLieu = item.ChatLieu,
-                    SoLuongTon = item.SoLuongTon,
-                    GiaBan = item.GiaBan,
-                    GiaNhap = item.GiaNhap
+                    ChatLieu = item.ChatLieu
+                    
                 };
                 filterList.Add(sanPham);
             }
 
             SanPhamDataGridView.DataSource = sp;
+
+            SanPhamDataGridView.CellFormatting += (sender, e) =>
+            {
+                // Kiểm tra nếu cột đang format là cột "SoLuongTon"
+                if (SanPhamDataGridView.Columns[e.ColumnIndex].DataPropertyName == "SoLuongTon")
+                {
+                    var soLuongTon = Convert.ToInt32(SanPhamDataGridView.Rows[e.RowIndex].Cells["SoLuongTon"].Value);
+
+                    // Nếu số lượng bằng 0, tô màu cả dòng thành màu đỏ
+                    if (soLuongTon == 0)
+                    {
+                        SanPhamDataGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
+                        SanPhamDataGridView.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.White;
+                    }
+
+                    // Nếu số lượng nhỏ hơn hoặc bằng 10, tô màu cả dòng thành màu vàng
+                    else if (soLuongTon <= 10)
+                    {
+                        SanPhamDataGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Yellow;
+                    }
+                }
+            };
 
         }
 
@@ -371,45 +394,42 @@ namespace DoAnCuoiKi
 
         private void SanPhamDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                var row = SanPhamDataGridView.Rows[e.RowIndex];
-                var maSo = row.Cells["MaSP"].Value.ToString();
-                if (!string.IsNullOrEmpty(maSo))
-                {
-                    var thongTin = db.SANPHAMs.FirstOrDefault(x => x.MaSP == maSo);
-
-                    if (thongTin != null)
-                    {
-                        MaSPTextBox.Text = thongTin.MaSP;
-                        TenSPTextBox.Text = thongTin.TenSP;
-                        SLTonTextBox.Text = thongTin.SoLuongTon.ToString();
-                        KichCoComboBox.SelectedItem = thongTin.Size;
-
-                        if (thongTin.AnhSP != null)
+            if (e.RowIndex >= 0) 
+            { 
+                var row = SanPhamDataGridView.Rows[e.RowIndex]; 
+                var maSo = row.Cells["MaSP"].Value.ToString(); 
+                if (!string.IsNullOrEmpty(maSo)) 
+                { 
+                    var thongTin = db.SANPHAMs.FirstOrDefault(x => x.MaSP == maSo); 
+                    if (thongTin != null) 
+                    { 
+                        MaSPTextBox.Text = thongTin.MaSP; 
+                        TenSPTextBox.Text = thongTin.TenSP; 
+                        SLTonTextBox.Text = row.Cells["SoLuongTon"].Value.ToString(); 
+                        //SLTonTextBox.Text = thongTin.SoLuongTon.ToString();
+                        KichCoComboBox.SelectedItem = thongTin.Size; 
+                        if (thongTin.AnhSP != null) 
+                        { 
+                            using (MemoryStream ms = new MemoryStream(thongTin.AnhSP)) 
+                            { 
+                                Image img = Image.FromStream(ms); 
+                                anhSPPictureBox.Image = img; 
+                                anhSPPictureBox.SizeMode = PictureBoxSizeMode.StretchImage; 
+                                chonAnhLabel.Visible = false; 
+                            } 
+                        } else 
                         {
-                            using (MemoryStream ms = new MemoryStream(thongTin.AnhSP))
-                            {
-                                Image img = Image.FromStream(ms);
-                                anhSPPictureBox.Image = img;
-                                anhSPPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-                                chonAnhLabel.Visible = false;
-                            }
+                            anhSPPictureBox.Image = null; 
+                            chonAnhLabel.Visible = true; 
                         }
-                        else
-                        {
-                            anhSPPictureBox.Image = null;
-                            chonAnhLabel.Visible = true;
-                        }
-
                         MauComboBox.SelectedItem = thongTin.MAU.TenMau;
                         LoaiSPComboBox.SelectedItem = thongTin.DANHMUC.TenDM;
                         MaNCCComboBox.SelectedItem = thongTin.NHACUNGCAP.TenNCC;
                         MaChatLieuComboBox.SelectedItem = thongTin.CHATLIEU.TenCL;
                         NhanHieuComboBox.SelectedItem = thongTin.THUONGHIEU.TenTH;
-                        GiaBanTextBox.Text = thongTin.GiaBan.ToString();
+                        GiaBanTextBox.Text = thongTin.GiaBan.ToString(); 
                         GiaNhapTextBox.Text = thongTin.GiaNhap.ToString();
-                        MoTaRichTextBox.Text = thongTin.MoTa;
+                        MoTaRichTextBox.Text = thongTin.MoTa; 
                     }
                 }
             }
@@ -558,14 +578,39 @@ namespace DoAnCuoiKi
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked_1(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void nhậpHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             NhapHang nhapHang = new NhapHang(MaSPTextBox.Text);
             DialogResult dr = nhapHang.ShowDialog();
 
             if (dr == DialogResult.Cancel)
             {
-                LoadForm();
-                ClearFields();
+                QuanLySanPham_Load(sender, e);
+                CuaHangDB db = new CuaHangDB();
             }
+        }
+
+        private void báoCáoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

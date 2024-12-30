@@ -92,5 +92,11 @@ namespace DoAnCuoiKi
 
             this.DonHangReportViewer.RefreshReport();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
     }
 }

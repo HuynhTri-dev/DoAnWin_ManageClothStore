@@ -472,6 +472,8 @@ namespace DoAnCuoiKi
                           .FirstOrDefault();
             }
 
+
+            // nhap dia chi giao hang
             if (LoaiDHComboBox.SelectedItem.ToString() == "Online")
             {
                 ThongTinGiaoHang giaoHang = new ThongTinGiaoHang();
@@ -548,6 +550,9 @@ namespace DoAnCuoiKi
             MessageBox.Show("Hoàn thành đơn hàng", "Thông báo");
             flowLayoutPanel1.Refresh();
             LoadProducts();
+
+            XuatHoaDon xuatHoaDon = new XuatHoaDon(hd.MaHD);
+            xuatHoaDon.ShowDialog();
         }
 
         private void ResetGioHang()
@@ -617,6 +622,33 @@ namespace DoAnCuoiKi
         private void GiaoHangButton_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void KhachDuaTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            { 
+                e.Handled = true;
+                if (decimal.TryParse(KhachDuaTextBox.Text, out decimal khachDua)
+                 && khachDua >= 0
+                 && decimal.TryParse(PhaiThuTextBox.Text, out decimal phaiThu))
+                {
+                    if (khachDua >= phaiThu)
+                    {
+                        TienThoiTextBox.Text = (khachDua - phaiThu).ToString();
+                    }
+                    else
+                    {
+                        TienThoiTextBox.Text = "0";
+                        MessageBox.Show("Khách đưa chưa đủ", "Thông báo");
+                    }
+                }
+                else
+                {
+
+                    MessageBox.Show("Giá trị không đúng", "Thông báo");
+                }
+            }
         }
     }
 }

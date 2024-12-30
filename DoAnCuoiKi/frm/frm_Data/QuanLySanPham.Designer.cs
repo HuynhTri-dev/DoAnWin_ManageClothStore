@@ -58,9 +58,6 @@
             this.LoaiSPComboBox = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ErrorLabel = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.anhSPPictureBox = new System.Windows.Forms.PictureBox();
             this.OpenMauButton = new System.Windows.Forms.Button();
             this.OpenLoaiButton = new System.Windows.Forms.Button();
             this.OpenNCCButton = new System.Windows.Forms.Button();
@@ -68,13 +65,21 @@
             this.OpenNHButton = new System.Windows.Forms.Button();
             this.chonAnhLabel = new System.Windows.Forms.Label();
             this.SanPhamDataGridView = new Zuby.ADGV.AdvancedDataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.nhậpHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.báoCáoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.anhSPPictureBox = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SanPhamDataGridView)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.anhSPPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.anhSPPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SanPhamDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -82,7 +87,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(490, 18);
+            this.label1.Location = new System.Drawing.Point(663, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(353, 40);
             this.label1.TabIndex = 0;
@@ -103,11 +108,11 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(113)))), ((int)(((byte)(91)))));
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1432, 78);
+            this.panel1.Size = new System.Drawing.Size(1595, 80);
             this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label3
             // 
@@ -196,7 +201,7 @@
             // 
             this.XoaButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(225)))), ((int)(((byte)(213)))));
             this.XoaButton.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.XoaButton.Location = new System.Drawing.Point(594, 632);
+            this.XoaButton.Location = new System.Drawing.Point(512, 648);
             this.XoaButton.Name = "XoaButton";
             this.XoaButton.Size = new System.Drawing.Size(238, 46);
             this.XoaButton.TabIndex = 17;
@@ -208,7 +213,7 @@
             // 
             this.ThemSuaButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(225)))), ((int)(((byte)(213)))));
             this.ThemSuaButton.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ThemSuaButton.Location = new System.Drawing.Point(594, 550);
+            this.ThemSuaButton.Location = new System.Drawing.Point(512, 577);
             this.ThemSuaButton.Name = "ThemSuaButton";
             this.ThemSuaButton.Size = new System.Drawing.Size(238, 63);
             this.ThemSuaButton.TabIndex = 16;
@@ -390,9 +395,9 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Location = new System.Drawing.Point(26, 102);
+            this.groupBox1.Location = new System.Drawing.Point(23, 134);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(468, 576);
+            this.groupBox1.Size = new System.Drawing.Size(468, 557);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
@@ -405,6 +410,141 @@
             this.ErrorLabel.Name = "ErrorLabel";
             this.ErrorLabel.Size = new System.Drawing.Size(0, 16);
             this.ErrorLabel.TabIndex = 29;
+            // 
+            // OpenMauButton
+            // 
+            this.OpenMauButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OpenMauButton.Location = new System.Drawing.Point(534, 337);
+            this.OpenMauButton.Name = "OpenMauButton";
+            this.OpenMauButton.Size = new System.Drawing.Size(186, 32);
+            this.OpenMauButton.TabIndex = 29;
+            this.OpenMauButton.Text = "Màu";
+            this.OpenMauButton.UseVisualStyleBackColor = true;
+            this.OpenMauButton.Click += new System.EventHandler(this.OpenMauButton_Click);
+            // 
+            // OpenLoaiButton
+            // 
+            this.OpenLoaiButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OpenLoaiButton.Location = new System.Drawing.Point(534, 385);
+            this.OpenLoaiButton.Name = "OpenLoaiButton";
+            this.OpenLoaiButton.Size = new System.Drawing.Size(186, 32);
+            this.OpenLoaiButton.TabIndex = 30;
+            this.OpenLoaiButton.Text = "Loại";
+            this.OpenLoaiButton.UseVisualStyleBackColor = true;
+            this.OpenLoaiButton.Click += new System.EventHandler(this.OpenLoaiButton_Click);
+            // 
+            // OpenNCCButton
+            // 
+            this.OpenNCCButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OpenNCCButton.Location = new System.Drawing.Point(534, 432);
+            this.OpenNCCButton.Name = "OpenNCCButton";
+            this.OpenNCCButton.Size = new System.Drawing.Size(186, 32);
+            this.OpenNCCButton.TabIndex = 31;
+            this.OpenNCCButton.Text = "Nhà cung cấp";
+            this.OpenNCCButton.UseVisualStyleBackColor = true;
+            this.OpenNCCButton.Click += new System.EventHandler(this.OpenNCCButton_Click);
+            // 
+            // OpenCLButton
+            // 
+            this.OpenCLButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OpenCLButton.Location = new System.Drawing.Point(534, 480);
+            this.OpenCLButton.Name = "OpenCLButton";
+            this.OpenCLButton.Size = new System.Drawing.Size(186, 32);
+            this.OpenCLButton.TabIndex = 32;
+            this.OpenCLButton.Text = "Chất liệu";
+            this.OpenCLButton.UseVisualStyleBackColor = true;
+            this.OpenCLButton.Click += new System.EventHandler(this.OpenCLButton_Click);
+            // 
+            // OpenNHButton
+            // 
+            this.OpenNHButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OpenNHButton.Location = new System.Drawing.Point(534, 525);
+            this.OpenNHButton.Name = "OpenNHButton";
+            this.OpenNHButton.Size = new System.Drawing.Size(186, 32);
+            this.OpenNHButton.TabIndex = 33;
+            this.OpenNHButton.Text = "Nhãn hiệu";
+            this.OpenNHButton.UseVisualStyleBackColor = true;
+            this.OpenNHButton.Click += new System.EventHandler(this.OpenNHButton_Click);
+            // 
+            // chonAnhLabel
+            // 
+            this.chonAnhLabel.AutoSize = true;
+            this.chonAnhLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(225)))), ((int)(((byte)(213)))));
+            this.chonAnhLabel.Enabled = false;
+            this.chonAnhLabel.Location = new System.Drawing.Point(602, 227);
+            this.chonAnhLabel.Name = "chonAnhLabel";
+            this.chonAnhLabel.Size = new System.Drawing.Size(63, 16);
+            this.chonAnhLabel.TabIndex = 34;
+            this.chonAnhLabel.Text = "Chọn ảnh";
+            this.chonAnhLabel.Click += new System.EventHandler(this.chonAnhLabel_Click);
+            // 
+            // SanPhamDataGridView
+            // 
+            this.SanPhamDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.SanPhamDataGridView.FilterAndSortEnabled = true;
+            this.SanPhamDataGridView.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
+            this.SanPhamDataGridView.Location = new System.Drawing.Point(776, 142);
+            this.SanPhamDataGridView.MaxFilterButtonImageHeight = 23;
+            this.SanPhamDataGridView.Name = "SanPhamDataGridView";
+            this.SanPhamDataGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.SanPhamDataGridView.RowHeadersWidth = 51;
+            this.SanPhamDataGridView.RowTemplate.Height = 24;
+            this.SanPhamDataGridView.Size = new System.Drawing.Size(694, 554);
+            this.SanPhamDataGridView.SortStringChangedInvokeBeforeDatasourceUpdate = true;
+            this.SanPhamDataGridView.TabIndex = 35;
+            this.SanPhamDataGridView.SortStringChanged += new System.EventHandler<Zuby.ADGV.AdvancedDataGridView.SortEventArgs>(this.SanPhamDataGridView_SortStringChanged);
+            this.SanPhamDataGridView.FilterStringChanged += new System.EventHandler<Zuby.ADGV.AdvancedDataGridView.FilterEventArgs>(this.SanPhamDataGridView_FilterStringChanged);
+            this.SanPhamDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SanPhamDataGridView_CellContentClick);
+            this.SanPhamDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SanPhamDataGridView_CellContentClick);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.menuStrip1);
+            this.panel2.Location = new System.Drawing.Point(0, 80);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1592, 35);
+            this.panel2.TabIndex = 37;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.White;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nhậpHàngToolStripMenuItem,
+            this.báoCáoToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1592, 28);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // nhậpHàngToolStripMenuItem
+            // 
+            this.nhậpHàngToolStripMenuItem.Name = "nhậpHàngToolStripMenuItem";
+            this.nhậpHàngToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
+            this.nhậpHàngToolStripMenuItem.Size = new System.Drawing.Size(96, 24);
+            this.nhậpHàngToolStripMenuItem.Text = "Nhập hàng";
+            this.nhậpHàngToolStripMenuItem.Click += new System.EventHandler(this.nhậpHàngToolStripMenuItem_Click);
+            // 
+            // báoCáoToolStripMenuItem
+            // 
+            this.báoCáoToolStripMenuItem.Name = "báoCáoToolStripMenuItem";
+            this.báoCáoToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
+            this.báoCáoToolStripMenuItem.Text = "Báo cáo";
+            this.báoCáoToolStripMenuItem.Click += new System.EventHandler(this.báoCáoToolStripMenuItem_Click);
+            // 
+            // anhSPPictureBox
+            // 
+            this.anhSPPictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(225)))), ((int)(((byte)(213)))));
+            this.anhSPPictureBox.Location = new System.Drawing.Point(512, 142);
+            this.anhSPPictureBox.Name = "anhSPPictureBox";
+            this.anhSPPictureBox.Size = new System.Drawing.Size(238, 181);
+            this.anhSPPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.anhSPPictureBox.TabIndex = 28;
+            this.anhSPPictureBox.TabStop = false;
+            this.anhSPPictureBox.Tag = "";
+            this.anhSPPictureBox.Click += new System.EventHandler(this.anhSPPictureBox_Click);
             // 
             // pictureBox2
             // 
@@ -428,121 +568,12 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // anhSPPictureBox
-            // 
-            this.anhSPPictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(225)))), ((int)(((byte)(213)))));
-            this.anhSPPictureBox.Location = new System.Drawing.Point(594, 105);
-            this.anhSPPictureBox.Name = "anhSPPictureBox";
-            this.anhSPPictureBox.Size = new System.Drawing.Size(238, 181);
-            this.anhSPPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.anhSPPictureBox.TabIndex = 28;
-            this.anhSPPictureBox.TabStop = false;
-            this.anhSPPictureBox.Tag = "";
-            this.anhSPPictureBox.Click += new System.EventHandler(this.anhSPPictureBox_Click);
-            // 
-            // OpenMauButton
-            // 
-            this.OpenMauButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OpenMauButton.Location = new System.Drawing.Point(616, 305);
-            this.OpenMauButton.Name = "OpenMauButton";
-            this.OpenMauButton.Size = new System.Drawing.Size(186, 32);
-            this.OpenMauButton.TabIndex = 29;
-            this.OpenMauButton.Text = "Màu";
-            this.OpenMauButton.UseVisualStyleBackColor = true;
-            this.OpenMauButton.Click += new System.EventHandler(this.OpenMauButton_Click);
-            // 
-            // OpenLoaiButton
-            // 
-            this.OpenLoaiButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OpenLoaiButton.Location = new System.Drawing.Point(616, 353);
-            this.OpenLoaiButton.Name = "OpenLoaiButton";
-            this.OpenLoaiButton.Size = new System.Drawing.Size(186, 32);
-            this.OpenLoaiButton.TabIndex = 30;
-            this.OpenLoaiButton.Text = "Loại";
-            this.OpenLoaiButton.UseVisualStyleBackColor = true;
-            this.OpenLoaiButton.Click += new System.EventHandler(this.OpenLoaiButton_Click);
-            // 
-            // OpenNCCButton
-            // 
-            this.OpenNCCButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OpenNCCButton.Location = new System.Drawing.Point(616, 400);
-            this.OpenNCCButton.Name = "OpenNCCButton";
-            this.OpenNCCButton.Size = new System.Drawing.Size(186, 32);
-            this.OpenNCCButton.TabIndex = 31;
-            this.OpenNCCButton.Text = "Nhà cung cấp";
-            this.OpenNCCButton.UseVisualStyleBackColor = true;
-            this.OpenNCCButton.Click += new System.EventHandler(this.OpenNCCButton_Click);
-            // 
-            // OpenCLButton
-            // 
-            this.OpenCLButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OpenCLButton.Location = new System.Drawing.Point(616, 448);
-            this.OpenCLButton.Name = "OpenCLButton";
-            this.OpenCLButton.Size = new System.Drawing.Size(186, 32);
-            this.OpenCLButton.TabIndex = 32;
-            this.OpenCLButton.Text = "Chất liệu";
-            this.OpenCLButton.UseVisualStyleBackColor = true;
-            this.OpenCLButton.Click += new System.EventHandler(this.OpenCLButton_Click);
-            // 
-            // OpenNHButton
-            // 
-            this.OpenNHButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OpenNHButton.Location = new System.Drawing.Point(616, 493);
-            this.OpenNHButton.Name = "OpenNHButton";
-            this.OpenNHButton.Size = new System.Drawing.Size(186, 32);
-            this.OpenNHButton.TabIndex = 33;
-            this.OpenNHButton.Text = "Nhãn hiệu";
-            this.OpenNHButton.UseVisualStyleBackColor = true;
-            this.OpenNHButton.Click += new System.EventHandler(this.OpenNHButton_Click);
-            // 
-            // chonAnhLabel
-            // 
-            this.chonAnhLabel.AutoSize = true;
-            this.chonAnhLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(225)))), ((int)(((byte)(213)))));
-            this.chonAnhLabel.Enabled = false;
-            this.chonAnhLabel.Location = new System.Drawing.Point(684, 195);
-            this.chonAnhLabel.Name = "chonAnhLabel";
-            this.chonAnhLabel.Size = new System.Drawing.Size(63, 16);
-            this.chonAnhLabel.TabIndex = 34;
-            this.chonAnhLabel.Text = "Chọn ảnh";
-            this.chonAnhLabel.Click += new System.EventHandler(this.chonAnhLabel_Click);
-            // 
-            // SanPhamDataGridView
-            // 
-            this.SanPhamDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.SanPhamDataGridView.FilterAndSortEnabled = true;
-            this.SanPhamDataGridView.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.SanPhamDataGridView.Location = new System.Drawing.Point(858, 105);
-            this.SanPhamDataGridView.MaxFilterButtonImageHeight = 23;
-            this.SanPhamDataGridView.Name = "SanPhamDataGridView";
-            this.SanPhamDataGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.SanPhamDataGridView.RowHeadersWidth = 51;
-            this.SanPhamDataGridView.RowTemplate.Height = 24;
-            this.SanPhamDataGridView.Size = new System.Drawing.Size(543, 567);
-            this.SanPhamDataGridView.SortStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.SanPhamDataGridView.TabIndex = 35;
-            this.SanPhamDataGridView.SortStringChanged += new System.EventHandler<Zuby.ADGV.AdvancedDataGridView.SortEventArgs>(this.SanPhamDataGridView_SortStringChanged);
-            this.SanPhamDataGridView.FilterStringChanged += new System.EventHandler<Zuby.ADGV.AdvancedDataGridView.FilterEventArgs>(this.SanPhamDataGridView_FilterStringChanged);
-            this.SanPhamDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SanPhamDataGridView_CellContentClick);
-            this.SanPhamDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SanPhamDataGridView_CellContentClick);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(500, 200);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 61);
-            this.button1.TabIndex = 36;
-            this.button1.Text = "Nhập hàng";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // QuanLySanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1432, 703);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1482, 703);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.SanPhamDataGridView);
             this.Controls.Add(this.chonAnhLabel);
             this.Controls.Add(this.OpenNHButton);
@@ -562,10 +593,14 @@
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SanPhamDataGridView)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.anhSPPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.anhSPPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SanPhamDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -613,6 +648,9 @@
         private System.Windows.Forms.Label chonAnhLabel;
         private System.Windows.Forms.Label ErrorLabel;
         private Zuby.ADGV.AdvancedDataGridView SanPhamDataGridView;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem nhậpHàngToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem báoCáoToolStripMenuItem;
     }
 }
