@@ -254,7 +254,7 @@ namespace DoAnCuoiKi
                 productPanel.Controls.Add(soLuong);
                 productPanel.Controls.Add(productPrice);
                 productPanel.Controls.Add(moreInfo);
-
+                productPanel.Enabled = true;
                 // Neu san pham het
                 if (product.SoLuongTon <= 0)
                 {
@@ -275,9 +275,6 @@ namespace DoAnCuoiKi
                     soldOut.BringToFront();
                     productPanel.Enabled = false;
                 }
-
-                productPanel.Enabled = true;
-
                 productPanel.Click += (s, e) => ThemVaoGioHang(product.MaSP, product.TenSP, product.GiaBan);
 
 
@@ -370,7 +367,18 @@ namespace DoAnCuoiKi
                 try
                 {
                     int soLuong = int.Parse(DonHangDataGrid.Rows[rowIndex].Cells["SoLuong"].Value.ToString());
+
                     var ma = DonHangDataGrid.Rows[rowIndex].Cells["MaSP"].Value.ToString();
+
+                    var slt = db.SANPHAMs.Where(x => x.MaSP == ma).Select(x => x.SoLuongTon).FirstOrDefault();
+
+                    if (soLuong > slt)
+                    {
+                        MessageBox.Show("Số lượng tồn không đủ", "Thông báo");
+                        soLuong = slt;
+                        return;
+                    }
+
                     decimal donGia = db.SANPHAMs.Where(x => x.MaSP == ma).Select(x => x.GiaBan).FirstOrDefault();
 
                     decimal thanhTien = soLuong * donGia;

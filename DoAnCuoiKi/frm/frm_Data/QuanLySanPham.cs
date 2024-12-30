@@ -11,6 +11,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DoAnCuoiKi.frm.frm_Data;
 using DoAnCuoiKi.model;
 using static QRCoder.PayloadGenerator.SwissQrCode;
 
@@ -120,6 +121,8 @@ namespace DoAnCuoiKi
         }
         private void LoadForm()
         {
+            filterList.Clear();
+            SanPhamDataGridView.DataSource = null;
             var sp = db.SANPHAMs.Select(x => new { x.MaSP, x.TenSP, NhanHieu = x.THUONGHIEU.TenTH, LoaiSanPham = x.DANHMUC.TenDM, x.Size, Mau = x.MAU.TenMau, NhaCungCap = x.NHACUNGCAP.TenNCC, ChatLieu = x.CHATLIEU.TenCL, x.SoLuongTon, x.GiaBan, x.GiaNhap }).ToList();
 
             foreach (var item in sp)
@@ -199,7 +202,7 @@ namespace DoAnCuoiKi
 
             try
             {
-                var sp = db.SANPHAMs.Any(x => x.MaSP == MaSPTextBox.Text);
+                
                 byte[] b = ImageToBytes(anhSPPictureBox.Image);
                 var maDM = db.DANHMUCs.Where(x => x.TenDM == LoaiSPComboBox.SelectedItem.ToString()).Select(x => x.MaDM).FirstOrDefault();
                 var maNCC = db.NHACUNGCAPs.Where(x => x.TenNCC == MaNCCComboBox.SelectedItem.ToString()).Select(x => x.MaNCC).FirstOrDefault();
@@ -223,18 +226,18 @@ namespace DoAnCuoiKi
                     MaTH = maTH
                 };
 
-                db.SANPHAMs.AddOrUpdate(sanPham);
-                db.SaveChanges();
-
-                if (!sp)
+                var existingProduct = db.SANPHAMs.FirstOrDefault(x => x.MaSP == sanPham.MaSP);
+                if (existingProduct != null)
                 {
-                    MessageBox.Show("Thêm thành công sản phẩm!", "Thông báo");
-
+                    // Cập nhật sản phẩm
+                    db.Entry(existingProduct).CurrentValues.SetValues(sanPham);
                 }
                 else
                 {
-                    MessageBox.Show("Cập nhật thông tin sản phẩm thành công!", "Thông báo");
+                    // Thêm mới
+                    db.SANPHAMs.Add(sanPham);
                 }
+                db.SaveChanges();
                 LoadForm();
                 ClearFields();
             }
@@ -321,8 +324,19 @@ namespace DoAnCuoiKi
         {
             if (!int.TryParse(SLTonTextBox.Text, out int sl) || string.IsNullOrEmpty(SLTonTextBox.Text) || sl < 0)
             {
-                ErrorLabel.Text = "Giá trị nhập không hợp lệ. \nVui lòng nhập số nguyên và >= 0!";
-                ErrorLabel.ForeColor = Color.Red; 
+                ErrorLabel.Text = "Giá trị nhập\nkhông hợp lệ.";
+                ErrorLabel.ForeColor = Color.Red;
+
+            }
+            else if (sl == 0)
+            {
+                ErrorLabel.Text = "Hết hàng\nCần nhập thêm";
+                ErrorLabel.ForeColor = Color.Red;
+            }
+            else if (sl <= 10)
+            {
+                ErrorLabel.Text = "Gần hết hàng\nCần nhập thêm";
+                ErrorLabel.ForeColor = Color.Green;
             }
             else
             {
@@ -348,6 +362,11 @@ namespace DoAnCuoiKi
 
         private void GiaBanTextBox_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private ComboBox GetMauComboBox()
+        {
+            return MauComboBox;
         }
 
         private void SanPhamDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -529,6 +548,23 @@ namespace DoAnCuoiKi
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + " - " + MethodBase.GetCurrentMethod().Name, "Thông báo");
+            }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            NhapHang nhapHang = new NhapHang(MaSPTextBox.Text);
+            DialogResult dr = nhapHang.ShowDialog();
+
+            if (dr == DialogResult.Cancel)
+            {
+                LoadForm();
+                ClearFields();
             }
         }
     }

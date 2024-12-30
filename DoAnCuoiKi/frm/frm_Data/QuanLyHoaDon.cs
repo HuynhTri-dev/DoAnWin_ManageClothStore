@@ -146,21 +146,25 @@ namespace DoAnCuoiKi.frm.frm_Data
             if (e.RowIndex >= 0)
             {
                 var row = HoaDonAdvance.Rows[e.RowIndex];
-                var maSo = row.Cells["MaDH"].Value.ToString();
+                var maSo = row.Cells["MaHD"].Value.ToString();
                 if (!string.IsNullOrEmpty(maSo))
                 {
-                    var thongTin = db.DonHangs.FirstOrDefault(x => x.MaDH == maSo);
-                    if (thongTin != null)
+                    var thongTinHD = db.HOADONs.FirstOrDefault(x => x.MaHD == maSo);
+                    var thongTinDH = db.DonHangs.FirstOrDefault(x => x.MaDH == thongTinHD.MaDH);
+                    if (thongTinHD != null && thongTinDH != null)
                     {
-                        MaDHText.Text = thongTin.MaDH;
-                        NgayLap.Value = thongTin.NgayLapDon;
-                        LoaiDHText.Text = thongTin.LoaiDH == "ON" ? "Online" : "Offline";  
-                        MaKHText.Text = thongTin?.MaKH;
-                        MaNVText.Text = thongTin.MaNV;
-                        MaKMText.Text = thongTin.MaKM;
+                        MaHDTextBox.Text = thongTinHD.MaHD;
+                        NgayLap.Value = thongTinHD.NgayLap;
+                        TongTienText.Text = thongTinHD.TongTien.ToString();
+                        PTTTText.Text = thongTinHD.PhuongThucThanhToan;
+                        MaDHText.Text = thongTinHD.MaDH;
+                        LoaiDHText.Text = thongTinDH.LoaiDH == "ON" ? "Online" : "Offline";  
+                        MaKHText.Text = thongTinDH?.MaKH;
+                        MaNVText.Text = thongTinDH.MaNV;
+                        MaKMText.Text = thongTinDH?.MaKM;
                     }
 
-                    var data = db.CHITIETDONHANGs.Where(x => x.MaDH == maSo).Select(x => new { x.MaSP, x.SoLuong}).ToList();
+                    var data = db.CHITIETDONHANGs.Where(x => x.MaDH == thongTinHD.MaDH).Select(x => new { x.MaSP, x.SoLuong}).ToList();
                     CTDHDataGrid.DataSource = data;
                 }
             }
@@ -233,6 +237,10 @@ namespace DoAnCuoiKi.frm.frm_Data
 
         }
 
-        
+        private void InHoaDonButton_Click(object sender, EventArgs e)
+        {
+            XuatHoaDon xuatHoaDon = new XuatHoaDon(MaHDTextBox.Text);
+            xuatHoaDon.ShowDialog();
+        }
     }
 }

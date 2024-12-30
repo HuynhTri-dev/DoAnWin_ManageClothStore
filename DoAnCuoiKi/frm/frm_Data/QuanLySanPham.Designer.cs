@@ -68,6 +68,7 @@
             this.OpenNHButton = new System.Windows.Forms.Button();
             this.chonAnhLabel = new System.Windows.Forms.Label();
             this.SanPhamDataGridView = new Zuby.ADGV.AdvancedDataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -171,7 +172,7 @@
             "XL"});
             this.KichCoComboBox.Location = new System.Drawing.Point(181, 157);
             this.KichCoComboBox.Name = "KichCoComboBox";
-            this.KichCoComboBox.Size = new System.Drawing.Size(332, 32);
+            this.KichCoComboBox.Size = new System.Drawing.Size(263, 32);
             this.KichCoComboBox.TabIndex = 8;
             // 
             // MaSPTextBox
@@ -179,7 +180,7 @@
             this.MaSPTextBox.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaSPTextBox.Location = new System.Drawing.Point(181, 23);
             this.MaSPTextBox.Name = "MaSPTextBox";
-            this.MaSPTextBox.Size = new System.Drawing.Size(332, 32);
+            this.MaSPTextBox.Size = new System.Drawing.Size(263, 32);
             this.MaSPTextBox.TabIndex = 9;
             this.MaSPTextBox.TextChanged += new System.EventHandler(this.MaSPTextBox_TextChanged);
             // 
@@ -188,7 +189,7 @@
             this.TenSPTextBox.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TenSPTextBox.Location = new System.Drawing.Point(181, 66);
             this.TenSPTextBox.Name = "TenSPTextBox";
-            this.TenSPTextBox.Size = new System.Drawing.Size(332, 32);
+            this.TenSPTextBox.Size = new System.Drawing.Size(263, 32);
             this.TenSPTextBox.TabIndex = 10;
             // 
             // XoaButton
@@ -229,7 +230,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(279, 441);
+            this.label9.Location = new System.Drawing.Point(242, 441);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(78, 24);
             this.label9.TabIndex = 19;
@@ -269,7 +270,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(19, 487);
+            this.label14.Location = new System.Drawing.Point(19, 488);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(60, 24);
             this.label14.TabIndex = 19;
@@ -280,7 +281,7 @@
             this.GiaNhapTextBox.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GiaNhapTextBox.Location = new System.Drawing.Point(114, 438);
             this.GiaNhapTextBox.Name = "GiaNhapTextBox";
-            this.GiaNhapTextBox.Size = new System.Drawing.Size(150, 32);
+            this.GiaNhapTextBox.Size = new System.Drawing.Size(119, 32);
             this.GiaNhapTextBox.TabIndex = 20;
             this.GiaNhapTextBox.TextChanged += new System.EventHandler(this.GiaNhapTextBox_TextChanged);
             // 
@@ -297,9 +298,9 @@
             // GiaBanTextBox
             // 
             this.GiaBanTextBox.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GiaBanTextBox.Location = new System.Drawing.Point(363, 438);
+            this.GiaBanTextBox.Location = new System.Drawing.Point(326, 438);
             this.GiaBanTextBox.Name = "GiaBanTextBox";
-            this.GiaBanTextBox.Size = new System.Drawing.Size(150, 32);
+            this.GiaBanTextBox.Size = new System.Drawing.Size(118, 32);
             this.GiaBanTextBox.TabIndex = 20;
             this.GiaBanTextBox.TextChanged += new System.EventHandler(this.GiaBanTextBox_TextChanged);
             // 
@@ -309,7 +310,7 @@
             this.MaNCCComboBox.FormattingEnabled = true;
             this.MaNCCComboBox.Location = new System.Drawing.Point(181, 298);
             this.MaNCCComboBox.Name = "MaNCCComboBox";
-            this.MaNCCComboBox.Size = new System.Drawing.Size(332, 32);
+            this.MaNCCComboBox.Size = new System.Drawing.Size(263, 32);
             this.MaNCCComboBox.TabIndex = 21;
             // 
             // MaChatLieuComboBox
@@ -318,15 +319,15 @@
             this.MaChatLieuComboBox.FormattingEnabled = true;
             this.MaChatLieuComboBox.Location = new System.Drawing.Point(181, 345);
             this.MaChatLieuComboBox.Name = "MaChatLieuComboBox";
-            this.MaChatLieuComboBox.Size = new System.Drawing.Size(332, 32);
+            this.MaChatLieuComboBox.Size = new System.Drawing.Size(263, 32);
             this.MaChatLieuComboBox.TabIndex = 21;
             // 
             // MoTaRichTextBox
             // 
             this.MoTaRichTextBox.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MoTaRichTextBox.Location = new System.Drawing.Point(181, 484);
+            this.MoTaRichTextBox.Location = new System.Drawing.Point(181, 476);
             this.MoTaRichTextBox.Name = "MoTaRichTextBox";
-            this.MoTaRichTextBox.Size = new System.Drawing.Size(332, 72);
+            this.MoTaRichTextBox.Size = new System.Drawing.Size(263, 72);
             this.MoTaRichTextBox.TabIndex = 23;
             this.MoTaRichTextBox.Text = "";
             // 
@@ -336,7 +337,7 @@
             this.NhanHieuComboBox.FormattingEnabled = true;
             this.NhanHieuComboBox.Location = new System.Drawing.Point(181, 391);
             this.NhanHieuComboBox.Name = "NhanHieuComboBox";
-            this.NhanHieuComboBox.Size = new System.Drawing.Size(332, 32);
+            this.NhanHieuComboBox.Size = new System.Drawing.Size(263, 32);
             this.NhanHieuComboBox.TabIndex = 24;
             this.NhanHieuComboBox.SelectedIndexChanged += new System.EventHandler(this.NhanHieuComboBox_SelectedIndexChanged);
             // 
@@ -346,7 +347,7 @@
             this.MauComboBox.FormattingEnabled = true;
             this.MauComboBox.Location = new System.Drawing.Point(181, 203);
             this.MauComboBox.Name = "MauComboBox";
-            this.MauComboBox.Size = new System.Drawing.Size(332, 32);
+            this.MauComboBox.Size = new System.Drawing.Size(263, 32);
             this.MauComboBox.TabIndex = 25;
             this.MauComboBox.SelectedIndexChanged += new System.EventHandler(this.MauComboBox_SelectedIndexChanged);
             // 
@@ -356,7 +357,7 @@
             this.LoaiSPComboBox.FormattingEnabled = true;
             this.LoaiSPComboBox.Location = new System.Drawing.Point(181, 251);
             this.LoaiSPComboBox.Name = "LoaiSPComboBox";
-            this.LoaiSPComboBox.Size = new System.Drawing.Size(332, 32);
+            this.LoaiSPComboBox.Size = new System.Drawing.Size(263, 32);
             this.LoaiSPComboBox.TabIndex = 26;
             this.LoaiSPComboBox.SelectedIndexChanged += new System.EventHandler(this.LoaiSPComboBox_SelectedIndexChanged);
             // 
@@ -391,15 +392,16 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Location = new System.Drawing.Point(26, 102);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(543, 576);
+            this.groupBox1.Size = new System.Drawing.Size(468, 576);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // ErrorLabel
             // 
             this.ErrorLabel.AutoSize = true;
             this.ErrorLabel.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ErrorLabel.Location = new System.Drawing.Point(329, 115);
+            this.ErrorLabel.Location = new System.Drawing.Point(320, 112);
             this.ErrorLabel.Name = "ErrorLabel";
             this.ErrorLabel.Size = new System.Drawing.Size(0, 16);
             this.ErrorLabel.TabIndex = 29;
@@ -441,9 +443,9 @@
             // OpenMauButton
             // 
             this.OpenMauButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OpenMauButton.Location = new System.Drawing.Point(594, 304);
+            this.OpenMauButton.Location = new System.Drawing.Point(616, 305);
             this.OpenMauButton.Name = "OpenMauButton";
-            this.OpenMauButton.Size = new System.Drawing.Size(238, 32);
+            this.OpenMauButton.Size = new System.Drawing.Size(186, 32);
             this.OpenMauButton.TabIndex = 29;
             this.OpenMauButton.Text = "Màu";
             this.OpenMauButton.UseVisualStyleBackColor = true;
@@ -452,9 +454,9 @@
             // OpenLoaiButton
             // 
             this.OpenLoaiButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OpenLoaiButton.Location = new System.Drawing.Point(594, 352);
+            this.OpenLoaiButton.Location = new System.Drawing.Point(616, 353);
             this.OpenLoaiButton.Name = "OpenLoaiButton";
-            this.OpenLoaiButton.Size = new System.Drawing.Size(238, 32);
+            this.OpenLoaiButton.Size = new System.Drawing.Size(186, 32);
             this.OpenLoaiButton.TabIndex = 30;
             this.OpenLoaiButton.Text = "Loại";
             this.OpenLoaiButton.UseVisualStyleBackColor = true;
@@ -463,9 +465,9 @@
             // OpenNCCButton
             // 
             this.OpenNCCButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OpenNCCButton.Location = new System.Drawing.Point(594, 399);
+            this.OpenNCCButton.Location = new System.Drawing.Point(616, 400);
             this.OpenNCCButton.Name = "OpenNCCButton";
-            this.OpenNCCButton.Size = new System.Drawing.Size(238, 32);
+            this.OpenNCCButton.Size = new System.Drawing.Size(186, 32);
             this.OpenNCCButton.TabIndex = 31;
             this.OpenNCCButton.Text = "Nhà cung cấp";
             this.OpenNCCButton.UseVisualStyleBackColor = true;
@@ -474,9 +476,9 @@
             // OpenCLButton
             // 
             this.OpenCLButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OpenCLButton.Location = new System.Drawing.Point(594, 447);
+            this.OpenCLButton.Location = new System.Drawing.Point(616, 448);
             this.OpenCLButton.Name = "OpenCLButton";
-            this.OpenCLButton.Size = new System.Drawing.Size(238, 32);
+            this.OpenCLButton.Size = new System.Drawing.Size(186, 32);
             this.OpenCLButton.TabIndex = 32;
             this.OpenCLButton.Text = "Chất liệu";
             this.OpenCLButton.UseVisualStyleBackColor = true;
@@ -485,9 +487,9 @@
             // OpenNHButton
             // 
             this.OpenNHButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OpenNHButton.Location = new System.Drawing.Point(594, 492);
+            this.OpenNHButton.Location = new System.Drawing.Point(616, 493);
             this.OpenNHButton.Name = "OpenNHButton";
-            this.OpenNHButton.Size = new System.Drawing.Size(238, 32);
+            this.OpenNHButton.Size = new System.Drawing.Size(186, 32);
             this.OpenNHButton.TabIndex = 33;
             this.OpenNHButton.Text = "Nhãn hiệu";
             this.OpenNHButton.UseVisualStyleBackColor = true;
@@ -524,11 +526,23 @@
             this.SanPhamDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SanPhamDataGridView_CellContentClick);
             this.SanPhamDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SanPhamDataGridView_CellContentClick);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(500, 200);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(88, 61);
+            this.button1.TabIndex = 36;
+            this.button1.Text = "Nhập hàng";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // QuanLySanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1432, 703);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.SanPhamDataGridView);
             this.Controls.Add(this.chonAnhLabel);
             this.Controls.Add(this.OpenNHButton);
@@ -599,5 +613,6 @@
         private System.Windows.Forms.Label chonAnhLabel;
         private System.Windows.Forms.Label ErrorLabel;
         private Zuby.ADGV.AdvancedDataGridView SanPhamDataGridView;
+        private System.Windows.Forms.Button button1;
     }
 }
