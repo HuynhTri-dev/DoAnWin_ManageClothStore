@@ -51,6 +51,16 @@ namespace DoAnCuoiKi.frm.frm_Data
             try
             {
                 var sp = db.SANPHAMs.Where(x => x.MaSP == MASP).FirstOrDefault();
+
+                var phieuNhap = new PHIEUNHAPKHO
+                {
+                    MaSP = MASP,
+                    SoLuongNhap = soLuongNhap,
+                    NgayNhap = DateTime.Now
+                };
+
+                db.PHIEUNHAPKHOes.Add(phieuNhap);
+
                 sp.SoLuongTon += soLuongNhap;
                 db.SaveChanges();
                 MessageBox.Show("Nhập hàng thành công!");

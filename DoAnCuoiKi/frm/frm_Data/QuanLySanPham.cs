@@ -619,5 +619,11 @@ namespace DoAnCuoiKi
             BaoCaoXuHuong bcxh = new BaoCaoXuHuong();
             bcxh.ShowDialog();
         }
+
+        private void báoCáoNhậpKhoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BaoCaoNhapKho bcnk = new BaoCaoNhapKho();
+            bcnk.ShowDialog();
+        }
     }
 }

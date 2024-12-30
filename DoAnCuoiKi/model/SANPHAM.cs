@@ -13,6 +13,7 @@ namespace DoAnCuoiKi.model
         public SANPHAM()
         {
             CHITIETDONHANGs = new HashSet<CHITIETDONHANG>();
+            PHIEUNHAPKHOes = new HashSet<PHIEUNHAPKHO>();
         }
 
         [Key]
@@ -68,6 +69,9 @@ namespace DoAnCuoiKi.model
         public virtual MAU MAU { get; set; }
 
         public virtual NHACUNGCAP NHACUNGCAP { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PHIEUNHAPKHO> PHIEUNHAPKHOes { get; set; }
 
         public virtual THUONGHIEU THUONGHIEU { get; set; }
     }

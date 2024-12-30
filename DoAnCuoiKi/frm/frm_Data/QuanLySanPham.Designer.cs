@@ -573,6 +573,7 @@
             this.báoCáoNhậpKhoToolStripMenuItem.Name = "báoCáoNhậpKhoToolStripMenuItem";
             this.báoCáoNhậpKhoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.báoCáoNhậpKhoToolStripMenuItem.Text = "Báo cáo nhập kho";
+            this.báoCáoNhậpKhoToolStripMenuItem.Click += new System.EventHandler(this.báoCáoNhậpKhoToolStripMenuItem_Click);
             // 
             // anhSPPictureBox
             // 

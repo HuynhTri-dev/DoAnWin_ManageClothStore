@@ -23,6 +23,7 @@ namespace DoAnCuoiKi.model
         public virtual DbSet<NHACUNGCAP> NHACUNGCAPs { get; set; }
         public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
         public virtual DbSet<PHIEUGIAOHANG> PHIEUGIAOHANGs { get; set; }
+        public virtual DbSet<PHIEUNHAPKHO> PHIEUNHAPKHOes { get; set; }
         public virtual DbSet<SANPHAM> SANPHAMs { get; set; }
         public virtual DbSet<TAIKHOAN> TAIKHOANs { get; set; }
         public virtual DbSet<THUONGHIEU> THUONGHIEUx { get; set; }
@@ -169,6 +170,10 @@ namespace DoAnCuoiKi.model
                 .Property(e => e.Phi)
                 .HasPrecision(18, 0);
 
+            modelBuilder.Entity<PHIEUNHAPKHO>()
+                .Property(e => e.MaSP)
+                .IsUnicode(false);
+
             modelBuilder.Entity<SANPHAM>()
                 .Property(e => e.MaSP)
                 .IsUnicode(false);
@@ -207,6 +212,11 @@ namespace DoAnCuoiKi.model
 
             modelBuilder.Entity<SANPHAM>()
                 .HasMany(e => e.CHITIETDONHANGs)
+                .WithRequired(e => e.SANPHAM)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<SANPHAM>()
+                .HasMany(e => e.PHIEUNHAPKHOes)
                 .WithRequired(e => e.SANPHAM)
                 .WillCascadeOnDelete(false);
 

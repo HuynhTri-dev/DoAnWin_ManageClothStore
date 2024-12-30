@@ -117,6 +117,12 @@
     <Compile Include="frm\frm_BaoCao\BaoCaoXuHuong.Designer.cs">
       <DependentUpon>BaoCaoXuHuong.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm\frm_BaoCao\BaoCaoNhapKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\frm_BaoCao\BaoCaoNhapKho.Designer.cs">
+      <DependentUpon>BaoCaoNhapKho.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm\frm_BaoCao\XuatHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +219,7 @@
     <Compile Include="model\NHACUNGCAP.cs" />
     <Compile Include="model\NHANVIEN.cs" />
     <Compile Include="model\PHIEUGIAOHANG.cs" />
+    <Compile Include="model\PHIEUNHAPKHO.cs" />
     <Compile Include="model\SANPHAM.cs" />
     <Compile Include="model\TAIKHOAN.cs" />
     <Compile Include="model\THUONGHIEU.cs" />
@@ -259,10 +266,14 @@
     <EmbeddedResource Include="frm\frm_BaoCao\BaoCaoDoanhThu.resx">
       <DependentUpon>BaoCaoDoanhThu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm\frm_BaoCao\BaoCaoNhapKho.resx">
+      <DependentUpon>BaoCaoNhapKho.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm\frm_BaoCao\BaoCaoXuHuong.resx">
       <DependentUpon>BaoCaoXuHuong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm\frm_BaoCao\rptDonHang.rdlc" />
+    <EmbeddedResource Include="frm\frm_BaoCao\rptNhapHang.rdlc" />
     <EmbeddedResource Include="frm\frm_BaoCao\rptXuHuong.rdlc" />
     <EmbeddedResource Include="frm\frm_BaoCao\XuatHoaDon.resx">
       <DependentUpon>XuatHoaDon.cs</DependentUpon>
@@ -325,8 +336,10 @@
     </EmbeddedResource>
     <None Include="App.Config" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\DoAnCuoiKi.frm.frm_BaoCao.BaoCaoNhapKho.datasource" />
     <None Include="Properties\DataSources\DoAnCuoiKi.frm.frm_BaoCao.BaoCaoXuHuong+BaoCaoDanhMuc.datasource" />
     <None Include="Properties\DataSources\DoAnCuoiKi.frm.frm_BaoCao.BaoCaoXuHuong+BaoCaoSanPham.datasource" />
+    <None Include="Properties\DataSources\DoAnCuoiKi.model.PHIEUNHAPKHO.datasource" />
     <None Include="Properties\DataSources\XuatHoaDon.CTHD.datasource" />
     <None Include="Properties\DataSources\XuatHoaDon.datasource" />
     <None Include="Properties\DataSources\XuatHoaDon.ThongTinHoaDon.datasource" />
