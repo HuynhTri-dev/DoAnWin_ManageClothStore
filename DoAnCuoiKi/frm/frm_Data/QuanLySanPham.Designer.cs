@@ -71,9 +71,9 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.nhậpHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.báoCáoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.anhSPPictureBox = new System.Windows.Forms.PictureBox();
             this.báoCáoXuHướngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.báoCáoNhậpKhoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.anhSPPictureBox = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -539,7 +539,7 @@
             this.báoCáoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1592, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1592, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -547,7 +547,7 @@
             // 
             this.nhậpHàngToolStripMenuItem.Name = "nhậpHàngToolStripMenuItem";
             this.nhậpHàngToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
-            this.nhậpHàngToolStripMenuItem.Size = new System.Drawing.Size(96, 26);
+            this.nhậpHàngToolStripMenuItem.Size = new System.Drawing.Size(96, 24);
             this.nhậpHàngToolStripMenuItem.Text = "Nhập hàng";
             this.nhậpHàngToolStripMenuItem.Click += new System.EventHandler(this.nhậpHàngToolStripMenuItem_Click);
             // 
@@ -557,21 +557,9 @@
             this.báoCáoXuHướngToolStripMenuItem,
             this.báoCáoNhậpKhoToolStripMenuItem});
             this.báoCáoToolStripMenuItem.Name = "báoCáoToolStripMenuItem";
-            this.báoCáoToolStripMenuItem.Size = new System.Drawing.Size(81, 26);
+            this.báoCáoToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
             this.báoCáoToolStripMenuItem.Text = "Báo cáo ";
             this.báoCáoToolStripMenuItem.Click += new System.EventHandler(this.báoCáoToolStripMenuItem_Click);
-            // 
-            // anhSPPictureBox
-            // 
-            this.anhSPPictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(225)))), ((int)(((byte)(213)))));
-            this.anhSPPictureBox.Location = new System.Drawing.Point(512, 142);
-            this.anhSPPictureBox.Name = "anhSPPictureBox";
-            this.anhSPPictureBox.Size = new System.Drawing.Size(238, 181);
-            this.anhSPPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.anhSPPictureBox.TabIndex = 28;
-            this.anhSPPictureBox.TabStop = false;
-            this.anhSPPictureBox.Tag = "";
-            this.anhSPPictureBox.Click += new System.EventHandler(this.anhSPPictureBox_Click);
             // 
             // báoCáoXuHướngToolStripMenuItem
             // 
@@ -585,6 +573,18 @@
             this.báoCáoNhậpKhoToolStripMenuItem.Name = "báoCáoNhậpKhoToolStripMenuItem";
             this.báoCáoNhậpKhoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.báoCáoNhậpKhoToolStripMenuItem.Text = "Báo cáo nhập kho";
+            // 
+            // anhSPPictureBox
+            // 
+            this.anhSPPictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(225)))), ((int)(((byte)(213)))));
+            this.anhSPPictureBox.Location = new System.Drawing.Point(512, 142);
+            this.anhSPPictureBox.Name = "anhSPPictureBox";
+            this.anhSPPictureBox.Size = new System.Drawing.Size(238, 181);
+            this.anhSPPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.anhSPPictureBox.TabIndex = 28;
+            this.anhSPPictureBox.TabStop = false;
+            this.anhSPPictureBox.Tag = "";
+            this.anhSPPictureBox.Click += new System.EventHandler(this.anhSPPictureBox_Click);
             // 
             // QuanLySanPham
             // 

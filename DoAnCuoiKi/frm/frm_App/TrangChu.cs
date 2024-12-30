@@ -1,4 +1,5 @@
-﻿using DoAnCuoiKi.frm.frm_Data;
+﻿using DoAnCuoiKi.frm.frm_BaoCao;
+using DoAnCuoiKi.frm.frm_Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -107,6 +108,7 @@ namespace DoAnCuoiKi
         private void btnRevenue_Click(object sender, EventArgs e)
         {
             this.Text = "Quản lý doanh thu";
+            OpenChildForm(new BaoCaoDoanhThu());
         }
 
         
