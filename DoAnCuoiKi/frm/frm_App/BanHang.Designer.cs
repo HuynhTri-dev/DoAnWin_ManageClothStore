@@ -32,7 +32,6 @@
             this.GhiChuRichText = new System.Windows.Forms.RichTextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.MaQRButton = new System.Windows.Forms.PictureBox();
             this.TienThoiTextBox = new System.Windows.Forms.TextBox();
             this.KhachDuaTextBox = new System.Windows.Forms.TextBox();
             this.PhaiThuTextBox = new System.Windows.Forms.TextBox();
@@ -65,11 +64,15 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.ResearchSanPham = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.MaQRButton = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MaQRButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DonHangDataGrid)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MaQRButton)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -137,17 +140,6 @@
             this.groupBox1.Size = new System.Drawing.Size(436, 255);
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
-            // 
-            // MaQRButton
-            // 
-            this.MaQRButton.Image = global::DoAnCuoiKi.Properties.Resources.tải_xuống1;
-            this.MaQRButton.Location = new System.Drawing.Point(373, 156);
-            this.MaQRButton.Name = "MaQRButton";
-            this.MaQRButton.Size = new System.Drawing.Size(35, 35);
-            this.MaQRButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.MaQRButton.TabIndex = 37;
-            this.MaQRButton.TabStop = false;
-            this.MaQRButton.Click += new System.EventHandler(this.MaQRButton_Click);
             // 
             // TienThoiTextBox
             // 
@@ -446,9 +438,9 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(14, 77);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(11, 120);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(956, 734);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(956, 691);
             this.flowLayoutPanel1.TabIndex = 0;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
@@ -473,6 +465,36 @@
             this.panel2.Size = new System.Drawing.Size(969, 71);
             this.panel2.TabIndex = 8;
             // 
+            // ResearchSanPham
+            // 
+            this.ResearchSanPham.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ResearchSanPham.Location = new System.Drawing.Point(65, 86);
+            this.ResearchSanPham.Name = "ResearchSanPham";
+            this.ResearchSanPham.Size = new System.Drawing.Size(227, 28);
+            this.ResearchSanPham.TabIndex = 9;
+            this.ResearchSanPham.TextChanged += new System.EventHandler(this.ResearchSanPham_TextChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::DoAnCuoiKi.Properties.Resources.istockphoto_1342842799_612x6121;
+            this.pictureBox1.Location = new System.Drawing.Point(298, 85);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
+            // MaQRButton
+            // 
+            this.MaQRButton.Image = global::DoAnCuoiKi.Properties.Resources.tải_xuống1;
+            this.MaQRButton.Location = new System.Drawing.Point(373, 156);
+            this.MaQRButton.Name = "MaQRButton";
+            this.MaQRButton.Size = new System.Drawing.Size(35, 35);
+            this.MaQRButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.MaQRButton.TabIndex = 37;
+            this.MaQRButton.TabStop = false;
+            this.MaQRButton.Click += new System.EventHandler(this.MaQRButton_Click);
+            // 
             // BanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -481,6 +503,8 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(225)))), ((int)(((byte)(213)))));
             this.ClientSize = new System.Drawing.Size(1476, 823);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.ResearchSanPham);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -491,11 +515,13 @@
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MaQRButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DonHangDataGrid)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MaQRButton)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -537,5 +563,7 @@
         private System.Windows.Forms.PictureBox MaQRButton;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.RichTextBox GhiChuRichText;
+        private System.Windows.Forms.TextBox ResearchSanPham;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

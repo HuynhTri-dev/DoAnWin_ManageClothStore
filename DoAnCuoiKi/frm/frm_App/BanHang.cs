@@ -41,6 +41,23 @@ namespace DoAnCuoiKi
             }
         }
 
+        public class Product
+        {
+            public string MaSP { get; set; }
+            public string TenSP { get; set; }
+            public decimal GiaBan { get; set; }
+            public byte[] AnhSP { get; set; }
+            public string Size { get; set; }
+            public string Mau { get; set; }
+            public string ThuongHieu { get; set; }
+            public string ChatLieu { get; set; }
+            public string DanhMuc { get; set; }
+            public string NhaCungCap { get; set; }
+            public int SoLuongTon { get; set; }
+        }
+
+        //private List<Product> products = new List<Product>();
+
         private List<Hang> gioHangs = new List<Hang>();
 
         // Định danh nhân viên
@@ -61,7 +78,9 @@ namespace DoAnCuoiKi
             GiaTriTextBox.Text = "0";
             LoadMaDonHang();
             LoadGioHang();
-            LoadProducts();
+
+            // Lấy danh sách sản phẩm từ cơ sở dữ liệu
+            LoadProduct();
 
             // Group
             TongTienTextBox.Text = "0";
@@ -168,23 +187,9 @@ namespace DoAnCuoiKi
             PhaiThuTextBox.Text = (PhaiThu).ToString("0.##");
         }
 
-        private void LoadProducts()
+        private void HienThiSanPham(List<Product> products)
         {
-            // Lấy danh sách sản phẩm từ cơ sở dữ liệu
-            var products = db.SANPHAMs.Select(p => new
-            {
-                p.MaSP,
-                p.TenSP,
-                p.GiaBan,
-                p.AnhSP,
-                p.Size,
-                p.MAU.TenMau,
-                p.THUONGHIEU.TenTH,
-                p.CHATLIEU.TenCL,
-                p.DANHMUC.TenDM,
-                p.NHACUNGCAP.TenNCC,
-                p.SoLuongTon
-            }).ToList();
+            
 
             // Dọn dẹp FlowLayoutPanel
             flowLayoutPanel1.Controls.Clear();
@@ -282,6 +287,27 @@ namespace DoAnCuoiKi
                 flowLayoutPanel1.Controls.Add(productPanel);
             }
         }
+
+        private void LoadProduct()
+        {
+            var products = db.SANPHAMs.Select(p => new Product
+            {
+                MaSP = p.MaSP,
+                TenSP = p.TenSP,
+                GiaBan = p.GiaBan,
+                AnhSP = p.AnhSP,
+                Size = p.Size,
+                Mau = p.MAU.TenMau,
+                ThuongHieu = p.THUONGHIEU.TenTH,
+                ChatLieu = p.CHATLIEU.TenCL,
+                DanhMuc = p.DANHMUC.TenDM,
+                NhaCungCap = p.NHACUNGCAP.TenNCC,
+                SoLuongTon = p.SoLuongTon
+            }).ToList();
+            // Load sản phẩm
+            HienThiSanPham(products);
+        }
+
         // Chức năng thêm hàng vào giỏ
         private void ThemVaoGioHang(string MaSP, string TenSP, decimal GiaBan)
         {
@@ -403,6 +429,10 @@ namespace DoAnCuoiKi
             {
                 PhuongThuc = "Momo";
                 MessageBox.Show("Thanh toán thành công", "Thông báo");
+            }
+            else
+            {
+                PhuongThuc = "Tiền mặt";
             }
         }
         // chức năng xóa hàng trong giỏ
@@ -549,7 +579,7 @@ namespace DoAnCuoiKi
             ResetGioHang();
             MessageBox.Show("Hoàn thành đơn hàng", "Thông báo");
             flowLayoutPanel1.Refresh();
-            LoadProducts();
+            LoadProduct();
 
             XuatHoaDon xuatHoaDon = new XuatHoaDon(hd.MaHD);
             xuatHoaDon.ShowDialog();
@@ -566,6 +596,7 @@ namespace DoAnCuoiKi
             LoaiDHComboBox.SelectedIndex = -1;
             GhiChuRichText.Clear();
             KhachDuaTextBox.Text = "0";
+            PhuongThuc = "Tiền mặt";
         }
 
         // Tao mã hóa đơn
@@ -585,43 +616,6 @@ namespace DoAnCuoiKi
                 MessageBox.Show("Mã hóa đơn đã tồn tại","Thông báo");
                 return string.Empty;
             }
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MaKHTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        
-
-        private void KhachDuaTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GiaoHangButton_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void KhachDuaTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -649,6 +643,72 @@ namespace DoAnCuoiKi
                     MessageBox.Show("Giá trị không đúng", "Thông báo");
                 }
             }
+        }
+
+        private void ResearchSanPham_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(ResearchSanPham.Text))
+            {
+                LoadProduct();
+            }
+            else
+            {
+                var search = ResearchSanPham.Text;
+                var products = db.SANPHAMs
+                    .Where(p => p.TenSP.Contains(search))
+                    .Select(p => new Product
+                    {
+                        MaSP = p.MaSP,
+                        TenSP = p.TenSP,
+                        GiaBan = p.GiaBan,
+                        AnhSP = p.AnhSP,
+                        Size = p.Size,
+                        Mau = p.MAU.TenMau,
+                        ThuongHieu = p.THUONGHIEU.TenTH,
+                        ChatLieu = p.CHATLIEU.TenCL,
+                        DanhMuc = p.DANHMUC.TenDM,
+                        NhaCungCap = p.NHACUNGCAP.TenNCC,
+                        SoLuongTon = p.SoLuongTon
+                    }).ToList();
+                HienThiSanPham(products);
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MaKHTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void KhachDuaTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GiaoHangButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
