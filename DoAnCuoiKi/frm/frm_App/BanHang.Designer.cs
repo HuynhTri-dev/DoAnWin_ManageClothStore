@@ -32,6 +32,7 @@
             this.GhiChuRichText = new System.Windows.Forms.RichTextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.MaQRButton = new System.Windows.Forms.PictureBox();
             this.TienThoiTextBox = new System.Windows.Forms.TextBox();
             this.KhachDuaTextBox = new System.Windows.Forms.TextBox();
             this.PhaiThuTextBox = new System.Windows.Forms.TextBox();
@@ -66,13 +67,17 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.ResearchSanPham = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.MaQRButton = new System.Windows.Forms.PictureBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.SearchThuongHieu = new System.Windows.Forms.ComboBox();
+            this.SearchLoai = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MaQRButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DonHangDataGrid)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MaQRButton)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -140,6 +145,17 @@
             this.groupBox1.Size = new System.Drawing.Size(436, 255);
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
+            // 
+            // MaQRButton
+            // 
+            this.MaQRButton.Image = global::DoAnCuoiKi.Properties.Resources.tải_xuống1;
+            this.MaQRButton.Location = new System.Drawing.Point(373, 156);
+            this.MaQRButton.Name = "MaQRButton";
+            this.MaQRButton.Size = new System.Drawing.Size(35, 35);
+            this.MaQRButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.MaQRButton.TabIndex = 37;
+            this.MaQRButton.TabStop = false;
+            this.MaQRButton.Click += new System.EventHandler(this.MaQRButton_Click);
             // 
             // TienThoiTextBox
             // 
@@ -467,8 +483,9 @@
             // 
             // ResearchSanPham
             // 
+            this.ResearchSanPham.AccessibleName = "";
             this.ResearchSanPham.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ResearchSanPham.Location = new System.Drawing.Point(65, 86);
+            this.ResearchSanPham.Location = new System.Drawing.Point(98, 82);
             this.ResearchSanPham.Name = "ResearchSanPham";
             this.ResearchSanPham.Size = new System.Drawing.Size(227, 28);
             this.ResearchSanPham.TabIndex = 9;
@@ -477,23 +494,63 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::DoAnCuoiKi.Properties.Resources.istockphoto_1342842799_612x6121;
-            this.pictureBox1.Location = new System.Drawing.Point(298, 85);
+            this.pictureBox1.Location = new System.Drawing.Point(331, 81);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(30, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
-            // MaQRButton
+            // label16
             // 
-            this.MaQRButton.Image = global::DoAnCuoiKi.Properties.Resources.tải_xuống1;
-            this.MaQRButton.Location = new System.Drawing.Point(373, 156);
-            this.MaQRButton.Name = "MaQRButton";
-            this.MaQRButton.Size = new System.Drawing.Size(35, 35);
-            this.MaQRButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.MaQRButton.TabIndex = 37;
-            this.MaQRButton.TabStop = false;
-            this.MaQRButton.Click += new System.EventHandler(this.MaQRButton_Click);
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(21, 85);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(67, 21);
+            this.label16.TabIndex = 100;
+            this.label16.Text = "Tên SP:";
+            // 
+            // SearchThuongHieu
+            // 
+            this.SearchThuongHieu.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchThuongHieu.FormattingEnabled = true;
+            this.SearchThuongHieu.Location = new System.Drawing.Point(553, 81);
+            this.SearchThuongHieu.Name = "SearchThuongHieu";
+            this.SearchThuongHieu.Size = new System.Drawing.Size(121, 29);
+            this.SearchThuongHieu.TabIndex = 101;
+            this.SearchThuongHieu.SelectedIndexChanged += new System.EventHandler(this.SearchThuongHieu_SelectedIndexChanged);
+            this.SearchThuongHieu.TextChanged += new System.EventHandler(this.SearchThuongHieu_TextChanged);
+            // 
+            // SearchLoai
+            // 
+            this.SearchLoai.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchLoai.FormattingEnabled = true;
+            this.SearchLoai.Location = new System.Drawing.Point(828, 81);
+            this.SearchLoai.Name = "SearchLoai";
+            this.SearchLoai.Size = new System.Drawing.Size(121, 29);
+            this.SearchLoai.TabIndex = 102;
+            this.SearchLoai.TextChanged += new System.EventHandler(this.SearchLoai_TextChanged);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(431, 84);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(108, 21);
+            this.label17.TabIndex = 103;
+            this.label17.Text = "Thương hiệu:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(691, 84);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(123, 21);
+            this.label18.TabIndex = 104;
+            this.label18.Text = "Loại sản phẩm:";
             // 
             // BanHang
             // 
@@ -503,6 +560,11 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(225)))), ((int)(((byte)(213)))));
             this.ClientSize = new System.Drawing.Size(1476, 823);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.SearchLoai);
+            this.Controls.Add(this.SearchThuongHieu);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ResearchSanPham);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -515,11 +577,11 @@
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MaQRButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DonHangDataGrid)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MaQRButton)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -565,5 +627,10 @@
         private System.Windows.Forms.RichTextBox GhiChuRichText;
         private System.Windows.Forms.TextBox ResearchSanPham;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox SearchThuongHieu;
+        private System.Windows.Forms.ComboBox SearchLoai;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
     }
 }

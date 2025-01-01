@@ -78,6 +78,8 @@ namespace DoAnCuoiKi
             GiaTriTextBox.Text = "0";
             LoadMaDonHang();
             LoadGioHang();
+            LoadThuongHieuCombo();
+            LoadLoaiCombo();
 
             // Lấy danh sách sản phẩm từ cơ sở dữ liệu
             LoadProduct();
@@ -90,7 +92,28 @@ namespace DoAnCuoiKi
             TienThoiTextBox.Text = "0";
         }
 
-        // Hiển thị collection combo khuyến mãi
+        private void LoadThuongHieuCombo()
+        {
+            var thuongHieus = db.THUONGHIEUx.Select(x => x.TenTH).ToList();
+
+            foreach (var th in thuongHieus)
+            {
+                SearchThuongHieu.Items.Add(th);
+            }
+        }
+
+        private void LoadLoaiCombo()
+        {
+            var danhMucs = db.DANHMUCs.Select(x => x.TenDM).ToList();
+
+            foreach (var dm in danhMucs)
+            {
+                SearchLoai.Items.Add(dm);
+            }
+        }
+
+
+            // Hiển thị collection combo khuyến mãi
         private void LoadComboKhuyenMai()
         {
             var khuyenMais = db.KHUYENMAIs.ToList();
@@ -647,15 +670,49 @@ namespace DoAnCuoiKi
 
         private void ResearchSanPham_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(ResearchSanPham.Text))
+            FilterSanPham();
+        }
+
+        private void SearchThuongHieu_TextChanged(object sender, EventArgs e)
+        {
+            FilterSanPham();
+        }
+
+        private void SearchLoai_TextChanged(object sender, EventArgs e)
+        {
+            FilterSanPham();
+
+        }
+
+        private void FilterSanPham()
+        {
+            var filter = db.SANPHAMs.AsQueryable();
+
+            if (string.IsNullOrEmpty(ResearchSanPham.Text) 
+                && SearchThuongHieu.SelectedItem == null
+                && SearchLoai.SelectedItem == null)
             {
                 LoadProduct();
             }
             else
             {
-                var search = ResearchSanPham.Text;
-                var products = db.SANPHAMs
-                    .Where(p => p.TenSP.Contains(search))
+                if (!string.IsNullOrEmpty(ResearchSanPham.Text))
+                {
+                    filter = filter.Where(p => p.TenSP.Contains(ResearchSanPham.Text));
+                }
+
+
+                if (SearchThuongHieu.SelectedItem != null)
+                {
+                    filter = filter.Where(p => p.THUONGHIEU.TenTH == SearchThuongHieu.SelectedItem.ToString());
+                }
+
+                if (SearchLoai.SelectedItem != null)
+                {
+                    filter = filter.Where(p => p.DANHMUC.TenDM == SearchLoai.SelectedItem.ToString());
+                }
+
+                var products = filter
                     .Select(p => new Product
                     {
                         MaSP = p.MaSP,
@@ -706,7 +763,7 @@ namespace DoAnCuoiKi
 
         }
 
-        private void GiaoHangButton_Click(object sender, EventArgs e)
+        private void SearchThuongHieu_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
