@@ -240,7 +240,13 @@ namespace DoAnCuoiKi.frm.frm_Data
         private void InHoaDonButton_Click(object sender, EventArgs e)
         {
             XuatHoaDon xuatHoaDon = new XuatHoaDon(MaHDTextBox.Text);
-            xuatHoaDon.ShowDialog();
+            xuatHoaDon.Show();
+        }
+
+        private void báoCáoHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BaoCaoHoaDon bchd = new BaoCaoHoaDon();
+            bchd.Show();
         }
     }
 }

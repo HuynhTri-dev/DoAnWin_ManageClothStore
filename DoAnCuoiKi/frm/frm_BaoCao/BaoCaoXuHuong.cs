@@ -23,7 +23,7 @@ namespace DoAnCuoiKi.frm.frm_BaoCao
 
         private void ThangText_ValueChanged(object sender, EventArgs e)
         {
-            ThangText.Maximum = 12;
+            
         }
 
         public class BaoCaoSanPham
@@ -117,13 +117,18 @@ namespace DoAnCuoiKi.frm.frm_BaoCao
 
         private void NamText_ValueChanged(object sender, EventArgs e)
         {
-            NamText.Maximum = 3000;
-            NamText.Minimum = 1000;
+            
         }
 
         private void BaoCaoXuHuong_Load(object sender, EventArgs e)
         {
-
+            ThangText.Minimum = 1;
+            ThangText.Maximum = 12;
+            NamText.Minimum = 1000;
+            NamText.Maximum = 3000;
+            ThangText.Value = (decimal)DateTime.Now.Month;
+            NamText.Value = (decimal)DateTime.Now.Year;
+            this.SanPhamReportViewer.RefreshReport();
         }
 
         private void button1_Click(object sender, EventArgs e)

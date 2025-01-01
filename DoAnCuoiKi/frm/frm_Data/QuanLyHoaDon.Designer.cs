@@ -54,10 +54,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.XoaButton = new System.Windows.Forms.Button();
             this.InHoaDonButton = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.báoCáoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.báoCáoHóaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HoaDonAdvance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CTDHDataGrid)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -85,13 +91,13 @@
             this.HoaDonAdvance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.HoaDonAdvance.FilterAndSortEnabled = true;
             this.HoaDonAdvance.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.HoaDonAdvance.Location = new System.Drawing.Point(34, 122);
+            this.HoaDonAdvance.Location = new System.Drawing.Point(34, 149);
             this.HoaDonAdvance.MaxFilterButtonImageHeight = 23;
             this.HoaDonAdvance.Name = "HoaDonAdvance";
             this.HoaDonAdvance.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.HoaDonAdvance.RowHeadersWidth = 51;
             this.HoaDonAdvance.RowTemplate.Height = 24;
-            this.HoaDonAdvance.Size = new System.Drawing.Size(861, 555);
+            this.HoaDonAdvance.Size = new System.Drawing.Size(878, 528);
             this.HoaDonAdvance.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.HoaDonAdvance.TabIndex = 7;
             this.HoaDonAdvance.SortStringChanged += new System.EventHandler<Zuby.ADGV.AdvancedDataGridView.SortEventArgs>(this.HoaDonAdvance_SortStringChanged);
@@ -141,7 +147,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(936, 122);
+            this.groupBox1.Location = new System.Drawing.Point(936, 131);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(335, 345);
             this.groupBox1.TabIndex = 11;
@@ -299,9 +305,9 @@
             // XoaButton
             // 
             this.XoaButton.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.XoaButton.Location = new System.Drawing.Point(1288, 197);
+            this.XoaButton.Location = new System.Drawing.Point(1277, 298);
             this.XoaButton.Name = "XoaButton";
-            this.XoaButton.Size = new System.Drawing.Size(101, 45);
+            this.XoaButton.Size = new System.Drawing.Size(113, 45);
             this.XoaButton.TabIndex = 13;
             this.XoaButton.Text = "Xóa";
             this.XoaButton.UseVisualStyleBackColor = true;
@@ -310,19 +316,54 @@
             // InHoaDonButton
             // 
             this.InHoaDonButton.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InHoaDonButton.Location = new System.Drawing.Point(1288, 133);
+            this.InHoaDonButton.Location = new System.Drawing.Point(1277, 234);
             this.InHoaDonButton.Name = "InHoaDonButton";
-            this.InHoaDonButton.Size = new System.Drawing.Size(101, 45);
+            this.InHoaDonButton.Size = new System.Drawing.Size(113, 45);
             this.InHoaDonButton.TabIndex = 14;
             this.InHoaDonButton.Text = "In hóa đơn";
             this.InHoaDonButton.UseVisualStyleBackColor = true;
             this.InHoaDonButton.Click += new System.EventHandler(this.InHoaDonButton_Click);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.menuStrip1);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(34, 104);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(878, 39);
+            this.flowLayoutPanel1.TabIndex = 16;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.báoCáoToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(235, 28);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // báoCáoToolStripMenuItem
+            // 
+            this.báoCáoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.báoCáoHóaĐơnToolStripMenuItem});
+            this.báoCáoToolStripMenuItem.Name = "báoCáoToolStripMenuItem";
+            this.báoCáoToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
+            this.báoCáoToolStripMenuItem.Text = "Báo cáo";
+            // 
+            // báoCáoHóaĐơnToolStripMenuItem
+            // 
+            this.báoCáoHóaĐơnToolStripMenuItem.Name = "báoCáoHóaĐơnToolStripMenuItem";
+            this.báoCáoHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.báoCáoHóaĐơnToolStripMenuItem.Text = "Báo cáo hóa đơn";
+            this.báoCáoHóaĐơnToolStripMenuItem.Click += new System.EventHandler(this.báoCáoHóaĐơnToolStripMenuItem_Click);
             // 
             // QuanLyHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1432, 703);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.InHoaDonButton);
             this.Controls.Add(this.XoaButton);
             this.Controls.Add(this.groupBox1);
@@ -330,6 +371,7 @@
             this.Controls.Add(this.CTDHDataGrid);
             this.Controls.Add(this.HoaDonAdvance);
             this.Controls.Add(this.panel1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "QuanLyHoaDon";
             this.Text = "QuanLyHoaDon";
             this.Load += new System.EventHandler(this.QuanLyHoaDon_Load);
@@ -339,6 +381,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.CTDHDataGrid)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -372,5 +418,9 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox PTTTText;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem báoCáoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem báoCáoHóaĐơnToolStripMenuItem;
     }
 }

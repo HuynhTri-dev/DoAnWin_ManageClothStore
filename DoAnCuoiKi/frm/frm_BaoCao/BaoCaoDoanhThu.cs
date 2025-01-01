@@ -131,5 +131,10 @@ namespace DoAnCuoiKi.frm.frm_BaoCao
         {
 
         }
+
+        private void txtMonth_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
