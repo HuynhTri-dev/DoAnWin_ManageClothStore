@@ -220,10 +220,6 @@ namespace DoAnCuoiKi
                     MessageBox.Show("Giá bán không hợp lệ", "Thông báo");
                     return;
                 }
-
-                
-            
-
             try
             {
                 
@@ -250,20 +246,21 @@ namespace DoAnCuoiKi
                     MaTH = maTH
                 };
 
-                var existingProduct = db.SANPHAMs.FirstOrDefault(x => x.MaSP == sanPham.MaSP);
-                if (existingProduct != null)
-                {
-                    // Cập nhật sản phẩm
-                    db.Entry(existingProduct).CurrentValues.SetValues(sanPham);
-                }
-                else
-                {
-                    // Thêm mới
-                    db.SANPHAMs.Add(sanPham);
-                }
+                db.SANPHAMs.AddOrUpdate(sanPham);
                 db.SaveChanges();
                 LoadForm();
                 ClearFields();
+
+                var existingProduct = db.SANPHAMs.FirstOrDefault(x => x.MaSP == sanPham.MaSP);
+                if (existingProduct != null)
+                {
+                    MessageBox.Show("Cập nhật thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Thêm mới thành công");
+                }
+               
             }
             catch (Exception ex)
             {
@@ -407,8 +404,9 @@ namespace DoAnCuoiKi
                         MaSPTextBox.Text = thongTin.MaSP; 
                         TenSPTextBox.Text = thongTin.TenSP; 
                         SLTonTextBox.Text = row.Cells["SoLuongTon"].Value.ToString(); 
-                        //SLTonTextBox.Text = thongTin.SoLuongTon.ToString();
+                        
                         KichCoComboBox.SelectedItem = thongTin.Size; 
+
                         if (thongTin.AnhSP != null) 
                         { 
                             using (MemoryStream ms = new MemoryStream(thongTin.AnhSP)) 
@@ -423,11 +421,18 @@ namespace DoAnCuoiKi
                             anhSPPictureBox.Image = null; 
                             chonAnhLabel.Visible = true; 
                         }
-                        MauComboBox.SelectedItem = thongTin.MAU.TenMau;
-                        LoaiSPComboBox.SelectedItem = thongTin.DANHMUC.TenDM;
-                        MaNCCComboBox.SelectedItem = thongTin.NHACUNGCAP.TenNCC;
-                        MaChatLieuComboBox.SelectedItem = thongTin.CHATLIEU.TenCL;
-                        NhanHieuComboBox.SelectedItem = thongTin.THUONGHIEU.TenTH;
+
+                        var tenMau = db.MAUs.Where(x => x.MaMau == thongTin.MaMau).Select(x => x.TenMau).FirstOrDefault();
+                        MauComboBox.SelectedItem = tenMau;
+                        var tenLoai = db.DANHMUCs.Where(x => x.MaDM == thongTin.MaDM).Select(x => x.TenDM).FirstOrDefault();
+                        LoaiSPComboBox.SelectedItem = tenLoai;
+                        var tenNCC = db.NHACUNGCAPs.Where(x => x.MaNCC == thongTin.MaNCC).Select(x => x.TenNCC).FirstOrDefault();
+                        MaNCCComboBox.SelectedItem = tenNCC;
+                        var tenCL = db.CHATLIEUx.Where(x => x.MaCL == thongTin.MaCL).Select(x => x.TenCL).FirstOrDefault();
+                        MaChatLieuComboBox.SelectedItem = tenCL;
+                        var tenNhanHieu = db.THUONGHIEUx.Where(x => x.MaTH == thongTin.MaTH).Select(x => x.TenTH).FirstOrDefault();
+                        NhanHieuComboBox.SelectedItem = tenNhanHieu;
+
                         GiaBanTextBox.Text = thongTin.GiaBan.ToString(); 
                         GiaNhapTextBox.Text = thongTin.GiaNhap.ToString();
                         MoTaRichTextBox.Text = thongTin.MoTa; 
@@ -446,8 +451,9 @@ namespace DoAnCuoiKi
             Mau mau = new Mau();
             DialogResult dr = mau.ShowDialog();
             if (dr == DialogResult.Cancel)
-            {
+            {            
                 MauBox();
+
             }
         }
 

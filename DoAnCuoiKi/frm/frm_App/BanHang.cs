@@ -196,7 +196,7 @@ namespace DoAnCuoiKi
                 {
                     Size = new Size(200, 260),
                     BorderStyle = BorderStyle.Fixed3D,
-                    Margin = new Padding(0, 0, 50, 50)
+                    Margin = new Padding(0, 0, 30, 30)
                 };
 
                 // Tạo PictureBox để hiển thị ảnh sản phẩm
@@ -389,7 +389,7 @@ namespace DoAnCuoiKi
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Dữ liệu không hợp lệ. Vui lòng nhập số hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Dữ liệu không hợp lệ. Vui lòng nhập số hợp lệ." + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

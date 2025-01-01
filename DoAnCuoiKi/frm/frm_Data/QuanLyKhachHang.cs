@@ -143,27 +143,7 @@ namespace DoAnCuoiKi
             }
         }
 
-        private void HoTenTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void NuRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void NamRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ThongTinKHDataGirdView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void ThongTinKHDataGirdView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
@@ -193,9 +173,39 @@ namespace DoAnCuoiKi
             }
         }
 
+        private void HoTenTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NuRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NamRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ThongTinKHDataGirdView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
         private void NgaySinhDateTimePicker_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void MaKhachHangTextBox_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

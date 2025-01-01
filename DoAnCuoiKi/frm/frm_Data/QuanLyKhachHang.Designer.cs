@@ -63,6 +63,7 @@
             this.ThongTinKHDataGirdView.RowTemplate.Height = 24;
             this.ThongTinKHDataGirdView.Size = new System.Drawing.Size(1334, 307);
             this.ThongTinKHDataGirdView.TabIndex = 1;
+            this.ThongTinKHDataGirdView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ThongTinKHDataGirdView_CellClick);
             this.ThongTinKHDataGirdView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ThongTinKHDataGirdView_CellContentClick);
             // 
             // lblCustomerID
@@ -132,6 +133,7 @@
             this.MaKhachHangTextBox.Name = "MaKhachHangTextBox";
             this.MaKhachHangTextBox.Size = new System.Drawing.Size(195, 32);
             this.MaKhachHangTextBox.TabIndex = 8;
+            this.MaKhachHangTextBox.TextChanged += new System.EventHandler(this.MaKhachHangTextBox_TextChanged);
             // 
             // HoTenTextBox
             // 
@@ -164,9 +166,9 @@
             // ThemSuaButton
             // 
             this.ThemSuaButton.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ThemSuaButton.Location = new System.Drawing.Point(254, 174);
+            this.ThemSuaButton.Location = new System.Drawing.Point(228, 174);
             this.ThemSuaButton.Name = "ThemSuaButton";
-            this.ThemSuaButton.Size = new System.Drawing.Size(145, 40);
+            this.ThemSuaButton.Size = new System.Drawing.Size(171, 40);
             this.ThemSuaButton.TabIndex = 14;
             this.ThemSuaButton.Text = "Thêm / Sửa";
             this.ThemSuaButton.UseVisualStyleBackColor = true;

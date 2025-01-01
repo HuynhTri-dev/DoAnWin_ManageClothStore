@@ -226,6 +226,18 @@ namespace DoAnCuoiKi
         {
 
         }
+
+        private void txtStaffID_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtStaffID.Text))
+            {
+                taoTKButton.Enabled = true;
+            }
+            else
+            {
+                taoTKButton.Enabled = false;
+            }
+        }
     }
 }
 
