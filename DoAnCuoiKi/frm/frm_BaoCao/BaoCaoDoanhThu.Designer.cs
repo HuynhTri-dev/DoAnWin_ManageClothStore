@@ -79,7 +79,7 @@
             this.btnViewReport.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewReport.Location = new System.Drawing.Point(286, 99);
             this.btnViewReport.Name = "btnViewReport";
-            this.btnViewReport.Size = new System.Drawing.Size(125, 31);
+            this.btnViewReport.Size = new System.Drawing.Size(166, 31);
             this.btnViewReport.TabIndex = 6;
             this.btnViewReport.Text = "Xem báo cáo";
             this.btnViewReport.UseVisualStyleBackColor = true;

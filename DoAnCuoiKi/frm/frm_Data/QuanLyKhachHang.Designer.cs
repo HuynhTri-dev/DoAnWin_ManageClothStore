@@ -202,7 +202,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(113)))), ((int)(((byte)(91)))));
             this.label1.Font = new System.Drawing.Font("Tahoma", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(528, 9);
+            this.label1.Location = new System.Drawing.Point(547, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(444, 40);
             this.label1.TabIndex = 0;
@@ -226,7 +226,7 @@
             this.groupBox1.Controls.Add(this.MaKhachHangTextBox);
             this.groupBox1.Controls.Add(this.lblCustomerID);
             this.groupBox1.Controls.Add(this.lblCDOB);
-            this.groupBox1.Location = new System.Drawing.Point(119, 99);
+            this.groupBox1.Location = new System.Drawing.Point(375, 103);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(853, 233);
             this.groupBox1.TabIndex = 18;

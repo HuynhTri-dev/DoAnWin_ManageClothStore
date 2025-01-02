@@ -34,6 +34,13 @@
             this.DonHangAdvanced = new Zuby.ADGV.AdvancedDataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.TimKiemButton = new System.Windows.Forms.Button();
+            this.CapNhatButton = new System.Windows.Forms.Button();
+            this.PhiText = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.MaDHText = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.TrangThaComboBox = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.GhiChuText = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -44,13 +51,6 @@
             this.NgayLapDate = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.MaPhieuText = new System.Windows.Forms.TextBox();
-            this.TrangThaComboBox = new System.Windows.Forms.ComboBox();
-            this.MaDHText = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.PhiText = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.CapNhatButton = new System.Windows.Forms.Button();
-            this.TimKiemButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MapWebView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DonHangAdvanced)).BeginInit();
@@ -104,6 +104,8 @@
             this.DonHangAdvanced.Size = new System.Drawing.Size(655, 328);
             this.DonHangAdvanced.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.DonHangAdvanced.TabIndex = 2;
+            this.DonHangAdvanced.SortStringChanged += new System.EventHandler<Zuby.ADGV.AdvancedDataGridView.SortEventArgs>(this.DonHangAdvanced_SortStringChanged);
+            this.DonHangAdvanced.FilterStringChanged += new System.EventHandler<Zuby.ADGV.AdvancedDataGridView.FilterEventArgs>(this.DonHangAdvanced_FilterStringChanged);
             this.DonHangAdvanced.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DonHangAdvanced_CellContentClick);
             this.DonHangAdvanced.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DonHangAdvanced_CellContentClick);
             // 
@@ -143,6 +145,70 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin đơn hàng";
+            // 
+            // TimKiemButton
+            // 
+            this.TimKiemButton.Location = new System.Drawing.Point(432, 197);
+            this.TimKiemButton.Name = "TimKiemButton";
+            this.TimKiemButton.Size = new System.Drawing.Size(104, 33);
+            this.TimKiemButton.TabIndex = 21;
+            this.TimKiemButton.Text = "Tìm kiếm";
+            this.TimKiemButton.UseVisualStyleBackColor = true;
+            this.TimKiemButton.Click += new System.EventHandler(this.TimKiemButton_Click);
+            // 
+            // CapNhatButton
+            // 
+            this.CapNhatButton.Location = new System.Drawing.Point(433, 147);
+            this.CapNhatButton.Name = "CapNhatButton";
+            this.CapNhatButton.Size = new System.Drawing.Size(103, 35);
+            this.CapNhatButton.TabIndex = 20;
+            this.CapNhatButton.Text = "Cập nhật";
+            this.CapNhatButton.UseVisualStyleBackColor = true;
+            this.CapNhatButton.Click += new System.EventHandler(this.CapNhatButton_Click);
+            // 
+            // PhiText
+            // 
+            this.PhiText.Location = new System.Drawing.Point(122, 135);
+            this.PhiText.Name = "PhiText";
+            this.PhiText.Size = new System.Drawing.Size(202, 28);
+            this.PhiText.TabIndex = 19;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(20, 138);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(38, 21);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "Phí:";
+            // 
+            // MaDHText
+            // 
+            this.MaDHText.Location = new System.Drawing.Point(433, 33);
+            this.MaDHText.Name = "MaDHText";
+            this.MaDHText.Size = new System.Drawing.Size(203, 28);
+            this.MaDHText.TabIndex = 17;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(330, 36);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(66, 21);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Mã DH:";
+            // 
+            // TrangThaComboBox
+            // 
+            this.TrangThaComboBox.FormattingEnabled = true;
+            this.TrangThaComboBox.Items.AddRange(new object[] {
+            "Chưa giao",
+            "Đang giao",
+            "Hoàn thành"});
+            this.TrangThaComboBox.Location = new System.Drawing.Point(433, 101);
+            this.TrangThaComboBox.Name = "TrangThaComboBox";
+            this.TrangThaComboBox.Size = new System.Drawing.Size(203, 29);
+            this.TrangThaComboBox.TabIndex = 15;
             // 
             // label7
             // 
@@ -228,70 +294,6 @@
             this.MaPhieuText.Name = "MaPhieuText";
             this.MaPhieuText.Size = new System.Drawing.Size(202, 28);
             this.MaPhieuText.TabIndex = 4;
-            // 
-            // TrangThaComboBox
-            // 
-            this.TrangThaComboBox.FormattingEnabled = true;
-            this.TrangThaComboBox.Items.AddRange(new object[] {
-            "Chưa giao",
-            "Đang giao",
-            "Hoàn thành"});
-            this.TrangThaComboBox.Location = new System.Drawing.Point(433, 101);
-            this.TrangThaComboBox.Name = "TrangThaComboBox";
-            this.TrangThaComboBox.Size = new System.Drawing.Size(203, 29);
-            this.TrangThaComboBox.TabIndex = 15;
-            // 
-            // MaDHText
-            // 
-            this.MaDHText.Location = new System.Drawing.Point(433, 33);
-            this.MaDHText.Name = "MaDHText";
-            this.MaDHText.Size = new System.Drawing.Size(203, 28);
-            this.MaDHText.TabIndex = 17;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(330, 36);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(66, 21);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Mã DH:";
-            // 
-            // PhiText
-            // 
-            this.PhiText.Location = new System.Drawing.Point(122, 135);
-            this.PhiText.Name = "PhiText";
-            this.PhiText.Size = new System.Drawing.Size(202, 28);
-            this.PhiText.TabIndex = 19;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(20, 138);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(38, 21);
-            this.label9.TabIndex = 18;
-            this.label9.Text = "Phí:";
-            // 
-            // CapNhatButton
-            // 
-            this.CapNhatButton.Location = new System.Drawing.Point(433, 147);
-            this.CapNhatButton.Name = "CapNhatButton";
-            this.CapNhatButton.Size = new System.Drawing.Size(103, 35);
-            this.CapNhatButton.TabIndex = 20;
-            this.CapNhatButton.Text = "Cập nhật";
-            this.CapNhatButton.UseVisualStyleBackColor = true;
-            this.CapNhatButton.Click += new System.EventHandler(this.CapNhatButton_Click);
-            // 
-            // TimKiemButton
-            // 
-            this.TimKiemButton.Location = new System.Drawing.Point(432, 197);
-            this.TimKiemButton.Name = "TimKiemButton";
-            this.TimKiemButton.Size = new System.Drawing.Size(104, 33);
-            this.TimKiemButton.TabIndex = 21;
-            this.TimKiemButton.Text = "Tìm kiếm";
-            this.TimKiemButton.UseVisualStyleBackColor = true;
-            this.TimKiemButton.Click += new System.EventHandler(this.TimKiemButton_Click);
             // 
             // QuanLyDongHang
             // 

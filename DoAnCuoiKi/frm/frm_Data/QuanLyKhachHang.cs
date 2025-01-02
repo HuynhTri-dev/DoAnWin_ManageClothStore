@@ -89,8 +89,6 @@ namespace DoAnCuoiKi
                     restName = fullName.Substring(firstSpaceIndex + 1); // Đệm và tên
                 }
 
-                
-
                 KHACHHANG KH = new KHACHHANG()
                 {
                     MaKH = MaKhachHangTextBox.Text,
@@ -103,6 +101,18 @@ namespace DoAnCuoiKi
                 };
 
                 var maKH = db.KHACHHANGs.FirstOrDefault(x => x.MaKH == KH.MaKH);
+
+                if (maKH != null)
+                {
+                    DialogResult dr = MessageBox.Show("Khách hàng đã tồn tại. Bạn muốn sửa lại thông tin không?", "Thông báo", MessageBoxButtons.OKCancel);
+
+                    if (dr == DialogResult.Cancel)
+                    {
+                        return;
+                    }
+                }
+
+
                 db.KHACHHANGs.AddOrUpdate(KH);
                 db.SaveChanges();
                 LoadForm();

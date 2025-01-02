@@ -490,6 +490,7 @@
             this.ResearchSanPham.Size = new System.Drawing.Size(227, 28);
             this.ResearchSanPham.TabIndex = 9;
             this.ResearchSanPham.TextChanged += new System.EventHandler(this.ResearchSanPham_TextChanged);
+            this.ResearchSanPham.Enter += new System.EventHandler(this.ResearchSanPham_TextChanged);
             // 
             // pictureBox1
             // 
