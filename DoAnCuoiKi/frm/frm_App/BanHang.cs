@@ -380,29 +380,7 @@ namespace DoAnCuoiKi
                     MessageBoxIcon.Information);
             }
         }
-        // Đổi giá trị thối mỗi khi khách đưa tiền
-        private void KhachDuaTextBox_Leave(object sender, EventArgs e)
-        {
-            if (decimal.TryParse(KhachDuaTextBox.Text, out decimal khachDua)
-                && khachDua >= 0
-                && decimal.TryParse(PhaiThuTextBox.Text, out decimal phaiThu))
-            {
-                if (khachDua >= phaiThu)
-                {
-                    TienThoiTextBox.Text = (khachDua - phaiThu).ToString();
-                }
-                else
-                {
-                    TienThoiTextBox.Text = "0";
-                    MessageBox.Show("Khách đưa chưa đủ", "Thông báo");
-                }
-            }
-            else
-            {
-
-                MessageBox.Show("Giá trị không đúng", "Thông báo");
-            }
-        }
+        
 
         // Chức năng thay đổi số lượng trong sản phẩm
         private void DonHangDataGrid_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -514,6 +492,14 @@ namespace DoAnCuoiKi
             {
                 MessageBox.Show("Chưa thu tiền khách", "Thông báo");
                 return;
+            }
+
+            if (PhuongThuc == "Tiền mặt" 
+                && !decimal.TryParse(KhachDuaTextBox.Text, out decimal khachDua)
+                && !decimal.TryParse(PhaiThuTextBox.Text, out decimal phaiThu)
+                && khachDua < phaiThu)
+            {
+                MessageBox.Show("Chưa thu đủ tiền", "Thông báo");
             }
 
             string maKM = null;
@@ -641,30 +627,51 @@ namespace DoAnCuoiKi
             }
         }
 
-        private void KhachDuaTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        // Đổi giá trị thối mỗi khi khách đưa tiền
+        private void UpdateTienThoi()
         {
-            if (e.KeyChar == (char)Keys.Enter)
-            { 
-                e.Handled = true;
-                if (decimal.TryParse(KhachDuaTextBox.Text, out decimal khachDua)
-                 && khachDua >= 0
-                 && decimal.TryParse(PhaiThuTextBox.Text, out decimal phaiThu))
+            if (decimal.TryParse(KhachDuaTextBox.Text, out decimal khachDua)
+                && decimal.TryParse(PhaiThuTextBox.Text, out decimal phaiThu))
+            {
+                if (khachDua >= phaiThu)
                 {
-                    if (khachDua >= phaiThu)
-                    {
-                        TienThoiTextBox.Text = (khachDua - phaiThu).ToString();
-                    }
-                    else
-                    {
-                        TienThoiTextBox.Text = "0";
-                        MessageBox.Show("Khách đưa chưa đủ", "Thông báo");
-                    }
+                    TienThoiTextBox.Text = (khachDua - phaiThu).ToString();
                 }
                 else
                 {
-
-                    MessageBox.Show("Giá trị không đúng", "Thông báo");
+                    TienThoiTextBox.Text = "0";
+                    MessageBox.Show("Khách đưa chưa đủ", "Thông báo");
                 }
+            }
+            else
+            {
+
+                MessageBox.Show("Giá trị không đúng", "Thông báo");
+            }
+        }
+        private void KhachDuaTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                UpdateTienThoi();
+            }
+        }
+        private void KhachDuaTextBox_Leave(object sender, EventArgs e)
+        {
+            UpdateTienThoi();
+        }
+
+        private void PhaiThuTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(KhachDuaTextBox.Text, out decimal khachDua)
+                && decimal.TryParse(PhaiThuTextBox.Text, out decimal phaiThu))
+            {
+                if (khachDua >= phaiThu)
+                {
+                    TienThoiTextBox.Text = (khachDua - phaiThu).ToString();
+                }
+                
             }
         }
 
@@ -686,7 +693,8 @@ namespace DoAnCuoiKi
 
         private void FilterSanPham()
         {
-            var filter = db.SANPHAMs.AsQueryable();
+            var allProducts = db.SANPHAMs.ToList();
+            var filter = allProducts.AsQueryable();
 
             if (string.IsNullOrEmpty(ResearchSanPham.Text) 
                 && SearchThuongHieu.SelectedItem == null
@@ -698,7 +706,9 @@ namespace DoAnCuoiKi
             {
                 if (!string.IsNullOrEmpty(ResearchSanPham.Text))
                 {
-                    filter = filter.Where(p => p.TenSP.Contains(ResearchSanPham.Text));
+                    string ten = ResearchSanPham.Text.ToLower();
+
+                    filter = filter.Where(p => p.TenSP.ToLower().Contains(ten));
                 }
 
 
@@ -764,6 +774,16 @@ namespace DoAnCuoiKi
         }
 
         private void SearchThuongHieu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TienThoiTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ResearchSanPham_KeyPress(object sender, KeyPressEventArgs e)
         {
 
         }

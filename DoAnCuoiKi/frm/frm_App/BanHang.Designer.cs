@@ -166,6 +166,7 @@
             this.TienThoiTextBox.ReadOnly = true;
             this.TienThoiTextBox.Size = new System.Drawing.Size(280, 28);
             this.TienThoiTextBox.TabIndex = 93;
+            this.TienThoiTextBox.TextChanged += new System.EventHandler(this.TienThoiTextBox_TextChanged);
             // 
             // KhachDuaTextBox
             // 
@@ -187,6 +188,7 @@
             this.PhaiThuTextBox.ReadOnly = true;
             this.PhaiThuTextBox.Size = new System.Drawing.Size(280, 28);
             this.PhaiThuTextBox.TabIndex = 94;
+            this.PhaiThuTextBox.TextChanged += new System.EventHandler(this.PhaiThuTextBox_TextChanged);
             // 
             // GiamTextBox
             // 
@@ -491,6 +493,7 @@
             this.ResearchSanPham.TabIndex = 9;
             this.ResearchSanPham.TextChanged += new System.EventHandler(this.ResearchSanPham_TextChanged);
             this.ResearchSanPham.Enter += new System.EventHandler(this.ResearchSanPham_TextChanged);
+            this.ResearchSanPham.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ResearchSanPham_KeyPress);
             // 
             // pictureBox1
             // 
