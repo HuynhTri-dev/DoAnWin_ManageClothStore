@@ -90,6 +90,7 @@
             this.MaSPText.Name = "MaSPText";
             this.MaSPText.Size = new System.Drawing.Size(292, 28);
             this.MaSPText.TabIndex = 4;
+            this.MaSPText.TextChanged += new System.EventHandler(this.MaSPText_TextChanged);
             // 
             // SoLuongNhapText
             // 

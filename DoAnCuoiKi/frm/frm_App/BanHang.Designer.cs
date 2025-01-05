@@ -209,6 +209,7 @@
             this.TongTienTextBox.ReadOnly = true;
             this.TongTienTextBox.Size = new System.Drawing.Size(280, 28);
             this.TongTienTextBox.TabIndex = 96;
+            this.TongTienTextBox.TextChanged += new System.EventHandler(this.TongTienTextBox_TextChanged);
             // 
             // label9
             // 

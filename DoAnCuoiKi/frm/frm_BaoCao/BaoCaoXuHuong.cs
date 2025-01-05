@@ -107,11 +107,13 @@ namespace DoAnCuoiKi.frm.frm_BaoCao
             var dm = new ReportDataSource("DanhMuc", danhMuc);
 
             var paraThang = new ReportParameter("Thang", thang.ToString());
+            var paraNam = new ReportParameter("Nam", nam.ToString());
 
             SanPhamReportViewer.LocalReport.DataSources.Clear();
             SanPhamReportViewer.LocalReport.DataSources.Add(sp);
             SanPhamReportViewer.LocalReport.DataSources.Add(dm);
             SanPhamReportViewer.LocalReport.SetParameters(paraThang);
+            SanPhamReportViewer.LocalReport.SetParameters(paraNam);
             SanPhamReportViewer.RefreshReport();
         }
 

@@ -61,11 +61,13 @@ namespace DoAnCuoiKi.frm.frm_BaoCao
             var nhapKhoData = new ReportDataSource("NhapKhoDataSet", thongTin);
 
             var thangPar = new ReportParameter("Thang", thang.ToString());
+            var namPar = new ReportParameter("Nam", nam.ToString());
 
             NhapKhoReport.LocalReport.DataSources.Clear();
 
             NhapKhoReport.LocalReport.DataSources.Add(nhapKhoData);
             NhapKhoReport.LocalReport.SetParameters(thangPar);
+            NhapKhoReport.LocalReport.SetParameters(namPar);
 
             NhapKhoReport.RefreshReport();
         }

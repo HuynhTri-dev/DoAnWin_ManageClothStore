@@ -111,6 +111,12 @@
     <Compile Include="frm\frm_BaoCao\BaoCaoDoanhThu.Designer.cs">
       <DependentUpon>BaoCaoDoanhThu.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm\frm_Data\QuanLyDoanhThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm\frm_Data\QuanLyDoanhThu.Designer.cs">
+      <DependentUpon>QuanLyDoanhThu.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm\frm_BaoCao\BaoCaoHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,6 +278,10 @@
     <EmbeddedResource Include="frm\frm_BaoCao\BaoCaoDoanhThu.resx">
       <DependentUpon>BaoCaoDoanhThu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm\frm_BaoCao\rptDoanhThu.rdlc" />
+    <EmbeddedResource Include="frm\frm_Data\QuanLyDoanhThu.resx">
+      <DependentUpon>QuanLyDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm\frm_BaoCao\BaoCaoHoaDon.resx">
       <DependentUpon>BaoCaoHoaDon.cs</DependentUpon>
     </EmbeddedResource>
@@ -349,6 +359,8 @@
     <None Include="Properties\DataSources\BaoCaoHoaDon.BaoCao.datasource" />
     <None Include="Properties\DataSources\BaoCaoHoaDon.datasource" />
     <None Include="Properties\DataSources\BaoCaoHoaDon.HoaDon.datasource" />
+    <None Include="Properties\DataSources\DoAnCuoiKi.frm.frm_BaoCao.BaoCaoDoanhThu+DoanhThu.datasource" />
+    <None Include="Properties\DataSources\DoAnCuoiKi.frm.frm_BaoCao.BaoCaoDoanhThu.datasource" />
     <None Include="Properties\DataSources\DoAnCuoiKi.frm.frm_BaoCao.BaoCaoNhapKho.datasource" />
     <None Include="Properties\DataSources\DoAnCuoiKi.frm.frm_BaoCao.BaoCaoXuHuong+BaoCaoDanhMuc.datasource" />
     <None Include="Properties\DataSources\DoAnCuoiKi.frm.frm_BaoCao.BaoCaoXuHuong+BaoCaoSanPham.datasource" />

@@ -55,7 +55,7 @@
             this.SanPhamReportViewer.Location = new System.Drawing.Point(0, 249);
             this.SanPhamReportViewer.Name = "SanPhamReportViewer";
             this.SanPhamReportViewer.ServerReport.BearerToken = null;
-            this.SanPhamReportViewer.Size = new System.Drawing.Size(1383, 454);
+            this.SanPhamReportViewer.Size = new System.Drawing.Size(1383, 585);
             this.SanPhamReportViewer.TabIndex = 1;
             // 
             // label1
@@ -200,7 +200,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1382, 703);
+            this.ClientSize = new System.Drawing.Size(1382, 833);
             this.Controls.Add(this.TongSanPhamText);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);

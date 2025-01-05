@@ -95,21 +95,43 @@
                 <TextRuns>
                   <TextRun>
                     <Value>Báo cáo xu hướng tháng: </Value>
-                    <Style />
+                    <Style>
+                      <FontSize>20pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
                   </TextRun>
                   <TextRun>
                     <Value>=Parameters!Thang.Value</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>20pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>/</Value>
+                    <Style>
+                      <FontSize>20pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Parameters!Nam.Value</Value>
+                    <Style>
+                      <FontSize>20pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>0.26334in</Top>
             <Left>0.29667in</Left>
-            <Height>0.25in</Height>
-            <Width>3.025in</Width>
+            <Height>0.425in</Height>
+            <Width>10.45834in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -129,12 +151,12 @@
                       <GroupExpression>=Fields!TenSP.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
-                  <Label>=Fields!TenSP.Value</Label>
                   <SortExpressions>
                     <SortExpression>
                       <Value>=Fields!SoLuong.Value</Value>
                     </SortExpression>
                   </SortExpressions>
+                  <Label>=Fields!TenSP.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
@@ -498,13 +520,13 @@
                       <GroupExpression>=Fields!TenSP.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
-                  <Label>=Fields!TenSP.Value</Label>
                   <SortExpressions>
                     <SortExpression>
                       <Value>=Fields!SoLuong.Value</Value>
                       <Direction>Descending</Direction>
                     </SortExpression>
                   </SortExpressions>
+                  <Label>=Fields!TenSP.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
@@ -904,7 +926,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>4.1875in</Top>
+            <Top>3.825in</Top>
             <Left>0.29667in</Left>
             <Height>0.25in</Height>
             <Width>3.025in</Width>
@@ -928,12 +950,12 @@
                       <GroupExpression>=Fields!TenDM.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
-                  <Label>=Fields!TenDM.Value</Label>
                   <SortExpressions>
                     <SortExpression>
                       <Value>=Fields!SoLuong.Value</Value>
                     </SortExpression>
                   </SortExpressions>
+                  <Label>=Fields!TenDM.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
@@ -1275,7 +1297,7 @@
                 </FilterValues>
               </Filter>
             </Filters>
-            <Top>4.55in</Top>
+            <Top>4.1875in</Top>
             <Left>0.29667in</Left>
             <Height>2.525in</Height>
             <Width>4.65833in</Width>
@@ -1298,13 +1320,13 @@
                       <GroupExpression>=Fields!TenDM.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
-                  <Label>=Fields!TenDM.Value</Label>
                   <SortExpressions>
                     <SortExpression>
                       <Value>=Fields!SoLuong.Value</Value>
                       <Direction>Descending</Direction>
                     </SortExpression>
                   </SortExpressions>
+                  <Label>=Fields!TenDM.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
@@ -1645,7 +1667,7 @@
                 </FilterValues>
               </Filter>
             </Filters>
-            <Top>4.55in</Top>
+            <Top>4.1875in</Top>
             <Left>5.78834in</Left>
             <Height>2.525in</Height>
             <Width>4.96667in</Width>
@@ -1678,6 +1700,10 @@
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
+    <ReportParameter Name="Nam">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
@@ -1688,6 +1714,11 @@
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>Thang</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>Nam</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

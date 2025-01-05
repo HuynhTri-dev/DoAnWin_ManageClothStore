@@ -23,10 +23,14 @@ namespace DoAnCuoiKi.frm.frm_Data
 
         private void NhapHang_Load(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(MASP))
+            MaSPText.Text = MASP;
+        }
+
+        private void MaSPText_TextChanged(object sender, EventArgs e)
+        {
+            var sp = db.SANPHAMs.Where(x => x.MaSP == MaSPText.Text).Select(x => new { x.TenSP, x.NHACUNGCAP.TenNCC }).FirstOrDefault();
+            if (sp != null)
             {
-                MaSPText.Text = MASP;
-                var sp = db.SANPHAMs.Where(x => x.MaSP == MASP).Select(x => new {x.TenSP, x.NHACUNGCAP.TenNCC }).FirstOrDefault();
                 TenSPText.Text = sp.TenSP;
                 TenNCCText.Text = sp.TenNCC;
             }
@@ -50,11 +54,11 @@ namespace DoAnCuoiKi.frm.frm_Data
 
             try
             {
-                var sp = db.SANPHAMs.Where(x => x.MaSP == MASP).FirstOrDefault();
+                var sp = db.SANPHAMs.Where(x => x.MaSP == MaSPText.Text).FirstOrDefault();
 
                 var phieuNhap = new PHIEUNHAPKHO
                 {
-                    MaSP = MASP,
+                    MaSP = MaSPText.Text,
                     SoLuongNhap = soLuongNhap,
                     NgayNhap = DateTime.Now
                 };
@@ -64,6 +68,8 @@ namespace DoAnCuoiKi.frm.frm_Data
                 sp.SoLuongTon += soLuongNhap;
                 db.SaveChanges();
                 MessageBox.Show("Nhập hàng thành công!");
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -76,5 +82,7 @@ namespace DoAnCuoiKi.frm.frm_Data
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
+
+        
     }
 }

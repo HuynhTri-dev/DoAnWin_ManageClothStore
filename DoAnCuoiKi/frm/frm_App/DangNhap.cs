@@ -29,9 +29,11 @@ namespace DoAnCuoiKi
             timer.Interval = 1000; 
             timer.Tick += timer1_Tick; 
             timer.Start();
+        }
 
-            this.Load += Form1_Load;
-
+        private void DangNhap_Load(object sender, EventArgs e)
+        {
+            
         }
 
         private void SetPlaceholder(System.Windows.Forms.TextBox textBox, string placeholder)

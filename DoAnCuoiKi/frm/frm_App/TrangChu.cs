@@ -108,7 +108,7 @@ namespace DoAnCuoiKi
         private void btnRevenue_Click(object sender, EventArgs e)
         {
             this.Text = "Quản lý doanh thu";
-            OpenChildForm(new BaoCaoDoanhThu());
+            OpenChildForm(new QuanLyDoanhThu());
         }
 
         

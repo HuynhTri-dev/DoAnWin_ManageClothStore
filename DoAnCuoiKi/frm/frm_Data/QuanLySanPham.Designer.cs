@@ -89,7 +89,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(663, 18);
+            this.label1.Location = new System.Drawing.Point(732, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(353, 40);
             this.label1.TabIndex = 0;
@@ -513,7 +513,7 @@
             this.SanPhamDataGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.SanPhamDataGridView.RowHeadersWidth = 51;
             this.SanPhamDataGridView.RowTemplate.Height = 24;
-            this.SanPhamDataGridView.Size = new System.Drawing.Size(694, 554);
+            this.SanPhamDataGridView.Size = new System.Drawing.Size(778, 554);
             this.SanPhamDataGridView.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.SanPhamDataGridView.TabIndex = 35;
             this.SanPhamDataGridView.SortStringChanged += new System.EventHandler<Zuby.ADGV.AdvancedDataGridView.SortEventArgs>(this.SanPhamDataGridView_SortStringChanged);
@@ -564,14 +564,14 @@
             // báoCáoXuHướngToolStripMenuItem
             // 
             this.báoCáoXuHướngToolStripMenuItem.Name = "báoCáoXuHướngToolStripMenuItem";
-            this.báoCáoXuHướngToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.báoCáoXuHướngToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
             this.báoCáoXuHướngToolStripMenuItem.Text = "Báo cáo xu hướng";
             this.báoCáoXuHướngToolStripMenuItem.Click += new System.EventHandler(this.báoCáoXuHướngToolStripMenuItem_Click);
             // 
             // báoCáoNhậpKhoToolStripMenuItem
             // 
             this.báoCáoNhậpKhoToolStripMenuItem.Name = "báoCáoNhậpKhoToolStripMenuItem";
-            this.báoCáoNhậpKhoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.báoCáoNhậpKhoToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
             this.báoCáoNhậpKhoToolStripMenuItem.Text = "Báo cáo nhập kho";
             this.báoCáoNhậpKhoToolStripMenuItem.Click += new System.EventHandler(this.báoCáoNhậpKhoToolStripMenuItem_Click);
             // 
@@ -591,7 +591,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1482, 703);
+            this.ClientSize = new System.Drawing.Size(1566, 712);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.SanPhamDataGridView);
             this.Controls.Add(this.chonAnhLabel);

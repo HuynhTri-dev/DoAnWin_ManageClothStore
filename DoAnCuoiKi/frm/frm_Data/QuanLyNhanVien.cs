@@ -120,11 +120,12 @@ namespace DoAnCuoiKi
                 var existingStaff = db.NHANVIENs.FirstOrDefault(x => x.MaNV == nv.MaNV);
                 db.NHANVIENs.AddOrUpdate(nv);
 
-                db.SaveChanges(); 
+                db.SaveChanges();
+                LoadThongTinNhanVien();
 
                 MessageBox.Show(existingStaff == null ? "Thêm thông tin nhân viên thành công!" : "Cập nhật thông tin nhân viên thành công!", "Thông báo");
 
-                LoadThongTinNhanVien(); 
+                
                 ClearFields();
             }
             else

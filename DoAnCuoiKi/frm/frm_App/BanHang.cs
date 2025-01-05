@@ -5,7 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -75,9 +77,6 @@ namespace DoAnCuoiKi
                 MaNVTextBox.Text = MANV;
             }
             LoadComboKhuyenMai();
-            GiaTriTextBox.Text = "0";
-            LoadMaDonHang();
-            LoadGioHang();
             LoadThuongHieuCombo();
             LoadLoaiCombo();
 
@@ -85,11 +84,27 @@ namespace DoAnCuoiKi
             LoadProduct();
 
             // Group
-            TongTienTextBox.Text = "0";
+            ResetGioHang();
+        }
+
+        private void ResetGioHang()
+        {
+            LoadMaDonHang();
+            NgayLapDatePicker.Value = DateTime.Now;
+            gioHangs.Clear();
+            LoadGioHang();
+            MaKHTextBox.Clear();
+            MaKMComboBox.SelectedIndex = -1;
+            LoaiDHComboBox.SelectedIndex = -1;
+            GhiChuRichText.Clear();
+
+            TongTienTextBox.Text = "0.000 ₫";
             GiamTextBox.Text = "0";
-            PhaiThuTextBox.Text = "0";
-            KhachDuaTextBox.Text = "0";
-            TienThoiTextBox.Text = "0";
+            PhaiThuTextBox.Text = "0.000 ₫";
+            KhachDuaTextBox.Text = "0.000";
+            TienThoiTextBox.Text = "0.000 ₫";
+            PhuongThuc = "Tiền mặt";
+            KhachDuaTextBox.Enabled = true;
         }
 
         private void LoadThuongHieuCombo()
@@ -113,7 +128,7 @@ namespace DoAnCuoiKi
         }
 
 
-            // Hiển thị collection combo khuyến mãi
+        // Hiển thị collection combo khuyến mãi
         private void LoadComboKhuyenMai()
         {
             var khuyenMais = db.KHUYENMAIs.ToList();
@@ -198,22 +213,20 @@ namespace DoAnCuoiKi
                 tongTien += x.ThanhTien;
             }
 
-            TongTienTextBox.Text = tongTien.ToString();
+            TongTienTextBox.Text = tongTien.ToString("C0", CultureInfo.GetCultureInfo("vi-VN"));
 
             decimal giamGia = 0;
             if (float.TryParse(GiaTriTextBox.Text, out float giam))
             {
                 giamGia = tongTien * (decimal)(giam / 100);
-                GiamTextBox.Text = giamGia.ToString("0.##");
+                GiamTextBox.Text = giamGia.ToString("C0", CultureInfo.GetCultureInfo("vi-VN"));
             }
             PhaiThu = tongTien - giamGia;
-            PhaiThuTextBox.Text = (PhaiThu).ToString("0.##");
+            PhaiThuTextBox.Text = (PhaiThu).ToString("C0", CultureInfo.GetCultureInfo("vi-VN"));
         }
 
         private void HienThiSanPham(List<Product> products)
         {
-            
-
             // Dọn dẹp FlowLayoutPanel
             flowLayoutPanel1.Controls.Clear();
 
@@ -335,11 +348,18 @@ namespace DoAnCuoiKi
         private void ThemVaoGioHang(string MaSP, string TenSP, decimal GiaBan)
         {
             var sanPham = gioHangs.FirstOrDefault(h => h.MaSP == MaSP);
-
+            var soLuongTon = db.SANPHAMs.Where(x => x.MaSP == MaSP).Select(x => x.SoLuongTon).FirstOrDefault();
             if (sanPham != null)
             {
-                sanPham.SoLuong++;
-                sanPham.ThanhTien = sanPham.SoLuong * GiaBan;
+                if (sanPham.SoLuong < soLuongTon)
+                {
+                    sanPham.SoLuong++;
+                    sanPham.ThanhTien = sanPham.SoLuong * GiaBan;
+                }
+                else
+                {
+                    MessageBox.Show("Số lượng sản phẩm trong kho không đủ");
+                }
             }
             else
             {
@@ -430,6 +450,7 @@ namespace DoAnCuoiKi
             {
                 PhuongThuc = "Momo";
                 MessageBox.Show("Thanh toán thành công", "Thông báo");
+                KhachDuaTextBox.Enabled = false;
             }
             else
             {
@@ -520,6 +541,7 @@ namespace DoAnCuoiKi
                 if (dr == DialogResult.Cancel)
                 {
                     MessageBox.Show("Cần phải nhập thông tin giao hàng", "Thông báo");
+                    //LoaiDHComboBox.SelectedItem = "Offline";
                     return;
                 }
                 if (dr == DialogResult.OK)
@@ -573,12 +595,15 @@ namespace DoAnCuoiKi
                 db.SaveChanges();
             }
 
+            // Đổi sang đúng 
+            string value = PhaiThuTextBox.Text.Replace("₫", "").Replace(".", "").Trim();
+            
             //Lưu hóa đơn
-           HOADON hd = new HOADON()
+            HOADON hd = new HOADON()
            {
                MaHD = LoadMaHoaDon(),
                NgayLap = NgayLapDatePicker.Value,
-               TongTien = decimal.Parse(PhaiThuTextBox.Text),
+               TongTien = decimal.Parse(value),
                PhuongThucThanhToan = PhuongThuc,
                GhiChu = GhiChuRichText.Text,
                MaDH = MaDHTextBox.Text
@@ -594,19 +619,7 @@ namespace DoAnCuoiKi
             xuatHoaDon.ShowDialog();
         }
 
-        private void ResetGioHang()
-        {
-            LoadMaDonHang();
-            NgayLapDatePicker.Value = DateTime.Now;
-            gioHangs.Clear();
-            LoadGioHang();
-            MaKHTextBox.Clear();
-            MaKMComboBox.SelectedIndex = -1;
-            LoaiDHComboBox.SelectedIndex = -1;
-            GhiChuRichText.Clear();
-            KhachDuaTextBox.Text = "0";
-            PhuongThuc = "Tiền mặt";
-        }
+        
 
         // Tao mã hóa đơn
         private string LoadMaHoaDon()
@@ -630,24 +643,25 @@ namespace DoAnCuoiKi
         // Đổi giá trị thối mỗi khi khách đưa tiền
         private void UpdateTienThoi()
         {
-            if (decimal.TryParse(KhachDuaTextBox.Text, out decimal khachDua)
-                && decimal.TryParse(PhaiThuTextBox.Text, out decimal phaiThu))
+            var phaiThu = decimal.Parse(PhaiThuTextBox.Text.Replace("₫", "").Replace(".", "").Trim());
+            var khachDua = decimal.Parse(KhachDuaTextBox.Text.Replace(".", "").Trim());
+            if (!string.IsNullOrEmpty(phaiThu.ToString())
+                && !string.IsNullOrEmpty(phaiThu.ToString()))
             {
                 if (khachDua >= phaiThu)
                 {
-                    TienThoiTextBox.Text = (khachDua - phaiThu).ToString();
+                    TienThoiTextBox.Text = (khachDua - phaiThu).ToString("C0", CultureInfo.GetCultureInfo("vi-VN"));
                 }
                 else
                 {
-                    TienThoiTextBox.Text = "0";
                     MessageBox.Show("Khách đưa chưa đủ", "Thông báo");
                 }
             }
             else
             {
-
                 MessageBox.Show("Giá trị không đúng", "Thông báo");
             }
+            
         }
         private void KhachDuaTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -662,14 +676,26 @@ namespace DoAnCuoiKi
             UpdateTienThoi();
         }
 
+        private void KhachDuaTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(KhachDuaTextBox.Text.Replace(".", ""), out decimal number))
+            {
+                KhachDuaTextBox.Text = number.ToString("N0", new CultureInfo("vi-VN"));
+                KhachDuaTextBox.SelectionStart = KhachDuaTextBox.Text.Length;
+            }
+        }
+
         private void PhaiThuTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (decimal.TryParse(KhachDuaTextBox.Text, out decimal khachDua)
-                && decimal.TryParse(PhaiThuTextBox.Text, out decimal phaiThu))
+            
+            if (!string.IsNullOrEmpty(KhachDuaTextBox.Text)
+                && !string.IsNullOrEmpty(PhaiThuTextBox.Text))
             {
+                var phaiThu = decimal.Parse(PhaiThuTextBox.Text.Replace("₫", "").Replace(".", "").Trim());
+                var khachDua = decimal.Parse(KhachDuaTextBox.Text.Replace(".", "").Trim());
                 if (khachDua >= phaiThu)
                 {
-                    TienThoiTextBox.Text = (khachDua - phaiThu).ToString();
+                    TienThoiTextBox.Text = (khachDua - phaiThu).ToString("N0", new CultureInfo("vi-VN"));
                 }
                 
             }
@@ -691,38 +717,36 @@ namespace DoAnCuoiKi
 
         }
 
+
         private void FilterSanPham()
         {
-            var allProducts = db.SANPHAMs.ToList();
-            var filter = allProducts.AsQueryable();
-
             if (string.IsNullOrEmpty(ResearchSanPham.Text) 
                 && SearchThuongHieu.SelectedItem == null
                 && SearchLoai.SelectedItem == null)
             {
                 LoadProduct();
+                return;
             }
-            else
+           
+            var filter = db.SANPHAMs.AsQueryable();
+            if (!string.IsNullOrEmpty(ResearchSanPham.Text))
             {
-                if (!string.IsNullOrEmpty(ResearchSanPham.Text))
-                {
-                    string ten = ResearchSanPham.Text.ToLower();
+                string ten = ResearchSanPham.Text.ToLower();
 
-                    filter = filter.Where(p => p.TenSP.ToLower().Contains(ten));
-                }
+                filter = filter.Where(p => p.TenSP.ToLower().Contains(ten));
+            }
 
+            if (SearchThuongHieu.SelectedItem != null)
+            {
+                filter = filter.Where(p => p.THUONGHIEU.TenTH == SearchThuongHieu.SelectedItem.ToString());
+            }
 
-                if (SearchThuongHieu.SelectedItem != null)
-                {
-                    filter = filter.Where(p => p.THUONGHIEU.TenTH == SearchThuongHieu.SelectedItem.ToString());
-                }
+            if (SearchLoai.SelectedItem != null)
+            {
+                filter = filter.Where(p => p.DANHMUC.TenDM == SearchLoai.SelectedItem.ToString());
+            }
 
-                if (SearchLoai.SelectedItem != null)
-                {
-                    filter = filter.Where(p => p.DANHMUC.TenDM == SearchLoai.SelectedItem.ToString());
-                }
-
-                var products = filter
+            var products = filter
                     .Select(p => new Product
                     {
                         MaSP = p.MaSP,
@@ -736,10 +760,13 @@ namespace DoAnCuoiKi
                         DanhMuc = p.DANHMUC.TenDM,
                         NhaCungCap = p.NHACUNGCAP.TenNCC,
                         SoLuongTon = p.SoLuongTon
-                    }).ToList();
-                HienThiSanPham(products);
-            }
+                    })
+                    .Take(100)
+                    .ToList();
+            HienThiSanPham(products);
         }
+
+        
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -763,10 +790,7 @@ namespace DoAnCuoiKi
 
 
 
-        private void KhachDuaTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void label6_Click(object sender, EventArgs e)
         {
@@ -784,6 +808,11 @@ namespace DoAnCuoiKi
         }
 
         private void ResearchSanPham_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void TongTienTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }

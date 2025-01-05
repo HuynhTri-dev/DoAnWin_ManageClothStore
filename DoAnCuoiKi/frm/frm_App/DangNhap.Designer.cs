@@ -159,7 +159,7 @@
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.pictureBox2);
             this.Name = "DangNhap";
-            this.Text = "Form1";
+            this.Text = "Đăng nhập";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);

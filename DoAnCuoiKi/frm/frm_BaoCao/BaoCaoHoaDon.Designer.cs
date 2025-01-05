@@ -46,7 +46,7 @@
             this.BaoCaoReportViewer.Location = new System.Drawing.Point(-2, 151);
             this.BaoCaoReportViewer.Name = "BaoCaoReportViewer";
             this.BaoCaoReportViewer.ServerReport.BearerToken = null;
-            this.BaoCaoReportViewer.Size = new System.Drawing.Size(1177, 431);
+            this.BaoCaoReportViewer.Size = new System.Drawing.Size(1177, 515);
             this.BaoCaoReportViewer.TabIndex = 2;
             // 
             // panel1
@@ -122,7 +122,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1173, 594);
+            this.ClientSize = new System.Drawing.Size(1173, 678);
             this.Controls.Add(this.NamText);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.ThangText);

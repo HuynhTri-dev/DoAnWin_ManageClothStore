@@ -246,12 +246,12 @@ namespace DoAnCuoiKi
                     MaTH = maTH
                 };
 
+                var existingProduct = db.SANPHAMs.FirstOrDefault(x => x.MaSP == sanPham.MaSP);
+
                 db.SANPHAMs.AddOrUpdate(sanPham);
                 db.SaveChanges();
-                LoadForm();
-                ClearFields();
-
-                var existingProduct = db.SANPHAMs.FirstOrDefault(x => x.MaSP == sanPham.MaSP);
+        
+               
                 if (existingProduct != null)
                 {
                     MessageBox.Show("Cập nhật thành công");
@@ -260,7 +260,10 @@ namespace DoAnCuoiKi
                 {
                     MessageBox.Show("Thêm mới thành công");
                 }
-               
+
+                LoadForm();
+                ClearFields();
+
             }
             catch (Exception ex)
             {
@@ -276,11 +279,13 @@ namespace DoAnCuoiKi
                 DialogResult dlg = MessageBox.Show("Xóa thông tin sản phẩm này?", "Xóa sản phẩm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dlg == DialogResult.Yes)
                 {
+                    
                     db.SANPHAMs.Remove(sp);
                     db.SaveChanges();
-                    MessageBox.Show("Xóa thành công!");
                     LoadForm();
                     ClearFields();
+                    MessageBox.Show("Xóa thành công!");
+                    
                 }
             }
             else
@@ -608,7 +613,7 @@ namespace DoAnCuoiKi
             NhapHang nhapHang = new NhapHang(MaSPTextBox.Text);
             DialogResult dr = nhapHang.ShowDialog();
 
-            if (dr == DialogResult.Cancel)
+            if (dr == DialogResult.OK)
             {
                 QuanLySanPham_Load(sender, e);
                 CuaHangDB db = new CuaHangDB();

@@ -63,11 +63,18 @@ namespace DoAnCuoiKi.frm.frm_Data
             if (!string.IsNullOrEmpty(maTextBox.Text)
                 && !string.IsNullOrEmpty(tenTextBox.Text)
                 && !string.IsNullOrEmpty(giaTriTextBox.Text)
-                && !string.IsNullOrEmpty(batDauDatePicker.Value.ToString()))
+                && !string.IsNullOrEmpty(batDauDatePicker.Value.ToString())
+                && !string.IsNullOrEmpty(ketThucDatePicker.Value.ToString()))
             {
                 if (!float.TryParse(giaTriTextBox.Text, out float giaTri))
                 {
                     MessageBox.Show("Giá trị phải là một chữ số", "Thông báo");
+                    return;
+                }
+
+                if (ketThucDatePicker.Value < batDauDatePicker.Value)
+                {
+                    MessageBox.Show("Ngày kết thúc không thể sớm hơn ngày bắt đầu", "Thông báo");
                     return;
                 }
 
@@ -84,11 +91,13 @@ namespace DoAnCuoiKi.frm.frm_Data
 
                     var checkMa = db.KHUYENMAIs.Where(x => x.MaKM == maTextBox.Text).FirstOrDefault();
 
-                    MessageBox.Show(checkMa == null ? "Thêm thông tin thành công!" : "Cập nhật thông tin thành công!", "Thông báo");
-
                     db.KHUYENMAIs.AddOrUpdate(km);
                     db.SaveChanges();
                     LoadBang();
+
+                    MessageBox.Show(checkMa == null ? "Thêm thông tin thành công!" : "Cập nhật thông tin thành công!", "Thông báo");
+
+                    
                     ResetFields();
                 }
                 catch (Exception ex)
@@ -111,6 +120,7 @@ namespace DoAnCuoiKi.frm.frm_Data
                 if (checkDonHang != null)
                 {
                     MessageBox.Show("Còn đơn hàng đang chứa mã này.");
+                    return;
                 }
 
                 DialogResult dlg = MessageBox.Show("Xóa thông tin khuyến mãi này?", "Xóa sản phẩm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

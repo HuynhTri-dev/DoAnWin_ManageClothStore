@@ -526,7 +526,10 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!donGia.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>#,0'₫';(#,0'₫')</Format>
+                                <rd:FormatSymbolCulture>vi-VN</rd:FormatSymbolCulture>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -543,6 +546,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>vi-VN</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -588,7 +592,10 @@
             <TextRuns>
               <TextRun>
                 <Value>=Sum(Fields!tongTien.Value, "ThongTinHD")</Value>
-                <Style />
+                <Style>
+                  <Format>#,0'₫';(#,0'₫')</Format>
+                  <rd:FormatSymbolCulture>vi-VN</rd:FormatSymbolCulture>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style>
@@ -610,6 +617,7 @@
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
           <PaddingBottom>2pt</PaddingBottom>
+          <rd:FormatSymbolCulture>vi-VN</rd:FormatSymbolCulture>
         </Style>
       </Textbox>
       <Textbox Name="Textbox3">

@@ -136,6 +136,14 @@ namespace DoAnCuoiKi
                 DialogResult dlg = MessageBox.Show("Xóa thông tin khách hàng này?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dlg == DialogResult.Yes)
                 {
+                    var checkDH = db.DonHangs.FirstOrDefault(x => x.MaKH == MaKhachHangTextBox.Text);
+
+                    if (checkDH != null)
+                    {
+                        MessageBox.Show("Còn đơn hàng đang chứa mã này.");
+                        return;
+                    }
+
                     db.KHACHHANGs.Remove(maKH);
                     db.SaveChanges();
                     MessageBox.Show("Xóa thành công!");
