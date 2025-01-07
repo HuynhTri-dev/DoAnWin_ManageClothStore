@@ -39,6 +39,7 @@
             this.DonHangReportViewer.ServerReport.BearerToken = null;
             this.DonHangReportViewer.Size = new System.Drawing.Size(884, 573);
             this.DonHangReportViewer.TabIndex = 0;
+            this.DonHangReportViewer.Load += new System.EventHandler(this.DonHangReportViewer_Load);
             // 
             // button1
             // 

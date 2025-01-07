@@ -515,13 +515,37 @@ namespace DoAnCuoiKi
                 return;
             }
 
-            if (PhuongThuc == "Tiền mặt" 
-                && !decimal.TryParse(KhachDuaTextBox.Text, out decimal khachDua)
-                && !decimal.TryParse(PhaiThuTextBox.Text, out decimal phaiThu)
-                && khachDua < phaiThu)
+            if (PhuongThuc == "Tiền mặt")
             {
-                MessageBox.Show("Chưa thu đủ tiền", "Thông báo");
+                if (string.IsNullOrWhiteSpace(KhachDuaTextBox.Text))
+                {
+                    MessageBox.Show("Chưa thu tiền khách", "Thông báo");
+                    return;
+                }
+
+                string cleanedKhachDuaText = KhachDuaTextBox.Text.Replace(".", "");
+
+                if (!decimal.TryParse(cleanedKhachDuaText, out decimal khachDua))
+                {
+                    MessageBox.Show("Số tiền khách đưa không hợp lệ", "Thông báo");
+                    return;
+                }
+
+                string thu = PhaiThuTextBox.Text.Replace("₫", "").Replace(".", "").Trim();
+
+                if (!decimal.TryParse(thu, out decimal phaiThu))
+                {
+                    MessageBox.Show("Số tiền phải thu không hợp lệ", "Thông báo");
+                    return;
+                }
+
+                if (khachDua < phaiThu)
+                {
+                    MessageBox.Show("Chưa thu đủ tiền", "Thông báo");
+                    return;
+                }
             }
+
 
             string maKM = null;
             if (MaKMComboBox.SelectedItem != null)
@@ -643,25 +667,32 @@ namespace DoAnCuoiKi
         // Đổi giá trị thối mỗi khi khách đưa tiền
         private void UpdateTienThoi()
         {
-            var phaiThu = decimal.Parse(PhaiThuTextBox.Text.Replace("₫", "").Replace(".", "").Trim());
-            var khachDua = decimal.Parse(KhachDuaTextBox.Text.Replace(".", "").Trim());
-            if (!string.IsNullOrEmpty(phaiThu.ToString())
-                && !string.IsNullOrEmpty(phaiThu.ToString()))
+            var phaiThuText = PhaiThuTextBox.Text.Replace("₫", "").Replace(".", "").Trim();
+            var khachDuaText = KhachDuaTextBox.Text.Replace(".", "").Trim();
+
+            if (decimal.TryParse(phaiThuText, out decimal phaiThu) && decimal.TryParse(khachDuaText, out decimal khachDua))
             {
-                if (khachDua >= phaiThu)
+                if (phaiThu >= 0 && khachDua >= 0) // Kiểm tra giá trị không âm
                 {
-                    TienThoiTextBox.Text = (khachDua - phaiThu).ToString("C0", CultureInfo.GetCultureInfo("vi-VN"));
+                    if (khachDua >= phaiThu)
+                    {
+                        TienThoiTextBox.Text = (khachDua - phaiThu).ToString("C0", CultureInfo.GetCultureInfo("vi-VN"));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Khách đưa chưa đủ", "Thông báo");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Khách đưa chưa đủ", "Thông báo");
+                    MessageBox.Show("Số tiền phải thu và số tiền khách đưa phải là giá trị dương", "Thông báo");
                 }
             }
             else
             {
-                MessageBox.Show("Giá trị không đúng", "Thông báo");
+                MessageBox.Show("Giá trị không hợp lệ. Vui lòng nhập lại số tiền hợp lệ.", "Thông báo");
             }
-            
+
         }
         private void KhachDuaTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -687,17 +718,26 @@ namespace DoAnCuoiKi
 
         private void PhaiThuTextBox_TextChanged(object sender, EventArgs e)
         {
-            
-            if (!string.IsNullOrEmpty(KhachDuaTextBox.Text)
-                && !string.IsNullOrEmpty(PhaiThuTextBox.Text))
+            if (!string.IsNullOrEmpty(KhachDuaTextBox.Text) && !string.IsNullOrEmpty(PhaiThuTextBox.Text))
             {
-                var phaiThu = decimal.Parse(PhaiThuTextBox.Text.Replace("₫", "").Replace(".", "").Trim());
-                var khachDua = decimal.Parse(KhachDuaTextBox.Text.Replace(".", "").Trim());
-                if (khachDua >= phaiThu)
+                var phaiThuText = PhaiThuTextBox.Text.Replace("₫", "").Replace(".", "").Trim();
+                var khachDuaText = KhachDuaTextBox.Text.Replace(".", "").Trim();
+
+                if (decimal.TryParse(phaiThuText, out decimal phaiThu) && decimal.TryParse(khachDuaText, out decimal khachDua))
                 {
-                    TienThoiTextBox.Text = (khachDua - phaiThu).ToString("N0", new CultureInfo("vi-VN"));
+                    if (khachDua >= phaiThu)
+                    {
+                        TienThoiTextBox.Text = (khachDua - phaiThu).ToString("N0", new CultureInfo("vi-VN"));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Khách đưa chưa đủ tiền", "Thông báo");
+                    }
                 }
-                
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập số tiền hợp lệ", "Thông báo");
+                }
             }
         }
 
@@ -815,6 +855,14 @@ namespace DoAnCuoiKi
 
         }
 
-        
+        private void GiamTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GiaTriTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

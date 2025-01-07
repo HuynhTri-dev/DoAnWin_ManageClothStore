@@ -32,6 +32,7 @@
             this.GhiChuRichText = new System.Windows.Forms.RichTextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.MaQRButton = new System.Windows.Forms.PictureBox();
             this.TienThoiTextBox = new System.Windows.Forms.TextBox();
             this.KhachDuaTextBox = new System.Windows.Forms.TextBox();
             this.PhaiThuTextBox = new System.Windows.Forms.TextBox();
@@ -70,12 +71,11 @@
             this.SearchLoai = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.MaQRButton = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MaQRButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DonHangDataGrid)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MaQRButton)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -144,6 +144,17 @@
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             // 
+            // MaQRButton
+            // 
+            this.MaQRButton.Image = global::DoAnCuoiKi.Properties.Resources.tải_xuống1;
+            this.MaQRButton.Location = new System.Drawing.Point(373, 156);
+            this.MaQRButton.Name = "MaQRButton";
+            this.MaQRButton.Size = new System.Drawing.Size(35, 35);
+            this.MaQRButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.MaQRButton.TabIndex = 0;
+            this.MaQRButton.TabStop = false;
+            this.MaQRButton.Click += new System.EventHandler(this.MaQRButton_Click);
+            // 
             // TienThoiTextBox
             // 
             this.TienThoiTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -186,6 +197,7 @@
             this.GiamTextBox.ReadOnly = true;
             this.GiamTextBox.Size = new System.Drawing.Size(280, 28);
             this.GiamTextBox.TabIndex = 95;
+            this.GiamTextBox.TextChanged += new System.EventHandler(this.GiamTextBox_TextChanged);
             // 
             // TongTienTextBox
             // 
@@ -311,6 +323,7 @@
             this.GiaTriTextBox.ReadOnly = true;
             this.GiaTriTextBox.Size = new System.Drawing.Size(43, 22);
             this.GiaTriTextBox.TabIndex = 20;
+            this.GiaTriTextBox.TextChanged += new System.EventHandler(this.GiaTriTextBox_TextChanged);
             // 
             // label7
             // 
@@ -534,17 +547,6 @@
             this.label18.TabIndex = 104;
             this.label18.Text = "Loại sản phẩm:";
             // 
-            // MaQRButton
-            // 
-            this.MaQRButton.Image = global::DoAnCuoiKi.Properties.Resources.tải_xuống1;
-            this.MaQRButton.Location = new System.Drawing.Point(373, 156);
-            this.MaQRButton.Name = "MaQRButton";
-            this.MaQRButton.Size = new System.Drawing.Size(35, 35);
-            this.MaQRButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.MaQRButton.TabIndex = 0;
-            this.MaQRButton.TabStop = false;
-            this.MaQRButton.Click += new System.EventHandler(this.MaQRButton_Click);
-            // 
             // BanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -569,10 +571,10 @@
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MaQRButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DonHangDataGrid)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MaQRButton)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

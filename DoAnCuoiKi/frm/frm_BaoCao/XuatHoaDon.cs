@@ -52,6 +52,7 @@ namespace DoAnCuoiKi
             }
 
             List<ThongTinHoaDon> thongTinHoaDon = new List<ThongTinHoaDon>();
+
             ThongTinHoaDon tt = new ThongTinHoaDon
             {
                 maHD = tthd.MaHD,
@@ -62,12 +63,12 @@ namespace DoAnCuoiKi
 
             thongTinHoaDon.Add(tt);
 
-
+            
 
             List<CTHD> listCTHD = new List<CTHD>();
             var ctdh = db.CHITIETDONHANGs.Where(x => x.MaDH == tthd.MaDH).ToList();
 
-            
+            decimal tamTinh = 0;
 
             foreach (var item in ctdh)
             {
@@ -78,25 +79,51 @@ namespace DoAnCuoiKi
                     soLuong = item.SoLuong,
                     donGia = sp.GiaBan,
                 };
+
+                tamTinh += item.SoLuong * sp.GiaBan;
+
                 listCTHD.Add(temp);
             }
+
+            // Gia tri giam gia
+            decimal giamGia = 0;
+
+            // Lấy giá trị khuyến mãi trực tiếp trong một truy vấn
+            var giaTriKhuyenMai = db.DonHangs
+                .Where(x => x.MaDH == tthd.MaDH && x.MaKM != null)
+                .Select(x => x.KHUYENMAI.GiaTri)
+                .FirstOrDefault();
+
+            giamGia = tamTinh * (decimal)(giaTriKhuyenMai / 100);
+
+
 
             DonHangReportViewer.LocalReport.ReportPath = "D:\\HUTECH\\C#\\CuaHangQuanAo\\CuaHangQuanAo_DoAn\\DoAnCuoiKi\\frm\\frm_BaoCao\\rptDonHang.rdlc";
             var source = new ReportDataSource("ThongTinHD", thongTinHoaDon);
             var source2 = new ReportDataSource("CTHD", listCTHD);
+
+            var tamTinhPara = new ReportParameter("TamTinh", tamTinh.ToString("0"));
+            var giamGiaPara = new ReportParameter("GiamGia", giamGia.ToString("0"));
+
             DonHangReportViewer.LocalReport.DataSources.Clear();
             DonHangReportViewer.LocalReport.DataSources.Add(source);
             DonHangReportViewer.LocalReport.DataSources.Add(source2);
+
+            DonHangReportViewer.LocalReport.SetParameters(tamTinhPara);
+            DonHangReportViewer.LocalReport.SetParameters(giamGiaPara);
+
             DonHangReportViewer.RefreshReport();
-
-
-            this.DonHangReportViewer.RefreshReport();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void DonHangReportViewer_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
