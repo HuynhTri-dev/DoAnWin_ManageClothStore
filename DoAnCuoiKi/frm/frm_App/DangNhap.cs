@@ -136,6 +136,20 @@ namespace DoAnCuoiKi
         {
 
         }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            if (txtPass.PasswordChar == '*')
+            {
+                pictureBox1.Image = Properties.Resources.show;
+                txtPass.PasswordChar = '\0';
+            }
+            else
+            {
+                pictureBox1.Image = Properties.Resources.close;
+                txtPass.PasswordChar = '*';
+            }
+        }
     }
  }
 

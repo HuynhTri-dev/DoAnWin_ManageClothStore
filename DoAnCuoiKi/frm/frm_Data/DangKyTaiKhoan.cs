@@ -114,5 +114,19 @@ namespace DoAnCuoiKi.frm
                 MessageBox.Show("Không có thông tin nhân viên này.");
             }
         }
+
+        private void ShowPass_Click(object sender, EventArgs e)
+        {
+            if (matKhauTextBox.PasswordChar == '*')
+            {
+                ShowPass.Image = Properties.Resources.show;
+                matKhauTextBox.PasswordChar = '\0';
+            }
+            else
+            {
+                ShowPass.Image = Properties.Resources.close;
+                matKhauTextBox.PasswordChar = '*';
+            }
+        }
     }
 }

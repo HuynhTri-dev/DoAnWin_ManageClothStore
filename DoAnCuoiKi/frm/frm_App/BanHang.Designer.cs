@@ -32,7 +32,6 @@
             this.GhiChuRichText = new System.Windows.Forms.RichTextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.MaQRButton = new System.Windows.Forms.PictureBox();
             this.TienThoiTextBox = new System.Windows.Forms.TextBox();
             this.KhachDuaTextBox = new System.Windows.Forms.TextBox();
             this.PhaiThuTextBox = new System.Windows.Forms.TextBox();
@@ -66,18 +65,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.ResearchSanPham = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
             this.SearchThuongHieu = new System.Windows.Forms.ComboBox();
             this.SearchLoai = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.MaQRButton = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MaQRButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DonHangDataGrid)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MaQRButton)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -145,17 +143,6 @@
             this.groupBox1.Size = new System.Drawing.Size(436, 255);
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
-            // 
-            // MaQRButton
-            // 
-            this.MaQRButton.Image = global::DoAnCuoiKi.Properties.Resources.tải_xuống1;
-            this.MaQRButton.Location = new System.Drawing.Point(373, 156);
-            this.MaQRButton.Name = "MaQRButton";
-            this.MaQRButton.Size = new System.Drawing.Size(35, 35);
-            this.MaQRButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.MaQRButton.TabIndex = 37;
-            this.MaQRButton.TabStop = false;
-            this.MaQRButton.Click += new System.EventHandler(this.MaQRButton_Click);
             // 
             // TienThoiTextBox
             // 
@@ -496,16 +483,6 @@
             this.ResearchSanPham.Enter += new System.EventHandler(this.ResearchSanPham_TextChanged);
             this.ResearchSanPham.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ResearchSanPham_KeyPress);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::DoAnCuoiKi.Properties.Resources.istockphoto_1342842799_612x6121;
-            this.pictureBox1.Location = new System.Drawing.Point(331, 81);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -557,6 +534,17 @@
             this.label18.TabIndex = 104;
             this.label18.Text = "Loại sản phẩm:";
             // 
+            // MaQRButton
+            // 
+            this.MaQRButton.Image = global::DoAnCuoiKi.Properties.Resources.tải_xuống1;
+            this.MaQRButton.Location = new System.Drawing.Point(373, 156);
+            this.MaQRButton.Name = "MaQRButton";
+            this.MaQRButton.Size = new System.Drawing.Size(35, 35);
+            this.MaQRButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.MaQRButton.TabIndex = 0;
+            this.MaQRButton.TabStop = false;
+            this.MaQRButton.Click += new System.EventHandler(this.MaQRButton_Click);
+            // 
             // BanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -570,7 +558,6 @@
             this.Controls.Add(this.SearchLoai);
             this.Controls.Add(this.SearchThuongHieu);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ResearchSanPham);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
@@ -582,11 +569,10 @@
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MaQRButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DonHangDataGrid)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MaQRButton)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -631,7 +617,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.RichTextBox GhiChuRichText;
         private System.Windows.Forms.TextBox ResearchSanPham;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox SearchThuongHieu;
         private System.Windows.Forms.ComboBox SearchLoai;

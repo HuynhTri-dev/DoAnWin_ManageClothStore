@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Collections.Generic;
 using static DoAnCuoiKi.BanHang;
 using System.Security.Cryptography;
 

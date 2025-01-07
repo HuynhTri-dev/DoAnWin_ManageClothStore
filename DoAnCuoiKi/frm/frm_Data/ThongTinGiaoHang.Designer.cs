@@ -31,6 +31,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.TrangThaiCombo = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.PhiText = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.DiaChiText = new System.Windows.Forms.TextBox();
@@ -44,8 +46,6 @@
             this.MaPhieuText = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.HoanThanhButton = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.TrangThaiCombo = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -92,6 +92,27 @@
             this.groupBox1.Size = new System.Drawing.Size(454, 363);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
+            // 
+            // TrangThaiCombo
+            // 
+            this.TrangThaiCombo.FormattingEnabled = true;
+            this.TrangThaiCombo.Items.AddRange(new object[] {
+            "Chưa giao",
+            "Đang giao",
+            "Hoàn thành"});
+            this.TrangThaiCombo.Location = new System.Drawing.Point(173, 97);
+            this.TrangThaiCombo.Name = "TrangThaiCombo";
+            this.TrangThaiCombo.Size = new System.Drawing.Size(239, 29);
+            this.TrangThaiCombo.TabIndex = 13;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(31, 100);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(86, 21);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "Trạng thái";
             // 
             // PhiText
             // 
@@ -205,27 +226,6 @@
             this.HoanThanhButton.UseVisualStyleBackColor = true;
             this.HoanThanhButton.Click += new System.EventHandler(this.HoanThanhButton_Click);
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(31, 100);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(86, 21);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "Trạng thái";
-            // 
-            // TrangThaiCombo
-            // 
-            this.TrangThaiCombo.FormattingEnabled = true;
-            this.TrangThaiCombo.Items.AddRange(new object[] {
-            "Chưa giao",
-            "Đang giao",
-            "Hoàn thành"});
-            this.TrangThaiCombo.Location = new System.Drawing.Point(173, 97);
-            this.TrangThaiCombo.Name = "TrangThaiCombo";
-            this.TrangThaiCombo.Size = new System.Drawing.Size(239, 29);
-            this.TrangThaiCombo.TabIndex = 13;
-            // 
             // ThongTinGiaoHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -235,7 +235,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Name = "ThongTinGiaoHang";
-            this.Text = "Form1";
+            this.Text = "Phiếu giao hàng";
             this.Load += new System.EventHandler(this.ThongTinGiaoHang_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

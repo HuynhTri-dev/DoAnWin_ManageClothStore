@@ -39,8 +39,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.addUpdateButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
+            this.ShowPass = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ShowPass)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -64,6 +66,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.ShowPass);
             this.groupBox1.Controls.Add(this.matKhauTextBox);
             this.groupBox1.Controls.Add(this.tenDangNhapTextBox);
             this.groupBox1.Controls.Add(this.maTKText);
@@ -81,7 +84,8 @@
             this.matKhauTextBox.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.matKhauTextBox.Location = new System.Drawing.Point(259, 178);
             this.matKhauTextBox.Name = "matKhauTextBox";
-            this.matKhauTextBox.Size = new System.Drawing.Size(364, 32);
+            this.matKhauTextBox.PasswordChar = '*';
+            this.matKhauTextBox.Size = new System.Drawing.Size(321, 32);
             this.matKhauTextBox.TabIndex = 5;
             // 
             // tenDangNhapTextBox
@@ -153,6 +157,17 @@
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
+            // ShowPass
+            // 
+            this.ShowPass.Image = global::DoAnCuoiKi.Properties.Resources.close;
+            this.ShowPass.Location = new System.Drawing.Point(593, 178);
+            this.ShowPass.Name = "ShowPass";
+            this.ShowPass.Size = new System.Drawing.Size(32, 32);
+            this.ShowPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ShowPass.TabIndex = 6;
+            this.ShowPass.TabStop = false;
+            this.ShowPass.Click += new System.EventHandler(this.ShowPass_Click);
+            // 
             // DangKyTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -169,6 +184,7 @@
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ShowPass)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -186,5 +202,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button addUpdateButton;
         private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.PictureBox ShowPass;
     }
 }

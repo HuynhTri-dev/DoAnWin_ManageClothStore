@@ -93,6 +93,16 @@ namespace DoAnCuoiKi.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap close {
+            get {
+                object obj = ResourceManager.GetObject("close", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dau_cong {
             get {
                 object obj = ResourceManager.GetObject("dau cong", resourceCulture);
@@ -153,9 +163,9 @@ namespace DoAnCuoiKi.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap istockphoto_1342842799_612x6121 {
+        internal static System.Drawing.Bitmap quanLyDHicon {
             get {
-                object obj = ResourceManager.GetObject("istockphoto-1342842799-612x6121", resourceCulture);
+                object obj = ResourceManager.GetObject("quanLyDHicon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +173,9 @@ namespace DoAnCuoiKi.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap quanLyDHicon {
+        internal static System.Drawing.Bitmap show {
             get {
-                object obj = ResourceManager.GetObject("quanLyDHicon", resourceCulture);
+                object obj = ResourceManager.GetObject("show", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
