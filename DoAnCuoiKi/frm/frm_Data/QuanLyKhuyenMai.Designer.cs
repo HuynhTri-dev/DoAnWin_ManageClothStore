@@ -79,7 +79,7 @@
             this.KhuyenMaiDataGrid.RowHeadersWidth = 51;
             this.KhuyenMaiDataGrid.RowTemplate.Height = 24;
             this.KhuyenMaiDataGrid.Size = new System.Drawing.Size(837, 540);
-            this.KhuyenMaiDataGrid.TabIndex = 1;
+            this.KhuyenMaiDataGrid.TabIndex = 3;
             this.KhuyenMaiDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.KhuyenMaiDataGrid_CellContentClick);
             this.KhuyenMaiDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.KhuyenMaiDataGrid_CellContentClick);
             // 
@@ -99,7 +99,7 @@
             this.groupBox1.Location = new System.Drawing.Point(42, 186);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(465, 279);
-            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // ketThucDatePicker
@@ -109,7 +109,7 @@
             this.ketThucDatePicker.Location = new System.Drawing.Point(172, 211);
             this.ketThucDatePicker.Name = "ketThucDatePicker";
             this.ketThucDatePicker.Size = new System.Drawing.Size(267, 32);
-            this.ketThucDatePicker.TabIndex = 9;
+            this.ketThucDatePicker.TabIndex = 4;
             // 
             // batDauDatePicker
             // 
@@ -193,7 +193,7 @@
             this.themSuaButton.Location = new System.Drawing.Point(75, 490);
             this.themSuaButton.Name = "themSuaButton";
             this.themSuaButton.Size = new System.Drawing.Size(168, 40);
-            this.themSuaButton.TabIndex = 3;
+            this.themSuaButton.TabIndex = 1;
             this.themSuaButton.Text = "Thêm / Sửa";
             this.themSuaButton.UseVisualStyleBackColor = true;
             this.themSuaButton.Click += new System.EventHandler(this.themSuaButton_Click);
@@ -204,7 +204,7 @@
             this.xoaButton.Location = new System.Drawing.Point(392, 490);
             this.xoaButton.Name = "xoaButton";
             this.xoaButton.Size = new System.Drawing.Size(89, 40);
-            this.xoaButton.TabIndex = 4;
+            this.xoaButton.TabIndex = 2;
             this.xoaButton.Text = "Xóa";
             this.xoaButton.UseVisualStyleBackColor = true;
             this.xoaButton.Click += new System.EventHandler(this.xoaButton_Click);

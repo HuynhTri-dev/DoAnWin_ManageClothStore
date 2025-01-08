@@ -132,7 +132,7 @@
             this.MaKhachHangTextBox.Location = new System.Drawing.Point(179, 21);
             this.MaKhachHangTextBox.Name = "MaKhachHangTextBox";
             this.MaKhachHangTextBox.Size = new System.Drawing.Size(195, 32);
-            this.MaKhachHangTextBox.TabIndex = 8;
+            this.MaKhachHangTextBox.TabIndex = 0;
             this.MaKhachHangTextBox.TextChanged += new System.EventHandler(this.MaKhachHangTextBox_TextChanged);
             // 
             // HoTenTextBox
@@ -141,7 +141,7 @@
             this.HoTenTextBox.Location = new System.Drawing.Point(179, 68);
             this.HoTenTextBox.Name = "HoTenTextBox";
             this.HoTenTextBox.Size = new System.Drawing.Size(195, 32);
-            this.HoTenTextBox.TabIndex = 9;
+            this.HoTenTextBox.TabIndex = 1;
             this.HoTenTextBox.TextChanged += new System.EventHandler(this.HoTenTextBox_TextChanged);
             // 
             // DiaChiTextBox
@@ -150,7 +150,7 @@
             this.DiaChiTextBox.Location = new System.Drawing.Point(533, 68);
             this.DiaChiTextBox.Name = "DiaChiTextBox";
             this.DiaChiTextBox.Size = new System.Drawing.Size(189, 32);
-            this.DiaChiTextBox.TabIndex = 10;
+            this.DiaChiTextBox.TabIndex = 5;
             // 
             // NgaySinhDateTimePicker
             // 
@@ -160,7 +160,7 @@
             this.NgaySinhDateTimePicker.Location = new System.Drawing.Point(533, 21);
             this.NgaySinhDateTimePicker.Name = "NgaySinhDateTimePicker";
             this.NgaySinhDateTimePicker.Size = new System.Drawing.Size(163, 32);
-            this.NgaySinhDateTimePicker.TabIndex = 12;
+            this.NgaySinhDateTimePicker.TabIndex = 4;
             this.NgaySinhDateTimePicker.ValueChanged += new System.EventHandler(this.NgaySinhDateTimePicker_ValueChanged);
             // 
             // ThemSuaButton
@@ -169,7 +169,7 @@
             this.ThemSuaButton.Location = new System.Drawing.Point(228, 174);
             this.ThemSuaButton.Name = "ThemSuaButton";
             this.ThemSuaButton.Size = new System.Drawing.Size(171, 40);
-            this.ThemSuaButton.TabIndex = 14;
+            this.ThemSuaButton.TabIndex = 7;
             this.ThemSuaButton.Text = "Thêm / Sửa";
             this.ThemSuaButton.UseVisualStyleBackColor = true;
             this.ThemSuaButton.Click += new System.EventHandler(this.ThemSuaButton_Click_1);
@@ -180,7 +180,7 @@
             this.XoaButton.Location = new System.Drawing.Point(479, 174);
             this.XoaButton.Name = "XoaButton";
             this.XoaButton.Size = new System.Drawing.Size(96, 40);
-            this.XoaButton.TabIndex = 15;
+            this.XoaButton.TabIndex = 8;
             this.XoaButton.Text = "Xoá";
             this.XoaButton.UseVisualStyleBackColor = true;
             this.XoaButton.Click += new System.EventHandler(this.XoaButton_Click);
@@ -229,7 +229,7 @@
             this.groupBox1.Location = new System.Drawing.Point(375, 103);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(853, 233);
-            this.groupBox1.TabIndex = 18;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // ghiChuText
@@ -237,7 +237,7 @@
             this.ghiChuText.Location = new System.Drawing.Point(533, 113);
             this.ghiChuText.Name = "ghiChuText";
             this.ghiChuText.Size = new System.Drawing.Size(189, 52);
-            this.ghiChuText.TabIndex = 17;
+            this.ghiChuText.TabIndex = 6;
             this.ghiChuText.Text = "";
             // 
             // NuRadioButton
@@ -247,7 +247,7 @@
             this.NuRadioButton.Location = new System.Drawing.Point(279, 117);
             this.NuRadioButton.Name = "NuRadioButton";
             this.NuRadioButton.Size = new System.Drawing.Size(56, 28);
-            this.NuRadioButton.TabIndex = 16;
+            this.NuRadioButton.TabIndex = 3;
             this.NuRadioButton.TabStop = true;
             this.NuRadioButton.Text = "Nữ";
             this.NuRadioButton.UseVisualStyleBackColor = true;
@@ -260,7 +260,7 @@
             this.NamRadioButton.Location = new System.Drawing.Point(179, 117);
             this.NamRadioButton.Name = "NamRadioButton";
             this.NamRadioButton.Size = new System.Drawing.Size(72, 28);
-            this.NamRadioButton.TabIndex = 16;
+            this.NamRadioButton.TabIndex = 2;
             this.NamRadioButton.TabStop = true;
             this.NamRadioButton.Text = "Nam";
             this.NamRadioButton.UseVisualStyleBackColor = true;

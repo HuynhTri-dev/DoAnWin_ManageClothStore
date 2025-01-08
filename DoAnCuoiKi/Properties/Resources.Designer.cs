@@ -183,6 +183,16 @@ namespace DoAnCuoiKi.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap square_8c08a00f550e40a2efafea4a005b1232 {
+            get {
+                object obj = ResourceManager.GetObject("square-8c08a00f550e40a2efafea4a005b1232", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap tải_xuống {
             get {
                 object obj = ResourceManager.GetObject("tải xuống", resourceCulture);

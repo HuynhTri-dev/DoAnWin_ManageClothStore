@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.txtMonth = new System.Windows.Forms.TextBox();
             this.lblTotalRevenue = new System.Windows.Forms.Label();
             this.dgvReport = new System.Windows.Forms.DataGridView();
@@ -54,7 +54,7 @@
             this.txtMonth.Location = new System.Drawing.Point(146, 102);
             this.txtMonth.Name = "txtMonth";
             this.txtMonth.Size = new System.Drawing.Size(100, 28);
-            this.txtMonth.TabIndex = 9;
+            this.txtMonth.TabIndex = 0;
             this.txtMonth.TextChanged += new System.EventHandler(this.txtMonth_TextChanged);
             // 
             // lblTotalRevenue
@@ -64,7 +64,7 @@
             this.lblTotalRevenue.Location = new System.Drawing.Point(19, 619);
             this.lblTotalRevenue.Name = "lblTotalRevenue";
             this.lblTotalRevenue.Size = new System.Drawing.Size(146, 21);
-            this.lblTotalRevenue.TabIndex = 8;
+            this.lblTotalRevenue.TabIndex = 5;
             this.lblTotalRevenue.Text = "Tổng doanh thu: 0";
             // 
             // dgvReport
@@ -76,7 +76,7 @@
             this.dgvReport.RowHeadersWidth = 51;
             this.dgvReport.RowTemplate.Height = 24;
             this.dgvReport.Size = new System.Drawing.Size(518, 444);
-            this.dgvReport.TabIndex = 7;
+            this.dgvReport.TabIndex = 3;
             this.dgvReport.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReport_CellContentClick);
             // 
             // btnViewReport
@@ -85,25 +85,25 @@
             this.btnViewReport.Location = new System.Drawing.Point(286, 99);
             this.btnViewReport.Name = "btnViewReport";
             this.btnViewReport.Size = new System.Drawing.Size(166, 31);
-            this.btnViewReport.TabIndex = 6;
+            this.btnViewReport.TabIndex = 1;
             this.btnViewReport.Text = "Xem báo cáo";
             this.btnViewReport.UseVisualStyleBackColor = true;
             this.btnViewReport.Click += new System.EventHandler(this.btnViewReport_Click);
             // 
             // chartRevenue
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartRevenue.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartRevenue.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chartRevenue.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartRevenue.Legends.Add(legend1);
             this.chartRevenue.Location = new System.Drawing.Point(576, 157);
             this.chartRevenue.Name = "chartRevenue";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartRevenue.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartRevenue.Series.Add(series1);
             this.chartRevenue.Size = new System.Drawing.Size(826, 444);
-            this.chartRevenue.TabIndex = 10;
+            this.chartRevenue.TabIndex = 4;
             this.chartRevenue.Click += new System.EventHandler(this.chartRevenue_Click);
             // 
             // label1
@@ -143,7 +143,7 @@
             this.XuatBaoCaoButton.Location = new System.Drawing.Point(505, 102);
             this.XuatBaoCaoButton.Name = "XuatBaoCaoButton";
             this.XuatBaoCaoButton.Size = new System.Drawing.Size(166, 31);
-            this.XuatBaoCaoButton.TabIndex = 13;
+            this.XuatBaoCaoButton.TabIndex = 2;
             this.XuatBaoCaoButton.Text = "Xuất Báo Cáo";
             this.XuatBaoCaoButton.UseVisualStyleBackColor = true;
             this.XuatBaoCaoButton.Click += new System.EventHandler(this.XuatBaoCaoButton_Click);
@@ -155,7 +155,7 @@
             this.label3.Location = new System.Drawing.Point(19, 660);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 21);
-            this.label3.TabIndex = 14;
+            this.label3.TabIndex = 6;
             this.label3.Text = "Lợi nhuận:";
             // 
             // lblLoiNhuan

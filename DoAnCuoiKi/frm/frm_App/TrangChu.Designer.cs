@@ -73,7 +73,7 @@
             this.btnStaff.Location = new System.Drawing.Point(-1, 379);
             this.btnStaff.Name = "btnStaff";
             this.btnStaff.Size = new System.Drawing.Size(203, 47);
-            this.btnStaff.TabIndex = 1;
+            this.btnStaff.TabIndex = 6;
             this.btnStaff.Text = "Nhân Viên";
             this.btnStaff.UseVisualStyleBackColor = false;
             this.btnStaff.Click += new System.EventHandler(this.btnStaff_Click);
@@ -91,7 +91,7 @@
             this.btnCustomers.Location = new System.Drawing.Point(-1, 220);
             this.btnCustomers.Name = "btnCustomers";
             this.btnCustomers.Size = new System.Drawing.Size(203, 47);
-            this.btnCustomers.TabIndex = 2;
+            this.btnCustomers.TabIndex = 3;
             this.btnCustomers.Text = "Khách Hàng";
             this.btnCustomers.UseVisualStyleBackColor = false;
             this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
@@ -109,7 +109,7 @@
             this.btnBill.Location = new System.Drawing.Point(-1, 326);
             this.btnBill.Name = "btnBill";
             this.btnBill.Size = new System.Drawing.Size(203, 47);
-            this.btnBill.TabIndex = 3;
+            this.btnBill.TabIndex = 5;
             this.btnBill.Text = "Giao Hàng";
             this.btnBill.UseVisualStyleBackColor = false;
             this.btnBill.Click += new System.EventHandler(this.btnBill_Click);
@@ -127,7 +127,7 @@
             this.btnProduct.Location = new System.Drawing.Point(-1, 114);
             this.btnProduct.Name = "btnProduct";
             this.btnProduct.Size = new System.Drawing.Size(203, 47);
-            this.btnProduct.TabIndex = 4;
+            this.btnProduct.TabIndex = 1;
             this.btnProduct.Text = "Sản Phẩm";
             this.btnProduct.UseVisualStyleBackColor = false;
             this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
@@ -145,7 +145,7 @@
             this.btnWarehouse.Location = new System.Drawing.Point(-1, 167);
             this.btnWarehouse.Name = "btnWarehouse";
             this.btnWarehouse.Size = new System.Drawing.Size(203, 47);
-            this.btnWarehouse.TabIndex = 5;
+            this.btnWarehouse.TabIndex = 2;
             this.btnWarehouse.Text = "Khuyến mãi";
             this.btnWarehouse.UseVisualStyleBackColor = false;
             this.btnWarehouse.Click += new System.EventHandler(this.btnWarehouse_Click);
@@ -163,7 +163,7 @@
             this.btnRevenue.Location = new System.Drawing.Point(-1, 432);
             this.btnRevenue.Name = "btnRevenue";
             this.btnRevenue.Size = new System.Drawing.Size(203, 47);
-            this.btnRevenue.TabIndex = 5;
+            this.btnRevenue.TabIndex = 7;
             this.btnRevenue.Text = "Doanh Thu";
             this.btnRevenue.UseVisualStyleBackColor = false;
             this.btnRevenue.Click += new System.EventHandler(this.btnRevenue_Click);
@@ -180,7 +180,7 @@
             this.exitButton.Location = new System.Drawing.Point(-1, 510);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(203, 47);
-            this.exitButton.TabIndex = 6;
+            this.exitButton.TabIndex = 8;
             this.exitButton.Tag = "";
             this.exitButton.Text = "Đăng xuất";
             this.exitButton.UseVisualStyleBackColor = false;
@@ -194,7 +194,7 @@
             this.panel2.Location = new System.Drawing.Point(199, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1283, 703);
-            this.panel2.TabIndex = 2;
+            this.panel2.TabIndex = 9;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel1
@@ -224,7 +224,7 @@
             this.HoaDonButton.Location = new System.Drawing.Point(-1, 273);
             this.HoaDonButton.Name = "HoaDonButton";
             this.HoaDonButton.Size = new System.Drawing.Size(203, 47);
-            this.HoaDonButton.TabIndex = 7;
+            this.HoaDonButton.TabIndex = 4;
             this.HoaDonButton.Text = "Hóa Đơn";
             this.HoaDonButton.UseVisualStyleBackColor = false;
             this.HoaDonButton.Click += new System.EventHandler(this.HoaDonButton_Click);

@@ -86,7 +86,7 @@
             this.MapWebView.Location = new System.Drawing.Point(707, 101);
             this.MapWebView.Name = "MapWebView";
             this.MapWebView.Size = new System.Drawing.Size(700, 578);
-            this.MapWebView.TabIndex = 1;
+            this.MapWebView.TabIndex = 2;
             this.MapWebView.ZoomFactor = 1D;
             this.MapWebView.Click += new System.EventHandler(this.MapWebView_Click);
             // 
@@ -103,7 +103,7 @@
             this.DonHangAdvanced.RowTemplate.Height = 24;
             this.DonHangAdvanced.Size = new System.Drawing.Size(677, 328);
             this.DonHangAdvanced.SortStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.DonHangAdvanced.TabIndex = 2;
+            this.DonHangAdvanced.TabIndex = 0;
             this.DonHangAdvanced.SortStringChanged += new System.EventHandler<Zuby.ADGV.AdvancedDataGridView.SortEventArgs>(this.DonHangAdvanced_SortStringChanged);
             this.DonHangAdvanced.FilterStringChanged += new System.EventHandler<Zuby.ADGV.AdvancedDataGridView.FilterEventArgs>(this.DonHangAdvanced_FilterStringChanged);
             this.DonHangAdvanced.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DonHangAdvanced_CellContentClick);
@@ -142,7 +142,7 @@
             this.groupBox1.Location = new System.Drawing.Point(19, 101);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(677, 244);
-            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin đơn hàng";
             // 
@@ -151,7 +151,7 @@
             this.TimKiemButton.Location = new System.Drawing.Point(589, 30);
             this.TimKiemButton.Name = "TimKiemButton";
             this.TimKiemButton.Size = new System.Drawing.Size(82, 33);
-            this.TimKiemButton.TabIndex = 21;
+            this.TimKiemButton.TabIndex = 9;
             this.TimKiemButton.Text = "Find";
             this.TimKiemButton.UseVisualStyleBackColor = true;
             this.TimKiemButton.Click += new System.EventHandler(this.TimKiemButton_Click);
@@ -161,7 +161,7 @@
             this.CapNhatButton.Location = new System.Drawing.Point(334, 169);
             this.CapNhatButton.Name = "CapNhatButton";
             this.CapNhatButton.Size = new System.Drawing.Size(103, 35);
-            this.CapNhatButton.TabIndex = 20;
+            this.CapNhatButton.TabIndex = 8;
             this.CapNhatButton.Text = "Cập nhật";
             this.CapNhatButton.UseVisualStyleBackColor = true;
             this.CapNhatButton.Click += new System.EventHandler(this.CapNhatButton_Click);
@@ -171,7 +171,7 @@
             this.PhiText.Location = new System.Drawing.Point(122, 135);
             this.PhiText.Name = "PhiText";
             this.PhiText.Size = new System.Drawing.Size(202, 28);
-            this.PhiText.TabIndex = 19;
+            this.PhiText.TabIndex = 3;
             // 
             // label9
             // 
@@ -187,7 +187,7 @@
             this.MaDHText.Location = new System.Drawing.Point(433, 33);
             this.MaDHText.Name = "MaDHText";
             this.MaDHText.Size = new System.Drawing.Size(150, 28);
-            this.MaDHText.TabIndex = 17;
+            this.MaDHText.TabIndex = 5;
             // 
             // label8
             // 
@@ -208,7 +208,7 @@
             this.TrangThaComboBox.Location = new System.Drawing.Point(433, 101);
             this.TrangThaComboBox.Name = "TrangThaComboBox";
             this.TrangThaComboBox.Size = new System.Drawing.Size(150, 29);
-            this.TrangThaComboBox.TabIndex = 15;
+            this.TrangThaComboBox.TabIndex = 7;
             // 
             // label7
             // 
@@ -224,7 +224,7 @@
             this.GhiChuText.Location = new System.Drawing.Point(122, 169);
             this.GhiChuText.Name = "GhiChuText";
             this.GhiChuText.Size = new System.Drawing.Size(202, 61);
-            this.GhiChuText.TabIndex = 12;
+            this.GhiChuText.TabIndex = 4;
             this.GhiChuText.Text = "";
             // 
             // label6
@@ -243,7 +243,7 @@
             this.NgayGiaoDate.Location = new System.Drawing.Point(433, 66);
             this.NgayGiaoDate.Name = "NgayGiaoDate";
             this.NgayGiaoDate.Size = new System.Drawing.Size(150, 28);
-            this.NgayGiaoDate.TabIndex = 10;
+            this.NgayGiaoDate.TabIndex = 6;
             // 
             // label4
             // 
@@ -259,7 +259,7 @@
             this.DiaChiText.Location = new System.Drawing.Point(122, 101);
             this.DiaChiText.Name = "DiaChiText";
             this.DiaChiText.Size = new System.Drawing.Size(202, 28);
-            this.DiaChiText.TabIndex = 8;
+            this.DiaChiText.TabIndex = 2;
             // 
             // label5
             // 
@@ -277,7 +277,7 @@
             this.NgayLapDate.Location = new System.Drawing.Point(122, 67);
             this.NgayLapDate.Name = "NgayLapDate";
             this.NgayLapDate.Size = new System.Drawing.Size(150, 28);
-            this.NgayLapDate.TabIndex = 6;
+            this.NgayLapDate.TabIndex = 1;
             // 
             // label3
             // 
@@ -293,7 +293,7 @@
             this.MaPhieuText.Location = new System.Drawing.Point(122, 33);
             this.MaPhieuText.Name = "MaPhieuText";
             this.MaPhieuText.Size = new System.Drawing.Size(202, 28);
-            this.MaPhieuText.TabIndex = 4;
+            this.MaPhieuText.TabIndex = 0;
             // 
             // QuanLyDongHang
             // 

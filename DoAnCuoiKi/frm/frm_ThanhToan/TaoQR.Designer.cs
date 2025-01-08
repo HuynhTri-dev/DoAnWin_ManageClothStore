@@ -28,21 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBoxQRCode = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.pictureBoxQRCode = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxQRCode)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBoxQRCode
-            // 
-            this.pictureBoxQRCode.Location = new System.Drawing.Point(68, 45);
-            this.pictureBoxQRCode.Name = "pictureBoxQRCode";
-            this.pictureBoxQRCode.Size = new System.Drawing.Size(350, 350);
-            this.pictureBoxQRCode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxQRCode.TabIndex = 0;
-            this.pictureBoxQRCode.TabStop = false;
-            this.pictureBoxQRCode.Click += new System.EventHandler(this.pictureBoxQRCode_Click);
             // 
             // button1
             // 
@@ -65,6 +55,16 @@
             this.button2.Text = "HỦY";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // pictureBoxQRCode
+            // 
+            this.pictureBoxQRCode.Location = new System.Drawing.Point(68, 45);
+            this.pictureBoxQRCode.Name = "pictureBoxQRCode";
+            this.pictureBoxQRCode.Size = new System.Drawing.Size(350, 350);
+            this.pictureBoxQRCode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxQRCode.TabIndex = 0;
+            this.pictureBoxQRCode.TabStop = false;
+            this.pictureBoxQRCode.Click += new System.EventHandler(this.pictureBoxQRCode_Click);
             // 
             // TaoQR
             // 

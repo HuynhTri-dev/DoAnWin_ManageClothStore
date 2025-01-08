@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblStaffID = new System.Windows.Forms.Label();
@@ -142,21 +142,21 @@
             // 
             this.nhanVienDataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(225)))), ((int)(((byte)(213)))));
             this.nhanVienDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.nhanVienDataGrid.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.nhanVienDataGrid.DefaultCellStyle = dataGridViewCellStyle1;
             this.nhanVienDataGrid.Location = new System.Drawing.Point(84, 318);
             this.nhanVienDataGrid.Name = "nhanVienDataGrid";
             this.nhanVienDataGrid.ReadOnly = true;
             this.nhanVienDataGrid.RowHeadersWidth = 51;
             this.nhanVienDataGrid.RowTemplate.Height = 24;
             this.nhanVienDataGrid.Size = new System.Drawing.Size(1272, 357);
-            this.nhanVienDataGrid.TabIndex = 8;
+            this.nhanVienDataGrid.TabIndex = 1;
             this.nhanVienDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.nhanVienDataGrid_CellContentClick);
             this.nhanVienDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.nhanVienDataGrid_CellContentClick);
             // 
@@ -166,7 +166,7 @@
             this.txtStaffID.Location = new System.Drawing.Point(162, 29);
             this.txtStaffID.Name = "txtStaffID";
             this.txtStaffID.Size = new System.Drawing.Size(235, 32);
-            this.txtStaffID.TabIndex = 9;
+            this.txtStaffID.TabIndex = 0;
             this.txtStaffID.TextChanged += new System.EventHandler(this.txtStaffID_TextChanged);
             // 
             // txtStaffName
@@ -175,7 +175,7 @@
             this.txtStaffName.Location = new System.Drawing.Point(162, 73);
             this.txtStaffName.Name = "txtStaffName";
             this.txtStaffName.Size = new System.Drawing.Size(235, 32);
-            this.txtStaffName.TabIndex = 10;
+            this.txtStaffName.TabIndex = 1;
             // 
             // dtpStaff
             // 
@@ -185,7 +185,7 @@
             this.dtpStaff.Location = new System.Drawing.Point(556, 25);
             this.dtpStaff.Name = "dtpStaff";
             this.dtpStaff.Size = new System.Drawing.Size(133, 32);
-            this.dtpStaff.TabIndex = 12;
+            this.dtpStaff.TabIndex = 5;
             // 
             // cboRole
             // 
@@ -194,7 +194,7 @@
             this.cboRole.Location = new System.Drawing.Point(556, 76);
             this.cboRole.Name = "cboRole";
             this.cboRole.Size = new System.Drawing.Size(133, 32);
-            this.cboRole.TabIndex = 13;
+            this.cboRole.TabIndex = 6;
             this.cboRole.SelectedIndexChanged += new System.EventHandler(this.cboRole_SelectedIndexChanged);
             // 
             // txtSDTS
@@ -203,7 +203,7 @@
             this.txtSDTS.Location = new System.Drawing.Point(162, 166);
             this.txtSDTS.Name = "txtSDTS";
             this.txtSDTS.Size = new System.Drawing.Size(235, 32);
-            this.txtSDTS.TabIndex = 14;
+            this.txtSDTS.TabIndex = 4;
             // 
             // btnAdd
             // 
@@ -211,7 +211,7 @@
             this.btnAdd.Location = new System.Drawing.Point(463, 161);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(186, 40);
-            this.btnAdd.TabIndex = 16;
+            this.btnAdd.TabIndex = 9;
             this.btnAdd.Text = "Thêm/Cập nhật";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -222,7 +222,7 @@
             this.btnDelete.Location = new System.Drawing.Point(697, 161);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(100, 40);
-            this.btnDelete.TabIndex = 17;
+            this.btnDelete.TabIndex = 10;
             this.btnDelete.Text = "Xoá";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -250,7 +250,7 @@
             this.groupBox1.Location = new System.Drawing.Point(386, 99);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(817, 213);
-            this.groupBox1.TabIndex = 20;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // nuRadio
@@ -260,7 +260,7 @@
             this.nuRadio.Location = new System.Drawing.Point(273, 121);
             this.nuRadio.Name = "nuRadio";
             this.nuRadio.Size = new System.Drawing.Size(56, 28);
-            this.nuRadio.TabIndex = 25;
+            this.nuRadio.TabIndex = 3;
             this.nuRadio.TabStop = true;
             this.nuRadio.Text = "Nữ";
             this.nuRadio.UseVisualStyleBackColor = true;
@@ -273,7 +273,7 @@
             this.namRadio.Location = new System.Drawing.Point(162, 121);
             this.namRadio.Name = "namRadio";
             this.namRadio.Size = new System.Drawing.Size(72, 28);
-            this.namRadio.TabIndex = 24;
+            this.namRadio.TabIndex = 2;
             this.namRadio.TabStop = true;
             this.namRadio.Text = "Nam";
             this.namRadio.UseVisualStyleBackColor = true;
@@ -286,7 +286,7 @@
             this.taoTKButton.Location = new System.Drawing.Point(697, 118);
             this.taoTKButton.Name = "taoTKButton";
             this.taoTKButton.Size = new System.Drawing.Size(90, 33);
-            this.taoTKButton.TabIndex = 23;
+            this.taoTKButton.TabIndex = 8;
             this.taoTKButton.Text = "Tạo TK";
             this.taoTKButton.UseVisualStyleBackColor = true;
             this.taoTKButton.Click += new System.EventHandler(this.taoTKButton_Click);
@@ -298,7 +298,7 @@
             this.MaTKTextBox.Name = "MaTKTextBox";
             this.MaTKTextBox.ReadOnly = true;
             this.MaTKTextBox.Size = new System.Drawing.Size(133, 32);
-            this.MaTKTextBox.TabIndex = 22;
+            this.MaTKTextBox.TabIndex = 7;
             this.MaTKTextBox.TextChanged += new System.EventHandler(this.MaTKTextBox_TextChanged);
             // 
             // label2

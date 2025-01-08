@@ -31,6 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ShowPass = new System.Windows.Forms.PictureBox();
             this.matKhauTextBox = new System.Windows.Forms.TextBox();
             this.tenDangNhapTextBox = new System.Windows.Forms.TextBox();
             this.maTKText = new System.Windows.Forms.TextBox();
@@ -39,7 +40,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.addUpdateButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
-            this.ShowPass = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ShowPass)).BeginInit();
@@ -76,8 +76,19 @@
             this.groupBox1.Location = new System.Drawing.Point(48, 121);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(655, 244);
-            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // ShowPass
+            // 
+            this.ShowPass.Image = global::DoAnCuoiKi.Properties.Resources.close;
+            this.ShowPass.Location = new System.Drawing.Point(593, 178);
+            this.ShowPass.Name = "ShowPass";
+            this.ShowPass.Size = new System.Drawing.Size(32, 32);
+            this.ShowPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ShowPass.TabIndex = 6;
+            this.ShowPass.TabStop = false;
+            this.ShowPass.Click += new System.EventHandler(this.ShowPass_Click);
             // 
             // matKhauTextBox
             // 
@@ -86,7 +97,7 @@
             this.matKhauTextBox.Name = "matKhauTextBox";
             this.matKhauTextBox.PasswordChar = '*';
             this.matKhauTextBox.Size = new System.Drawing.Size(321, 32);
-            this.matKhauTextBox.TabIndex = 5;
+            this.matKhauTextBox.TabIndex = 2;
             // 
             // tenDangNhapTextBox
             // 
@@ -94,7 +105,7 @@
             this.tenDangNhapTextBox.Location = new System.Drawing.Point(259, 104);
             this.tenDangNhapTextBox.Name = "tenDangNhapTextBox";
             this.tenDangNhapTextBox.Size = new System.Drawing.Size(364, 32);
-            this.tenDangNhapTextBox.TabIndex = 4;
+            this.tenDangNhapTextBox.TabIndex = 1;
             // 
             // maTKText
             // 
@@ -103,7 +114,7 @@
             this.maTKText.Location = new System.Drawing.Point(259, 25);
             this.maTKText.Name = "maTKText";
             this.maTKText.Size = new System.Drawing.Size(364, 32);
-            this.maTKText.TabIndex = 3;
+            this.maTKText.TabIndex = 0;
             // 
             // label4
             // 
@@ -141,7 +152,7 @@
             this.addUpdateButton.Location = new System.Drawing.Point(48, 389);
             this.addUpdateButton.Name = "addUpdateButton";
             this.addUpdateButton.Size = new System.Drawing.Size(137, 43);
-            this.addUpdateButton.TabIndex = 2;
+            this.addUpdateButton.TabIndex = 1;
             this.addUpdateButton.Text = "Thêm/Sửa";
             this.addUpdateButton.UseVisualStyleBackColor = true;
             this.addUpdateButton.Click += new System.EventHandler(this.addUpdateButton_Click);
@@ -152,21 +163,10 @@
             this.deleteButton.Location = new System.Drawing.Point(566, 389);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(137, 43);
-            this.deleteButton.TabIndex = 3;
+            this.deleteButton.TabIndex = 2;
             this.deleteButton.Text = "Xóa";
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
-            // 
-            // ShowPass
-            // 
-            this.ShowPass.Image = global::DoAnCuoiKi.Properties.Resources.close;
-            this.ShowPass.Location = new System.Drawing.Point(593, 178);
-            this.ShowPass.Name = "ShowPass";
-            this.ShowPass.Size = new System.Drawing.Size(32, 32);
-            this.ShowPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ShowPass.TabIndex = 6;
-            this.ShowPass.TabStop = false;
-            this.ShowPass.Click += new System.EventHandler(this.ShowPass_Click);
             // 
             // DangKyTaiKhoan
             // 

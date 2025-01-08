@@ -99,7 +99,7 @@
             this.HoaDonAdvance.RowTemplate.Height = 24;
             this.HoaDonAdvance.Size = new System.Drawing.Size(878, 528);
             this.HoaDonAdvance.SortStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.HoaDonAdvance.TabIndex = 7;
+            this.HoaDonAdvance.TabIndex = 0;
             this.HoaDonAdvance.SortStringChanged += new System.EventHandler<Zuby.ADGV.AdvancedDataGridView.SortEventArgs>(this.HoaDonAdvance_SortStringChanged);
             this.HoaDonAdvance.FilterStringChanged += new System.EventHandler<Zuby.ADGV.AdvancedDataGridView.FilterEventArgs>(this.HoaDonAdvance_FilterStringChanged);
             this.HoaDonAdvance.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.HoaDonAdvance_CellContentClick);
@@ -114,7 +114,7 @@
             this.CTDHDataGrid.RowHeadersWidth = 51;
             this.CTDHDataGrid.RowTemplate.Height = 24;
             this.CTDHDataGrid.Size = new System.Drawing.Size(453, 170);
-            this.CTDHDataGrid.TabIndex = 9;
+            this.CTDHDataGrid.TabIndex = 1;
             // 
             // label3
             // 
@@ -150,7 +150,7 @@
             this.groupBox1.Location = new System.Drawing.Point(936, 131);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(335, 345);
-            this.groupBox1.TabIndex = 11;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin hóa đơn";
             // 
@@ -159,7 +159,7 @@
             this.PTTTText.Location = new System.Drawing.Point(108, 129);
             this.PTTTText.Name = "PTTTText";
             this.PTTTText.Size = new System.Drawing.Size(208, 28);
-            this.PTTTText.TabIndex = 30;
+            this.PTTTText.TabIndex = 3;
             // 
             // label11
             // 
@@ -175,7 +175,7 @@
             this.TongTienText.Location = new System.Drawing.Point(108, 95);
             this.TongTienText.Name = "TongTienText";
             this.TongTienText.Size = new System.Drawing.Size(208, 28);
-            this.TongTienText.TabIndex = 28;
+            this.TongTienText.TabIndex = 2;
             // 
             // label10
             // 
@@ -191,7 +191,7 @@
             this.MaHDTextBox.Location = new System.Drawing.Point(108, 27);
             this.MaHDTextBox.Name = "MaHDTextBox";
             this.MaHDTextBox.Size = new System.Drawing.Size(208, 28);
-            this.MaHDTextBox.TabIndex = 26;
+            this.MaHDTextBox.TabIndex = 0;
             // 
             // label9
             // 
@@ -209,42 +209,42 @@
             this.NgayLap.Location = new System.Drawing.Point(108, 61);
             this.NgayLap.Name = "NgayLap";
             this.NgayLap.Size = new System.Drawing.Size(208, 28);
-            this.NgayLap.TabIndex = 24;
+            this.NgayLap.TabIndex = 1;
             // 
             // MaKMText
             // 
             this.MaKMText.Location = new System.Drawing.Point(108, 299);
             this.MaKMText.Name = "MaKMText";
             this.MaKMText.Size = new System.Drawing.Size(208, 28);
-            this.MaKMText.TabIndex = 23;
+            this.MaKMText.TabIndex = 8;
             // 
             // MaNVText
             // 
             this.MaNVText.Location = new System.Drawing.Point(108, 265);
             this.MaNVText.Name = "MaNVText";
             this.MaNVText.Size = new System.Drawing.Size(208, 28);
-            this.MaNVText.TabIndex = 22;
+            this.MaNVText.TabIndex = 7;
             // 
             // MaKHText
             // 
             this.MaKHText.Location = new System.Drawing.Point(108, 231);
             this.MaKHText.Name = "MaKHText";
             this.MaKHText.Size = new System.Drawing.Size(208, 28);
-            this.MaKHText.TabIndex = 21;
+            this.MaKHText.TabIndex = 6;
             // 
             // LoaiDHText
             // 
             this.LoaiDHText.Location = new System.Drawing.Point(108, 197);
             this.LoaiDHText.Name = "LoaiDHText";
             this.LoaiDHText.Size = new System.Drawing.Size(208, 28);
-            this.LoaiDHText.TabIndex = 20;
+            this.LoaiDHText.TabIndex = 5;
             // 
             // MaDHText
             // 
             this.MaDHText.Location = new System.Drawing.Point(108, 163);
             this.MaDHText.Name = "MaDHText";
             this.MaDHText.Size = new System.Drawing.Size(208, 28);
-            this.MaDHText.TabIndex = 18;
+            this.MaDHText.TabIndex = 4;
             this.MaDHText.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label8
@@ -308,7 +308,7 @@
             this.XoaButton.Location = new System.Drawing.Point(1277, 298);
             this.XoaButton.Name = "XoaButton";
             this.XoaButton.Size = new System.Drawing.Size(113, 45);
-            this.XoaButton.TabIndex = 13;
+            this.XoaButton.TabIndex = 4;
             this.XoaButton.Text = "Xóa";
             this.XoaButton.UseVisualStyleBackColor = true;
             this.XoaButton.Click += new System.EventHandler(this.XoaButton_Click);
@@ -319,7 +319,7 @@
             this.InHoaDonButton.Location = new System.Drawing.Point(1277, 234);
             this.InHoaDonButton.Name = "InHoaDonButton";
             this.InHoaDonButton.Size = new System.Drawing.Size(113, 45);
-            this.InHoaDonButton.TabIndex = 14;
+            this.InHoaDonButton.TabIndex = 3;
             this.InHoaDonButton.Text = "In hóa đơn";
             this.InHoaDonButton.UseVisualStyleBackColor = true;
             this.InHoaDonButton.Click += new System.EventHandler(this.InHoaDonButton_Click);
@@ -339,7 +339,7 @@
             this.báoCáoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(235, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(85, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -354,7 +354,7 @@
             // báoCáoHóaĐơnToolStripMenuItem
             // 
             this.báoCáoHóaĐơnToolStripMenuItem.Name = "báoCáoHóaĐơnToolStripMenuItem";
-            this.báoCáoHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.báoCáoHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
             this.báoCáoHóaĐơnToolStripMenuItem.Text = "Báo cáo hóa đơn";
             this.báoCáoHóaĐơnToolStripMenuItem.Click += new System.EventHandler(this.báoCáoHóaĐơnToolStripMenuItem_Click);
             // 

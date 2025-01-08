@@ -74,10 +74,26 @@ namespace DoAnCuoiKi.frm.frm_ThanhToan
                 QRCodeData qrCodeData = qrGenerator.CreateQrCode(data, QRCodeGenerator.ECCLevel.Q);
                 using (QRCode qrCode = new QRCode(qrCodeData))
                 {
-                    return qrCode.GetGraphic(20);
+                    Bitmap qrImg =  qrCode.GetGraphic(10, Color.Black, Color.White, true);
+                    Bitmap qrImgLogo = AddLogoToQRCode(qrImg, Properties.Resources.square_8c08a00f550e40a2efafea4a005b1232);
+                    return qrImgLogo;
                 }
             }
         }
+
+        private Bitmap AddLogoToQRCode(Bitmap qrCode, Bitmap logoPath)
+        {
+            Bitmap logo = new Bitmap(logoPath);
+            Graphics g = Graphics.FromImage(qrCode);
+
+            int logoSize = qrCode.Width / 5; // Kích thước logo (20% kích thước mã QR)
+            int x = (qrCode.Width - logoSize) / 2;
+            int y = (qrCode.Height - logoSize) / 2;
+
+            g.DrawImage(logo, new Rectangle(x, y, logoSize, logoSize));
+            return qrCode;
+        }
+
 
         private string GenerateSignature(string data, string secretKey)
         {

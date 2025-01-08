@@ -180,7 +180,7 @@
             this.KichCoComboBox.Location = new System.Drawing.Point(181, 157);
             this.KichCoComboBox.Name = "KichCoComboBox";
             this.KichCoComboBox.Size = new System.Drawing.Size(263, 32);
-            this.KichCoComboBox.TabIndex = 8;
+            this.KichCoComboBox.TabIndex = 3;
             // 
             // MaSPTextBox
             // 
@@ -188,7 +188,7 @@
             this.MaSPTextBox.Location = new System.Drawing.Point(181, 23);
             this.MaSPTextBox.Name = "MaSPTextBox";
             this.MaSPTextBox.Size = new System.Drawing.Size(263, 32);
-            this.MaSPTextBox.TabIndex = 9;
+            this.MaSPTextBox.TabIndex = 0;
             this.MaSPTextBox.TextChanged += new System.EventHandler(this.MaSPTextBox_TextChanged);
             // 
             // TenSPTextBox
@@ -197,7 +197,7 @@
             this.TenSPTextBox.Location = new System.Drawing.Point(181, 66);
             this.TenSPTextBox.Name = "TenSPTextBox";
             this.TenSPTextBox.Size = new System.Drawing.Size(263, 32);
-            this.TenSPTextBox.TabIndex = 10;
+            this.TenSPTextBox.TabIndex = 1;
             // 
             // XoaButton
             // 
@@ -206,7 +206,7 @@
             this.XoaButton.Location = new System.Drawing.Point(512, 648);
             this.XoaButton.Name = "XoaButton";
             this.XoaButton.Size = new System.Drawing.Size(238, 46);
-            this.XoaButton.TabIndex = 17;
+            this.XoaButton.TabIndex = 3;
             this.XoaButton.Text = "Xoá";
             this.XoaButton.UseVisualStyleBackColor = false;
             this.XoaButton.Click += new System.EventHandler(this.XoaButton_Click);
@@ -218,7 +218,7 @@
             this.ThemSuaButton.Location = new System.Drawing.Point(512, 577);
             this.ThemSuaButton.Name = "ThemSuaButton";
             this.ThemSuaButton.Size = new System.Drawing.Size(238, 63);
-            this.ThemSuaButton.TabIndex = 16;
+            this.ThemSuaButton.TabIndex = 2;
             this.ThemSuaButton.Text = "Thêm / Sửa";
             this.ThemSuaButton.UseVisualStyleBackColor = false;
             this.ThemSuaButton.Click += new System.EventHandler(this.ThemSuaButton_Click);
@@ -289,7 +289,7 @@
             this.GiaNhapTextBox.Location = new System.Drawing.Point(114, 438);
             this.GiaNhapTextBox.Name = "GiaNhapTextBox";
             this.GiaNhapTextBox.Size = new System.Drawing.Size(119, 32);
-            this.GiaNhapTextBox.TabIndex = 20;
+            this.GiaNhapTextBox.TabIndex = 9;
             this.GiaNhapTextBox.TextChanged += new System.EventHandler(this.GiaNhapTextBox_TextChanged);
             // 
             // SLTonTextBox
@@ -298,7 +298,7 @@
             this.SLTonTextBox.Location = new System.Drawing.Point(212, 112);
             this.SLTonTextBox.Name = "SLTonTextBox";
             this.SLTonTextBox.Size = new System.Drawing.Size(71, 32);
-            this.SLTonTextBox.TabIndex = 20;
+            this.SLTonTextBox.TabIndex = 2;
             this.SLTonTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.SLTonTextBox.TextChanged += new System.EventHandler(this.SLTonTextBox_TextChanged);
             // 
@@ -308,7 +308,7 @@
             this.GiaBanTextBox.Location = new System.Drawing.Point(326, 438);
             this.GiaBanTextBox.Name = "GiaBanTextBox";
             this.GiaBanTextBox.Size = new System.Drawing.Size(118, 32);
-            this.GiaBanTextBox.TabIndex = 20;
+            this.GiaBanTextBox.TabIndex = 10;
             this.GiaBanTextBox.TextChanged += new System.EventHandler(this.GiaBanTextBox_TextChanged);
             // 
             // MaNCCComboBox
@@ -318,7 +318,7 @@
             this.MaNCCComboBox.Location = new System.Drawing.Point(181, 298);
             this.MaNCCComboBox.Name = "MaNCCComboBox";
             this.MaNCCComboBox.Size = new System.Drawing.Size(263, 32);
-            this.MaNCCComboBox.TabIndex = 21;
+            this.MaNCCComboBox.TabIndex = 6;
             // 
             // MaChatLieuComboBox
             // 
@@ -327,7 +327,7 @@
             this.MaChatLieuComboBox.Location = new System.Drawing.Point(181, 345);
             this.MaChatLieuComboBox.Name = "MaChatLieuComboBox";
             this.MaChatLieuComboBox.Size = new System.Drawing.Size(263, 32);
-            this.MaChatLieuComboBox.TabIndex = 21;
+            this.MaChatLieuComboBox.TabIndex = 7;
             // 
             // MoTaRichTextBox
             // 
@@ -335,7 +335,7 @@
             this.MoTaRichTextBox.Location = new System.Drawing.Point(181, 476);
             this.MoTaRichTextBox.Name = "MoTaRichTextBox";
             this.MoTaRichTextBox.Size = new System.Drawing.Size(263, 72);
-            this.MoTaRichTextBox.TabIndex = 23;
+            this.MoTaRichTextBox.TabIndex = 11;
             this.MoTaRichTextBox.Text = "";
             // 
             // NhanHieuComboBox
@@ -345,7 +345,7 @@
             this.NhanHieuComboBox.Location = new System.Drawing.Point(181, 391);
             this.NhanHieuComboBox.Name = "NhanHieuComboBox";
             this.NhanHieuComboBox.Size = new System.Drawing.Size(263, 32);
-            this.NhanHieuComboBox.TabIndex = 24;
+            this.NhanHieuComboBox.TabIndex = 8;
             this.NhanHieuComboBox.SelectedIndexChanged += new System.EventHandler(this.NhanHieuComboBox_SelectedIndexChanged);
             // 
             // MauComboBox
@@ -355,7 +355,7 @@
             this.MauComboBox.Location = new System.Drawing.Point(181, 203);
             this.MauComboBox.Name = "MauComboBox";
             this.MauComboBox.Size = new System.Drawing.Size(263, 32);
-            this.MauComboBox.TabIndex = 25;
+            this.MauComboBox.TabIndex = 4;
             this.MauComboBox.SelectedIndexChanged += new System.EventHandler(this.MauComboBox_SelectedIndexChanged);
             // 
             // LoaiSPComboBox
@@ -365,7 +365,7 @@
             this.LoaiSPComboBox.Location = new System.Drawing.Point(181, 251);
             this.LoaiSPComboBox.Name = "LoaiSPComboBox";
             this.LoaiSPComboBox.Size = new System.Drawing.Size(263, 32);
-            this.LoaiSPComboBox.TabIndex = 26;
+            this.LoaiSPComboBox.TabIndex = 5;
             this.LoaiSPComboBox.SelectedIndexChanged += new System.EventHandler(this.LoaiSPComboBox_SelectedIndexChanged);
             // 
             // groupBox1
@@ -400,7 +400,7 @@
             this.groupBox1.Location = new System.Drawing.Point(23, 134);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(468, 557);
-            this.groupBox1.TabIndex = 27;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
@@ -498,7 +498,7 @@
             this.chonAnhLabel.Location = new System.Drawing.Point(602, 227);
             this.chonAnhLabel.Name = "chonAnhLabel";
             this.chonAnhLabel.Size = new System.Drawing.Size(63, 16);
-            this.chonAnhLabel.TabIndex = 34;
+            this.chonAnhLabel.TabIndex = 1;
             this.chonAnhLabel.Text = "Chọn ảnh";
             this.chonAnhLabel.Click += new System.EventHandler(this.chonAnhLabel_Click);
             // 
@@ -515,7 +515,7 @@
             this.SanPhamDataGridView.RowTemplate.Height = 24;
             this.SanPhamDataGridView.Size = new System.Drawing.Size(778, 554);
             this.SanPhamDataGridView.SortStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.SanPhamDataGridView.TabIndex = 35;
+            this.SanPhamDataGridView.TabIndex = 4;
             this.SanPhamDataGridView.SortStringChanged += new System.EventHandler<Zuby.ADGV.AdvancedDataGridView.SortEventArgs>(this.SanPhamDataGridView_SortStringChanged);
             this.SanPhamDataGridView.FilterStringChanged += new System.EventHandler<Zuby.ADGV.AdvancedDataGridView.FilterEventArgs>(this.SanPhamDataGridView_FilterStringChanged);
             this.SanPhamDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SanPhamDataGridView_CellContentClick);

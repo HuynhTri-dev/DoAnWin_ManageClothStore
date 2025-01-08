@@ -78,7 +78,7 @@
             this.NhapHangButton.Location = new System.Drawing.Point(172, 269);
             this.NhapHangButton.Name = "NhapHangButton";
             this.NhapHangButton.Size = new System.Drawing.Size(114, 40);
-            this.NhapHangButton.TabIndex = 3;
+            this.NhapHangButton.TabIndex = 2;
             this.NhapHangButton.Text = "Nhập hàng";
             this.NhapHangButton.UseVisualStyleBackColor = true;
             this.NhapHangButton.Click += new System.EventHandler(this.NhapHangButton_Click);
@@ -89,7 +89,7 @@
             this.MaSPText.Location = new System.Drawing.Point(172, 106);
             this.MaSPText.Name = "MaSPText";
             this.MaSPText.Size = new System.Drawing.Size(292, 28);
-            this.MaSPText.TabIndex = 4;
+            this.MaSPText.TabIndex = 0;
             this.MaSPText.TextChanged += new System.EventHandler(this.MaSPText_TextChanged);
             // 
             // SoLuongNhapText
@@ -98,7 +98,7 @@
             this.SoLuongNhapText.Location = new System.Drawing.Point(172, 175);
             this.SoLuongNhapText.Name = "SoLuongNhapText";
             this.SoLuongNhapText.Size = new System.Drawing.Size(292, 28);
-            this.SoLuongNhapText.TabIndex = 6;
+            this.SoLuongNhapText.TabIndex = 1;
             // 
             // label3
             // 
@@ -154,7 +154,7 @@
             this.DongButton.Location = new System.Drawing.Point(370, 269);
             this.DongButton.Name = "DongButton";
             this.DongButton.Size = new System.Drawing.Size(94, 40);
-            this.DongButton.TabIndex = 11;
+            this.DongButton.TabIndex = 3;
             this.DongButton.Text = "Đóng";
             this.DongButton.UseVisualStyleBackColor = true;
             this.DongButton.Click += new System.EventHandler(this.DongButton_Click);

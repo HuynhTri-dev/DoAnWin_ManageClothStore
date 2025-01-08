@@ -90,7 +90,7 @@
             this.groupBox1.Location = new System.Drawing.Point(28, 120);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(454, 363);
-            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // TrangThaiCombo
@@ -103,7 +103,7 @@
             this.TrangThaiCombo.Location = new System.Drawing.Point(173, 97);
             this.TrangThaiCombo.Name = "TrangThaiCombo";
             this.TrangThaiCombo.Size = new System.Drawing.Size(239, 29);
-            this.TrangThaiCombo.TabIndex = 13;
+            this.TrangThaiCombo.TabIndex = 2;
             // 
             // label8
             // 
@@ -119,7 +119,7 @@
             this.PhiText.Location = new System.Drawing.Point(173, 208);
             this.PhiText.Name = "PhiText";
             this.PhiText.Size = new System.Drawing.Size(239, 28);
-            this.PhiText.TabIndex = 11;
+            this.PhiText.TabIndex = 5;
             // 
             // label7
             // 
@@ -135,7 +135,7 @@
             this.DiaChiText.Location = new System.Drawing.Point(173, 63);
             this.DiaChiText.Name = "DiaChiText";
             this.DiaChiText.Size = new System.Drawing.Size(239, 28);
-            this.DiaChiText.TabIndex = 9;
+            this.DiaChiText.TabIndex = 1;
             // 
             // NgayGiaoDate
             // 
@@ -144,7 +144,7 @@
             this.NgayGiaoDate.Location = new System.Drawing.Point(173, 171);
             this.NgayGiaoDate.Name = "NgayGiaoDate";
             this.NgayGiaoDate.Size = new System.Drawing.Size(142, 28);
-            this.NgayGiaoDate.TabIndex = 8;
+            this.NgayGiaoDate.TabIndex = 4;
             // 
             // label6
             // 
@@ -196,7 +196,7 @@
             this.GhiChuText.Location = new System.Drawing.Point(173, 249);
             this.GhiChuText.Name = "GhiChuText";
             this.GhiChuText.Size = new System.Drawing.Size(239, 96);
-            this.GhiChuText.TabIndex = 2;
+            this.GhiChuText.TabIndex = 6;
             this.GhiChuText.Text = "";
             // 
             // MaPhieuText
@@ -204,7 +204,7 @@
             this.MaPhieuText.Location = new System.Drawing.Point(173, 28);
             this.MaPhieuText.Name = "MaPhieuText";
             this.MaPhieuText.Size = new System.Drawing.Size(239, 28);
-            this.MaPhieuText.TabIndex = 1;
+            this.MaPhieuText.TabIndex = 0;
             // 
             // label2
             // 
@@ -221,7 +221,7 @@
             this.HoanThanhButton.Location = new System.Drawing.Point(357, 489);
             this.HoanThanhButton.Name = "HoanThanhButton";
             this.HoanThanhButton.Size = new System.Drawing.Size(125, 44);
-            this.HoanThanhButton.TabIndex = 5;
+            this.HoanThanhButton.TabIndex = 1;
             this.HoanThanhButton.Text = "Hoàn thành";
             this.HoanThanhButton.UseVisualStyleBackColor = true;
             this.HoanThanhButton.Click += new System.EventHandler(this.HoanThanhButton_Click);

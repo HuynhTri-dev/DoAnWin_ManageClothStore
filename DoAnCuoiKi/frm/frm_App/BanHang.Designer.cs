@@ -106,14 +106,14 @@
             this.panel1.Location = new System.Drawing.Point(966, -2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(510, 826);
-            this.panel1.TabIndex = 5;
+            this.panel1.TabIndex = 3;
             // 
             // GhiChuRichText
             // 
             this.GhiChuRichText.Location = new System.Drawing.Point(321, 446);
             this.GhiChuRichText.Name = "GhiChuRichText";
             this.GhiChuRichText.Size = new System.Drawing.Size(158, 49);
-            this.GhiChuRichText.TabIndex = 4;
+            this.GhiChuRichText.TabIndex = 3;
             this.GhiChuRichText.Text = "";
             // 
             // label15
@@ -163,7 +163,7 @@
             this.TienThoiTextBox.Name = "TienThoiTextBox";
             this.TienThoiTextBox.ReadOnly = true;
             this.TienThoiTextBox.Size = new System.Drawing.Size(280, 28);
-            this.TienThoiTextBox.TabIndex = 93;
+            this.TienThoiTextBox.TabIndex = 1;
             this.TienThoiTextBox.TextChanged += new System.EventHandler(this.TienThoiTextBox_TextChanged);
             // 
             // KhachDuaTextBox
@@ -172,7 +172,7 @@
             this.KhachDuaTextBox.Location = new System.Drawing.Point(128, 159);
             this.KhachDuaTextBox.Name = "KhachDuaTextBox";
             this.KhachDuaTextBox.Size = new System.Drawing.Size(236, 28);
-            this.KhachDuaTextBox.TabIndex = 5;
+            this.KhachDuaTextBox.TabIndex = 0;
             this.KhachDuaTextBox.TextChanged += new System.EventHandler(this.KhachDuaTextBox_TextChanged);
             this.KhachDuaTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KhachDuaTextBox_KeyPress);
             this.KhachDuaTextBox.Leave += new System.EventHandler(this.KhachDuaTextBox_Leave);
@@ -185,7 +185,7 @@
             this.PhaiThuTextBox.Name = "PhaiThuTextBox";
             this.PhaiThuTextBox.ReadOnly = true;
             this.PhaiThuTextBox.Size = new System.Drawing.Size(280, 28);
-            this.PhaiThuTextBox.TabIndex = 94;
+            this.PhaiThuTextBox.TabIndex = 2;
             this.PhaiThuTextBox.TextChanged += new System.EventHandler(this.PhaiThuTextBox_TextChanged);
             // 
             // GiamTextBox
@@ -196,7 +196,7 @@
             this.GiamTextBox.Name = "GiamTextBox";
             this.GiamTextBox.ReadOnly = true;
             this.GiamTextBox.Size = new System.Drawing.Size(280, 28);
-            this.GiamTextBox.TabIndex = 95;
+            this.GiamTextBox.TabIndex = 3;
             this.GiamTextBox.TextChanged += new System.EventHandler(this.GiamTextBox_TextChanged);
             // 
             // TongTienTextBox
@@ -207,7 +207,7 @@
             this.TongTienTextBox.Name = "TongTienTextBox";
             this.TongTienTextBox.ReadOnly = true;
             this.TongTienTextBox.Size = new System.Drawing.Size(280, 28);
-            this.TongTienTextBox.TabIndex = 96;
+            this.TongTienTextBox.TabIndex = 4;
             this.TongTienTextBox.TextChanged += new System.EventHandler(this.TongTienTextBox_TextChanged);
             // 
             // label9
@@ -277,7 +277,7 @@
             this.XoaButton.Location = new System.Drawing.Point(394, 367);
             this.XoaButton.Name = "XoaButton";
             this.XoaButton.Size = new System.Drawing.Size(86, 30);
-            this.XoaButton.TabIndex = 25;
+            this.XoaButton.TabIndex = 13;
             this.XoaButton.Text = "Xóa";
             this.XoaButton.UseVisualStyleBackColor = false;
             this.XoaButton.Click += new System.EventHandler(this.XoaButton_Click);
@@ -290,7 +290,7 @@
             this.ThanhToanButton.Location = new System.Drawing.Point(280, 772);
             this.ThanhToanButton.Name = "ThanhToanButton";
             this.ThanhToanButton.Size = new System.Drawing.Size(172, 41);
-            this.ThanhToanButton.TabIndex = 6;
+            this.ThanhToanButton.TabIndex = 4;
             this.ThanhToanButton.Text = "Thanh Toán";
             this.ThanhToanButton.UseVisualStyleBackColor = false;
             this.ThanhToanButton.Click += new System.EventHandler(this.ThanhToanButton_Click);
@@ -313,7 +313,7 @@
             this.LoaiDHComboBox.Location = new System.Drawing.Point(121, 441);
             this.LoaiDHComboBox.Name = "LoaiDHComboBox";
             this.LoaiDHComboBox.Size = new System.Drawing.Size(121, 24);
-            this.LoaiDHComboBox.TabIndex = 3;
+            this.LoaiDHComboBox.TabIndex = 2;
             this.LoaiDHComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // GiaTriTextBox
@@ -348,7 +348,7 @@
             this.MaKHTextBox.Location = new System.Drawing.Point(121, 373);
             this.MaKHTextBox.Name = "MaKHTextBox";
             this.MaKHTextBox.Size = new System.Drawing.Size(121, 22);
-            this.MaKHTextBox.TabIndex = 1;
+            this.MaKHTextBox.TabIndex = 0;
             this.MaKHTextBox.TextChanged += new System.EventHandler(this.MaKHTextBox_TextChanged);
             // 
             // label6
@@ -367,7 +367,7 @@
             this.MaKMComboBox.Location = new System.Drawing.Point(121, 406);
             this.MaKMComboBox.Name = "MaKMComboBox";
             this.MaKMComboBox.Size = new System.Drawing.Size(121, 24);
-            this.MaKMComboBox.TabIndex = 2;
+            this.MaKMComboBox.TabIndex = 1;
             this.MaKMComboBox.SelectedIndexChanged += new System.EventHandler(this.MaKMComboBox_SelectedIndexChanged);
             // 
             // MaNVTextBox
@@ -377,7 +377,7 @@
             this.MaNVTextBox.Name = "MaNVTextBox";
             this.MaNVTextBox.ReadOnly = true;
             this.MaNVTextBox.Size = new System.Drawing.Size(99, 23);
-            this.MaNVTextBox.TabIndex = 98;
+            this.MaNVTextBox.TabIndex = 9;
             // 
             // label5
             // 
@@ -386,7 +386,7 @@
             this.label5.Location = new System.Drawing.Point(41, 83);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 16);
-            this.label5.TabIndex = 13;
+            this.label5.TabIndex = 7;
             this.label5.Text = "Mã NV:";
             // 
             // label4
@@ -396,7 +396,7 @@
             this.label4.Location = new System.Drawing.Point(327, 72);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 16);
-            this.label4.TabIndex = 12;
+            this.label4.TabIndex = 10;
             this.label4.Text = "Ngày lập:";
             // 
             // NgayLapDatePicker
@@ -407,7 +407,7 @@
             this.NgayLapDatePicker.Location = new System.Drawing.Point(398, 67);
             this.NgayLapDatePicker.Name = "NgayLapDatePicker";
             this.NgayLapDatePicker.Size = new System.Drawing.Size(97, 23);
-            this.NgayLapDatePicker.TabIndex = 97;
+            this.NgayLapDatePicker.TabIndex = 11;
             // 
             // MaDHTextBox
             // 
@@ -415,7 +415,7 @@
             this.MaDHTextBox.Location = new System.Drawing.Point(107, 52);
             this.MaDHTextBox.Name = "MaDHTextBox";
             this.MaDHTextBox.Size = new System.Drawing.Size(99, 23);
-            this.MaDHTextBox.TabIndex = 99;
+            this.MaDHTextBox.TabIndex = 8;
             this.MaDHTextBox.TextChanged += new System.EventHandler(this.MaDHTextBox_TextChanged);
             // 
             // label2
@@ -425,7 +425,7 @@
             this.label2.Location = new System.Drawing.Point(11, 55);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 16);
-            this.label2.TabIndex = 9;
+            this.label2.TabIndex = 6;
             this.label2.Text = "Mã đơn hàng:";
             // 
             // DonHangDataGrid
@@ -440,7 +440,7 @@
             this.DonHangDataGrid.RowHeadersWidth = 51;
             this.DonHangDataGrid.RowTemplate.Height = 24;
             this.DonHangDataGrid.Size = new System.Drawing.Size(482, 251);
-            this.DonHangDataGrid.TabIndex = 0;
+            this.DonHangDataGrid.TabIndex = 12;
             this.DonHangDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.DonHangDataGrid.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DonHangDataGrid_CellEndEdit);
             // 
@@ -451,7 +451,7 @@
             this.label3.Location = new System.Drawing.Point(191, 12);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(143, 34);
-            this.label3.TabIndex = 0;
+            this.label3.TabIndex = 5;
             this.label3.Text = "Giỏ Hàng";
             // 
             // flowLayoutPanel1
@@ -460,7 +460,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(11, 120);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(956, 691);
-            this.flowLayoutPanel1.TabIndex = 0;
+            this.flowLayoutPanel1.TabIndex = 5;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // label1
@@ -491,7 +491,7 @@
             this.ResearchSanPham.Location = new System.Drawing.Point(98, 82);
             this.ResearchSanPham.Name = "ResearchSanPham";
             this.ResearchSanPham.Size = new System.Drawing.Size(227, 28);
-            this.ResearchSanPham.TabIndex = 9;
+            this.ResearchSanPham.TabIndex = 0;
             this.ResearchSanPham.TextChanged += new System.EventHandler(this.ResearchSanPham_TextChanged);
             this.ResearchSanPham.Enter += new System.EventHandler(this.ResearchSanPham_TextChanged);
             this.ResearchSanPham.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ResearchSanPham_KeyPress);
@@ -513,7 +513,7 @@
             this.SearchThuongHieu.Location = new System.Drawing.Point(553, 81);
             this.SearchThuongHieu.Name = "SearchThuongHieu";
             this.SearchThuongHieu.Size = new System.Drawing.Size(121, 29);
-            this.SearchThuongHieu.TabIndex = 101;
+            this.SearchThuongHieu.TabIndex = 1;
             this.SearchThuongHieu.SelectedIndexChanged += new System.EventHandler(this.SearchThuongHieu_SelectedIndexChanged);
             this.SearchThuongHieu.TextChanged += new System.EventHandler(this.SearchThuongHieu_TextChanged);
             // 
@@ -524,7 +524,7 @@
             this.SearchLoai.Location = new System.Drawing.Point(828, 81);
             this.SearchLoai.Name = "SearchLoai";
             this.SearchLoai.Size = new System.Drawing.Size(121, 29);
-            this.SearchLoai.TabIndex = 102;
+            this.SearchLoai.TabIndex = 2;
             this.SearchLoai.TextChanged += new System.EventHandler(this.SearchLoai_TextChanged);
             // 
             // label17
