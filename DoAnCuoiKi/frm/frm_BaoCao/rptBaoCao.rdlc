@@ -1028,10 +1028,11 @@
                   </TextRun>
                   <TextRun>
                     <Value>=Count(Fields!MaHD.Value, "HoaDonDataSet")</Value>
-                    <Style>
-                      <Format>0'₫';(0'₫')</Format>
-                      <rd:FormatSymbolCulture>vi-VN</rd:FormatSymbolCulture>
-                    </Style>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value> hóa đơn</Value>
+                    <Style />
                   </TextRun>
                 </TextRuns>
                 <Style>

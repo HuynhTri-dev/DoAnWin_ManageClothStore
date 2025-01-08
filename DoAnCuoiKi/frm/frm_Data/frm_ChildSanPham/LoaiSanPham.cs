@@ -46,28 +46,22 @@ namespace DoAnCuoiKi
                     MaDM = MaDMTextBox.Text,
                     TenDM = TenDMTextBox.Text
                 };
+
+                db.DANHMUCs.AddOrUpdate(dm);
+                db.SaveChanges();
+
                 if (!sp)
                 {
-                    if (string.IsNullOrWhiteSpace(MaDMTextBox.Text) || string.IsNullOrWhiteSpace(TenDMTextBox.Text))
-                    {
-                        MessageBox.Show("Vui lòng nhập đủ thông tin!", "Lỗi");
-                    }
-                    else
-                    {
-                        db.DANHMUCs.AddOrUpdate(dm);
-                        db.SaveChanges();
-                        MessageBox.Show("Thêm thành công danh mục!");
-                        MaDMTextBox.Text = string.Empty;
-                        TenDMTextBox.Text = string.Empty;
-                    }
+                    MessageBox.Show("Thêm thành công danh mục!");
                 }
                 else
                 {
                     MessageBox.Show("Cập nhật danh mục thành công!");
-                    MaDMTextBox.Text = string.Empty;
-                    TenDMTextBox.Text = string.Empty;
+                    
                 }
                 LoadLSP();
+                MaDMTextBox.Text = string.Empty;
+                TenDMTextBox.Text = string.Empty;
             }
             else
             {
@@ -84,6 +78,14 @@ namespace DoAnCuoiKi
             {
                 if (dlg == DialogResult.Yes)
                 {
+                    var checkSanPham = db.SANPHAMs.Any(x => x.MaDM == MaDMTextBox.Text);
+
+                    if (checkSanPham == true)
+                    {
+                        MessageBox.Show("Còn sản phẩm thuộc loại này", "Thông báo");
+                        return;
+                    }
+
                     db.DANHMUCs.Remove(dm);
                     db.SaveChanges();
                     MessageBox.Show("Xóa thành công!");

@@ -238,5 +238,113 @@ namespace DoAnCuoiKi
             }
             return newColFilter.Replace("'", "\"");
         }
+
+        private void XoaButton_Click(object sender, EventArgs e)
+        {
+            var maPhieu = db.PHIEUGIAOHANGs.FirstOrDefault(x => x.MaPhieu == MaPhieuText.Text);
+            if (maPhieu != null)
+            {
+                DialogResult dlg = MessageBox.Show("Xóa thông tin phiếu giao hàng này?" +
+                                                    "\nĐơn hàng này sẽ tự chuyển sang bán tại quầy", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dlg == DialogResult.Yes)
+                {
+                    try
+                    {
+                        var donHang = db.DonHangs.FirstOrDefault(x => x.MaDH == maPhieu.MaDH);
+
+                        donHang.LoaiDH = "OF";
+
+                        db.PHIEUGIAOHANGs.Remove(maPhieu);
+                        db.SaveChanges();
+                        MessageBox.Show("Xóa thành công!");
+                        LoadData();
+                        ClearFields();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Lỗi: " + ex.Message, "Thông báo");
+                    }
+                }
+                else
+                {
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không có thông tin đơn hàng này!");
+            }
+        }
+
+        private void ClearFields()
+        {
+            MaPhieuText.Clear();
+            MaDHText.Clear();
+            NgayLapDate.Value = DateTime.Now;
+            NgayGiaoDate.Value = DateTime.Now;
+            DiaChiText.Clear();
+            TrangThaComboBox.SelectedIndex = -1;
+            PhiText.Clear();
+            GhiChuText.Clear();
+        }
+
+        private void ThemButton_Click(object sender, EventArgs e)
+        {
+            // add
+            if (string.IsNullOrEmpty(MaPhieuText.Text)
+                    || string.IsNullOrEmpty(DiaChiText.Text)
+                    || string.IsNullOrEmpty(PhiText.Text)
+                    || TrangThaComboBox.SelectedItem == null)
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+                return;
+            }
+
+            if (!decimal.TryParse(PhiText.Text, out decimal phi))
+            {
+                MessageBox.Show("Giá trị không hợp lệ");
+                return;
+            }
+
+            if (NgayGiaoDate.Value < NgayLapDate.Value)
+            {
+                MessageBox.Show("Ngày giao hàng không thể sớm hơn ngày lập");
+                return;
+            }
+
+            try
+            {
+                PHIEUGIAOHANG phieuGiaoHang = new PHIEUGIAOHANG()
+                {
+                    MaPhieu = MaPhieuText.Text,
+                    NgayLap = NgayLapDate.Value,
+                    DiaChi = DiaChiText.Text,
+                    NgayGiaoHang = NgayGiaoDate.Value,
+                    TrangThaiGiaoHang = TrangThaComboBox.SelectedItem.ToString(),
+                    GhiChu = GhiChuText.Text,
+                    MaDH = MaDHText.Text,
+                    Phi = phi,
+                };
+
+                var donHang = db.DonHangs.FirstOrDefault(x => x.MaDH == MaDHText.Text);
+                if (donHang == null)
+                {
+                    MessageBox.Show("Đơn hàng không tồn tại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                donHang.LoaiDH = "ON";
+
+                db.PHIEUGIAOHANGs.Add(phieuGiaoHang);
+                db.SaveChanges();
+
+                MessageBox.Show("Thêm thành công", "Thông báo");
+                LoadData();
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
+        }
     }
 }

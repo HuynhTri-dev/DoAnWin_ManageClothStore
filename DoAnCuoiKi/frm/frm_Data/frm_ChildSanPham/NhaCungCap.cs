@@ -52,34 +52,25 @@ namespace DoAnCuoiKi
                     SDT = SDTTextBox.Text,
                     Email = EmailTextBox.Text,
                 };
+
+                db.NHACUNGCAPs.AddOrUpdate(ncc);
+                db.SaveChanges();
+
                 if (!source)
                 {
-                    if (string.IsNullOrWhiteSpace(MaNCCTextBox.Text) || string.IsNullOrWhiteSpace(TenNCCTextBox.Text) || string.IsNullOrWhiteSpace(DiaChiTextBox.Text) || string.IsNullOrWhiteSpace(SDTTextBox.Text) || string.IsNullOrWhiteSpace(EmailTextBox.Text))
-                    {
-                        MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
-                    }
-                    else
-                    {
-                        db.NHACUNGCAPs.AddOrUpdate(ncc);
-                        db.SaveChanges();
-                        MessageBox.Show("Thêm thành công nhà cung cấp!");
-                        MaNCCTextBox.Text = string.Empty;
-                        TenNCCTextBox.Text = string.Empty;
-                        DiaChiTextBox.Text = string.Empty;
-                        SDTTextBox.Text = string.Empty;
-                        EmailTextBox.Text = string.Empty;
-                    }
+                    MessageBox.Show("Thêm thành công nhà cung cấp!");
                 }
                 else
                 {
                     MessageBox.Show("Cập nhật nhà cung cấp thành công!");
-                    MaNCCTextBox.Text = string.Empty;
-                    TenNCCTextBox.Text = string.Empty;
-                    DiaChiTextBox.Text = string.Empty;
-                    SDTTextBox.Text = string.Empty;
-                    EmailTextBox.Text = string.Empty;
                 }
                 LoadNCC();
+
+                MaNCCTextBox.Text = string.Empty;
+                TenNCCTextBox.Text = string.Empty;
+                DiaChiTextBox.Text = string.Empty;
+                SDTTextBox.Text = string.Empty;
+                EmailTextBox.Text = string.Empty;
             }
             else
             {
@@ -96,6 +87,15 @@ namespace DoAnCuoiKi
             {
                 if (dlg == DialogResult.Yes)
                 {
+                    var checkSanPham = db.SANPHAMs.Any(x => x.MaNCC == MaNCCTextBox.Text);
+
+                    if (checkSanPham == true)
+                    {
+                        MessageBox.Show("Còn sản phẩm được cung cấp từ nhà cung cấp này", "Thông báo");
+                        return;
+                    }
+
+
                     db.NHACUNGCAPs.Remove(ncc);
                     db.SaveChanges();
                     MessageBox.Show("Xóa thành công!");

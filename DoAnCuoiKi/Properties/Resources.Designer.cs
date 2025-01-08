@@ -83,6 +83,16 @@ namespace DoAnCuoiKi.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _561184 {
+            get {
+                object obj = ResourceManager.GetObject("561184", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Brown__Business_Card {
             get {
                 object obj = ResourceManager.GetObject("Brown  Business Card", resourceCulture);

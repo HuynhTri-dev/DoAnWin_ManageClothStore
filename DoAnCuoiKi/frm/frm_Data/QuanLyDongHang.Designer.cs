@@ -34,6 +34,7 @@
             this.DonHangAdvanced = new Zuby.ADGV.AdvancedDataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.XoaButton = new System.Windows.Forms.Button();
             this.TimKiemButton = new System.Windows.Forms.Button();
             this.CapNhatButton = new System.Windows.Forms.Button();
             this.PhiText = new System.Windows.Forms.TextBox();
@@ -51,6 +52,7 @@
             this.NgayLapDate = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.MaPhieuText = new System.Windows.Forms.TextBox();
+            this.ThemButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MapWebView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DonHangAdvanced)).BeginInit();
@@ -120,6 +122,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.ThemButton);
+            this.groupBox1.Controls.Add(this.XoaButton);
             this.groupBox1.Controls.Add(this.TimKiemButton);
             this.groupBox1.Controls.Add(this.CapNhatButton);
             this.groupBox1.Controls.Add(this.PhiText);
@@ -146,6 +150,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin đơn hàng";
             // 
+            // XoaButton
+            // 
+            this.XoaButton.Location = new System.Drawing.Point(568, 171);
+            this.XoaButton.Name = "XoaButton";
+            this.XoaButton.Size = new System.Drawing.Size(103, 35);
+            this.XoaButton.TabIndex = 19;
+            this.XoaButton.Text = "Xóa";
+            this.XoaButton.UseVisualStyleBackColor = true;
+            this.XoaButton.Click += new System.EventHandler(this.XoaButton_Click);
+            // 
             // TimKiemButton
             // 
             this.TimKiemButton.Location = new System.Drawing.Point(589, 30);
@@ -158,7 +172,7 @@
             // 
             // CapNhatButton
             // 
-            this.CapNhatButton.Location = new System.Drawing.Point(334, 169);
+            this.CapNhatButton.Location = new System.Drawing.Point(459, 171);
             this.CapNhatButton.Name = "CapNhatButton";
             this.CapNhatButton.Size = new System.Drawing.Size(103, 35);
             this.CapNhatButton.TabIndex = 8;
@@ -295,6 +309,16 @@
             this.MaPhieuText.Size = new System.Drawing.Size(202, 28);
             this.MaPhieuText.TabIndex = 0;
             // 
+            // ThemButton
+            // 
+            this.ThemButton.Location = new System.Drawing.Point(350, 171);
+            this.ThemButton.Name = "ThemButton";
+            this.ThemButton.Size = new System.Drawing.Size(103, 35);
+            this.ThemButton.TabIndex = 20;
+            this.ThemButton.Text = "Thêm";
+            this.ThemButton.UseVisualStyleBackColor = true;
+            this.ThemButton.Click += new System.EventHandler(this.ThemButton_Click);
+            // 
             // QuanLyDongHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -343,5 +367,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button TimKiemButton;
         private System.Windows.Forms.Button CapNhatButton;
+        private System.Windows.Forms.Button XoaButton;
+        private System.Windows.Forms.Button ThemButton;
     }
 }

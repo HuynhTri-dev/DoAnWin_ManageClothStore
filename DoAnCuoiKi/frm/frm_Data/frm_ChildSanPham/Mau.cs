@@ -40,34 +40,29 @@ namespace DoAnCuoiKi
             if(!string.IsNullOrEmpty(MaMauTextBox.Text)
                 && !string.IsNullOrEmpty(TenMauTextBox.Text))
             {
+
                 var color = db.MAUs.Any(x => x.MaMau == MaMauTextBox.Text);
                 MAU mau = new MAU()
                 {
                     MaMau = MaMauTextBox.Text,
                     TenMau = TenMauTextBox.Text,
                 };
-                if (!color)
+                db.MAUs.AddOrUpdate(mau);
+                db.SaveChanges();
+
+                if (color == false)
                 {
-                    if (string.IsNullOrWhiteSpace(MaMauTextBox.Text) || string.IsNullOrWhiteSpace(TenMauTextBox.Text))
-                    {
-                        MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
-                    }
-                    else
-                    {
-                        db.MAUs.AddOrUpdate(mau);
-                        db.SaveChanges();
-                        MessageBox.Show("Thêm màu thành công!");
-                        MaMauTextBox.Text = string.Empty;
-                        TenMauTextBox.Text = string.Empty;
-                    }
+                    MessageBox.Show("Thêm màu thành công!");
                 }
                 else
                 {
                     MessageBox.Show("Cập nhật màu thành công!");
-                    MaMauTextBox.Text = string.Empty;
-                    TenMauTextBox.Text = string.Empty;
+                    
                 }
+
                 LoadMau();
+                MaMauTextBox.Text = string.Empty;
+                TenMauTextBox.Text = string.Empty;
             }
             else
             {
@@ -85,6 +80,14 @@ namespace DoAnCuoiKi
             {
                 if (dlg == DialogResult.Yes)
                 {
+                    var checkSanPham = db.SANPHAMs.Any(x => x.MaMau == MaMauTextBox.Text);
+
+                    if (checkSanPham == true)
+                    {
+                        MessageBox.Show("Còn sản phẩm đang có màu này", "Thông báo");
+                        return;
+                    }
+
                     db.MAUs.Remove(color);
                     db.SaveChanges();
                     MessageBox.Show("Xóa thành công!");

@@ -45,28 +45,23 @@ namespace DoAnCuoiKi
                     MaCL = MaCLTextBox.Text,
                     TenCL = TenCLTextBox.Text
                 };
+
+                db.CHATLIEUx.AddOrUpdate(cl);
+                db.SaveChanges();
+                
+                
+
                 if (!chat)
                 {
-                    if (string.IsNullOrWhiteSpace(MaCLTextBox.Text) || string.IsNullOrWhiteSpace(TenCLTextBox.Text))
-                    {
-                        MessageBox.Show("Vui lòng nhập đủ thông tin!");
-                    }
-                    else
-                    {
-                        db.CHATLIEUx.AddOrUpdate(cl);
-                        db.SaveChanges();
-                        MessageBox.Show("Thêm chất liệu thành công!");
-                        MaCLTextBox.Text = string.Empty;
-                        TenCLTextBox.Text = string.Empty;
-                    }
+                    MessageBox.Show("Thêm chất liệu thành công!");
                 }
                 else
                 {
                     MessageBox.Show("Cập nhật chất liệu thành công!");
-                    MaCLTextBox.Text = string.Empty;
-                    TenCLTextBox.Text = string.Empty;
                 }
                 LoadCL();
+                MaCLTextBox.Text = string.Empty;
+                TenCLTextBox.Text = string.Empty;
             }
             else
             {
@@ -83,6 +78,14 @@ namespace DoAnCuoiKi
             {
                 if (dlg == DialogResult.Yes)
                 {
+                    var checkSanPham = db.SANPHAMs.Any(x => x.MaCL == MaCLTextBox.Text);
+
+                    if (checkSanPham == true)
+                    {
+                        MessageBox.Show("Còn sản phẩm có chất liệu này", "Thông báo");
+                        return;
+                    }
+
                     db.CHATLIEUx.Remove(cl);
                     db.SaveChanges();
                     MessageBox.Show("Xóa thành công!");

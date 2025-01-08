@@ -75,7 +75,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBoxQRCode);
             this.Name = "TaoQR";
-            this.Text = "TaoQR";
+            this.Text = "Tạo QR";
             this.Load += new System.EventHandler(this.TaoQR_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxQRCode)).EndInit();
             this.ResumeLayout(false);

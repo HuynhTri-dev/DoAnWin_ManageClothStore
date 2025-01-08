@@ -39,6 +39,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.HoaDonButton = new System.Windows.Forms.Button();
+            this.ShowMenu = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.ShowMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // btnHome
@@ -52,9 +54,9 @@
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.Color.White;
-            this.btnHome.Location = new System.Drawing.Point(-1, 41);
+            this.btnHome.Location = new System.Drawing.Point(-1, 54);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(203, 47);
+            this.btnHome.Size = new System.Drawing.Size(200, 47);
             this.btnHome.TabIndex = 0;
             this.btnHome.Text = "Trang Chủ";
             this.btnHome.UseVisualStyleBackColor = false;
@@ -72,7 +74,7 @@
             this.btnStaff.ForeColor = System.Drawing.Color.White;
             this.btnStaff.Location = new System.Drawing.Point(-1, 379);
             this.btnStaff.Name = "btnStaff";
-            this.btnStaff.Size = new System.Drawing.Size(203, 47);
+            this.btnStaff.Size = new System.Drawing.Size(200, 47);
             this.btnStaff.TabIndex = 6;
             this.btnStaff.Text = "Nhân Viên";
             this.btnStaff.UseVisualStyleBackColor = false;
@@ -90,7 +92,7 @@
             this.btnCustomers.ForeColor = System.Drawing.Color.White;
             this.btnCustomers.Location = new System.Drawing.Point(-1, 220);
             this.btnCustomers.Name = "btnCustomers";
-            this.btnCustomers.Size = new System.Drawing.Size(203, 47);
+            this.btnCustomers.Size = new System.Drawing.Size(200, 47);
             this.btnCustomers.TabIndex = 3;
             this.btnCustomers.Text = "Khách Hàng";
             this.btnCustomers.UseVisualStyleBackColor = false;
@@ -108,7 +110,7 @@
             this.btnBill.ForeColor = System.Drawing.Color.White;
             this.btnBill.Location = new System.Drawing.Point(-1, 326);
             this.btnBill.Name = "btnBill";
-            this.btnBill.Size = new System.Drawing.Size(203, 47);
+            this.btnBill.Size = new System.Drawing.Size(200, 47);
             this.btnBill.TabIndex = 5;
             this.btnBill.Text = "Giao Hàng";
             this.btnBill.UseVisualStyleBackColor = false;
@@ -126,7 +128,7 @@
             this.btnProduct.ForeColor = System.Drawing.Color.White;
             this.btnProduct.Location = new System.Drawing.Point(-1, 114);
             this.btnProduct.Name = "btnProduct";
-            this.btnProduct.Size = new System.Drawing.Size(203, 47);
+            this.btnProduct.Size = new System.Drawing.Size(200, 47);
             this.btnProduct.TabIndex = 1;
             this.btnProduct.Text = "Sản Phẩm";
             this.btnProduct.UseVisualStyleBackColor = false;
@@ -144,7 +146,7 @@
             this.btnWarehouse.ForeColor = System.Drawing.Color.White;
             this.btnWarehouse.Location = new System.Drawing.Point(-1, 167);
             this.btnWarehouse.Name = "btnWarehouse";
-            this.btnWarehouse.Size = new System.Drawing.Size(203, 47);
+            this.btnWarehouse.Size = new System.Drawing.Size(200, 47);
             this.btnWarehouse.TabIndex = 2;
             this.btnWarehouse.Text = "Khuyến mãi";
             this.btnWarehouse.UseVisualStyleBackColor = false;
@@ -162,7 +164,7 @@
             this.btnRevenue.ForeColor = System.Drawing.Color.White;
             this.btnRevenue.Location = new System.Drawing.Point(-1, 432);
             this.btnRevenue.Name = "btnRevenue";
-            this.btnRevenue.Size = new System.Drawing.Size(203, 47);
+            this.btnRevenue.Size = new System.Drawing.Size(200, 47);
             this.btnRevenue.TabIndex = 7;
             this.btnRevenue.Text = "Doanh Thu";
             this.btnRevenue.UseVisualStyleBackColor = false;
@@ -179,7 +181,7 @@
             this.exitButton.ForeColor = System.Drawing.Color.White;
             this.exitButton.Location = new System.Drawing.Point(-1, 510);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(203, 47);
+            this.exitButton.Size = new System.Drawing.Size(200, 47);
             this.exitButton.TabIndex = 8;
             this.exitButton.Tag = "";
             this.exitButton.Text = "Đăng xuất";
@@ -191,9 +193,9 @@
             this.panel2.AutoScroll = true;
             this.panel2.AutoSize = true;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(225)))), ((int)(((byte)(213)))));
-            this.panel2.Location = new System.Drawing.Point(199, 0);
+            this.panel2.Location = new System.Drawing.Point(192, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1283, 703);
+            this.panel2.Size = new System.Drawing.Size(1290, 703);
             this.panel2.TabIndex = 9;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -223,11 +225,22 @@
             this.HoaDonButton.ForeColor = System.Drawing.Color.White;
             this.HoaDonButton.Location = new System.Drawing.Point(-1, 273);
             this.HoaDonButton.Name = "HoaDonButton";
-            this.HoaDonButton.Size = new System.Drawing.Size(203, 47);
+            this.HoaDonButton.Size = new System.Drawing.Size(200, 47);
             this.HoaDonButton.TabIndex = 4;
             this.HoaDonButton.Text = "Hóa Đơn";
             this.HoaDonButton.UseVisualStyleBackColor = false;
             this.HoaDonButton.Click += new System.EventHandler(this.HoaDonButton_Click);
+            // 
+            // ShowMenu
+            // 
+            this.ShowMenu.Image = global::DoAnCuoiKi.Properties.Resources._561184;
+            this.ShowMenu.Location = new System.Drawing.Point(-1, 0);
+            this.ShowMenu.Name = "ShowMenu";
+            this.ShowMenu.Size = new System.Drawing.Size(18, 17);
+            this.ShowMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ShowMenu.TabIndex = 10;
+            this.ShowMenu.TabStop = false;
+            this.ShowMenu.Click += new System.EventHandler(this.ShowMenu_Click);
             // 
             // TrangChu
             // 
@@ -238,6 +251,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(113)))), ((int)(((byte)(91)))));
             this.ClientSize = new System.Drawing.Size(1482, 703);
+            this.Controls.Add(this.ShowMenu);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnRevenue);
             this.Controls.Add(this.panel1);
@@ -252,6 +266,7 @@
             this.Name = "TrangChu";
             this.Text = "Trang Chủ";
             this.Load += new System.EventHandler(this.TrangChu_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ShowMenu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -269,5 +284,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button HoaDonButton;
+        private System.Windows.Forms.PictureBox ShowMenu;
     }
 }

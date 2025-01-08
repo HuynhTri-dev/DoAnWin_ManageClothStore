@@ -178,7 +178,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Name = "DangKyTaiKhoan";
-            this.Text = "DangKyTaiKhoan";
+            this.Text = "Đăng ký tài khoản";
             this.Load += new System.EventHandler(this.DangKyTaiKhoan_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -426,6 +426,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="frm\frm_Data\Map.html" />
+    <None Include="Resources\561184.png" />
     <None Include="Resources\square-8c08a00f550e40a2efafea4a005b1232.png" />
     <None Include="Resources\show.jpg" />
     <None Include="Resources\close.jpg" />

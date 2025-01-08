@@ -136,6 +136,43 @@ namespace DoAnCuoiKi
 
             OpenChildForm(new QuanLyHoaDon());
         }
+
+        private Timer toggleMenuTimer;
+
+        private const int max = 1500; // Chiều rộng khi menu mở
+        private const int min = 1300; // Chiều rộng khi menu đóng
+        private bool isMenuExpanded = true;
+        private void ShowMenu_Click(object sender, EventArgs e)
+        {
+            toggleMenuTimer = new Timer();
+            toggleMenuTimer.Interval = 10; // Tốc độ hiệu ứng (ms)
+            toggleMenuTimer.Tick += ToggleMenuTimer_Tick;
+            toggleMenuTimer.Start();
+        }
+
+        private void ToggleMenuTimer_Tick(object sender, EventArgs e)
+        {
+            if (isMenuExpanded)
+            {
+                panel2.Width += 10;
+                panel2.Left -= 10;
+                if (panel2.Width >= max)
+                {
+                    isMenuExpanded = false;
+                    toggleMenuTimer.Stop();
+                }
+            }
+            else
+            {
+                panel2.Width -= 10;
+                panel2.Left += 10;
+                if (panel2.Width <= min)
+                {
+                    isMenuExpanded = true;
+                    toggleMenuTimer.Stop();
+                }
+            }
+        }
     }
 }
 

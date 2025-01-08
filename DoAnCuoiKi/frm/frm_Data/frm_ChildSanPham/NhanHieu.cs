@@ -44,28 +44,22 @@ namespace DoAnCuoiKi
                     MaTH = MaTHTextBox.Text,
                     TenTH = TenTHTextBox.Text
                 };
+
+                db.THUONGHIEUx.AddOrUpdate(th);
+                db.SaveChanges();
+
                 if (!brand)
                 {
-                    if (string.IsNullOrWhiteSpace(MaTHTextBox.Text) || string.IsNullOrWhiteSpace(TenTHTextBox.Text))
-                    {
-                        MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
-                    }
-                    else
-                    {
-                        db.THUONGHIEUx.AddOrUpdate(th);
-                        db.SaveChanges();
-                        MessageBox.Show("Thêm thương hiệu thành công!");
-                        MaTHTextBox.Text = string.Empty;
-                        TenTHTextBox.Text = string.Empty;
-                    }
+                    MessageBox.Show("Thêm thương hiệu thành công!");
                 }
                 else
                 {
                     MessageBox.Show("Cập nhật thương hiệu thành công!");
-                    MaTHTextBox.Text = string.Empty;
-                    TenTHTextBox.Text = string.Empty;
                 }
                 LoadTH();
+
+                MaTHTextBox.Text = string.Empty;
+                TenTHTextBox.Text = string.Empty;
             }
             else
             {
@@ -81,6 +75,14 @@ namespace DoAnCuoiKi
             {
                 if (dlg == DialogResult.Yes)
                 {
+                    var checkSanPham = db.SANPHAMs.Any(x => x.MaTH == MaTHTextBox.Text);
+
+                    if (checkSanPham == true)
+                    {
+                        MessageBox.Show("Còn sản phẩm thuộc thương hiệu này", "Thông báo");
+                        return;
+                    }
+
                     db.THUONGHIEUx.Remove(th);
                     db.SaveChanges();
                     MessageBox.Show("Xóa thành công!");
