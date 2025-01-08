@@ -634,13 +634,15 @@ namespace DoAnCuoiKi
            };
             db.HOADONs.Add(hd);
             db.SaveChanges();
-            ResetGioHang();
+            
             MessageBox.Show("Hoàn thành đơn hàng", "Thông báo");
-            flowLayoutPanel1.Refresh();
-            LoadProduct();
 
             XuatHoaDon xuatHoaDon = new XuatHoaDon(hd.MaHD);
             xuatHoaDon.ShowDialog();
+
+            flowLayoutPanel1.Refresh();
+            LoadProduct();
+            ResetGioHang();
         }
 
         
@@ -709,10 +711,20 @@ namespace DoAnCuoiKi
 
         private void KhachDuaTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (decimal.TryParse(KhachDuaTextBox.Text.Replace(".", ""), out decimal number))
+            int cursorPosition = KhachDuaTextBox.SelectionStart;
+            string input = KhachDuaTextBox.Text.Replace(".", "").Trim();
+
+            if (decimal.TryParse(input, out decimal number))
             {
-                KhachDuaTextBox.Text = number.ToString("N0", new CultureInfo("vi-VN"));
-                KhachDuaTextBox.SelectionStart = KhachDuaTextBox.Text.Length;
+                string formatted = number.ToString("N0", new CultureInfo("vi-VN"));
+                KhachDuaTextBox.Text = formatted;
+
+                cursorPosition += formatted.Length - input.Length;
+                KhachDuaTextBox.SelectionStart = Math.Max(0, Math.Min(cursorPosition, KhachDuaTextBox.Text.Length));
+            }
+            else
+            {
+                KhachDuaTextBox.SelectionStart = cursorPosition;
             }
         }
 
@@ -728,10 +740,6 @@ namespace DoAnCuoiKi
                     if (khachDua >= phaiThu)
                     {
                         TienThoiTextBox.Text = (khachDua - phaiThu).ToString("N0", new CultureInfo("vi-VN"));
-                    }
-                    else
-                    {
-                        MessageBox.Show("Khách đưa chưa đủ tiền", "Thông báo");
                     }
                 }
                 else

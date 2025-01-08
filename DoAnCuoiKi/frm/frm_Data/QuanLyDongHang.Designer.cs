@@ -95,13 +95,13 @@
             this.DonHangAdvanced.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DonHangAdvanced.FilterAndSortEnabled = true;
             this.DonHangAdvanced.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.DonHangAdvanced.Location = new System.Drawing.Point(24, 351);
+            this.DonHangAdvanced.Location = new System.Drawing.Point(19, 351);
             this.DonHangAdvanced.MaxFilterButtonImageHeight = 23;
             this.DonHangAdvanced.Name = "DonHangAdvanced";
             this.DonHangAdvanced.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DonHangAdvanced.RowHeadersWidth = 51;
             this.DonHangAdvanced.RowTemplate.Height = 24;
-            this.DonHangAdvanced.Size = new System.Drawing.Size(655, 328);
+            this.DonHangAdvanced.Size = new System.Drawing.Size(677, 328);
             this.DonHangAdvanced.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.DonHangAdvanced.TabIndex = 2;
             this.DonHangAdvanced.SortStringChanged += new System.EventHandler<Zuby.ADGV.AdvancedDataGridView.SortEventArgs>(this.DonHangAdvanced_SortStringChanged);
@@ -139,26 +139,26 @@
             this.groupBox1.Controls.Add(this.MaPhieuText);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(24, 101);
+            this.groupBox1.Location = new System.Drawing.Point(19, 101);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(655, 244);
+            this.groupBox1.Size = new System.Drawing.Size(677, 244);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin đơn hàng";
             // 
             // TimKiemButton
             // 
-            this.TimKiemButton.Location = new System.Drawing.Point(432, 197);
+            this.TimKiemButton.Location = new System.Drawing.Point(589, 30);
             this.TimKiemButton.Name = "TimKiemButton";
-            this.TimKiemButton.Size = new System.Drawing.Size(104, 33);
+            this.TimKiemButton.Size = new System.Drawing.Size(82, 33);
             this.TimKiemButton.TabIndex = 21;
-            this.TimKiemButton.Text = "Tìm kiếm";
+            this.TimKiemButton.Text = "Find";
             this.TimKiemButton.UseVisualStyleBackColor = true;
             this.TimKiemButton.Click += new System.EventHandler(this.TimKiemButton_Click);
             // 
             // CapNhatButton
             // 
-            this.CapNhatButton.Location = new System.Drawing.Point(433, 147);
+            this.CapNhatButton.Location = new System.Drawing.Point(334, 169);
             this.CapNhatButton.Name = "CapNhatButton";
             this.CapNhatButton.Size = new System.Drawing.Size(103, 35);
             this.CapNhatButton.TabIndex = 20;
@@ -186,7 +186,7 @@
             // 
             this.MaDHText.Location = new System.Drawing.Point(433, 33);
             this.MaDHText.Name = "MaDHText";
-            this.MaDHText.Size = new System.Drawing.Size(203, 28);
+            this.MaDHText.Size = new System.Drawing.Size(150, 28);
             this.MaDHText.TabIndex = 17;
             // 
             // label8
@@ -207,7 +207,7 @@
             "Hoàn thành"});
             this.TrangThaComboBox.Location = new System.Drawing.Point(433, 101);
             this.TrangThaComboBox.Name = "TrangThaComboBox";
-            this.TrangThaComboBox.Size = new System.Drawing.Size(203, 29);
+            this.TrangThaComboBox.Size = new System.Drawing.Size(150, 29);
             this.TrangThaComboBox.TabIndex = 15;
             // 
             // label7
@@ -248,7 +248,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(333, 72);
+            this.label4.Location = new System.Drawing.Point(330, 72);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 21);
             this.label4.TabIndex = 9;

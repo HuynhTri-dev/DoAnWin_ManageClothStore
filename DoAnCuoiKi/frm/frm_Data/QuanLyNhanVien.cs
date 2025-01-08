@@ -105,28 +105,34 @@ namespace DoAnCuoiKi
                 string restName = fullName.Substring(firstSpaceIndex + 1); // Đệm và tên
 
               
-                NHANVIEN nv = new NHANVIEN()
+                try
                 {
-                    MaNV = txtStaffID.Text.Trim(),
-                    Ho = lastName,
-                    LotTen = restName,
-                    ChucVu = cboRole.SelectedItem?.ToString(),
-                    GioiTinh = namRadio.Checked, 
-                    NgaySinh = dtpStaff.Value.Date,
-                    SDT = txtSDTS.Text.Trim(),
-                    MaTK = MaTKTextBox.Text.Trim()
-                };
+                    NHANVIEN nv = new NHANVIEN()
+                    {
+                        MaNV = txtStaffID.Text.Trim(),
+                        Ho = lastName,
+                        LotTen = restName,
+                        ChucVu = cboRole.SelectedItem?.ToString(),
+                        GioiTinh = namRadio.Checked,
+                        NgaySinh = dtpStaff.Value.Date,
+                        SDT = txtSDTS.Text.Trim(),
+                        MaTK = MaTKTextBox.Text.Trim()
+                    };
 
-                var existingStaff = db.NHANVIENs.FirstOrDefault(x => x.MaNV == nv.MaNV);
-                db.NHANVIENs.AddOrUpdate(nv);
+                    var existingStaff = db.NHANVIENs.FirstOrDefault(x => x.MaNV == nv.MaNV);
+                    db.NHANVIENs.AddOrUpdate(nv);
 
-                db.SaveChanges();
-                LoadThongTinNhanVien();
+                    db.SaveChanges();
+                    LoadThongTinNhanVien();
 
-                MessageBox.Show(existingStaff == null ? "Thêm thông tin nhân viên thành công!" : "Cập nhật thông tin nhân viên thành công!", "Thông báo");
+                    MessageBox.Show(existingStaff == null ? "Thêm thông tin nhân viên thành công!" : "Cập nhật thông tin nhân viên thành công!", "Thông báo");
 
-                
-                ClearFields();
+                    ClearFields();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi" + ex.Message, "Thông báo");
+                }
             }
             else
             {

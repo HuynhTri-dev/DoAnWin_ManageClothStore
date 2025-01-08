@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.Entity.Migrations;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Linq.Dynamic.Core;
@@ -150,7 +151,6 @@ namespace DoAnCuoiKi
 
             SanPhamDataGridView.CellFormatting += (sender, e) =>
             {
-                // Kiểm tra nếu cột đang format là cột "SoLuongTon"
                 if (SanPhamDataGridView.Columns[e.ColumnIndex].DataPropertyName == "SoLuongTon")
                 {
                     var soLuongTon = Convert.ToInt32(SanPhamDataGridView.Rows[e.RowIndex].Cells["SoLuongTon"].Value);
@@ -209,13 +209,13 @@ namespace DoAnCuoiKi
                 return;
             }
 
-                if (!decimal.TryParse(GiaNhapTextBox.Text, out decimal giaNhap) || giaNhap < 0)
+                if (!decimal.TryParse(GiaNhapTextBox.Text.Replace(".", ""), out decimal giaNhap) || giaNhap < 0)
                 {
                     MessageBox.Show("Giá nhập không hợp lệ", "Thông báo");
                     return;
                 }
 
-                if (!decimal.TryParse(GiaBanTextBox.Text, out decimal giaBan) || giaBan < 0)
+                if (!decimal.TryParse(GiaBanTextBox.Text.Replace(".", ""), out decimal giaBan) || giaBan < 0)
                 {
                     MessageBox.Show("Giá bán không hợp lệ", "Thông báo");
                     return;
@@ -294,46 +294,7 @@ namespace DoAnCuoiKi
             }    
         }
 
-        
-
-        private void MaSPTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MauComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LoaiSPComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void NhanHieuComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        
-
-
+       
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             if (int.TryParse(SLTonTextBox.Text, out int sl))
@@ -384,12 +345,43 @@ namespace DoAnCuoiKi
 
         private void GiaNhapTextBox_TextChanged(object sender, EventArgs e)
         {
+            int cursorPosition = GiaNhapTextBox.SelectionStart;
+            string input = GiaNhapTextBox.Text.Replace(".", "").Trim();
+
+            if (decimal.TryParse(input, out decimal number))
+            {
+                string formatted = number.ToString("N0", new CultureInfo("vi-VN"));
+                GiaNhapTextBox.Text = formatted;
+
+                cursorPosition += formatted.Length - input.Length;
+                GiaNhapTextBox.SelectionStart = Math.Max(0, Math.Min(cursorPosition, GiaNhapTextBox.Text.Length));
+            }
+            else
+            {
+                GiaNhapTextBox.SelectionStart = cursorPosition;
+            }
         }
 
         private void GiaBanTextBox_TextChanged(object sender, EventArgs e)
         {
+            int cursorPosition = GiaBanTextBox.SelectionStart;
+            string input = GiaBanTextBox.Text.Replace(".", "").Trim();
+
+            if (decimal.TryParse(input, out decimal number))
+            {
+                string formatted = number.ToString("N0", new CultureInfo("vi-VN"));
+                GiaBanTextBox.Text = formatted;
+
+                cursorPosition += formatted.Length - input.Length;
+                GiaBanTextBox.SelectionStart = Math.Max(0, Math.Min(cursorPosition, GiaBanTextBox.Text.Length));
+            }
+            else
+            {
+                GiaBanTextBox.SelectionStart = cursorPosition;
+            }
         }
 
+        
         private ComboBox GetMauComboBox()
         {
             return MauComboBox;
@@ -636,5 +628,46 @@ namespace DoAnCuoiKi
             BaoCaoNhapKho bcnk = new BaoCaoNhapKho();
             bcnk.ShowDialog();
         }
+
+
+
+        private void MaSPTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MauComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoaiSPComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NhanHieuComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
     }
 }

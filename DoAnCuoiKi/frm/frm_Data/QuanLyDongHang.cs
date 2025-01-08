@@ -149,6 +149,12 @@ namespace DoAnCuoiKi
 
             var phieu = query.ToList();
 
+            if (phieu == null || !phieu.Any())
+            {
+                MessageBox.Show("Đơn hàn này không có thông tin vận chuyển", "Thông báo");
+                return;
+            }
+
             DonHangAdvanced.Refresh();
             DonHangAdvanced.DataSource = phieu;
         }

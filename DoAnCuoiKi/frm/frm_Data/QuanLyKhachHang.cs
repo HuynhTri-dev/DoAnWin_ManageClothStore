@@ -72,54 +72,60 @@ namespace DoAnCuoiKi
                && (NamRadioButton.Checked == true || NuRadioButton.Checked == true)
                && !string.IsNullOrEmpty(NgaySinhDateTimePicker.Value.ToString()))
             {
-                string fullName = HoTenTextBox.Text; // Chuỗi họ tên đầy đủ
-                int firstSpaceIndex = fullName.IndexOf(' ');
-
-                string lastName;
-                string restName;
-
-                if (firstSpaceIndex == -1)
+                try
                 {
-                    MessageBox.Show("Phải nhập đầu đủ họ tên!", "Thông báo");
-                    return;
-                }
-                else
-                {
-                    lastName = fullName.Substring(0, firstSpaceIndex); // Họ
-                    restName = fullName.Substring(firstSpaceIndex + 1); // Đệm và tên
-                }
+                    string fullName = HoTenTextBox.Text; // Chuỗi họ tên đầy đủ
+                    int firstSpaceIndex = fullName.IndexOf(' ');
 
-                KHACHHANG KH = new KHACHHANG()
-                {
-                    MaKH = MaKhachHangTextBox.Text,
-                    Ho = lastName,
-                    TenLot = restName,
-                    GioiTinh = NamRadioButton.Checked,
-                    NgaySinh = NgaySinhDateTimePicker.Value,
-                    DiaChi = DiaChiTextBox.Text,
-                    GhiChu = ghiChuText.Text
-                };
+                    string lastName;
+                    string restName;
 
-                var maKH = db.KHACHHANGs.FirstOrDefault(x => x.MaKH == KH.MaKH);
-
-                if (maKH != null)
-                {
-                    DialogResult dr = MessageBox.Show("Khách hàng đã tồn tại. Bạn muốn sửa lại thông tin không?", "Thông báo", MessageBoxButtons.OKCancel);
-
-                    if (dr == DialogResult.Cancel)
+                    if (firstSpaceIndex == -1)
                     {
+                        MessageBox.Show("Phải nhập đầu đủ họ tên!", "Thông báo");
                         return;
                     }
+                    else
+                    {
+                        lastName = fullName.Substring(0, firstSpaceIndex); // Họ
+                        restName = fullName.Substring(firstSpaceIndex + 1); // Đệm và tên
+                    }
+
+                    KHACHHANG KH = new KHACHHANG()
+                    {
+                        MaKH = MaKhachHangTextBox.Text,
+                        Ho = lastName,
+                        TenLot = restName,
+                        GioiTinh = NamRadioButton.Checked,
+                        NgaySinh = NgaySinhDateTimePicker.Value,
+                        DiaChi = DiaChiTextBox.Text,
+                        GhiChu = ghiChuText.Text
+                    };
+
+                    var maKH = db.KHACHHANGs.FirstOrDefault(x => x.MaKH == KH.MaKH);
+
+                    if (maKH != null)
+                    {
+                        DialogResult dr = MessageBox.Show("Khách hàng đã tồn tại. Bạn muốn sửa lại thông tin không?", "Thông báo", MessageBoxButtons.OKCancel);
+
+                        if (dr == DialogResult.Cancel)
+                        {
+                            return;
+                        }
+                    }
+
+
+                    db.KHACHHANGs.AddOrUpdate(KH);
+                    db.SaveChanges();
+                    LoadForm();
+                    ClearFields();
+
+                    MessageBox.Show(maKH == null ? "Thêm thông tin khách hàng thành công!" : "Cập nhật thông tin khách hàng thành công!", "Thông báo");
                 }
-
-
-                db.KHACHHANGs.AddOrUpdate(KH);
-                db.SaveChanges();
-                LoadForm();
-                ClearFields();
-
-                MessageBox.Show(maKH == null ? "Thêm thông tin khách hàng thành công!" : "Cập nhật thông tin khách hàng thành công!", "Thông báo");
-
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Thông báo");
+                }
             }
             else
             {
