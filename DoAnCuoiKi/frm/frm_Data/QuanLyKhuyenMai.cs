@@ -44,15 +44,16 @@ namespace DoAnCuoiKi.frm.frm_Data
                 x.TenKM,
                 x.GiaTri,
                 x.NgayBatDau,
-                x.NgayKetThuc
+                x.NgayKetThuc 
             }).ToList()
             .Select(x => new {
                 x.MaKM,
                 x.TenKM,
                 x.GiaTri,
-                BatDau = x.NgayBatDau.ToString("dd/MM/yyyy"),  // Chuyển thành chuỗi sau khi truy vấn
-                KetThuc = x.NgayKetThuc.HasValue ? x.NgayKetThuc.Value.ToString("dd/MM/yyyy") : ""  // Kiểm tra null và chuyển thành chuỗi
+                BatDau = x.NgayBatDau.ToString("dd/MM/yyyy"),  
+                KetThuc = x.NgayKetThuc.HasValue ? x.NgayKetThuc.Value.ToString("dd/MM/yyyy") : ""  
             }).ToList();
+
             KhuyenMaiDataGrid.DataSource = thongTin;
 
             //KhuyenMaiDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;

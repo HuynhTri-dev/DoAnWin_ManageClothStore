@@ -41,7 +41,7 @@ namespace DoAnCuoiKi
 
         private void XuatHoaDon_Load(object sender, EventArgs e)
         {
-            var tthd = db.HOADONs.FirstOrDefault(x => x.MaHD == MAHD);
+                var tthd = db.HOADONs.FirstOrDefault(x => x.MaHD == MAHD);
 
             if (tthd == null)
             {
@@ -113,6 +113,10 @@ namespace DoAnCuoiKi
             DonHangReportViewer.LocalReport.SetParameters(giamGiaPara);
 
             DonHangReportViewer.RefreshReport();
+
+            DonHangReportViewer.Controls.Add(DonHangReportViewer);
+
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

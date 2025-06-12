@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using Zuby.ADGV;
 using System.Linq.Dynamic;
 using System.Linq.Dynamic.Core;
+using System.Globalization;
 
 namespace DoAnCuoiKi.frm.frm_Data
 {
@@ -164,7 +165,11 @@ namespace DoAnCuoiKi.frm.frm_Data
                         MaKMText.Text = thongTinDH?.MaKM;
                     }
 
-                    var data = db.CHITIETDONHANGs.Where(x => x.MaDH == thongTinHD.MaDH).Select(x => new { x.MaSP, x.SoLuong}).ToList();
+                    var data = db.CHITIETDONHANGs.Where(x => x.MaDH == thongTinHD.MaDH)
+                        .Select(x => new { x.SANPHAM.TenSP, x.SoLuong, x.SANPHAM.GiaBan })
+                        .ToList()
+                        .Select(x => new { x.TenSP, x.SoLuong, DonGia = x.GiaBan.ToString("N0", new CultureInfo("vi-VN")) })
+                        .ToList();
                     CTDHDataGrid.DataSource = data;
                 }
             }

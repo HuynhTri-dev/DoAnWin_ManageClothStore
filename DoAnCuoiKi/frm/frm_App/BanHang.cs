@@ -302,7 +302,6 @@ namespace DoAnCuoiKi
                     Label soldOut = new Label()
                     {
                         Size = new Size(200, 50),
-
                         BackColor = Color.Red,
                         Text = "Sold Out",
                         ForeColor = Color.White,

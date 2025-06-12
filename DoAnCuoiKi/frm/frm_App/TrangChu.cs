@@ -139,38 +139,38 @@ namespace DoAnCuoiKi
 
         private Timer toggleMenuTimer;
 
-        private const int max = 1500; // Chiều rộng khi menu mở
-        private const int min = 1300; // Chiều rộng khi menu đóng
+        private const int max = 1500; 
+        private const int min = 1290;
         private bool isMenuExpanded = true;
         private void ShowMenu_Click(object sender, EventArgs e)
         {
             toggleMenuTimer = new Timer();
-            toggleMenuTimer.Interval = 10; // Tốc độ hiệu ứng (ms)
+            toggleMenuTimer.Interval = 1; 
             toggleMenuTimer.Tick += ToggleMenuTimer_Tick;
             toggleMenuTimer.Start();
         }
 
         private void ToggleMenuTimer_Tick(object sender, EventArgs e)
         {
+
+
             if (isMenuExpanded)
             {
-                panel2.Width += 10;
+                this.Width -= 10;
                 panel2.Left -= 10;
-                if (panel2.Width >= max)
+                if (this.Width <= min && panel2.Left <= 0)
                 {
+                    this.Width = min;
+                    panel2.Left = 0;
                     isMenuExpanded = false;
                     toggleMenuTimer.Stop();
                 }
             }
             else
             {
-                panel2.Width -= 10;
-                panel2.Left += 10;
-                if (panel2.Width <= min)
-                {
-                    isMenuExpanded = true;
-                    toggleMenuTimer.Stop();
-                }
+                this.Width = max;
+                panel2.Left = 200;
+                toggleMenuTimer.Stop();
             }
         }
     }
